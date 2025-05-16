@@ -14,6 +14,8 @@
   --subheading-color: #555;
   --global-styles-bg: #000000; /* Para .global-styles que tiene el fondo negro original */
   --product-image-bg: #111;
+  --hero-overlay-color: rgba(0, 0, 0, 0.4); /* Color for hero overlay */
+  --hero-blur-amount: 8px; /* Blur amount for hero effect */
 
   /* Colores específicos del diseño existente (a mantener o adaptar) */
   --color-green-text: #10b981; /* Texto verde como en "computational algorithms" */
@@ -39,6 +41,7 @@ body.dark-mode {
   --subheading-color: #b0b0b0;
   --global-styles-bg: #000000; /* Se mantiene negro */
   --product-image-bg: #222;
+  --hero-overlay-color: rgba(0, 0, 0, 0.6); /* Darker overlay for dark mode */
 
   --color-green-text: #34d399; /* Verde más brillante para modo oscuro */
   --color-mid-grey-text: #9ca3af; /* Gris más claro */
@@ -63,17 +66,45 @@ body {
   justify-content: center;
   margin-left: 1rem; /* Espacio junto al icono del carrito */
   transition: var(--theme-transition), transform 0.2s ease;
+  position: relative;
+  width: 36px;
+  height: 36px;
+  overflow: visible;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
 .theme-toggle-button:hover {
-  border-color: var(--text-color);
+  border-color: var(--link-active-color);
   transform: scale(1.1);
+  box-shadow: 0 0 10px var(--link-active-color, rgba(59, 130, 246, 0.5));
+}
+
+.theme-toggle-button:before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  bottom: -4px;
+  left: -4px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, transparent, rgba(59, 130, 246, 0.2), transparent);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.theme-toggle-button:hover:before {
+  opacity: 1;
 }
 
 .theme-icon {
-  width: 20px;
-  height: 20px;
-  fill: currentColor; /* Usa el color del texto del botón */
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 /* Ajustes generales para usar las variables */
@@ -211,4 +242,300 @@ body.dark-mode .form-control {
 
 .sub-heading { /* Webflow default, podría heredar o necesitar variable */
     color: var(--text-color-muted);
+}
+
+/* Hero blur effect with logo */
+.hero-blur-section {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+}
+
+.hero-blur-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(90deg, #0046ca, #2e99ff);
+  background-size: cover;
+  background-position: center;
+  filter: blur(var(--hero-blur-amount));
+  z-index: 1;
+  opacity: 0.7;
+}
+
+.hero-blur-background::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  right: -50px;
+  bottom: -50px;
+  background: radial-gradient(ellipse at center, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.6) 70%);
+  z-index: 0;
+}
+
+.hero-blur-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--hero-overlay-color);
+  z-index: 2;
+  background: radial-gradient(circle at center, transparent 20%, rgba(0,0,0,0.5) 80%);
+}
+
+.hero-logo-container {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  transform: scale(1.2);
+  animation: pulse 3s infinite alternate;
+  width: 100%;
+}
+
+.hero-raper-logo {
+  max-width: 220px;
+  height: auto;
+  filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.7));
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+
+body.dark-mode .hero-blur-background {
+  filter: blur(calc(var(--hero-blur-amount) + 2px));
+  background-image: linear-gradient(90deg, #003399, #0066cc);
+}
+
+body.dark-mode .hero-raper-logo {
+  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.8));
+}
+
+/* Video Hero Section */
+.video-hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+}
+
+.hero-background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding-bottom: 15vh;
+  background: linear-gradient(to bottom, 
+    rgba(0,0,0,0) 0%,
+    rgba(0,0,0,0) 60%,
+    rgba(0,0,0,0.5) 100%);
+}
+
+.hero-logo-wrapper {
+  max-width: 280px;
+  margin-bottom: 2rem;
+  transform: translateY(0);
+  animation: float 6s ease-in-out infinite;
+}
+
+.hero-logo {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.7));
+  transition: filter 0.3s ease;
+}
+
+.hero-logo:hover {
+  filter: drop-shadow(0 0 25px rgba(255, 255, 255, 0.9));
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.section_hero {
+  margin-top: -1px; /* Ensure smooth transition to the next section */
+}
+
+body.dark-mode .hero-content {
+  background: linear-gradient(to bottom, 
+    rgba(0,0,0,0) 0%,
+    rgba(0,0,0,0) 60%,
+    rgba(0,0,0,0.7) 100%);
+}
+
+body.dark-mode .hero-logo {
+  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.9));
+}
+
+@media (max-width: 768px) {
+  .video-hero-section {
+    height: 80vh;
+  }
+  
+  .hero-logo-wrapper {
+    max-width: 220px;
+    margin-bottom: 1.5rem;
+  }
+  
+  .hero-content {
+    padding-bottom: 10vh;
+  }
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+  animation: fadeInUp 2s ease-in-out infinite;
+}
+
+.scroll-arrow {
+  width: 20px;
+  height: 20px;
+  border-right: 2px solid rgba(255, 255, 255, 0.8);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.8);
+  transform: rotate(45deg);
+  margin-bottom: 10px;
+  animation: scrollArrow 2s ease-in-out infinite;
+}
+
+.scroll-text {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+@keyframes scrollArrow {
+  0% {
+    transform: rotate(45deg) translate(0, 0);
+    opacity: 0.4;
+  }
+  50% {
+    transform: rotate(45deg) translate(10px, 10px);
+    opacity: 0.8;
+  }
+  100% {
+    transform: rotate(45deg) translate(0, 0);
+    opacity: 0.4;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0.4;
+    transform: translate(-50%, 10px);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translate(-50%, 0);
+  }
+  100% {
+    opacity: 0.4;
+    transform: translate(-50%, 10px);
+  }
+}
+
+/* Make the page scroll smooth */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Navbar Layout */
+.navbar-sticky__links-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cart-icon-wrapper {
+  position: relative;
+  cursor: pointer;
+  padding: 0.3rem;
+}
+
+.cart-icon {
+  width: 24px;
+  height: 24px;
+  color: var(--link-color);
+  transition: var(--theme-transition);
+}
+
+#cart-count {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: var(--button-bg-gradient);
+  color: var(--button-text-color);
+  border-radius: 50%;
+  font-size: 12px;
+  min-width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  transition: var(--theme-transition);
 } 

@@ -37,4 +37,29 @@ document.addEventListener('DOMContentLoaded', () => {
         // applyTheme(prefersDark ? 'dark' : 'light');
         applyTheme('light'); // Predeterminado a modo claro si no hay preferencia guardada o del sistema
     }
+    
+    // Video Hero Parallax Effect
+    const videoHero = document.querySelector('.video-hero-section');
+    const heroLogo = document.querySelector('.hero-logo-wrapper');
+    const heroVideo = document.querySelector('.hero-background-video');
+    
+    if (videoHero && window.innerWidth > 768) {
+        window.addEventListener('scroll', () => {
+            const scrollPosition = window.scrollY;
+            const heroHeight = videoHero.offsetHeight;
+            
+            // Only apply effect when in view
+            if (scrollPosition <= heroHeight) {
+                // Subtle scale effect on the video
+                const scaleValue = 1 + (scrollPosition * 0.0003);
+                heroVideo.style.transform = `scale(${scaleValue})`;
+                
+                // Parallax effect on the logo
+                if (heroLogo) {
+                    heroLogo.style.transform = `translateY(${scrollPosition * 0.2}px)`;
+                    heroLogo.style.opacity = 1 - (scrollPosition / (heroHeight * 0.5));
+                }
+            }
+        });
+    }
 }); 
