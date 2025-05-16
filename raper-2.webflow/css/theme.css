@@ -1,0 +1,214 @@
+:root {
+  --body-bg-color: #ffffff;
+  --text-color: #1a1b1f;
+  --text-color-muted: #6c757d;
+  --navbar-bg-color: rgba(255, 255, 255, 0.9);
+  --navbar-border-color: rgba(0, 0, 0, 0.1);
+  --card-bg-color: #ffffff;
+  --card-border-color: rgba(0,0,0,0.08);
+  --button-bg-gradient: linear-gradient(90deg, #3b82f6, #2dd4bf);
+  --button-text-color: #ffffff;
+  --link-color: #1a1b1f;
+  --link-active-color: #3b82f6;
+  --heading-color: #1a1b1f;
+  --subheading-color: #555;
+  --global-styles-bg: #000000; /* Para .global-styles que tiene el fondo negro original */
+  --product-image-bg: #111;
+
+  /* Colores específicos del diseño existente (a mantener o adaptar) */
+  --color-green-text: #10b981; /* Texto verde como en "computational algorithms" */
+  --color-mid-grey-text: #808080; /* Texto gris medio */
+
+  /* Transición para suavizar el cambio de tema */
+  --theme-transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+body.dark-mode {
+  --body-bg-color: #000000;
+  --text-color: #e0e0e0;
+  --text-color-muted: #a0a0a0;
+  --navbar-bg-color: rgba(18, 18, 18, 0.85); /* Un negro casi opaco con blur */
+  --navbar-border-color: rgba(255, 255, 255, 0.15);
+  --card-bg-color: linear-gradient(145deg, rgba(35,35,35,0.85), rgba(28,28,28,0.85)); /* Adaptar gradientes existentes */
+  --card-border-color: rgba(255,255,255,0.15);
+  --button-bg-gradient: linear-gradient(90deg, #5fa4ff, #4fd1c5);
+  --button-text-color: #000000;
+  --link-color: #e0e0e0;
+  --link-active-color: #5fa4ff;
+  --heading-color: #ffffff;
+  --subheading-color: #b0b0b0;
+  --global-styles-bg: #000000; /* Se mantiene negro */
+  --product-image-bg: #222;
+
+  --color-green-text: #34d399; /* Verde más brillante para modo oscuro */
+  --color-mid-grey-text: #9ca3af; /* Gris más claro */
+}
+
+body {
+  background-color: var(--body-bg-color);
+  color: var(--text-color);
+  transition: var(--theme-transition);
+}
+
+/* Estilos para el botón de cambio de tema */
+.theme-toggle-button {
+  background-color: transparent;
+  border: 1px solid var(--text-color-muted);
+  color: var(--text-color);
+  padding: 0.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 1rem; /* Espacio junto al icono del carrito */
+  transition: var(--theme-transition), transform 0.2s ease;
+}
+
+.theme-toggle-button:hover {
+  border-color: var(--text-color);
+  transform: scale(1.1);
+}
+
+.theme-icon {
+  width: 20px;
+  height: 20px;
+  fill: currentColor; /* Usa el color del texto del botón */
+}
+
+/* Ajustes generales para usar las variables */
+.page-wrapper {
+  background-color: var(--body-bg-color);
+  /* Cualquier otro estilo global que dependa del fondo/texto */
+}
+
+.global-styles {
+    /* Este div parece establecer un fondo negro en el diseño original.
+       Si queremos que el tema afecte el fondo "detrás" de la navbar cuando es transparente,
+       este fondo negro podría necesitar ajustarse o eliminarse si el body ya lo maneja.
+       Por ahora, mantengo su variable por si es un efecto deseado. */
+}
+
+.navbar-sticky {
+  /* El fondo es manejado por .navbar-sticky__background, pero el contenedor podría tener un color */
+  transition: var(--theme-transition);
+}
+
+.navbar-sticky__background {
+  background-color: var(--navbar-bg-color);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--navbar-border-color);
+  transition: var(--theme-transition);
+}
+
+.navbar-sticky__heading {
+  color: var(--heading-color);
+  transition: var(--theme-transition);
+}
+
+.navbar-sticky__link {
+  color: var(--link-color);
+  transition: var(--theme-transition);
+}
+.navbar-sticky__link.link--active, .navbar-sticky__link:hover {
+  color: var(--link-active-color);
+}
+
+.button-2, .checkout-button, .place-order-button, .add-to-cart-big {
+  background: var(--button-bg-gradient);
+  color: var(--button-text-color);
+  /* Otros estilos de botón como bordes, sombras, pueden necesitar variables también */
+  transition: var(--theme-transition), transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.heading-style-h1, .heading-style-h2, .product-name, .section-title, .summary-title {
+  color: var(--heading-color);
+  transition: var(--theme-transition);
+}
+
+.paragraph-big, .paragraph-medium, .paragraph-small, .product-description, .product-description-full, .spec-text, .cart-item-price, .form-group label, .summary-item-name, .summary-subtotal-label, .summary-shipping-label, .text-color-grey, p {
+  color: var(--text-color-muted);
+  transition: var(--theme-transition);
+}
+
+.text-color-white, .product-title, .cart-item-title, .quantity-value, .cart-item-total, .summary-item-price, .summary-subtotal-value, .summary-shipping-value, .summary-total-label, .form-control  {
+  color: var(--text-color);
+  transition: var(--theme-transition);
+}
+
+.text-color-green {
+  color: var(--color-green-text);
+  transition: var(--theme-transition);
+}
+
+.text-color-mid-grey {
+    color: var(--text-color-muted); /* Simplificado a usar text-color-muted */
+}
+
+/* Adaptación de product-card y otros elementos con fondos complejos */
+.product-card {
+  background: var(--card-bg-color); /* Usa la variable, que puede ser un gradiente en dark mode */
+  border: 1px solid var(--card-border-color);
+  transition: var(--theme-transition), transform 0.4s ease, box-shadow 0.4s ease;
+  /* Los pseudo-elementos ::before y ::after podrían necesitar adaptaciones si sus colores son fijos */
+}
+
+.product-card:hover {
+   border: 1px solid var(--link-active-color); /* Un toque de color al hacer hover */
+}
+
+.product-image-wrapper, .cart-item-image-wrapper {
+  background-color: var(--product-image-bg);
+  transition: var(--theme-transition);
+}
+
+/* Para el precio con gradiente, el -webkit-text-fill-color: transparent; es clave */
+.product-price, .product-price-big, .summary-total-value {
+  background: var(--button-bg-gradient); /* Reutiliza el gradiente del botón para consistencia */
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: var(--theme-transition); /* Esto no animará el gradiente del texto, pero sí otros cambios si los hubiera */
+}
+
+.cart-icon {
+  color: var(--link-color);
+  transition: var(--theme-transition);
+}
+
+#cart-count {
+  background: var(--button-bg-gradient);
+  color: var(--button-text-color);
+  transition: var(--theme-transition);
+}
+
+/* Estilos de formularios en Checkout */
+.checkout-form, .checkout-summary, .cart-summary {
+  background: var(--card-bg-color); /* Usar la variable del fondo de tarjeta */
+  border: 1px solid var(--card-border-color);
+  transition: var(--theme-transition);
+}
+
+.form-control {
+  background: rgba(128, 128, 128, 0.1); /* Un fondo semi-transparente genérico */
+  border: 1px solid var(--card-border-color);
+  color: var(--text-color);
+}
+
+body.dark-mode .form-control {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.form-control:focus {
+  border-color: var(--link-active-color);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--link-active-color) 30%, transparent);
+}
+
+/* Otros elementos que podrían necesitar ajustes */
+.hero__main-front { /* Este es un overlay, quizás deba cambiar su opacidad o color */ }
+
+.sub-heading { /* Webflow default, podría heredar o necesitar variable */
+    color: var(--text-color-muted);
+} 
