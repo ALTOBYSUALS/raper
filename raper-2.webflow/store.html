@@ -43,33 +43,34 @@ body {
       <div class="padding-global is_full-height">
         <div class="container-large is_full-height">
           <div class="navbar-sticky__wrapper">
-            <a href="index.html" class="navbar-sticky__heading">
+            <a href="#" class="navbar-sticky__heading">
               <img src="https://res.cloudinary.com/dt5pkdr0k/image/upload/v1747383494/Asset_16_tnitkj.png" alt="Raper Logo" class="navbar-logo">
             </a>
             <div class="navbar-sticky__links-wrapper">
               <div class="nav-links">
                 <a href="/" class="navbar-sticky__link" data-i18n="overview">Overview</a>
-                <a href="/store.html" class="navbar-sticky__link" data-i18n="store">Store</a>
+                <a href="/store.html" class="navbar-sticky__link link--active" data-i18n="store">Store</a>
                 <a href="/about.html" class="navbar-sticky__link" data-i18n="about">Quiénes Somos</a>
                 <a href="/careers.html" class="navbar-sticky__link" data-i18n="careers">Trabaja con Nosotros</a>
               </div>
-              <div class="navbar-actions">
-                <div class="cart-icon-wrapper" onclick="showCart()">
-                  <svg class="cart-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M9 22C9.55228 22 10 21.5523 10 21C10 20.4477 9.55228 20 9 20C8.44772 20 8 20.4477 8 21C8 21.5523 8.44772 22 9 22Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M20 22C20.5523 22 21 21.5523 21 21C21 20.4477 20.5523 20 20 20C19.4477 20 19 20.4477 19 21C19 21.5523 19.4477 22 20 22Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M1 1H5L7.68 14.39C7.77144 14.8504 8.02191 15.264 8.38755 15.5583C8.75318 15.8526 9.2107 16.009 9.68 16H19.4C19.8693 16.009 20.3268 15.8526 20.6925 15.5583C21.0581 15.264 21.3086 14.8504 21.4 14.39L23 6H6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                  <div id="cart-count">0</div>
-                </div>
-              </div>
             </div>
-                      <!-- Mobile Menu Button -->
-            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
-              <span class="hamburger-line"></span>
-              <span class="hamburger-line"></span>
-              <span class="hamburger-line"></span>
-            </button>
+            <!-- Navbar Actions - Siempre visible -->
+            <div class="navbar-actions">
+              <div class="cart-icon-wrapper" onclick="showCart()">
+                <svg class="cart-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9 22C9.55228 22 10 21.5523 10 21C10 20.4477 9.55228 20 9 20C8.44772 20 8 20.4477 8 21C8 21.5523 8.44772 22 9 22Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M20 22C20.5523 22 21 21.5523 21 21C21 20.4477 20.5523 20 20 20C19.4477 20 19 20.4477 19 21C19 21.5523 19.4477 22 20 22Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M1 1H5L7.68 14.39C7.77144 14.8504 8.02191 15.264 8.38755 15.5583C8.75318 15.8526 9.2107 16.009 9.68 16H19.4C19.8693 16.009 20.3268 15.8526 20.6925 15.5583C21.0581 15.264 21.3086 14.8504 21.4 14.39L23 6H6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <div id="cart-count">0</div>
+              </div>
+              <!-- Mobile Menu Button -->
+              <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -214,7 +215,6 @@ body {
   <script>
     // Función para navegar a los detalles del producto
     function goToProductDetails(productId) {
-      // Agregar efecto visual antes de navegar
       const productCard = document.querySelector(`[data-product-id="${productId}"]`);
       if (productCard) {
         productCard.style.transform = 'scale(0.95)';
@@ -228,97 +228,13 @@ body {
       }
     }
 
-    // Función para agregar al carrito (evita la navegación)
-    function addToCart(productId) {
-      // Aquí iría la lógica real del carrito
-      const productData = {
-        1: { name: 'RAPER Celeste Místico', price: 250000 },
-        2: { name: 'RAPER Violeta Real', price: 250000 },
-        3: { name: 'RAPER Negro Obsidiana', price: 250000 },
-        4: { name: 'RAPER Blanco Perla', price: 199000 },
-        5: { name: 'RAPER Gris Titanio', price: 199000 },
-        6: { name: 'RAPER Azul Océano', price: 199000 },
-        7: { name: 'RAPER Verde Esmeralda', price: 199000 },
-        8: { name: 'RAPER Rojo Carmesí', price: 199000 }
-      };
-
-      const product = productData[productId];
-      if (product) {
-        // Efecto visual en el botón
-        const button = event.target;
-        const originalText = button.textContent;
-        
-        button.style.transform = 'scale(0.95)';
-        button.textContent = '✓ Agregado';
-        button.style.background = 'var(--button-bg-gradient)';
-        button.style.color = '#000';
-        
-        setTimeout(() => {
-          button.style.transform = 'scale(1)';
-          button.textContent = originalText;
-          button.style.background = '';
-          button.style.color = '';
-        }, 1500);
-
-        // Mostrar notificación
-        showCartNotification(`${product.name} agregado al carrito`);
-        
-        // Actualizar contador del carrito
-        updateCartCount();
-      }
-    }
-
-    // Función para mostrar notificación del carrito
-    function showCartNotification(message) {
-      // Crear elemento de notificación si no existe
-      let notification = document.getElementById('cart-notification');
-      if (!notification) {
-        notification = document.createElement('div');
-        notification.id = 'cart-notification';
-        notification.className = 'cart-notification';
-        notification.innerHTML = `
-          <div class="cart-notification-content">
-            <div class="cart-notification-icon">✓</div>
-            <div class="cart-notification-text">${message}</div>
-          </div>
-        `;
-        document.body.appendChild(notification);
-      } else {
-        notification.querySelector('.cart-notification-text').textContent = message;
-      }
-
-      // Mostrar notificación
-      notification.classList.add('show');
-      
-      // Ocultar después de 3 segundos
-      setTimeout(() => {
-        notification.classList.remove('show');
-      }, 3000);
-    }
-
-    // Función para actualizar el contador del carrito
-    function updateCartCount() {
-      const cartCount = document.getElementById('cart-count');
-      if (cartCount) {
-        let currentCount = parseInt(cartCount.textContent) || 0;
-        cartCount.textContent = currentCount + 1;
-        
-        // Efecto de animación
-        cartCount.style.transform = 'scale(1.3)';
-        setTimeout(() => {
-          cartCount.style.transform = 'scale(1)';
-        }, 300);
-      }
-    }
-
-    // Agregar efectos de hover mejorados
+    // Inicialización
     document.addEventListener('DOMContentLoaded', function() {
+      // Efectos de hover para las tarjetas de productos
       const productCards = document.querySelectorAll('.product-card');
-      
       productCards.forEach(card => {
         card.addEventListener('mouseenter', function() {
           this.style.cursor = 'pointer';
-          // Agregar efecto de brillo sutil
           this.style.boxShadow = '0 15px 30px rgba(95, 164, 255, 0.15)';
         });
         
@@ -326,24 +242,19 @@ body {
           this.style.boxShadow = '';
         });
       });
-    });
-  </script>
 
-    // Mobile Menu Toggle
-    document.addEventListener('DOMContentLoaded', function() {
+      // Mobile Menu Toggle
       const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
       const mobileMenu = document.getElementById('mobile-menu');
       const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
       
       if (mobileMenuToggle && mobileMenu) {
-        // Toggle menu
         mobileMenuToggle.addEventListener('click', function() {
           mobileMenuToggle.classList.toggle('active');
           mobileMenu.classList.toggle('active');
           document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
         });
         
-        // Close menu when clicking on links
         mobileMenuLinks.forEach(link => {
           link.addEventListener('click', function() {
             mobileMenuToggle.classList.remove('active');
@@ -352,7 +263,6 @@ body {
           });
         });
         
-        // Close menu when clicking outside
         document.addEventListener('click', function(e) {
           if (!mobileMenu.contains(e.target) && !mobileMenuToggle.contains(e.target) && mobileMenu.classList.contains('active')) {
             mobileMenuToggle.classList.remove('active');

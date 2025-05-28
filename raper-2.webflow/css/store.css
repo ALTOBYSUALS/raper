@@ -121,29 +121,104 @@
   display: inline-block;
   width: 100%;
   max-width: 250px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(95, 164, 255, 0.3);
+  animation: buttonPulse 4s infinite;
+  z-index: 1;
+}
+
+@keyframes buttonPulse {
+  0%, 100% {
+    box-shadow: 0 5px 15px rgba(95, 164, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 5px 30px rgba(95, 164, 255, 0.6);
+  }
+}
+
+.button-2::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, 
+    rgba(95, 164, 255, 0) 0%, 
+    rgba(95, 164, 255, 0.1) 50%, 
+    rgba(79, 209, 197, 0.3) 100%);
+  animation: shinyEffect 6s linear infinite;
+  transform: rotate(25deg);
+  z-index: -1;
+}
+
+@keyframes shinyEffect {
+  0% {
+    transform: translateX(-100%) rotate(25deg);
+  }
+  20%, 100% {
+    transform: translateX(100%) rotate(25deg);
+  }
+}
+
+.button-2::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #5fa4ff 0%, #4fd1c5 100%);
+  z-index: -2;
+  opacity: 1;
+  transition: opacity 0.3s ease;
 }
 
 .button-2:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(95, 164, 255, 0.3);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(95, 164, 255, 0.5);
   text-decoration: none !important;
+  letter-spacing: 0.1em;
+  color: #000;
+}
+
+.button-2:hover::after {
+  opacity: 0.9;
+  background: linear-gradient(135deg, #4fd1c5 0%, #5fa4ff 100%);
+}
+
+.button-2:active {
+  transform: translateY(1px);
+  box-shadow: 0 5px 15px rgba(95, 164, 255, 0.3);
 }
 
 /* Mobile Responsive Styles for Store */
 @media (max-width: 767px) {
+  .section_store {
+    padding: 8rem 0 6rem;
+  }
+  
+  .heading-style-h1 {
+    font-size: 2.8rem;
+    margin-bottom: 3rem;
+  }
+  
   .store-grid {
     grid-template-columns: 1fr;
-    gap: 2rem;
-    padding: 0 1rem;
+    gap: 2.5rem;
+    padding: 0 1.5rem;
   }
   
   .product-card {
-    padding: 1.5rem;
+    padding: 2rem;
+    border-radius: 20px;
   }
   
   .product-image-wrapper {
-    height: 220px;
-    padding: 1rem;
+    height: 260px;
+    padding: 1.5rem;
+    margin-bottom: 2.5rem;
   }
   
   .product-image {
@@ -152,21 +227,29 @@
   }
   
   .product-title {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
   }
   
   .product-description {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     min-height: auto;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
   }
   
   .product-price {
-    font-size: 1.8rem;
+    font-size: 2.2rem;
+    margin-bottom: 2.5rem;
+    font-weight: 800;
   }
   
   .button-2 {
-    padding: 1rem 2rem;
-    font-size: 0.9rem;
+    padding: 1.4rem 2.5rem;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
   }
 }
 

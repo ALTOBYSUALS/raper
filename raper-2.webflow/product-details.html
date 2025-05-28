@@ -162,6 +162,20 @@ body {
   margin: 0;
   line-height: 1.2;
 }
+.product-price {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.price-current {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #5fa4ff;
+}
+.price-label {
+  font-size: 1.8rem;
+  color: #888;
+}
 .product-description {
   font-size: 1.8rem;
   line-height: 1.6;
@@ -200,6 +214,33 @@ body {
   font-weight: 600;
   width: 24px;
   text-align: center;
+}
+.product-specs {
+  background: #1a1a1a;
+  border-radius: 1.5rem;
+  padding: 3rem;
+}
+.specs-title {
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #5fa4ff;
+  margin-bottom: 2rem;
+}
+.specs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+.spec-item {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  font-size: 1.6rem;
+  color: #e0e0e0;
+}
+.spec-icon {
+  font-size: 2.2rem;
+  font-weight: 600;
 }
 .product-actions-section {
   display: flex;
@@ -247,7 +288,7 @@ body {
   font-weight: 600;
 }
 .add-to-cart-btn {
-  background: #5fa4ff;
+  background: linear-gradient(135deg, #5fa4ff 0%, #4fd1c5 100%);
   color: #000;
   border: none;
   padding: 1.5rem 4rem;
@@ -259,11 +300,70 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.5px;
   flex: 1;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(95, 164, 255, 0.3);
+  animation: cartButtonPulse 4s infinite;
+  z-index: 1;
 }
+
+@keyframes cartButtonPulse {
+  0%, 100% {
+    box-shadow: 0 5px 20px rgba(95, 164, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 5px 30px rgba(95, 164, 255, 0.7);
+  }
+}
+
+.add-to-cart-btn::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, 
+    rgba(95, 164, 255, 0) 0%, 
+    rgba(95, 164, 255, 0.1) 50%, 
+    rgba(79, 209, 197, 0.3) 100%);
+  animation: shinyCartEffect 6s linear infinite;
+  transform: rotate(25deg);
+  z-index: -1;
+}
+
+@keyframes shinyCartEffect {
+  0% {
+    transform: translateX(-100%) rotate(25deg);
+  }
+  20%, 100% {
+    transform: translateX(100%) rotate(25deg);
+  }
+}
+
+.add-to-cart-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #5fa4ff 0%, #4fd1c5 100%);
+  z-index: -2;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
 .add-to-cart-btn:hover {
   background: white;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(2, 255, 64, 0.3);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(95, 164, 255, 0.5);
+  letter-spacing: 0.1em;
+}
+
+.add-to-cart-btn:hover::after {
+  opacity: 0.9;
+  background: linear-gradient(135deg, #4fd1c5 0%, #5fa4ff 100%);
 }
 .product-meta {
   display: flex;
@@ -364,55 +464,102 @@ body {
             <!-- Sección de imagen del producto -->
             <div class="product-image-section">
               <div class="product-main-image-container">
-                <img src="images/audio.png" alt="Premium Headphones" class="product-main-image" id="main-product-image">
-            </div>
+                <img src="https://res.cloudinary.com/dyrgyzca3/image/upload/v1748398979/1_bkqjfk.jpg" alt="RAPER Blanco Perla" class="product-main-image" id="main-product-image">
+              </div>
               <div class="product-thumbnails">
-                <div class="product-thumbnail active" onclick="changeMainImage(this, 'images/audio.png')">
-                  <img src="images/audio.png" alt="View 1">
-          </div>
-                <div class="product-thumbnail" onclick="changeMainImage(this, 'images/audio.png')">
-                  <img src="images/audio.png" alt="View 2">
-        </div>
-                <div class="product-thumbnail" onclick="changeMainImage(this, 'images/audio.png')">
-                  <img src="images/audio.png" alt="View 3">
+                <div class="product-thumbnail active" onclick="changeMainImage(this, 'https://res.cloudinary.com/dyrgyzca3/image/upload/v1748398979/1_bkqjfk.jpg')">
+                  <img src="https://res.cloudinary.com/dyrgyzca3/image/upload/v1748398979/1_bkqjfk.jpg" alt="RAPER Blanco Perla">
+                </div>
+                <div class="product-thumbnail" onclick="changeMainImage(this, 'https://res.cloudinary.com/dyrgyzca3/image/upload/v1748398979/4_ljygwt.jpg')">
+                  <img src="https://res.cloudinary.com/dyrgyzca3/image/upload/v1748398979/4_ljygwt.jpg" alt="RAPER Blanco Perla - Vista Lateral">
+                </div>
+                <div class="product-thumbnail" onclick="changeMainImage(this, 'https://res.cloudinary.com/dyrgyzca3/image/upload/v1748398980/9_tl7qox.jpg')">
+                  <img src="https://res.cloudinary.com/dyrgyzca3/image/upload/v1748398980/9_tl7qox.jpg" alt="RAPER Blanco Perla - Vista Adicional">
                 </div>
               </div>
             </div>
 
             <!-- Sección de información del producto -->
             <div class="product-info-section">
-              <h1 class="product-title">Premium Headphones</h1>
+              <h1 class="product-title">RAPER Blanco Perla</h1>
+              
+              <div class="product-price">
+                <span class="price-current">$199.000 ARS</span>
+                <span class="price-label">Precio final</span>
+              </div>
               
               <p class="product-description">
-                The advanced noise cancellation technology blocks out ambient noise, allowing you to focus on your audio. With up to 30 hours of battery life, you can enjoy all-day listening without interruption.
+                Experimentá la excelencia en audio con tecnología de cancelación activa de ruido que te aísla completamente del mundo exterior. Con una batería de 1000mAH que brinda más de 25 horas de reproducción continua, estos auriculares redefinen lo que significa la libertad sonora. Fabricados con materiales de nylon premium importados y equipados con Bluetooth 5.0 para una conexión impecable.
               </p>
 
               <div class="product-features">
-                <h3 class="features-title">Key Features</h3>
+                <h3 class="features-title">Especificaciones Técnicas</h3>
                 <ul class="features-list">
                   <li class="feature-item">
                     <span class="feature-icon">✓</span>
-                    <span>Active Noise Cancellation</span>
-                      </li>
+                    <span>Cancelación Activa de Ruido Avanzada</span>
+                  </li>
                   <li class="feature-item">
                     <span class="feature-icon">✓</span>
-                    <span>30-hour Battery Life</span>
-                      </li>
+                    <span>Batería 1000mAH - Más de 25 horas de reproducción</span>
+                  </li>
                   <li class="feature-item">
                     <span class="feature-icon">✓</span>
-                    <span>Bluetooth 5.0</span>
-                      </li>
+                    <span>Bluetooth 5.0 - Conexión estable hasta 10 metros</span>
+                  </li>
                   <li class="feature-item">
                     <span class="feature-icon">✓</span>
-                    <span>High-Resolution Audio</span>
-                      </li>
+                    <span>Modo Dual: Auricular + Altavoz integrado</span>
+                  </li>
                   <li class="feature-item">
                     <span class="feature-icon">✓</span>
-                    <span>Memory Foam Ear Cushions</span>
-                      </li>
-                    </ul>
+                    <span>Ecualizador con efectos de sonido múltiples</span>
+                  </li>
+                  <li class="feature-item">
+                    <span class="feature-icon">✓</span>
+                    <span>Almohadillas de espuma con memoria premium</span>
+                  </li>
+                  <li class="feature-item">
+                    <span class="feature-icon">✓</span>
+                    <span>Materiales de nylon importados de alta resistencia</span>
+                  </li>
+                  <li class="feature-item">
+                    <span class="feature-icon">✓</span>
+                    <span>Micrófono integrado para llamadas HD</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="product-specs">
+                <h3 class="specs-title">Incluye en la Caja</h3>
+                <div class="specs-grid">
+                  <div class="spec-item">
+                    <span class="spec-icon">📦</span>
+                    <span>Auriculares RAPER Blanco Perla</span>
+                  </div>
+                  <div class="spec-item">
+                    <span class="spec-icon">📖</span>
+                    <span>Manual de usuario en español</span>
+                  </div>
+                  <div class="spec-item">
+                    <span class="spec-icon">🎵</span>
+                    <span>Cable AUX de 3.5mm premium</span>
+                  </div>
+                  <div class="spec-item">
+                    <span class="spec-icon">🔌</span>
+                    <span>Cable de carga USB-C</span>
+                  </div>
+                  <div class="spec-item">
+                    <span class="spec-icon">💳</span>
+                    <span>Tarjeta de garantía RAPER</span>
+                  </div>
+                  <div class="spec-item">
+                    <span class="spec-icon">👜</span>
+                    <span>Estuche de transporte premium</span>
+                  </div>
                 </div>
-                
+              </div>
+
               <div class="product-actions-section">
                 <div class="quantity-and-cart">
                   <div class="quantity-selector">
@@ -420,7 +567,7 @@ body {
                     <input type="number" id="quantity" class="quantity-input" value="1" min="1" readonly>
                     <button class="quantity-btn" onclick="updateQuantity(1)">+</button>
                   </div>
-                  <button class="add-to-cart-btn" onclick="addToCart()" data-i18n="add-to-cart">
+                  <button class="add-to-cart-btn" onclick="addToCart()" id="add-to-cart-button" data-product-id="4" data-i18n="add-to-cart">
                     AGREGAR AL CARRITO
                   </button>
                 </div>
@@ -429,15 +576,19 @@ body {
                 <div class="product-meta">
                 <div class="meta-row">
                   <span class="meta-label">SKU:</span>
-                  <span class="meta-value">HP-PRO-001</span>
+                  <span class="meta-value">RAPER-BP-001</span>
                   </div>
                 <div class="meta-row">
-                  <span class="meta-label">Category:</span>
-                  <span class="meta-value">Audio</span>
+                  <span class="meta-label">Categoría:</span>
+                  <span class="meta-value">Auriculares Premium</span>
                   </div>
                 <div class="meta-row">
-                  <span class="meta-label">Tags:</span>
-                  <span class="meta-value">headphones, premium, wireless</span>
+                  <span class="meta-label">Características:</span>
+                  <span class="meta-value">bluetooth, cancelación de ruido, premium, inalámbrico</span>
+                </div>
+                <div class="meta-row">
+                  <span class="meta-label">Garantía:</span>
+                  <span class="meta-value">2 años RAPER Argentina</span>
                 </div>
               </div>
             </div>
@@ -454,6 +605,12 @@ body {
   <script src="js/language.js" type="text/javascript"></script>
   
   <script>
+    // Obtener el ID del producto de la URL
+    function getProductIdFromUrl() {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get('id');
+    }
+    
     // Función para cambiar imagen principal
     function changeMainImage(thumbnail, imageSrc) {
       // Remover clase active de todos los thumbnails
@@ -490,94 +647,86 @@ body {
       }, 200);
     }
 
-    // Función para agregar al carrito
+    // Función para agregar al carrito (integrada con cart.js)
     function addToCart() {
+      // Obtener ID del producto del botón
+      const productId = document.getElementById('add-to-cart-button').getAttribute('data-product-id');
       const quantity = parseInt(document.getElementById('quantity').value) || 1;
+      
+      if (!productId) {
+        console.error("No se pudo obtener el ID del producto");
+        alert("Error: No se pudo agregar el producto al carrito");
+        return;
+      }
+      
+      console.log(`Intentando agregar producto ID: ${productId}, Cantidad: ${quantity}`);
+      
+      // Verificar que la función del carrito esté disponible
+      if (typeof window.addToCart !== 'function') {
+        console.error("La función addToCart no está disponible");
+        alert("Error: El sistema de carrito no está cargado");
+        return;
+      }
+      
+      // Efecto visual en el botón
       const button = document.querySelector('.add-to-cart-btn');
       const originalText = button.textContent;
+      const originalBg = button.style.background;
       
-      // Efecto visual mejorado
       button.style.transform = 'scale(0.95)';
       button.textContent = '✓ AGREGADO AL CARRITO';
       button.style.background = '#4fd1c5';
+      button.disabled = true;
       
+      let successCount = 0;
+      
+      // Llamar a la función principal de cart.js para cada unidad
+      for (let i = 0; i < quantity; i++) {
+        try {
+          const success = window.addToCart(productId);
+          if (success) {
+            successCount++;
+          }
+        } catch (error) {
+          console.error("Error al agregar producto:", error);
+        }
+      }
+      
+      console.log(`Productos agregados exitosamente: ${successCount}/${quantity}`);
+      
+      // Restaurar botón después de un momento
       setTimeout(() => {
         button.style.transform = 'translateY(-2px)';
         button.textContent = originalText;
-        button.style.background = '#5fa4ff';
-      }, 1500);
-      
-      // Mostrar notificación
-      showCartNotification(`¡${quantity} producto(s) agregado(s) al carrito!`);
-      
-      // Actualizar contador del carrito
-      updateCartCount(quantity);
-    }
-
-    // Función para mostrar notificación del carrito
-    function showCartNotification(message) {
-      let notification = document.getElementById('cart-notification');
-      if (!notification) {
-        notification = document.createElement('div');
-        notification.id = 'cart-notification';
-        notification.style.cssText = `
-          position: fixed;
-          top: 20px;
-          right: 20px;
-          background: rgba(25, 25, 25, 0.95);
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          backdrop-filter: blur(10px);
-          border-radius: 8px;
-          padding: 15px 20px;
-          color: #fff;
-          font-size: 1.4rem;
-          font-weight: 500;
-          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-          transform: translateX(150%);
-          opacity: 0;
-          transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease;
-          z-index: 10002;
-        `;
-        notification.innerHTML = `
-          <div style="display: flex; align-items: center; gap: 12px;">
-            <div style="width: 24px; height: 24px; background: linear-gradient(135deg, #5fa4ff, #4fd1c5); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #000; font-weight: 700; font-size: 1.2rem;">✓</div>
-            <div>${message}</div>
-          </div>
-        `;
-        document.body.appendChild(notification);
-      } else {
-        notification.querySelector('div:last-child').textContent = message;
-      }
-
-      // Mostrar notificación
-      notification.style.transform = 'translateX(0)';
-      notification.style.opacity = '1';
-      
-      // Ocultar después de 3 segundos
-      setTimeout(() => {
-        notification.style.transform = 'translateX(150%)';
-        notification.style.opacity = '0';
-      }, 3000);
-    }
-
-    // Función para actualizar el contador del carrito
-    function updateCartCount(quantity = 1) {
-      const cartCount = document.getElementById('cart-count');
-      if (cartCount) {
-        let currentCount = parseInt(cartCount.textContent) || 0;
-        cartCount.textContent = currentCount + quantity;
+        button.style.background = originalBg;
+        button.disabled = false;
         
-        // Efecto de animación
-        cartCount.style.transform = 'scale(1.3)';
-        cartCount.style.background = 'linear-gradient(135deg, #5fa4ff, #4fd1c5)';
-        setTimeout(() => {
-          cartCount.style.transform = 'scale(1)';
-        }, 300);
-      }
+        // Mostrar mensaje de éxito o error
+        if (successCount === quantity) {
+          console.log("Todos los productos se agregaron correctamente");
+          // Opcionalmente actualizar el contador manualmente
+          try {
+            if (typeof window.updateCartCount === 'function') {
+              window.updateCartCount();
+            }
+          } catch (e) {
+            console.log("No se pudo actualizar el contador manualmente");
+          }
+        } else {
+          alert(`Solo se pudieron agregar ${successCount} de ${quantity} productos al carrito`);
+        }
+      }, 1500);
     }
 
     // Inicialización mejorada
     document.addEventListener('DOMContentLoaded', function() {
+      // Cargar datos del producto actual basado en el ID de la URL
+      const productId = getProductIdFromUrl();
+      if (productId) {
+        // Aquí podrías cargar dinámicamente la información del producto
+        console.log(`Cargando producto ID: ${productId}`);
+      }
+      
       // Mejorar interactividad de thumbnails
       const thumbnails = document.querySelectorAll('.product-thumbnail');
       thumbnails.forEach(thumbnail => {
