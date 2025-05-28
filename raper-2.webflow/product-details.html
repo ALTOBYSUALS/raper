@@ -1,15 +1,13 @@
-<!DOCTYPE html><!--  This site was created in Webflow. https://webflow.com  -->
+<!DOCTYPE html><!--  This site was created in Webflow. https://webflow.com  --><!--  Last Published: Fri May 16 2025 06:15:37 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="68269b7c12f8a3ad86be7f60" data-wf-site="68269b7b12f8a3ad86be7d56">
 <head>
   <meta charset="utf-8">
-  <title>Detalles de Producto - Raper</title>
+  <title>Product Details - Raper</title>
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <meta content="Webflow" name="generator">
   <link href="css/normalize.css" rel="stylesheet" type="text/css">
   <link href="css/webflow.css" rel="stylesheet" type="text/css">
   <link href="css/raper-2.webflow.css" rel="stylesheet" type="text/css">
-  <link href="css/store.css" rel="stylesheet" type="text/css">
-  <link href="css/cart.css" rel="stylesheet" type="text/css">
   <link href="css/theme.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
@@ -36,32 +34,321 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }
+/* Focus state style for keyboard navigation for the focusable elements */
+*[tabindex]:focus-visible,
+  input[type="file"]:focus-visible {
+   outline: 0.125rem solid #4d65ff;
+   outline-offset: 0.125rem;
+}
+/* Get rid of top margin on first element in any rich text element */
+.w-richtext > :not(div):first-child, .w-richtext > div:first-child > :first-child {
+  margin-top: 0 !important;
+}
+/* Get rid of bottom margin on last element in any rich text element */
+.w-richtext>:last-child, .w-richtext ol li:last-child, .w-richtext ul li:last-child {
+	margin-bottom: 0 !important;
+}
+/* Prevent all click and hover interaction with an element */
+.pointer-events-off {
+	pointer-events: none;
+}
+/* Enables all click and hover interaction with an element */
+.pointer-events-on {
+  pointer-events: auto;
+}
+/* Create a class of .div-square which maintains a 1:1 dimension of a div */
+.div-square::after {
+	content: "";
+	display: block;
+	padding-bottom: 100%;
+}
+/* Make sure containers never lose their center alignment */
+.container-medium,.container-small, .container-large {
+	margin-right: auto !important;
+  margin-left: auto !important;
+}
+/* Product page styles matching the original design */
+.product-section {
+  background-color: #000;
+  min-height: 100vh;
+  padding: 12rem 0 8rem 0;
+}
+.product-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 4rem;
+}
+.product-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8rem;
+  align-items: start;
+}
+.product-image-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.product-main-image-container {
+  background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+  border-radius: 2rem;
+  padding: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 600px;
+  position: relative;
+  overflow: hidden;
+}
+.product-main-image-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, rgba(2, 255, 64, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+.product-main-image {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  object-fit: contain;
+  position: relative;
+  z-index: 2;
+}
+.product-thumbnails {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+}
+.product-thumbnail {
+  width: 100px;
+  height: 100px;
+  background: #2a2a2a;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.product-thumbnail:hover {
+  border-color: #5fa4ff;
+  background: #333;
+}
+.product-thumbnail.active {
+  border-color: #5fa4ff;
+  background: #333;
+}
+.product-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.product-info-section {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.product-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: white;
+  margin: 0;
+  line-height: 1.2;
+}
+.product-description {
+  font-size: 1.8rem;
+  line-height: 1.6;
+  color: #b0b0b0;
+  margin: 0;
+}
+.product-features {
+  background: #1a1a1a;
+  border-radius: 1.5rem;
+  padding: 3rem;
+}
+.features-title {
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #5fa4ff;
+  margin-bottom: 2rem;
+}
+.features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  font-size: 1.6rem;
+  color: #e0e0e0;
+}
+.feature-icon {
+  color: #5fa4ff;
+  font-size: 1.8rem;
+  font-weight: 600;
+  width: 24px;
+  text-align: center;
+}
+.product-actions-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.quantity-and-cart {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+.quantity-selector {
+  display: flex;
+  align-items: center;
+  background: #2a2a2a;
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 1px solid #404040;
+}
+.quantity-btn {
+  background: transparent;
+  border: none;
+  color: white;
+  width: 50px;
+  height: 50px;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.quantity-btn:hover {
+  background: #5fa4ff;
+  color: #000;
+}
+.quantity-input {
+  background: transparent;
+  border: none;
+  color: white;
+  text-align: center;
+  width: 60px;
+  height: 50px;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+.add-to-cart-btn {
+  background: #5fa4ff;
+  color: #000;
+  border: none;
+  padding: 1.5rem 4rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  flex: 1;
+}
+.add-to-cart-btn:hover {
+  background: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(2, 255, 64, 0.3);
+}
+.product-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem 0;
+  border-top: 1px solid #333;
+}
+.meta-row {
+  display: flex;
+  gap: 2rem;
+}
+.meta-label {
+  color: #888;
+  font-weight: 600;
+  min-width: 100px;
+}
+.meta-value {
+  color: #e0e0e0;
+}
+@media screen and (max-width: 1200px) {
+  .product-container {
+    padding: 0 2rem;
+  }
+  .product-layout {
+    gap: 6rem;
+  }
+}
+@media screen and (max-width: 991px) {
+  .product-layout {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+  .product-title {
+    font-size: 3rem;
+  }
+  .quantity-and-cart {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+@media screen and (max-width: 767px) {
+  .product-container {
+    padding: 0 1.5rem;
+  }
+  .product-section {
+    padding: 10rem 0 6rem 0;
+  }
+  .product-title {
+    font-size: 2.5rem;
+  }
+  .product-thumbnails {
+    gap: 1rem;
+  }
+  .product-thumbnail {
+    width: 80px;
+    height: 80px;
+  }
+}
 </style>
     </div>
+
     <div class="navbar-sticky">
       <div class="padding-global is_full-height">
         <div class="container-large is_full-height">
           <div class="navbar-sticky__wrapper">
-            <a href="index.html" class="navbar-sticky__heading">raper</a>
+            <a href="/" class="navbar-sticky__heading">
+              <img src="https://res.cloudinary.com/dt5pkdr0k/image/upload/v1747383494/Asset_16_tnitkj.png" alt="Raper Logo" class="navbar-logo">
+            </a>
             <div class="navbar-sticky__links-wrapper">
               <div class="nav-links">
-                <a href="index.html" class="navbar-sticky__link">Overview</a>
-                <a href="#" class="navbar-sticky__link">Tech Specs</a>
-                <a href="/store.html" class="navbar-sticky__link">Store</a>
+                <a href="/" class="navbar-sticky__link" data-i18n="overview">Overview</a>
+                <a href="/store.html" class="navbar-sticky__link" data-i18n="store">Store</a>
+                <a href="/about.html" class="navbar-sticky__link" data-i18n="about">Quiénes Somos</a>
+                <a href="/careers.html" class="navbar-sticky__link" data-i18n="careers">Trabaja con Nosotros</a>
               </div>
               <div class="navbar-actions">
                 <div class="cart-icon-wrapper" onclick="showCart()">
                   <svg class="cart-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M9 22C9.55228 22 10 21.5523 10 21C10 20.4477 9.55228 20 9 20C8.44772 20 8 20.4477 8 21C8 21.5523 8.44772 22 9 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M20 22C20.5523 22 21 21.5523 21 21C21 20.4477 20.5523 20 20 20C19.4477 20 19 20.4477 19 21C19 21.5523 19.4477 22 20 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M1 1H5L7.68 14.39C7.77144 14.8504 8.02191 15.264 8.38755 15.5583C8.75318 15.8526 9.2107 16.009 9.68 16H19.4C19.8693 16.009 20.3268 15.8526 20.6925 15.5583C21.0581 15.264 21.3086 14.8504 21.4 14.39L23 6H6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M9 22C9.55228 22 10 21.5523 10 21C10 20.4477 9.55228 20 9 20C8.44772 20 8 20.4477 8 21C8 21.5523 8.44772 22 9 22Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M20 22C20.5523 22 21 21.5523 21 21C21 20.4477 20.5523 20 20 20C19.4477 20 19 20.4477 19 21C19 21.5523 19.4477 22 20 22Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M1 1H5L7.68 14.39C7.77144 14.8504 8.02191 15.264 8.38755 15.5583C8.75318 15.8526 9.2107 16.009 9.68 16H19.4C19.8693 16.009 20.3268 15.8526 20.6925 15.5583C21.0581 15.264 21.3086 14.8504 21.4 14.39L23 6H6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
                   <div id="cart-count">0</div>
                 </div>
-                <button id="theme-toggle" class="theme-toggle-button" aria-label="Toggle theme">
-                  <svg class="theme-icon sun" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v1m0 16v1m8.66-10.66l-.707.707M4.05 19.95l-.707.707M21 12h-1M4 12H3m15.66-8.66l-.707-.707M6.05 4.05l-.707-.707M12 6a6 6 0 100 12 6 6 0 000-12z"></path></svg>
-                  <svg class="theme-icon moon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path></svg>
-                </button>
               </div>
             </div>
           </div>
@@ -71,78 +358,86 @@ body {
     </div>
     
     <main class="main-wrapper">
-      <div class="section_product-details">
-        <div class="container-large">
-          <div class="padding-global">
-            <div class="product-details-grid">
-              <div class="product-image-gallery">
+      <div class="product-section">
+        <div class="product-container">
+          <div class="product-layout">
+            <!-- Sección de imagen del producto -->
+            <div class="product-image-section">
+              <div class="product-main-image-container">
                 <img src="images/audio.png" alt="Premium Headphones" class="product-main-image" id="main-product-image">
-                <div class="product-thumbnails">
-                  <div class="product-thumbnail active" data-image="images/audio.png">
-                    <img src="images/audio.png" alt="Premium Headphones - Thumbnail 1">
-                  </div>
-                  <div class="product-thumbnail" data-image="images/audio.png">
-                    <img src="images/audio.png" alt="Premium Headphones - Thumbnail 2">
-                  </div>
-                  <div class="product-thumbnail" data-image="images/audio.png">
-                    <img src="images/audio.png" alt="Premium Headphones - Thumbnail 3">
-                  </div>
+            </div>
+              <div class="product-thumbnails">
+                <div class="product-thumbnail active" onclick="changeMainImage(this, 'images/audio.png')">
+                  <img src="images/audio.png" alt="View 1">
+          </div>
+                <div class="product-thumbnail" onclick="changeMainImage(this, 'images/audio.png')">
+                  <img src="images/audio.png" alt="View 2">
+        </div>
+                <div class="product-thumbnail" onclick="changeMainImage(this, 'images/audio.png')">
+                  <img src="images/audio.png" alt="View 3">
                 </div>
               </div>
+            </div>
+
+            <!-- Sección de información del producto -->
+            <div class="product-info-section">
+              <h1 class="product-title">Premium Headphones</h1>
               
-              <div class="product-info">
-                <div class="product-category">Audio</div>
-                <h1 class="product-name">Premium Headphones</h1>
-                
-                <div class="product-star-rating">
-                  <div class="star">★</div>
-                  <div class="star">★</div>
-                  <div class="star">★</div>
-                  <div class="star">★</div>
-                  <div class="star">★</div>
-                  <span class="rating-count">(124 reviews)</span>
+              <p class="product-description">
+                The advanced noise cancellation technology blocks out ambient noise, allowing you to focus on your audio. With up to 30 hours of battery life, you can enjoy all-day listening without interruption.
+              </p>
+
+              <div class="product-features">
+                <h3 class="features-title">Key Features</h3>
+                <ul class="features-list">
+                  <li class="feature-item">
+                    <span class="feature-icon">✓</span>
+                    <span>Active Noise Cancellation</span>
+                      </li>
+                  <li class="feature-item">
+                    <span class="feature-icon">✓</span>
+                    <span>30-hour Battery Life</span>
+                      </li>
+                  <li class="feature-item">
+                    <span class="feature-icon">✓</span>
+                    <span>Bluetooth 5.0</span>
+                      </li>
+                  <li class="feature-item">
+                    <span class="feature-icon">✓</span>
+                    <span>High-Resolution Audio</span>
+                      </li>
+                  <li class="feature-item">
+                    <span class="feature-icon">✓</span>
+                    <span>Memory Foam Ear Cushions</span>
+                      </li>
+                    </ul>
                 </div>
                 
-                <div class="product-price-big">$299.99</div>
-                
-                <div class="product-description-full">
-                  Experience crystal clear audio with our premium noise-cancelling headphones. These headphones feature advanced acoustic technology for immersive sound quality, active noise cancellation, and premium comfort for extended listening sessions.
-                </div>
-                
-                <div class="product-specs">
-                  <div class="spec-item">
-                    <div class="spec-icon">•</div>
-                    <div class="spec-text">Active Noise Cancellation</div>
-                  </div>
-                  <div class="spec-item">
-                    <div class="spec-icon">•</div>
-                    <div class="spec-text">40mm Dynamic Drivers</div>
-                  </div>
-                  <div class="spec-item">
-                    <div class="spec-icon">•</div>
-                    <div class="spec-text">30-Hour Battery Life</div>
-                  </div>
-                  <div class="spec-item">
-                    <div class="spec-icon">•</div>
-                    <div class="spec-text">Bluetooth 5.2</div>
-                  </div>
-                  <div class="spec-item">
-                    <div class="spec-icon">•</div>
-                    <div class="spec-text">Premium Memory Foam Ear Cushions</div>
-                  </div>
-                  <div class="spec-item">
-                    <div class="spec-icon">•</div>
-                    <div class="spec-text">Touch Controls</div>
-                  </div>
-                </div>
-                
-                <div class="product-actions">
+              <div class="product-actions-section">
+                <div class="quantity-and-cart">
                   <div class="quantity-selector">
-                    <button class="quantity-btn-big decrease">-</button>
-                    <div class="quantity-value-big">1</div>
-                    <button class="quantity-btn-big increase">+</button>
+                    <button class="quantity-btn" onclick="updateQuantity(-1)">-</button>
+                    <input type="number" id="quantity" class="quantity-input" value="1" min="1" readonly>
+                    <button class="quantity-btn" onclick="updateQuantity(1)">+</button>
                   </div>
-                  <button class="add-to-cart-big" id="add-to-cart-button">ADD TO CART</button>
+                  <button class="add-to-cart-btn" onclick="addToCart()" data-i18n="add-to-cart">
+                    AGREGAR AL CARRITO
+                  </button>
+                </div>
+                </div>
+                
+                <div class="product-meta">
+                <div class="meta-row">
+                  <span class="meta-label">SKU:</span>
+                  <span class="meta-value">HP-PRO-001</span>
+                  </div>
+                <div class="meta-row">
+                  <span class="meta-label">Category:</span>
+                  <span class="meta-value">Audio</span>
+                  </div>
+                <div class="meta-row">
+                  <span class="meta-label">Tags:</span>
+                  <span class="meta-value">headphones, premium, wireless</span>
                 </div>
               </div>
             </div>
@@ -156,67 +451,188 @@ body {
   <script src="js/webflow.js" type="text/javascript"></script>
   <script src="js/cart.js" type="text/javascript"></script>
   <script src="js/theme.js" type="text/javascript"></script>
+  <script src="js/language.js" type="text/javascript"></script>
   
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Get product ID from URL
-      const urlParams = new URLSearchParams(window.location.search);
-      const productId = urlParams.get('id') || '1';
+    // Función para cambiar imagen principal
+    function changeMainImage(thumbnail, imageSrc) {
+      // Remover clase active de todos los thumbnails
+      document.querySelectorAll('.product-thumbnail').forEach(thumb => {
+        thumb.classList.remove('active');
+      });
       
-      // Thumbnail gallery functionality
-      const thumbnails = document.querySelectorAll('.product-thumbnail');
+      // Agregar clase active al thumbnail clickeado
+      thumbnail.classList.add('active');
+      
+      // Cambiar imagen principal con efecto
       const mainImage = document.getElementById('main-product-image');
+      mainImage.style.opacity = '0.7';
+      mainImage.style.transform = 'scale(0.95)';
       
+      setTimeout(() => {
+        mainImage.src = imageSrc;
+        mainImage.style.opacity = '1';
+        mainImage.style.transform = 'scale(1)';
+      }, 200);
+    }
+
+    // Función para actualizar cantidad
+    function updateQuantity(change) {
+      const quantityInput = document.getElementById('quantity');
+      const currentValue = parseInt(quantityInput.value) || 1;
+      const newValue = Math.max(1, currentValue + change);
+      quantityInput.value = newValue;
+      
+      // Efecto visual en el input
+      quantityInput.style.transform = 'scale(1.1)';
+      setTimeout(() => {
+        quantityInput.style.transform = 'scale(1)';
+      }, 200);
+    }
+
+    // Función para agregar al carrito
+    function addToCart() {
+      const quantity = parseInt(document.getElementById('quantity').value) || 1;
+      const button = document.querySelector('.add-to-cart-btn');
+      const originalText = button.textContent;
+      
+      // Efecto visual mejorado
+      button.style.transform = 'scale(0.95)';
+      button.textContent = '✓ AGREGADO AL CARRITO';
+      button.style.background = '#4fd1c5';
+      
+      setTimeout(() => {
+        button.style.transform = 'translateY(-2px)';
+        button.textContent = originalText;
+        button.style.background = '#5fa4ff';
+      }, 1500);
+      
+      // Mostrar notificación
+      showCartNotification(`¡${quantity} producto(s) agregado(s) al carrito!`);
+      
+      // Actualizar contador del carrito
+      updateCartCount(quantity);
+    }
+
+    // Función para mostrar notificación del carrito
+    function showCartNotification(message) {
+      let notification = document.getElementById('cart-notification');
+      if (!notification) {
+        notification = document.createElement('div');
+        notification.id = 'cart-notification';
+        notification.style.cssText = `
+          position: fixed;
+          top: 20px;
+          right: 20px;
+          background: rgba(25, 25, 25, 0.95);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          backdrop-filter: blur(10px);
+          border-radius: 8px;
+          padding: 15px 20px;
+          color: #fff;
+          font-size: 1.4rem;
+          font-weight: 500;
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+          transform: translateX(150%);
+          opacity: 0;
+          transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease;
+          z-index: 10002;
+        `;
+        notification.innerHTML = `
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <div style="width: 24px; height: 24px; background: linear-gradient(135deg, #5fa4ff, #4fd1c5); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #000; font-weight: 700; font-size: 1.2rem;">✓</div>
+            <div>${message}</div>
+          </div>
+        `;
+        document.body.appendChild(notification);
+      } else {
+        notification.querySelector('div:last-child').textContent = message;
+      }
+
+      // Mostrar notificación
+      notification.style.transform = 'translateX(0)';
+      notification.style.opacity = '1';
+      
+      // Ocultar después de 3 segundos
+      setTimeout(() => {
+        notification.style.transform = 'translateX(150%)';
+        notification.style.opacity = '0';
+      }, 3000);
+    }
+
+    // Función para actualizar el contador del carrito
+    function updateCartCount(quantity = 1) {
+      const cartCount = document.getElementById('cart-count');
+      if (cartCount) {
+        let currentCount = parseInt(cartCount.textContent) || 0;
+        cartCount.textContent = currentCount + quantity;
+        
+        // Efecto de animación
+        cartCount.style.transform = 'scale(1.3)';
+        cartCount.style.background = 'linear-gradient(135deg, #5fa4ff, #4fd1c5)';
+        setTimeout(() => {
+          cartCount.style.transform = 'scale(1)';
+        }, 300);
+      }
+    }
+
+    // Inicialización mejorada
+    document.addEventListener('DOMContentLoaded', function() {
+      // Mejorar interactividad de thumbnails
+      const thumbnails = document.querySelectorAll('.product-thumbnail');
       thumbnails.forEach(thumbnail => {
-        thumbnail.addEventListener('click', function() {
-          // Remove active class from all thumbnails
-          thumbnails.forEach(t => t.classList.remove('active'));
-          // Add active class to clicked thumbnail
-          this.classList.add('active');
-          // Update main image source
-          mainImage.src = this.dataset.image;
+        thumbnail.addEventListener('mouseenter', function() {
+          this.style.cursor = 'pointer';
+          this.style.transform = 'scale(1.05)';
+          this.style.borderColor = '#5fa4ff';
+        });
+        
+        thumbnail.addEventListener('mouseleave', function() {
+          if (!this.classList.contains('active')) {
+            this.style.transform = 'scale(1)';
+            this.style.borderColor = 'transparent';
+          }
         });
       });
-      
-      // Quantity selector
-      const quantityValue = document.querySelector('.quantity-value-big');
-      const decreaseBtn = document.querySelector('.quantity-btn-big.decrease');
-      const increaseBtn = document.querySelector('.quantity-btn-big.increase');
-      let quantity = 1;
-      
-      decreaseBtn.addEventListener('click', function() {
-        if (quantity > 1) {
-          quantity--;
-          quantityValue.textContent = quantity;
-        }
-      });
-      
-      increaseBtn.addEventListener('click', function() {
-        quantity++;
-        quantityValue.textContent = quantity;
-      });
-      
-      // Add to cart button
-      const addToCartButton = document.getElementById('add-to-cart-button');
-      
-      addToCartButton.addEventListener('click', function() {
-        const product = {
-          id: productId,
-          name: document.querySelector('.product-name').textContent,
-          price: parseFloat(document.querySelector('.product-price-big').textContent.replace('$', '')),
-          image: document.getElementById('main-product-image').src,
-          quantity: quantity
-        };
+
+      // Mejorar interactividad de botones de cantidad
+      const quantityBtns = document.querySelectorAll('.quantity-btn');
+      quantityBtns.forEach(btn => {
+        btn.addEventListener('mouseenter', function() {
+          this.style.cursor = 'pointer';
+          this.style.transform = 'scale(1.1)';
+        });
         
-        // If cart.js is loaded and addToCart function exists
-        if (typeof addToCart === 'function') {
-          addToCart(product);
-          showCartNotification();
-        } else {
-          console.error('Cart functionality not available');
-        }
+        btn.addEventListener('mouseleave', function() {
+          this.style.transform = 'scale(1)';
+        });
       });
+
+      // Mejorar interactividad del botón principal
+      const addToCartBtn = document.querySelector('.add-to-cart-btn');
+      if (addToCartBtn) {
+        addToCartBtn.addEventListener('mouseenter', function() {
+          this.style.cursor = 'pointer';
+          this.style.boxShadow = '0 8px 25px rgba(95, 164, 255, 0.4)';
+        });
+        
+        addToCartBtn.addEventListener('mouseleave', function() {
+          this.style.boxShadow = '';
+        });
+      }
     });
   </script>
+  
+  <div id="side-cart-container" class="side-cart-container">
+    <div id="side-cart-overlay" class="side-cart-overlay"></div>
+    <div id="side-cart" class="side-cart">
+      <button id="close-cart-btn" class="close-cart-btn">&times;</button>
+      <div id="side-cart-content" class="side-cart-content">
+        <!-- Cart content will be loaded here -->
+        <p data-i18n="cart-loading">Cargando carrito...</p>
+      </div>
+    </div>
+  </div>
+  
 </body>
 </html> 

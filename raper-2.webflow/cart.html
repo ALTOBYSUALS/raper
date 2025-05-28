@@ -2,13 +2,12 @@
 <html data-wf-page="68269b7c12f8a3ad86be7f60" data-wf-site="68269b7b12f8a3ad86be7d56">
 <head>
   <meta charset="utf-8">
-  <title>Carrito - Raper</title>
+  <title>Cart - Raper</title>
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <meta content="Webflow" name="generator">
   <link href="css/normalize.css" rel="stylesheet" type="text/css">
   <link href="css/webflow.css" rel="stylesheet" type="text/css">
   <link href="css/raper-2.webflow.css" rel="stylesheet" type="text/css">
-  <link href="css/store.css" rel="stylesheet" type="text/css">
   <link href="css/cart.css" rel="stylesheet" type="text/css">
   <link href="css/theme.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -38,30 +37,29 @@ body {
 }
 </style>
     </div>
+
     <div class="navbar-sticky">
       <div class="padding-global is_full-height">
         <div class="container-large is_full-height">
           <div class="navbar-sticky__wrapper">
-            <a href="index.html" class="navbar-sticky__heading">raper</a>
+            <a href="index.html" class="navbar-sticky__heading">
+              <img src="https://res.cloudinary.com/dt5pkdr0k/image/upload/v1747383494/Asset_16_tnitkj.png" alt="Raper Logo" class="navbar-logo">
+            </a>
             <div class="navbar-sticky__links-wrapper">
               <div class="nav-links">
-                <a href="index.html" class="navbar-sticky__link">Overview</a>
-                <a href="#" class="navbar-sticky__link">Tech Specs</a>
-                <a href="/store.html" class="navbar-sticky__link">Store</a>
+                <a href="index.html" class="navbar-sticky__link" data-i18n="overview">Overview</a>
+                <a href="#" class="navbar-sticky__link" data-i18n="tech-specs">Tech Specs</a>
+                <a href="/store.html" class="navbar-sticky__link" data-i18n="store">Store</a>
               </div>
               <div class="navbar-actions">
                 <div class="cart-icon-wrapper" onclick="showCart()">
                   <svg class="cart-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M9 22C9.55228 22 10 21.5523 10 21C10 20.4477 9.55228 20 9 20C8.44772 20 8 20.4477 8 21C8 21.5523 8.44772 22 9 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M20 22C20.5523 22 21 21.5523 21 21C21 20.4477 20.5523 20 20 20C19.4477 20 19 20.4477 19 21C19 21.5523 19.4477 22 20 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M1 1H5L7.68 14.39C7.77144 14.8504 8.02191 15.264 8.38755 15.5583C8.75318 15.8526 9.2107 16.009 9.68 16H19.4C19.8693 16.009 20.3268 15.8526 20.6925 15.5583C21.0581 15.264 21.3086 14.8504 21.4 14.39L23 6H6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M9 22C9.55228 22 10 21.5523 10 21C10 20.4477 9.55228 20 9 20C8.44772 20 8 20.4477 8 21C8 21.5523 8.44772 22 9 22Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M20 22C20.5523 22 21 21.5523 21 21C21 20.4477 20.5523 20 20 20C19.4477 20 19 20.4477 19 21C19 21.5523 19.4477 22 20 22Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M1 1H5L7.68 14.39C7.77144 14.8504 8.02191 15.264 8.38755 15.5583C8.75318 15.8526 9.2107 16.009 9.68 16H19.4C19.8693 16.009 20.3268 15.8526 20.6925 15.5583C21.0581 15.264 21.3086 14.8504 21.4 14.39L23 6H6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
                   <div id="cart-count">0</div>
                 </div>
-                <button id="theme-toggle" class="theme-toggle-button" aria-label="Toggle theme">
-                  <svg class="theme-icon sun" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v1m0 16v1m8.66-10.66l-.707.707M4.05 19.95l-.707.707M21 12h-1M4 12H3m15.66-8.66l-.707-.707M6.05 4.05l-.707-.707M12 6a6 6 0 100 12 6 6 0 000-12z"></path></svg>
-                  <svg class="theme-icon moon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path></svg>
-                </button>
               </div>
             </div>
           </div>
@@ -74,36 +72,19 @@ body {
       <div class="section_cart">
         <div class="container-large">
           <div class="padding-global">
-            <h1 class="heading-style-h1">Tu Carrito</h1>
-            
-            <div class="cart-container">
-              <div class="cart-header">
-                <div>Producto</div>
-                <div>Detalles</div>
-                <div>Total</div>
-                <div></div>
+            <div class="cart-page-container">
+              <h1 class="section-title heading-style-h1" data-i18n="cart-title">Tu Carrito</h1>
+              <div id="cart-items" class="cart-items-container">
+                <!-- Cart items will be inserted here by JavaScript -->
               </div>
-              
-              <div id="cart-items">
-                <!-- Cart items will be dynamically inserted here -->
-              </div>
-              
               <div class="cart-summary">
-                <div class="cart-total-row">
-                  <div>Subtotal</div>
-                  <div id="cart-subtotal">$0.00</div>
+                <div class="summary-total">
+                  <span class="summary-total-label" data-i18n="cart-total">Total:</span>
+                  <span id="cart-total" class="summary-total-value">$0.00</span>
                 </div>
-                <div class="cart-total-row">
-                  <div>Envío</div>
-                  <div>Gratis</div>
-                </div>
-                <div class="cart-total-row">
-                  <div>Total</div>
-                  <div id="cart-total">$0.00</div>
-                </div>
+                <button id="checkout-button" class="checkout-button" onclick="proceedToCheckout()" data-i18n="cart-checkout">Finalizar Compra</button>
+                <button id="clear-cart-button" class="clear-cart-button" onclick="handleClearCart()" data-i18n="cart-clear">Vaciar Carrito</button>
               </div>
-              
-              <button id="checkout-button" class="checkout-button" onclick="proceedToCheckout()">PROCEDER AL CHECKOUT</button>
             </div>
           </div>
         </div>
@@ -111,21 +92,21 @@ body {
     </main>
   </div>
   
+  <div id="side-cart-container" class="side-cart-container">
+    <div id="side-cart-overlay" class="side-cart-overlay"></div>
+    <div id="side-cart" class="side-cart">
+      <button id="close-cart-btn" class="close-cart-btn">&times;</button>
+      <div id="side-cart-content" class="side-cart-content">
+        <!-- Cart content will be loaded here -->
+        <p data-i18n="cart-loading">Cargando carrito...</p>
+      </div>
+    </div>
+  </div>
+  
   <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=68269b7b12f8a3ad86be7d56" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
   <script src="js/webflow.js" type="text/javascript"></script>
   <script src="js/cart.js" type="text/javascript"></script>
   <script src="js/theme.js" type="text/javascript"></script>
-  
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Render cart items
-      if (typeof renderCartItems === 'function') {
-        renderCartItems();
-      } else {
-        console.error('Cart functionality not available');
-        document.getElementById('cart-items').innerHTML = '<div class="empty-cart">Error loading cart</div>';
-      }
-    });
-  </script>
+  <script src="js/language.js" type="text/javascript"></script>
 </body>
 </html> 

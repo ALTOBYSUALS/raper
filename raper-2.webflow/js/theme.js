@@ -1,42 +1,24 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const themeToggleButton = document.getElementById('theme-toggle');
-    const body = document.body;
-    // Asegúrate de que los SVG de los iconos estén en tu HTML o cárgalos aquí
-    const sunIcon = themeToggleButton ? themeToggleButton.querySelector('.theme-icon.sun') : null;
-    const moonIcon = themeToggleButton ? themeToggleButton.querySelector('.theme-icon.moon') : null;
-
-    const applyTheme = (theme) => {
-        if (theme === 'dark') {
-            body.classList.add('dark-mode');
-            if (sunIcon) sunIcon.style.display = 'none';
-            if (moonIcon) moonIcon.style.display = 'block';
+    // Aplicar siempre el tema oscuro (sin opción de cambio)
+    document.body.classList.add('dark-mode');
+    
+    // Navbar scroll effect
+    const navbar = document.querySelector('.navbar-sticky');
+    const scrollThreshold = 50; // pixels to scroll before applying effect
+    
+    function updateNavbar() {
+        if (window.scrollY > scrollThreshold) {
+            navbar?.classList.add('scrolled');
         } else {
-            body.classList.remove('dark-mode');
-            if (sunIcon) sunIcon.style.display = 'block';
-            if (moonIcon) moonIcon.style.display = 'none';
+            navbar?.classList.remove('scrolled');
         }
-    };
-
-    const toggleTheme = () => {
-        const currentTheme = body.classList.contains('dark-mode') ? 'light' : 'dark';
-        applyTheme(currentTheme);
-        localStorage.setItem('theme', currentTheme);
-    };
-
-    if (themeToggleButton) {
-        themeToggleButton.addEventListener('click', toggleTheme);
     }
-
-    // Cargar el tema guardado o usar el predeterminado
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-        applyTheme(savedTheme);
-    } else {
-        // Opcional: Detectar la preferencia del sistema operativo
-        // const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-        // applyTheme(prefersDark ? 'dark' : 'light');
-        applyTheme('light'); // Predeterminado a modo claro si no hay preferencia guardada o del sistema
-    }
+    
+    // Initialize navbar state
+    updateNavbar();
+    
+    // Add scroll event listener
+    window.addEventListener('scroll', updateNavbar);
     
     // Video Hero Parallax Effect
     const videoHero = document.querySelector('.video-hero-section');
@@ -62,4 +44,57 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+    
+    // Add smooth entrances to various elements
+    function addEntranceAnimations() {
+        // Function to check if element is in viewport
+        function isInViewport(element) {
+            const rect = element.getBoundingClientRect();
+            return (
+                rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.bottom >= 0
+            );
+        }
+        
+        // Add fade-in-up animation to cart items, product cards, etc.
+        function animateElements() {
+            const animatableElements = document.querySelectorAll('.product-card, .section-title, .product-details-grid > *, .h2__h2-video, .paragraph-big');
+            
+            animatableElements.forEach(element => {
+                if (isInViewport(element) && !element.classList.contains('has-animated')) {
+                    element.style.animation = 'fadeInUp 0.8s ease forwards';
+                    element.classList.add('has-animated');
+                }
+            });
+        }
+        
+        // Set initial animation CSS
+        const styleElement = document.createElement('style');
+        styleElement.textContent = `
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            
+            .product-card, .section-title, .product-details-grid > *, .h2__h2-video, .paragraph-big {
+                opacity: 0;
+            }
+        `;
+        document.head.appendChild(styleElement);
+        
+        // Run once on load
+        setTimeout(animateElements, 300);
+        
+        // Run on scroll
+        window.addEventListener('scroll', animateElements);
+    }
+    
+    // Initialize animations
+    addEntranceAnimations();
 }); 

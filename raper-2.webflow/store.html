@@ -38,30 +38,30 @@ body {
 }
 </style>
     </div>
+
     <div class="navbar-sticky">
       <div class="padding-global is_full-height">
         <div class="container-large is_full-height">
           <div class="navbar-sticky__wrapper">
-            <a href="index.html" class="navbar-sticky__heading">raper</a>
+            <a href="index.html" class="navbar-sticky__heading">
+              <img src="https://res.cloudinary.com/dt5pkdr0k/image/upload/v1747383494/Asset_16_tnitkj.png" alt="Raper Logo" class="navbar-logo">
+            </a>
             <div class="navbar-sticky__links-wrapper">
               <div class="nav-links">
-                <a href="index.html" class="navbar-sticky__link">Overview</a>
-                <a href="#" class="navbar-sticky__link">Tech Specs</a>
-                <a href="/store.html" class="navbar-sticky__link link--active">Store</a>
+                <a href="/" class="navbar-sticky__link" data-i18n="overview">Overview</a>
+                <a href="/store.html" class="navbar-sticky__link" data-i18n="store">Store</a>
+                <a href="/about.html" class="navbar-sticky__link" data-i18n="about">Quiénes Somos</a>
+                <a href="/careers.html" class="navbar-sticky__link" data-i18n="careers">Trabaja con Nosotros</a>
               </div>
               <div class="navbar-actions">
                 <div class="cart-icon-wrapper" onclick="showCart()">
                   <svg class="cart-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M9 22C9.55228 22 10 21.5523 10 21C10 20.4477 9.55228 20 9 20C8.44772 20 8 20.4477 8 21C8 21.5523 8.44772 22 9 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M20 22C20.5523 22 21 21.5523 21 21C21 20.4477 20.5523 20 20 20C19.4477 20 19 20.4477 19 21C19 21.5523 19.4477 22 20 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M1 1H5L7.68 14.39C7.77144 14.8504 8.02191 15.264 8.38755 15.5583C8.75318 15.8526 9.2107 16.009 9.68 16H19.4C19.8693 16.009 20.3268 15.8526 20.6925 15.5583C21.0581 15.264 21.3086 14.8504 21.4 14.39L23 6H6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M9 22C9.55228 22 10 21.5523 10 21C10 20.4477 9.55228 20 9 20C8.44772 20 8 20.4477 8 21C8 21.5523 8.44772 22 9 22Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M20 22C20.5523 22 21 21.5523 21 21C21 20.4477 20.5523 20 20 20C19.4477 20 19 20.4477 19 21C19 21.5523 19.4477 22 20 22Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M1 1H5L7.68 14.39C7.77144 14.8504 8.02191 15.264 8.38755 15.5583C8.75318 15.8526 9.2107 16.009 9.68 16H19.4C19.8693 16.009 20.3268 15.8526 20.6925 15.5583C21.0581 15.264 21.3086 14.8504 21.4 14.39L23 6H6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
                   <div id="cart-count">0</div>
                 </div>
-                <button id="theme-toggle" class="theme-toggle-button" aria-label="Toggle theme">
-                  <svg class="theme-icon sun" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v1m0 16v1m8.66-10.66l-.707.707M4.05 19.95l-.707.707M21 12h-1M4 12H3m15.66-8.66l-.707-.707M6.05 4.05l-.707-.707M12 6a6 6 0 100 12 6 6 0 000-12z"></path></svg>
-                  <svg class="theme-icon moon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path></svg>
-                </button>
               </div>
             </div>
           </div>
@@ -73,50 +73,50 @@ body {
       <div class="section_store">
         <div class="container-large">
           <div class="padding-global">
-            <h1 class="heading-style-h1">Our Products</h1>
+            <h1 class="heading-style-h1" data-i18n="our-products">Our Products</h1>
             <div class="store-grid">
               <!-- Producto 1 -->
-              <div class="product-card" data-product-id="1">
+              <div class="product-card" data-product-id="1" onclick="goToProductDetails(1)">
                 <div class="product-image-wrapper">
                   <img src="images/audio.png" alt="Product 1" class="product-image">
                 </div>
                 <h3 class="product-title">Premium Headphones</h3>
                 <p class="product-description">Experience crystal clear audio with our premium noise-cancelling headphones.</p>
                 <div class="product-price">$299.99</div>
-                <a href="#" class="button-2 w-button">Add to Cart</a>
+                <a href="#" class="button-2 w-button" data-i18n="add-to-cart" onclick="event.stopPropagation(); addToCart(1)">Agregar al Carrito</a>
               </div>
               
               <!-- Producto 2 -->
-              <div class="product-card" data-product-id="2">
+              <div class="product-card" data-product-id="2" onclick="goToProductDetails(2)">
                 <div class="product-image-wrapper">
                   <img src="images/audio.png" alt="Product 2" class="product-image">
                 </div>
                 <h3 class="product-title">Wireless Earbuds</h3>
                 <p class="product-description">Compact, lightweight and powerful. The perfect companion for your active lifestyle.</p>
                 <div class="product-price">$149.99</div>
-                <a href="#" class="button-2 w-button">Add to Cart</a>
+                <a href="#" class="button-2 w-button" data-i18n="add-to-cart" onclick="event.stopPropagation(); addToCart(2)">Agregar al Carrito</a>
               </div>
               
               <!-- Producto 3 -->
-              <div class="product-card" data-product-id="3">
+              <div class="product-card" data-product-id="3" onclick="goToProductDetails(3)">
                 <div class="product-image-wrapper">
                   <img src="images/audio.png" alt="Product 3" class="product-image">
                 </div>
                 <h3 class="product-title">Smart Speaker</h3>
                 <p class="product-description">Fill your room with immersive sound and control your smart home with ease.</p>
                 <div class="product-price">$199.99</div>
-                <a href="#" class="button-2 w-button">Add to Cart</a>
+                <a href="#" class="button-2 w-button" data-i18n="add-to-cart" onclick="event.stopPropagation(); addToCart(3)">Agregar al Carrito</a>
               </div>
               
               <!-- Producto 4 -->
-              <div class="product-card" data-product-id="4">
+              <div class="product-card" data-product-id="4" onclick="goToProductDetails(4)">
                 <div class="product-image-wrapper">
                   <img src="images/audio.png" alt="Product 4" class="product-image">
                 </div>
                 <h3 class="product-title">Studio Monitors</h3>
                 <p class="product-description">Professional grade audio monitors for your home studio setup.</p>
                 <div class="product-price">$499.99</div>
-                <a href="#" class="button-2 w-button">Add to Cart</a>
+                <a href="#" class="button-2 w-button" data-i18n="add-to-cart" onclick="event.stopPropagation(); addToCart(4)">Agregar al Carrito</a>
               </div>
             </div>
           </div>
@@ -128,5 +128,131 @@ body {
   <script src="js/webflow.js" type="text/javascript"></script>
   <script src="js/cart.js" type="text/javascript"></script>
   <script src="js/theme.js" type="text/javascript"></script>
+  <script src="js/language.js" type="text/javascript"></script>
+  
+  <div id="side-cart-container" class="side-cart-container">
+    <div id="side-cart-overlay" class="side-cart-overlay"></div>
+    <div id="side-cart" class="side-cart">
+      <button id="close-cart-btn" class="close-cart-btn">&times;</button>
+      <div id="side-cart-content" class="side-cart-content">
+        <!-- Cart content will be loaded here -->
+        <p data-i18n="cart-loading">Cargando carrito...</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Función para navegar a los detalles del producto
+    function goToProductDetails(productId) {
+      // Agregar efecto visual antes de navegar
+      const productCard = document.querySelector(`[data-product-id="${productId}"]`);
+      if (productCard) {
+        productCard.style.transform = 'scale(0.95)';
+        productCard.style.opacity = '0.8';
+        
+        setTimeout(() => {
+          window.location.href = `product-details.html?id=${productId}`;
+        }, 200);
+      } else {
+        window.location.href = `product-details.html?id=${productId}`;
+      }
+    }
+
+    // Función para agregar al carrito (evita la navegación)
+    function addToCart(productId) {
+      // Aquí iría la lógica real del carrito
+      const productData = {
+        1: { name: 'Premium Headphones', price: 299.99 },
+        2: { name: 'Wireless Earbuds', price: 149.99 },
+        3: { name: 'Smart Speaker', price: 199.99 },
+        4: { name: 'Studio Monitors', price: 499.99 }
+      };
+
+      const product = productData[productId];
+      if (product) {
+        // Efecto visual en el botón
+        const button = event.target;
+        const originalText = button.textContent;
+        
+        button.style.transform = 'scale(0.95)';
+        button.textContent = '✓ Agregado';
+        button.style.background = 'var(--button-bg-gradient)';
+        button.style.color = '#000';
+        
+        setTimeout(() => {
+          button.style.transform = 'scale(1)';
+          button.textContent = originalText;
+          button.style.background = '';
+          button.style.color = '';
+        }, 1500);
+
+        // Mostrar notificación
+        showCartNotification(`${product.name} agregado al carrito`);
+        
+        // Actualizar contador del carrito
+        updateCartCount();
+      }
+    }
+
+    // Función para mostrar notificación del carrito
+    function showCartNotification(message) {
+      // Crear elemento de notificación si no existe
+      let notification = document.getElementById('cart-notification');
+      if (!notification) {
+        notification = document.createElement('div');
+        notification.id = 'cart-notification';
+        notification.className = 'cart-notification';
+        notification.innerHTML = `
+          <div class="cart-notification-content">
+            <div class="cart-notification-icon">✓</div>
+            <div class="cart-notification-text">${message}</div>
+          </div>
+        `;
+        document.body.appendChild(notification);
+      } else {
+        notification.querySelector('.cart-notification-text').textContent = message;
+      }
+
+      // Mostrar notificación
+      notification.classList.add('show');
+      
+      // Ocultar después de 3 segundos
+      setTimeout(() => {
+        notification.classList.remove('show');
+      }, 3000);
+    }
+
+    // Función para actualizar el contador del carrito
+    function updateCartCount() {
+      const cartCount = document.getElementById('cart-count');
+      if (cartCount) {
+        let currentCount = parseInt(cartCount.textContent) || 0;
+        cartCount.textContent = currentCount + 1;
+        
+        // Efecto de animación
+        cartCount.style.transform = 'scale(1.3)';
+        setTimeout(() => {
+          cartCount.style.transform = 'scale(1)';
+        }, 300);
+      }
+    }
+
+    // Agregar efectos de hover mejorados
+    document.addEventListener('DOMContentLoaded', function() {
+      const productCards = document.querySelectorAll('.product-card');
+      
+      productCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+          this.style.cursor = 'pointer';
+          // Agregar efecto de brillo sutil
+          this.style.boxShadow = '0 15px 30px rgba(95, 164, 255, 0.15)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+          this.style.boxShadow = '';
+        });
+      });
+    });
+  </script>
 </body>
 </html> 
