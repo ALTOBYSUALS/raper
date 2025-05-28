@@ -64,59 +64,129 @@ body {
                 </div>
               </div>
             </div>
+                      <!-- Mobile Menu Button -->
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+              <span class="hamburger-line"></span>
+              <span class="hamburger-line"></span>
+              <span class="hamburger-line"></span>
+            </button>
           </div>
         </div>
       </div>
       <div class="navbar-sticky__background"></div>
+          
+      <!-- Mobile Menu -->
+      <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-links">
+          <a href="/" class="mobile-menu-link" data-i18n="overview">Overview</a>
+          <a href="/store.html" class="mobile-menu-link" data-i18n="store">Store</a>
+          <a href="/about.html" class="mobile-menu-link" data-i18n="about">Quiénes Somos</a>
+          <a href="/careers.html" class="mobile-menu-link" data-i18n="careers">Trabaja con Nosotros</a>
+        </div>
+        <div class="mobile-menu-contact">
+          <div class="contact-item">
+            <span class="flag">🇺🇸</span>
+            <span class="phone">+1 (555) 123-4567</span>
+          </div>
+          <div class="contact-item">
+            <span class="flag">🇦🇷</span>
+            <span class="phone">+54 11 1234-5678</span>
+          </div>
+        </div>
+      </div>
     </div>
     <main class="main-wrapper">
       <div class="section_store">
         <div class="container-large">
           <div class="padding-global">
-            <h1 class="heading-style-h1" data-i18n="our-products">Our Products</h1>
+            <h1 class="heading-style-h1" data-i18n="our-products">Auriculares RAPER</h1>
             <div class="store-grid">
-              <!-- Producto 1 -->
+              <!-- Auriculares RAPER Celeste Místico - $250.000 -->
               <div class="product-card" data-product-id="1" onclick="goToProductDetails(1)">
                 <div class="product-image-wrapper">
-                  <img src="images/audio.png" alt="Product 1" class="product-image">
+                  <img src="https://res.cloudinary.com/dyrgyzca3/image/upload/v1748398980/9_tl7qox.jpg" alt="Auriculares RAPER Celeste Místico" class="product-image">
                 </div>
-                <h3 class="product-title">Premium Headphones</h3>
-                <p class="product-description">Experience crystal clear audio with our premium noise-cancelling headphones.</p>
-                <div class="product-price">$299.99</div>
+                <h3 class="product-title">RAPER Celeste Místico</h3>
+                <p class="product-description">Edición limitada en celeste místico. Sonido premium con tecnología de cancelación de ruido avanzada.</p>
+                <div class="product-price">$250.000 ARS</div>
                 <a href="#" class="button-2 w-button" data-i18n="add-to-cart" onclick="event.stopPropagation(); addToCart(1)">Agregar al Carrito</a>
               </div>
               
-              <!-- Producto 2 -->
+              <!-- Auriculares RAPER Violeta Real - $250.000 -->
               <div class="product-card" data-product-id="2" onclick="goToProductDetails(2)">
                 <div class="product-image-wrapper">
-                  <img src="images/audio.png" alt="Product 2" class="product-image">
+                  <img src="https://res.cloudinary.com/dyrgyzca3/image/upload/v1748398979/1_bkqjfk.jpg" alt="Auriculares RAPER Violeta Real" class="product-image">
                 </div>
-                <h3 class="product-title">Wireless Earbuds</h3>
-                <p class="product-description">Compact, lightweight and powerful. The perfect companion for your active lifestyle.</p>
-                <div class="product-price">$149.99</div>
+                <h3 class="product-title">RAPER Violeta Real</h3>
+                <p class="product-description">Exclusivos auriculares en violeta real. Diseño elegante con calidad de audio profesional.</p>
+                <div class="product-price">$250.000 ARS</div>
                 <a href="#" class="button-2 w-button" data-i18n="add-to-cart" onclick="event.stopPropagation(); addToCart(2)">Agregar al Carrito</a>
               </div>
               
-              <!-- Producto 3 -->
+              <!-- Auriculares RAPER Negro Obsidiana - $250.000 -->
               <div class="product-card" data-product-id="3" onclick="goToProductDetails(3)">
                 <div class="product-image-wrapper">
-                  <img src="images/audio.png" alt="Product 3" class="product-image">
+                  <img src="https://res.cloudinary.com/dyrgyzca3/image/upload/v1748451429/10_oriq88.jpg" alt="Auriculares RAPER Negro Obsidiana" class="product-image">
                 </div>
-                <h3 class="product-title">Smart Speaker</h3>
-                <p class="product-description">Fill your room with immersive sound and control your smart home with ease.</p>
-                <div class="product-price">$199.99</div>
+                <h3 class="product-title">RAPER Negro Obsidiana</h3>
+                <p class="product-description">La elegancia en negro obsidiana. Auriculares premium con acabado mate y sonido cristalino.</p>
+                <div class="product-price">$250.000 ARS</div>
                 <a href="#" class="button-2 w-button" data-i18n="add-to-cart" onclick="event.stopPropagation(); addToCart(3)">Agregar al Carrito</a>
               </div>
               
-              <!-- Producto 4 -->
+              <!-- Auriculares RAPER Blanco Perla - $199.000 -->
               <div class="product-card" data-product-id="4" onclick="goToProductDetails(4)">
                 <div class="product-image-wrapper">
-                  <img src="images/audio.png" alt="Product 4" class="product-image">
+                  <img src="https://res.cloudinary.com/dyrgyzca3/image/upload/v1748398979/4_ljygwt.jpg" alt="Auriculares RAPER Blanco Perla" class="product-image">
                 </div>
-                <h3 class="product-title">Studio Monitors</h3>
-                <p class="product-description">Professional grade audio monitors for your home studio setup.</p>
-                <div class="product-price">$499.99</div>
+                <h3 class="product-title">RAPER Blanco Perla</h3>
+                <p class="product-description">Pureza en blanco perla. Auriculares con diseño minimalista y tecnología de vanguardia.</p>
+                <div class="product-price">$199.000 ARS</div>
                 <a href="#" class="button-2 w-button" data-i18n="add-to-cart" onclick="event.stopPropagation(); addToCart(4)">Agregar al Carrito</a>
+              </div>
+
+              <!-- Auriculares RAPER Gris Titanio - $199.000 -->
+              <div class="product-card" data-product-id="5" onclick="goToProductDetails(5)">
+                <div class="product-image-wrapper">
+                  <img src="https://res.cloudinary.com/dyrgyzca3/image/upload/v1748398979/5_1_jygqx3.jpg" alt="Auriculares RAPER Gris Titanio" class="product-image">
+                </div>
+                <h3 class="product-title">RAPER Gris Titanio</h3>
+                <p class="product-description">Sofisticación en gris titanio. Resistencia y estilo en perfecta armonía sonora.</p>
+                <div class="product-price">$199.000 ARS</div>
+                <a href="#" class="button-2 w-button" data-i18n="add-to-cart" onclick="event.stopPropagation(); addToCart(5)">Agregar al Carrito</a>
+              </div>
+
+              <!-- Auriculares RAPER Azul Océano - $199.000 -->
+              <div class="product-card" data-product-id="6" onclick="goToProductDetails(6)">
+                <div class="product-image-wrapper">
+                  <img src="https://res.cloudinary.com/dyrgyzca3/image/upload/v1748398979/6_mt8tn6.jpg" alt="Auriculares RAPER Azul Océano" class="product-image">
+                </div>
+                <h3 class="product-title">RAPER Azul Océano</h3>
+                <p class="product-description">Profundidad del azul océano. Inmersión total en un mar de sonidos cristalinos.</p>
+                <div class="product-price">$199.000 ARS</div>
+                <a href="#" class="button-2 w-button" data-i18n="add-to-cart" onclick="event.stopPropagation(); addToCart(6)">Agregar al Carrito</a>
+              </div>
+
+              <!-- Auriculares RAPER Verde Esmeralda - $199.000 -->
+              <div class="product-card" data-product-id="7" onclick="goToProductDetails(7)">
+                <div class="product-image-wrapper">
+                  <img src="https://res.cloudinary.com/dyrgyzca3/image/upload/v1748398978/7_1_zq3fig.jpg" alt="Auriculares RAPER Verde Esmeralda" class="product-image">
+                </div>
+                <h3 class="product-title">RAPER Verde Esmeralda</h3>
+                <p class="product-description">Vibrante verde esmeralda. Energía y frescura en cada nota musical.</p>
+                <div class="product-price">$199.000 ARS</div>
+                <a href="#" class="button-2 w-button" data-i18n="add-to-cart" onclick="event.stopPropagation(); addToCart(7)">Agregar al Carrito</a>
+              </div>
+
+              <!-- Auriculares RAPER Rojo Carmesí - $199.000 -->
+              <div class="product-card" data-product-id="8" onclick="goToProductDetails(8)">
+                <div class="product-image-wrapper">
+                  <img src="https://res.cloudinary.com/dyrgyzca3/image/upload/v1748398978/8_1_ixbyop.jpg" alt="Auriculares RAPER Rojo Carmesí" class="product-image">
+                </div>
+                <h3 class="product-title">RAPER Rojo Carmesí</h3>
+                <p class="product-description">Pasión en rojo carmesí. Intensidad y potencia en cada frecuencia.</p>
+                <div class="product-price">$199.000 ARS</div>
+                <a href="#" class="button-2 w-button" data-i18n="add-to-cart" onclick="event.stopPropagation(); addToCart(8)">Agregar al Carrito</a>
               </div>
             </div>
           </div>
@@ -162,10 +232,14 @@ body {
     function addToCart(productId) {
       // Aquí iría la lógica real del carrito
       const productData = {
-        1: { name: 'Premium Headphones', price: 299.99 },
-        2: { name: 'Wireless Earbuds', price: 149.99 },
-        3: { name: 'Smart Speaker', price: 199.99 },
-        4: { name: 'Studio Monitors', price: 499.99 }
+        1: { name: 'RAPER Celeste Místico', price: 250000 },
+        2: { name: 'RAPER Violeta Real', price: 250000 },
+        3: { name: 'RAPER Negro Obsidiana', price: 250000 },
+        4: { name: 'RAPER Blanco Perla', price: 199000 },
+        5: { name: 'RAPER Gris Titanio', price: 199000 },
+        6: { name: 'RAPER Azul Océano', price: 199000 },
+        7: { name: 'RAPER Verde Esmeralda', price: 199000 },
+        8: { name: 'RAPER Rojo Carmesí', price: 199000 }
       };
 
       const product = productData[productId];
@@ -254,5 +328,41 @@ body {
       });
     });
   </script>
-</body>
+
+    // Mobile Menu Toggle
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+      
+      if (mobileMenuToggle && mobileMenu) {
+        // Toggle menu
+        mobileMenuToggle.addEventListener('click', function() {
+          mobileMenuToggle.classList.toggle('active');
+          mobileMenu.classList.toggle('active');
+          document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+        });
+        
+        // Close menu when clicking on links
+        mobileMenuLinks.forEach(link => {
+          link.addEventListener('click', function() {
+            mobileMenuToggle.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+          });
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+          if (!mobileMenu.contains(e.target) && !mobileMenuToggle.contains(e.target) && mobileMenu.classList.contains('active')) {
+            mobileMenuToggle.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+          }
+        });
+      }
+    });
+  </script>
+
+  </body>
 </html> 
