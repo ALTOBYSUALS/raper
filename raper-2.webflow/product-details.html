@@ -19,6 +19,13 @@
 </head>
 <body>
   <div class="page-wrapper is-relative">
+    <!-- Banner de Sello Discográfico -->
+    <div class="record-label-banner">
+      <div class="container-large">
+        <p class="record-label-text">SELLO DISCOGRÁFICO RAPER COMPANY</p>
+      </div>
+    </div>
+    
     <div class="global-styles w-embed">
       <style>
 /* Setting project Font much easily, as multiple of 10px. */ 
@@ -28,6 +35,45 @@ font-size : 62.5%;
 body{
 font-size : 1.6rem; /* 1REM = 10PX => 1.6REM = 16PX */
 }
+
+/* Estilos para el banner del sello discográfico */
+.record-label-banner {
+  width: 100%;
+  background: linear-gradient(90deg, rgba(0,0,0,0.9) 0%, rgba(95, 164, 255, 0.2) 50%, rgba(0,0,0,0.9) 100%);
+  padding: 10px 0;
+  position: relative;
+  z-index: 100;
+  border-bottom: 1px solid rgba(95, 164, 255, 0.3);
+}
+
+.record-label-text {
+  text-align: center;
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin: 0;
+  text-shadow: 0 0 10px rgba(95, 164, 255, 0.5);
+  animation: glow 3s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 5px rgba(95, 164, 255, 0.5);
+  }
+  100% {
+    text-shadow: 0 0 15px rgba(95, 164, 255, 0.8), 0 0 20px rgba(95, 164, 255, 0.4);
+  }
+}
+
+@media (max-width: 767px) {
+  .record-label-text {
+    font-size: 1.2rem;
+    letter-spacing: 0.15em;
+  }
+}
+
 /* Make text look crisper and more legible in all browsers */
 body {
   -webkit-font-smoothing: antialiased;
@@ -430,31 +476,58 @@ body {
       <div class="padding-global is_full-height">
         <div class="container-large is_full-height">
           <div class="navbar-sticky__wrapper">
-            <a href="/" class="navbar-sticky__heading">
+            <a href="#" class="navbar-sticky__heading">
               <img src="https://res.cloudinary.com/dt5pkdr0k/image/upload/v1747383494/Asset_16_tnitkj.png" alt="Raper Logo" class="navbar-logo">
             </a>
             <div class="navbar-sticky__links-wrapper">
               <div class="nav-links">
-                <a href="/" class="navbar-sticky__link" data-i18n="overview">Overview</a>
-                <a href="/store.html" class="navbar-sticky__link" data-i18n="store">Store</a>
-                <a href="/about.html" class="navbar-sticky__link" data-i18n="about">Quiénes Somos</a>
-                <a href="/careers.html" class="navbar-sticky__link" data-i18n="careers">Trabaja con Nosotros</a>
+                <a href="/" class="navbar-sticky__link">Overview</a>
+                <a href="/store.html" class="navbar-sticky__link">Store</a>
+                <a href="/about.html" class="navbar-sticky__link">Quiénes Somos</a>
+                <a href="/careers.html" class="navbar-sticky__link">Trabaja con Nosotros</a>
               </div>
-              <div class="navbar-actions">
-                <div class="cart-icon-wrapper" onclick="showCart()">
-                  <svg class="cart-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M9 22C9.55228 22 10 21.5523 10 21C10 20.4477 9.55228 20 9 20C8.44772 20 8 20.4477 8 21C8 21.5523 8.44772 22 9 22Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M20 22C20.5523 22 21 21.5523 21 21C21 20.4477 20.5523 20 20 20C19.4477 20 19 20.4477 19 21C19 21.5523 19.4477 22 20 22Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M1 1H5L7.68 14.39C7.77144 14.8504 8.02191 15.264 8.38755 15.5583C8.75318 15.8526 9.2107 16.009 9.68 16H19.4C19.8693 16.009 20.3268 15.8526 20.6925 15.5583C21.0581 15.264 21.3086 14.8504 21.4 14.39L23 6H6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                  <div id="cart-count">0</div>
-                </div>
+            </div>
+            <!-- Navbar Actions - Siempre visible -->
+            <div class="navbar-actions">
+              <div class="cart-icon-wrapper" onclick="showCart()">
+                <svg class="cart-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9 22C9.55228 22 10 21.5523 10 21C10 20.4477 9.55228 20 9 20C8.44772 20 8 20.4477 8 21C8 21.5523 8.44772 22 9 22Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M20 22C20.5523 22 21 21.5523 21 21C21 20.4477 20.5523 20 20 20C19.4477 20 19 20.4477 19 21C19 21.5523 19.4477 22 20 22Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M1 1H5L7.68 14.39C7.77144 14.8504 8.02191 15.264 8.38755 15.5583C8.75318 15.8526 9.2107 16.009 9.68 16H19.4C19.8693 16.009 20.3268 15.8526 20.6925 15.5583C21.0581 15.264 21.3086 14.8504 21.4 14.39L23 6H6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <div id="cart-count">0</div>
               </div>
+              <!-- Mobile Menu Button -->
+              <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+              </button>
             </div>
           </div>
         </div>
       </div>
       <div class="navbar-sticky__background"></div>
+      
+      <!-- Mobile Menu -->
+      <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-links">
+          <a href="/" class="mobile-menu-link">Overview</a>
+          <a href="/store.html" class="mobile-menu-link">Store</a>
+          <a href="/about.html" class="mobile-menu-link">Quiénes Somos</a>
+          <a href="/careers.html" class="mobile-menu-link">Trabaja con Nosotros</a>
+        </div>
+        <div class="mobile-menu-contact">
+          <div class="contact-item">
+            <span class="flag">🇺🇸</span>
+            <span class="phone">+1 (555) 123-4567</span>
+          </div>
+          <div class="contact-item">
+            <span class="flag">🇦🇷</span>
+            <span class="phone">+54 11 1234-5678</span>
+          </div>
+        </div>
+      </div>
     </div>
     
     <main class="main-wrapper">

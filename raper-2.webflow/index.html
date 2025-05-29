@@ -36,6 +36,13 @@
   </div>
 
   <div class="page-wrapper is-relative">
+    <!-- Banner de Sello Discográfico -->
+    <div class="record-label-banner">
+      <div class="container-large">
+        <p class="record-label-text">SELLO DISCOGRÁFICO RAPER COMPANY</p>
+      </div>
+    </div>
+
     <div class="global-styles w-embed">
       <style>
 /* Setting project Font much easily, as multiple of 10px. */ 
@@ -45,6 +52,45 @@ font-size : 62.5%;
 body{
 font-size : 1.6rem; /* 1REM = 10PX => 1.6REM = 16PX */
 }
+
+/* Estilos para el banner del sello discográfico */
+.record-label-banner {
+  width: 100%;
+  background: linear-gradient(90deg, rgba(0,0,0,0.9) 0%, rgba(95, 164, 255, 0.2) 50%, rgba(0,0,0,0.9) 100%);
+  padding: 10px 0;
+  position: relative;
+  z-index: 100;
+  border-bottom: 1px solid rgba(95, 164, 255, 0.3);
+}
+
+.record-label-text {
+  text-align: center;
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin: 0;
+  text-shadow: 0 0 10px rgba(95, 164, 255, 0.5);
+  animation: glow 3s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 5px rgba(95, 164, 255, 0.5);
+  }
+  100% {
+    text-shadow: 0 0 15px rgba(95, 164, 255, 0.8), 0 0 20px rgba(95, 164, 255, 0.4);
+  }
+}
+
+@media (max-width: 767px) {
+  .record-label-text {
+    font-size: 1.2rem;
+    letter-spacing: 0.15em;
+  }
+}
+
 /* Make text look crisper and more legible in all browsers */
 body {
   -webkit-font-smoothing: antialiased;
@@ -325,9 +371,8 @@ margin: 0rem !important;
           <div class="hero-product-info" style="text-align: left; display: flex; flex-direction: column; justify-content: center; padding-left: 2rem;">
             <h1 class="hero-product-title">RAPER Celeste Místico</h1>
             <p class="hero-product-subtitle">Edición Limitada • Cancelación Activa • 25h Batería</p>
-            <div class="hero-product-price">$250.000 ARS</div>
             <div class="hero-cta-buttons">
-              <a href="/store.html" class="hero-cta-primary">Ver Auriculares</a>
+              <a href="/store.html" class="hero-cta-primary">Ver Colección</a>
               <button class="hero-cta-secondary" onclick="addToCart(1)">Agregar al Carrito</button>
             </div>
           </div>
