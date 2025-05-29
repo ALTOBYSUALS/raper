@@ -2785,25 +2785,28 @@ html {
   background: none;
   border: none;
   cursor: pointer;
-  padding: 0.5rem;
+  padding: 0.75rem; /* Aumentado para mejor área tactil */
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 40px;
-  height: 40px;
+  width: 50px; /* Aumentado de 40px a 50px */
+  height: 50px; /* Aumentado de 40px a 50px */
   position: relative;
   z-index: 10001;
   flex-shrink: 0;
+  border-radius: 8px;
+  transition: all 0.3s ease;
 }
 
 .hamburger-line {
   display: block;
-  width: 25px;
-  height: 2px;
+  width: 30px; /* Aumentado de 25px a 30px */
+  height: 3px; /* Aumentado de 2px a 3px */
   background-color: #fff;
-  margin: 5px 0;
+  margin: 4px 0; /* Reducido para mantener proporción */
   transition: all 0.3s ease;
   transform-origin: center;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); /* Sombra para mejor visibilidad */
 }
 
 .mobile-menu-toggle.active .hamburger-line:nth-child(1) {
