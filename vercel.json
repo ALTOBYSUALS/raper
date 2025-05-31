@@ -1,4 +1,7 @@
 {
   "version": 2,
-  "outputDirectory": "raper-2.webflow"
+  "outputDirectory": "raper-2.webflow",
+  "github": {
+    "silent": false
+  }
 } 
