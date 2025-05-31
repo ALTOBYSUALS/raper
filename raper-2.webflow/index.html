@@ -252,6 +252,94 @@ margin: 0rem !important;
   padding-right: 0rem !important;
   padding-left: 0rem !important;
 }
+
+/* Styles for Spotify Banner Enhancements */
+.available-on-text {
+  display: block; /* Ensure it takes up space and margin-bottom works */
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  margin-bottom: 15px; /* Space before play button */
+}
+
+.platform-logos-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* Nuevo estilo para los botones de plataforma */
+.platform-button {
+  color: white;
+  font-size: 1.4rem;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.platform-button:hover {
+  background-color: rgba(95, 164, 255, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Ajustes responsivos */
+@media (max-width: 480px) {
+  .platform-button {
+    font-size: 1.2rem;
+    padding: 6px 12px;
+  }
+  
+  .platform-logos-container {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+}
+
+/* Estilos para el overlay de play que no cambian */
+.spotify-play-button {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(95, 164, 255, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 30px rgba(95, 164, 255, 0.5);
+  transition: transform 0.5s ease, background 0.3s ease;
+}
+
+/* Ensure overlay has some padding if content grows */
+.spotify-play-overlay {
+    padding: 15px 0; /* Adjusted padding */
+}
+
+/* Responsive adjustments for logos */
+@media (max-width: 480px) {
+  .available-on-text {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+  }
+  .platform-logos-container {
+    gap: 15px; /* Adjusted gap for mobile */
+    margin-top: 10px;
+    flex-wrap: wrap;
+  }
+  /* Removed .platform-logo text styles for mobile, .platform-img handles this */
+  .platform-img {
+    height: 20px; /* Smaller logos for mobile */
+  }
+  /* .spotify-play-button and .play-icon have existing mobile styles, ensure they are not overridden badly */
+}
 </style>
     </div>
 
@@ -271,15 +359,15 @@ margin: 0rem !important;
               </div>
             </div>
             <!-- Navbar Actions - Siempre visible -->
-            <div class="navbar-actions">
-              <div class="cart-icon-wrapper" onclick="showCart()">
-                <svg class="cart-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M9 22C9.55228 22 10 21.5523 10 21C10 20.4477 9.55228 20 9 20C8.44772 20 8 20.4477 8 21C8 21.5523 8.44772 22 9 22Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M20 22C20.5523 22 21 21.5523 21 21C21 20.4477 20.5523 20 20 20C19.4477 20 19 20.4477 19 21C19 21.5523 19.4477 22 20 22Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M1 1H5L7.68 14.39C7.77144 14.8504 8.02191 15.264 8.38755 15.5583C8.75318 15.8526 9.2107 16.009 9.68 16H19.4C19.8693 16.009 20.3268 15.8526 20.6925 15.5583C21.0581 15.264 21.3086 14.8504 21.4 14.39L23 6H6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <div id="cart-count">0</div>
-              </div>
+              <div class="navbar-actions">
+                <div class="cart-icon-wrapper" onclick="showCart()">
+                  <svg class="cart-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 22C9.55228 22 10 21.5523 10 21C10 20.4477 9.55228 20 9 20C8.44772 20 8 20.4477 8 21C8 21.5523 8.44772 22 9 22Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M20 22C20.5523 22 21 21.5523 21 21C21 20.4477 20.5523 20 20 20C19.4477 20 19 20.4477 19 21C19 21.5523 19.4477 22 20 22Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M1 1H5L7.68 14.39C7.77144 14.8504 8.02191 15.264 8.38755 15.5583C8.75318 15.8526 9.2107 16.009 9.68 16H19.4C19.8693 16.009 20.3268 15.8526 20.6925 15.5583C21.0581 15.264 21.3086 14.8504 21.4 14.39L23 6H6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  <div id="cart-count">0</div>
+                </div>
               <!-- Mobile Menu Button -->
               <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
                 <span class="hamburger-line"></span>
@@ -303,11 +391,11 @@ margin: 0rem !important;
         <div class="mobile-menu-contact">
           <div class="contact-item">
             <span class="flag">🇺🇸</span>
-            <span class="phone">+1 (555) 123-4567</span>
+            <span class="phone">+1 (786) 978-1978</span>
           </div>
           <div class="contact-item">
             <span class="flag">🇦🇷</span>
-            <span class="phone">+54 11 1234-5678</span>
+            <span class="phone">+54 9 11 3422 6971</span>
           </div>
         </div>
       </div>
@@ -369,7 +457,7 @@ margin: 0rem !important;
           
           <!-- Información del producto - Centrada y mejorada -->
           <div class="hero-product-info" style="text-align: left; display: flex; flex-direction: column; justify-content: center; padding-left: 2rem;">
-            <h1 class="hero-product-title">RAPER Celeste Místico</h1>
+            <h1 class="hero-product-title"><img src="https://res.cloudinary.com/dt5pkdr0k/image/upload/v1747383494/Asset_16_tnitkj.png" alt="RAPER" style="height: 70px; vertical-align: middle; margin-right: 15px;"> Celeste Místico</h1>
             <p class="hero-product-subtitle">Edición Limitada • Cancelación Activa • 25h Batería</p>
             <div class="hero-cta-buttons">
               <a href="/store.html" class="hero-cta-primary">Ver Colección</a>
@@ -388,13 +476,20 @@ margin: 0rem !important;
           <a href="https://open.spotify.com" target="_blank" class="spotify-banner-link">
             <img src="https://res.cloudinary.com/dyrgyzca3/image/upload/v1748371554/BANNER3_qdi9ei.jpg" alt="Pre-save en Spotify" class="spotify-banner-image">
             <div class="spotify-play-overlay">
+              <div class="spotify-overlay-text">
+                <!-- Changed text from PRE-SAVE AHORA -->
+                <span class="available-on-text">DISPONIBLE EN</span>
+              </div>
               <div class="spotify-play-button">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="play-icon">
                   <path d="M8 5.14V19.14L19 12.14L8 5.14Z" fill="currentColor"/>
                 </svg>
               </div>
-              <div class="spotify-overlay-text">
-                <span class="pre-save-text">PRE-SAVE AHORA</span>
+              <!-- Botones de plataformas de música -->
+              <div class="platform-logos-container">
+                <a href="https://open.spotify.com" target="_blank" class="platform-button">Spotify</a>
+                <a href="https://music.youtube.com" target="_blank" class="platform-button">YouTube</a>
+                <a href="https://music.apple.com" target="_blank" class="platform-button">Apple Music</a>
               </div>
             </div>
           </a>
@@ -600,7 +695,7 @@ margin: 0rem !important;
                       <p class="featured-description">Diseñada para artistas y visionarios. Una experiencia cinematográfica personalizada que trasciende lo convencional.</p>
                       <div class="featured-price">Consultar</div>
                       <a href="/contact.html" class="featured-cta-button">Consultar</a>
-                    </div>
+                </div>
                     <div class="featured-product-card">
                       <div class="featured-icon">
                         <svg class="product-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -608,12 +703,12 @@ margin: 0rem !important;
                           <path d="M12 11C12.5523 11 13 11.4477 13 12C13 12.5523 12.5523 13 12 13C11.4477 13 11 12.5523 11 12C11 11.4477 11.4477 11 12 11Z" fill="currentColor"/>
                           <path d="M10 5.25L14 8.5L14 15.5L10 18.75L10 5.25Z" fill="currentColor"/>
                         </svg>
-                      </div>
+              </div>
                       <h3 class="featured-title">Pelota de Básquet Exclusiva</h3>
                       <p class="featured-description">Colores extravagantes que desafían lo tradicional. Donde el deporte se convierte en arte urbano.</p>
                       <div class="featured-price">Edición Limitada</div>
                       <a href="/store.html" class="featured-cta-button">Pre-ordenar</a>
-                    </div>
+            </div>
                   </div>
                 </div>
               </div>
@@ -637,11 +732,11 @@ margin: 0rem !important;
           <div class="footer-contact">
             <div class="contact-item">
               <span class="flag">🇺🇸</span>
-              <span class="phone">+1 (555) 123-4567</span>
+              <span class="phone">+1 (786) 978-1978</span>
             </div>
             <div class="contact-item">
               <span class="flag">🇦🇷</span>
-              <span class="phone">+54 11 1234-5678</span>
+              <span class="phone">+54 9 11 3422 6971</span>
             </div>
           </div>
           <div class="footer-copyright">
