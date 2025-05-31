@@ -2,8 +2,7 @@
 <html data-wf-page="68269b7c12f8a3ad86be7f60" data-wf-site="68269b7b12f8a3ad86be7d56">
 <head>
   <meta charset="utf-8">
-  <title>RAPER - Audio de alta calidad</title>
-  <!-- Versión 1.0.1 - Actualización mayo 2025 -->
+  <title>raper</title>
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <meta content="Webflow" name="generator">
   <link href="css/normalize.css" rel="stylesheet" type="text/css">
@@ -341,187 +340,6 @@ margin: 0rem !important;
   }
   /* .spotify-play-button and .play-icon have existing mobile styles, ensure they are not overridden badly */
 }
-
-/* Nuevos estilos para los iconos de plataformas */
-.platform-icon-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  transition: all 0.3s ease;
-  margin: 0 8px;
-}
-
-.platform-icon-link:hover {
-  background-color: rgba(95, 164, 255, 0.4);
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-.platform-icon {
-  color: white;
-  transition: all 0.3s ease;
-}
-
-.platform-icon-link:hover .platform-icon {
-  transform: scale(1.1);
-}
-
-@media (max-width: 480px) {
-  .platform-icon-link {
-    width: 40px;
-    height: 40px;
-    margin: 0 5px;
-  }
-  
-  .platform-icon {
-    width: 24px;
-    height: 24px;
-  }
-}
-
-/* Estilos para el banner horizontal de Spotify */
-.spotify-banner {
-  position: relative;
-  width: 100%;
-  padding: 0.5rem 0;
-  background: linear-gradient(90deg, rgba(30, 50, 100, 0.8) 0%, rgba(65, 80, 160, 0.8) 100%);
-  color: white;
-  overflow: hidden;
-  z-index: 1;
-  text-align: center;
-}
-
-.spotify-banner-link {
-  position: relative;
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  color: white;
-  padding: 0.5rem 2rem;
-  width: 100%;
-  transition: all 0.3s ease;
-}
-
-.spotify-banner-link:hover {
-  background-color: rgba(0, 0, 0, 0.1);
-}
-
-.available-on-text {
-  display: block;
-  color: white;
-  font-size: 1.8rem;
-  font-weight: 600;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-  margin-bottom: 15px;
-}
-
-.platform-logos-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 25px;
-  margin-top: 10px;
-}
-
-/* Iconos SVG integrados para plataformas de streaming */
-.platform-icon {
-  width: 30px;
-  height: 30px;
-  fill: white;
-  opacity: 0.9;
-  transition: all 0.3s ease;
-}
-
-.platform-icon:hover {
-  opacity: 1;
-  transform: scale(1.1);
-}
-
-/* Estilos para el equipo */
-.team-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 2rem;
-  padding: 2rem 0;
-}
-
-.team-member {
-  background-color: #121212;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.team-member:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 12px 25px rgba(95, 164, 255, 0.2);
-}
-
-.team-member-photo-container {
-  position: relative;
-  width: 100%;
-  padding-bottom: 100%; /* Aspect ratio 1:1 para imagen cuadrada */
-  overflow: hidden;
-}
-
-.team-member-photo {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border: 3px solid transparent;
-  transition: all 0.3s ease;
-}
-
-.gold-border .team-member-photo {
-  border-color: #FFD700;
-}
-
-.cyan-border .team-member-photo {
-  border-color: #00FFFF;
-}
-
-.green-border .team-member-photo {
-  border-color: #00FF7F;
-}
-
-.team-member-info {
-  padding: 1.5rem;
-  text-align: center;
-}
-
-.team-member-name {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-  color: #ffffff;
-}
-
-.team-member-title {
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 1rem;
-  color: #5FA4FF;
-}
-
-.team-member-bio {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #B0B0B0;
-}
 </style>
     </div>
 
@@ -536,6 +354,8 @@ margin: 0rem !important;
               <div class="nav-links">
                 <a href="/" class="navbar-sticky__link">Overview</a>
                 <a href="/store.html" class="navbar-sticky__link">Store</a>
+                <a href="/about.html" class="navbar-sticky__link">Quiénes Somos</a>
+                <a href="/careers.html" class="navbar-sticky__link">Trabaja con Nosotros</a>
               </div>
             </div>
             <!-- Navbar Actions - Siempre visible -->
@@ -565,6 +385,8 @@ margin: 0rem !important;
         <div class="mobile-menu-links">
           <a href="/" class="mobile-menu-link">Overview</a>
           <a href="/store.html" class="mobile-menu-link">Store</a>
+          <a href="/about.html" class="mobile-menu-link">Quiénes Somos</a>
+          <a href="/careers.html" class="mobile-menu-link">Trabaja con Nosotros</a>
         </div>
         <div class="mobile-menu-contact">
           <div class="contact-item">
@@ -648,111 +470,118 @@ margin: 0rem !important;
         <div class="luxury-particles" id="particles-container"></div>
       </div>
 
-      <!-- Banner horizontal de Spotify -->
-      <div class="spotify-banner">
-        <a href="https://open.spotify.com" target="_blank" class="spotify-banner-link">
-          <span class="available-on-text">DISPONIBLE EN</span>
-          <div class="platform-logos-container">
-            <!-- Spotify Icon -->
-            <a href="https://open.spotify.com" target="_blank" aria-label="Spotify">
-              <svg class="platform-icon" viewBox="0 0 24 24">
-                <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.48.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.779 1.02.479 1.56-.299.421-1.02.659-1.559.36z"/>
-              </svg>
-            </a>
-            <!-- YouTube Music Icon -->
-            <a href="https://music.youtube.com" target="_blank" aria-label="YouTube Music">
-              <svg class="platform-icon" viewBox="0 0 24 24">
-                <path d="M12 0C5.376 0 0 5.376 0 12s5.376 12 12 12 12-5.376 12-12S18.624 0 12 0zm5.52 12.336l-7.069 4.08c-.293.169-.64-.042-.64-.384v-8.064c0-.343.347-.553.64-.384l7.069 4.08c.293.169.293.504 0 .672z"/>
-              </svg>
-            </a>
-            <!-- Apple Music Icon -->
-            <a href="https://music.apple.com" target="_blank" aria-label="Apple Music">
-              <svg class="platform-icon" viewBox="0 0 24 24">
-                <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm1.436 17.8a7.5 7.5 0 01-1.452.15 7.51 7.51 0 01-1.462-.149c-.833-.167-1.445-.374-1.837-.616-.304-.19-.52-.394-.656-.612-.215-.346-.323-.988-.323-1.918 0-.93.107-1.573.323-1.92.137-.22.352-.423.655-.61.392-.243 1.005-.45 1.838-.617a7.605 7.605 0 012.913 0c.833.167 1.447.374 1.84.617.303.187.519.39.656.61.216.347.324.99.324 1.92 0 .93-.108 1.572-.324 1.918-.137.218-.353.422-.655.612-.393.242-1.007.449-1.84.617zm3.899-10.9c-.315.128-.694.323-1.14.585-.446.262-.837.485-1.172.668l-.509.28a5.41 5.41 0 00-.336.188.488.488 0 00-.192.186c-.067.103-.101.295-.101.576 0 .282.037.474.111.577a.474.474 0 00.2.193c.13.061.254.125.372.19l.527.282c.335.183.724.406 1.165.668.441.262.82.457 1.135.585.315.128.539.108.671-.062.133-.169.2-.58.2-1.233V8.195c0-.65-.068-1.06-.2-1.229-.133-.17-.359-.193-.731-.066z"/>
-              </svg>
-            </a>
-          </div>
-        </a>
-      </div>
+      <!-- Banner de Pre-Save Spotify -->
+      <section class="spotify-presave-banner">
+        <div class="spotify-banner-container">
+          <a href="https://open.spotify.com" target="_blank" class="spotify-banner-link">
+            <img src="https://res.cloudinary.com/dyrgyzca3/image/upload/v1748371554/BANNER3_qdi9ei.jpg" alt="Pre-save en Spotify" class="spotify-banner-image">
+            <div class="spotify-play-overlay">
+              <div class="spotify-overlay-text">
+                <!-- Changed text from PRE-SAVE AHORA -->
+                <span class="available-on-text">DISPONIBLE EN</span>
+              </div>
+              <div class="spotify-play-button">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="play-icon">
+                  <path d="M8 5.14V19.14L19 12.14L8 5.14Z" fill="currentColor"/>
+                </svg>
+              </div>
+              <!-- Botones de plataformas de música -->
+              <div class="platform-logos-container">
+                <a href="https://open.spotify.com" target="_blank" class="platform-button">Spotify</a>
+                <a href="https://music.youtube.com" target="_blank" class="platform-button">YouTube</a>
+                <a href="https://music.apple.com" target="_blank" class="platform-button">Apple Music</a>
+              </div>
+            </div>
+          </a>
+        </div>
+      </section>
 
       <!-- Sección del equipo RAPER - NUEVO DISEÑO PREMIUM -->
-      <section class="about-section">
-        <div class="section-container">
-          <div class="section-title-container">
-            <h2 class="section-title">Conoce al Equipo RAPER</h2>
-            <p class="section-subtitle">Los visionarios detrás de la revolución del audio luxury</p>
-          </div>
+      <section class="team-section-working" style="background: #000; padding: 100px 0; text-align: center;">
+        <div style="max-width: 1400px; margin: 0 auto; padding: 0 20px;">
+          <h2 style="color: #5fa4ff; font-size: 4.5rem; margin-bottom: 20px; font-weight: 700; text-shadow: 0 0 20px rgba(95, 164, 255, 0.3);">Conoce al Equipo RAPER</h2>
+          <p style="color: rgba(255,255,255,0.7); font-size: 1.8rem; margin-bottom: 80px; max-width: 800px; margin-left: auto; margin-right: auto;">Los visionarios detrás de la revolución del audio luxury</p>
           
-          <div class="team-grid">
-            <!-- Perro Primo -->
-            <div class="team-member gold-border">
-              <div class="team-member-photo-container">
-                <img src="https://assets-global.website-files.com/64f4ca51c3f9c2e5f75a63d2/65b7cc2a751c0df9d77e4e8a_perro-primo.jpeg" alt="Perro Primo" class="team-member-photo">
+          <!-- Distribución optimizada para 5 personas (3+2) -->
+          <div class="team-container">
+            <!-- Primera fila - 3 personas -->
+            <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 40px; margin-bottom: 40px;">
+              <!-- Perro Primo -->
+              <div class="artist-card" style="width: 320px; background: linear-gradient(145deg, rgba(25,25,25,0.8), rgba(15,15,15,0.9)); border-radius: 20px; padding: 40px 30px; border: 1px solid rgba(95,164,255,0.2); transition: all 0.4s ease; position: relative; overflow: hidden;">
+                <div class="card-glow" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; background: radial-gradient(circle at 30% 20%, rgba(255, 165, 0, 0.1) 0%, transparent 70%); z-index: 1; pointer-events: none;"></div>
+                <div style="position: relative; z-index: 2;">
+                  <div style="width: 180px; height: 180px; margin: 0 auto 25px; border-radius: 50%; overflow: hidden; border: 4px solid #FFA500; box-shadow: 0 10px 30px rgba(255, 165, 0, 0.2);">
+                    <img src="https://res.cloudinary.com/dyrgyzca3/image/upload/v1748460740/rapper_Artistas_amzahq.png" 
+                         alt="Perro Primo" 
+                         style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                  </div>
+                  <h3 style="color: #FFA500; font-size: 2.8rem; margin: 0 0 10px 0; font-weight: 700;">Perro Primo</h3>
+                  <p style="color: #5fa4ff; font-size: 1.4rem; text-transform: uppercase; margin: 0 0 20px 0; font-weight: 600; letter-spacing: 0.05em;">Creative Founder</p>
+                  <p style="color: rgba(255,255,255,0.85); font-size: 1.5rem; line-height: 1.5; margin: 0;">El visionario creativo detrás del concepto RAPER. Fusiona música, arte y tecnología.</p>
+                </div>
               </div>
-              <div class="team-member-info">
-                <h3 class="team-member-name">Perro Primo</h3>
-                <p class="team-member-title">CREATIVE FOUNDER</p>
-                <p class="team-member-bio">El visionario creativo detrás del concepto RAPER. Fusiona música, arte y tecnología.</p>
+              
+              <!-- Sofia -->
+              <div class="artist-card" style="width: 320px; background: linear-gradient(145deg, rgba(25,25,25,0.8), rgba(15,15,15,0.9)); border-radius: 20px; padding: 40px 30px; border: 1px solid rgba(95,164,255,0.2); transition: all 0.4s ease; position: relative; overflow: hidden;">
+                <div class="card-glow" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; background: radial-gradient(circle at 30% 20%, rgba(255, 20, 147, 0.1) 0%, transparent 70%); z-index: 1; pointer-events: none;"></div>
+                <div style="position: relative; z-index: 2;">
+                  <div style="width: 180px; height: 180px; margin: 0 auto 25px; border-radius: 50%; overflow: hidden; border: 4px solid #FF1493; box-shadow: 0 10px 30px rgba(255, 20, 147, 0.2);">
+                    <img src="https://res.cloudinary.com/dyrgyzca3/image/upload/v1748460740/RAPERSOFIA_hbwfmx.png" 
+                         alt="Sofia Martinez" 
+                         style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                  </div>
+                  <h3 style="color: #FF1493; font-size: 2.8rem; margin: 0 0 10px 0; font-weight: 700;">Sofia Martinez</h3>
+                  <p style="color: #5fa4ff; font-size: 1.4rem; text-transform: uppercase; margin: 0 0 20px 0; font-weight: 600; letter-spacing: 0.05em;">Technical Director</p>
+                  <p style="color: rgba(255,255,255,0.85); font-size: 1.5rem; line-height: 1.5; margin: 0;">Ingeniera de audio especializada en tecnología de cancelación de ruido activa.</p>
+                </div>
               </div>
-            </div>
-            
-            <!-- Sofia Martinez -->
-            <div class="team-member cyan-border">
-              <div class="team-member-photo-container">
-                <img src="https://assets-global.website-files.com/64f4ca51c3f9c2e5f75a63d2/6527a0872b56a3e27fccc8eb_sofia.jpeg" alt="Sofia Martinez" class="team-member-photo">
-              </div>
-              <div class="team-member-info">
-                <h3 class="team-member-name">Sofia Martinez</h3>
-                <p class="team-member-title">TECHNICAL DIRECTOR</p>
-                <p class="team-member-bio">Ingeniera de audio especializada en tecnología de cancelación de ruido activa.</p>
-              </div>
-            </div>
-            
-            <!-- Dexter -->
-            <div class="team-member green-border">
-              <div class="team-member-photo-container">
-                <img src="https://assets-global.website-files.com/64f4ca51c3f9c2e5f75a63d2/6527a0ebb2da57d5e7bd2c9c_dexter.jpeg" alt="Dexter" class="team-member-photo">
-              </div>
-              <div class="team-member-info">
-                <h3 class="team-member-name">Dexter</h3>
-                <p class="team-member-title">SOUND ENGINEER</p>
-                <p class="team-member-bio">Maestro del sonido que perfecciona cada frecuencia para crear experiencias únicas.</p>
-              </div>
-            </div>
-            
-            <!-- Gringo -->
-            <div class="team-member gold-border">
-              <div class="team-member-photo-container">
-                <img src="https://assets-global.website-files.com/64f4ca51c3f9c2e5f75a63d2/6527a0fcb24dc837b91d0d1a_gringo.jpeg" alt="Gringo" class="team-member-photo">
-              </div>
-              <div class="team-member-info">
-                <h3 class="team-member-name">Gringo</h3>
-                <p class="team-member-title">MARKETING DIRECTOR</p>
-                <p class="team-member-bio">Estratega creativo que lleva la marca RAPER a nuevas audiencias globales.</p>
-              </div>
-            </div>
-            
-            <!-- MZ -->
-            <div class="team-member cyan-border">
-              <div class="team-member-photo-container">
-                <img src="https://assets-global.website-files.com/64f4ca51c3f9c2e5f75a63d2/6527a114d6ca70b43ab86c3f_mz.jpeg" alt="MZ" class="team-member-photo">
-              </div>
-              <div class="team-member-info">
-                <h3 class="team-member-name">MZ</h3>
-                <p class="team-member-title">PRODUCT DESIGNER</p>
-                <p class="team-member-bio">Diseñador visionario que fusiona estética, funcionalidad y ergonomía en cada producto.</p>
+              
+              <!-- Dexter -->
+              <div class="artist-card" style="width: 320px; background: linear-gradient(145deg, rgba(25,25,25,0.8), rgba(15,15,15,0.9)); border-radius: 20px; padding: 40px 30px; border: 1px solid rgba(95,164,255,0.2); transition: all 0.4s ease; position: relative; overflow: hidden;">
+                <div class="card-glow" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; background: radial-gradient(circle at 30% 20%, rgba(0, 255, 127, 0.1) 0%, transparent 70%); z-index: 1; pointer-events: none;"></div>
+                <div style="position: relative; z-index: 2;">
+                  <div style="width: 180px; height: 180px; margin: 0 auto 25px; border-radius: 50%; overflow: hidden; border: 4px solid #00FF7F; box-shadow: 0 10px 30px rgba(0, 255, 127, 0.2);">
+                    <img src="https://res.cloudinary.com/dyrgyzca3/image/upload/v1748460740/dex_1_ybdvz5.png" 
+                         alt="Dexter" 
+                         style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                  </div>
+                  <h3 style="color: #00FF7F; font-size: 2.8rem; margin: 0 0 10px 0; font-weight: 700;">Dexter</h3>
+                  <p style="color: #5fa4ff; font-size: 1.4rem; text-transform: uppercase; margin: 0 0 20px 0; font-weight: 600; letter-spacing: 0.05em;">Sound Engineer</p>
+                  <p style="color: rgba(255,255,255,0.85); font-size: 1.5rem; line-height: 1.5; margin: 0;">Maestro del sonido que perfecciona cada frecuencia para crear experiencias únicas.</p>
+                </div>
               </div>
             </div>
             
-            <!-- Irie Kingz -->
-            <div class="team-member green-border">
-              <div class="team-member-photo-container">
-                <img src="https://assets-global.website-files.com/64f4ca51c3f9c2e5f75a63d2/6527a13cbbdc1d5ef6ef73ae_irie-kingz.jpeg" alt="Irie Kingz" class="team-member-photo">
+            <!-- Segunda fila - 2 personas centradas -->
+            <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 40px;">
+              <!-- Alex Rodriguez -->
+              <div class="artist-card" style="width: 320px; background: linear-gradient(145deg, rgba(25,25,25,0.8), rgba(15,15,15,0.9)); border-radius: 20px; padding: 40px 30px; border: 1px solid rgba(95,164,255,0.2); transition: all 0.4s ease; position: relative; overflow: hidden;">
+                <div class="card-glow" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; background: radial-gradient(circle at 30% 20%, rgba(138, 43, 226, 0.1) 0%, transparent 70%); z-index: 1; pointer-events: none;"></div>
+                <div style="position: relative; z-index: 2;">
+                  <div style="width: 180px; height: 180px; margin: 0 auto 25px; border-radius: 50%; overflow: hidden; border: 4px solid #8A2BE2; box-shadow: 0 10px 30px rgba(138, 43, 226, 0.2);">
+                    <img src="https://res.cloudinary.com/dyrgyzca3/image/upload/v1748460740/WhatsApp_Image_2025-05-27_at_13.58.12_kzfvup.png" 
+                         alt="Alex Rodriguez" 
+                         style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                  </div>
+                  <h3 style="color: #8A2BE2; font-size: 2.8rem; margin: 0 0 10px 0; font-weight: 700;">Alex Rodriguez</h3>
+                  <p style="color: #5fa4ff; font-size: 1.4rem; text-transform: uppercase; margin: 0 0 20px 0; font-weight: 600; letter-spacing: 0.05em;">Brand Director</p>
+                  <p style="color: rgba(255,255,255,0.85); font-size: 1.5rem; line-height: 1.5; margin: 0;">Estratega de marca que define la identidad luxury y la experiencia exclusiva RAPER.</p>
+                </div>
               </div>
-              <div class="team-member-info">
-                <h3 class="team-member-name">Irie Kingz</h3>
-                <p class="team-member-title">BRAND AMBASSADOR</p>
-                <p class="team-member-bio">Conector entre artistas, productores y RAPER, creando colaboraciones exclusivas.</p>
+              
+              <!-- Lucas Mora -->
+              <div class="artist-card" style="width: 320px; background: linear-gradient(145deg, rgba(25,25,25,0.8), rgba(15,15,15,0.9)); border-radius: 20px; padding: 40px 30px; border: 1px solid rgba(95,164,255,0.2); transition: all 0.4s ease; position: relative; overflow: hidden;">
+                <div class="card-glow" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; background: radial-gradient(circle at 30% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 70%); z-index: 1; pointer-events: none;"></div>
+                <div style="position: relative; z-index: 2;">
+                  <div style="width: 180px; height: 180px; margin: 0 auto 25px; border-radius: 50%; overflow: hidden; border: 4px solid #FFD700; box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);">
+                    <img src="https://res.cloudinary.com/dyrgyzca3/image/upload/v1748479709/23_d5lars.jpg" 
+                         alt="Lucas Mora" 
+                         style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                  </div>
+                  <h3 style="color: #FFD700; font-size: 2.8rem; margin: 0 0 10px 0; font-weight: 700;">Lucas Mora</h3>
+                  <p style="color: #5fa4ff; font-size: 1.4rem; text-transform: uppercase; margin: 0 0 20px 0; font-weight: 600; letter-spacing: 0.05em;">Product Manager</p>
+                  <p style="color: rgba(255,255,255,0.85); font-size: 1.5rem; line-height: 1.5; margin: 0;">Visionario de producto que fusiona innovación y estética en cada detalle de la línea RAPER.</p>
+                </div>
               </div>
             </div>
           </div>
@@ -1369,7 +1198,7 @@ margin: 0rem !important;
     .spotify-banner-link:hover .spotify-overlay-text {
       opacity: 1;
       transform: translateY(0);
-    }
+      }
     
     .pre-save-text {
       position: relative;
