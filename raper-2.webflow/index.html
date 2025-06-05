@@ -13,6 +13,7 @@
   <link href="css/cart.css" rel="stylesheet" type="text/css">
   <link href="css/mobile-fixes.css" rel="stylesheet" type="text/css">
   <link href="css/performance-optimizations.css" rel="stylesheet" type="text/css">
+  <link href="css/mobile-responsive-fixes.css" rel="stylesheet" type="text/css">
   <!-- CSS limpio para el banner será movido al final -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
@@ -957,6 +958,7 @@ margin: 0rem !important;
         @media (max-width: 768px) {
           .video-hero-section {
             min-height: 600px;
+            overflow-x: hidden;
           }
           
           .hero-main-content {
@@ -964,16 +966,48 @@ margin: 0rem !important;
             gap: 3rem;
             padding: 0 2rem;
             text-align: center;
+            justify-items: center;
+            align-items: center;
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100%;
           }
           
           .hero-product-info {
             order: 2;
             text-align: center;
             padding-left: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: 100%;
           }
           
           .hero-auricular-section {
             order: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            max-width: 100%;
+            overflow: hidden;
+          }
+          
+          .hero-auricular-container {
+            width: 100%;
+            max-width: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+          }
+          
+          .hero-product-title {
+            justify-content: center;
+            text-align: center;
+            align-items: center;
           }
           
           .hero-logo-img {
@@ -982,14 +1016,21 @@ margin: 0rem !important;
           
           .hero-company-text {
             font-size: 4rem;
+            text-align: center;
           }
           
           .hero-product-subtitle {
             font-size: 1.8rem;
+            text-align: center;
+            width: 100%;
           }
           
           .hero-auricular-main {
-            max-width: 450px;
+            width: 100%;
+            max-width: 350px;
+            transform: scale(1.05);
+            margin: 0 auto;
+            display: block;
           }
         }
         
@@ -998,17 +1039,30 @@ margin: 0rem !important;
           .video-hero-section {
             min-height: 500px;
             padding: 20px 15px;
+            overflow-x: hidden;
           }
           
           .hero-main-content {
             gap: 2rem;
             padding: 0 1rem;
+            overflow-x: hidden;
+            justify-items: center;
+          }
+          
+          .hero-product-info {
+            width: 100% !important;
+            max-width: 100% !important;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+            margin: 0 auto !important;
           }
           
           .hero-product-title {
             flex-direction: column;
             gap: 15px;
             margin-bottom: 1.5rem;
+            justify-content: center !important;
+            align-items: center !important;
           }
           
           .hero-logo-img {
@@ -1019,20 +1073,41 @@ margin: 0rem !important;
           .hero-company-text {
             font-size: 2.8rem;
             line-height: 0.9;
+            text-align: center !important;
           }
           
           .hero-product-subtitle {
             font-size: 1.4rem;
             padding: 0 10px;
+            text-align: center !important;
+            width: 100% !important;
           }
           
           .hero-auricular-section {
             opacity: 0.8;
+            width: 100% !important;
+            max-width: 100% !important;
+            overflow: hidden !important;
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+          }
+          
+          .hero-auricular-container {
+            width: 100% !important;
+            max-width: 280px !important;
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+            overflow: hidden !important;
           }
           
           .hero-auricular-main {
-            max-width: 300px;
-            width: 100%;
+            width: 100% !important;
+            max-width: 250px !important;
+            transform: scale(1) !important;
+            margin: 0 auto !important;
+            display: block !important;
           }
         }
         
@@ -1040,10 +1115,12 @@ margin: 0rem !important;
         @media (max-width: 360px) {
           .hero-company-text {
             font-size: 2.2rem;
+            text-align: center !important;
           }
           
           .hero-product-subtitle {
             font-size: 1.2rem;
+            text-align: center !important;
           }
           
           .hero-logo-img {
@@ -1051,42 +1128,236 @@ margin: 0rem !important;
           }
           
           .hero-auricular-main {
-            max-width: 250px;
-          }
-        }
-        </style>
-
-        <!-- Estilos para menú hamburguesa más pequeño solo en móvil -->
-        <style>
-          /* Reducir tamaño del menú hamburguesa SOLO EN MÓVIL */
-          @media (max-width: 768px) {
-            .mobile-menu-toggle {
-              width: 42px !important;
-              height: 42px !important;
-              padding: 0.4rem !important;
-            }
-            
-            .hamburger-line {
-              width: 24px !important;
-              height: 2.5px !important;
-              margin: 2.5px 0 !important;
-            }
+            width: 100% !important;
+            max-width: 220px !important;
+            transform: scale(1) !important;
+            margin: 0 auto !important;
           }
           
-          /* En móviles muy pequeños */
-          @media (max-width: 480px) {
-            .mobile-menu-toggle {
-              width: 38px !important;
-              height: 38px !important;
-              padding: 0.35rem !important;
-            }
-            
-            .hamburger-line {
-              width: 22px !important;
-              height: 2px !important;
-              margin: 2px 0 !important;
-            }
+          .hero-auricular-container {
+            max-width: 250px !important;
           }
+        }
+        
+        /* CENTRADO ABSOLUTO PARA MÓVIL - OVERRIDE FINAL */
+        @media (max-width: 768px) {
+          .video-hero-section * {
+            box-sizing: border-box !important;
+          }
+          
+          .hero-main-content,
+          .hero-product-info,
+          .hero-auricular-section,
+          .hero-auricular-container {
+            margin-left: auto !important;
+            margin-right: auto !important;
+          }
+          
+          .hero-product-title,
+          .hero-company-text,
+          .hero-product-subtitle {
+            text-align: center !important;
+            width: 100% !important;
+          }
+        }
+        
+        /* ===== NAVEGACIÓN MÓVIL MEJORADA ===== */
+        .mobile-menu {
+          position: fixed;
+          top: 0;
+          right: -100%;
+          width: 100%;
+          max-width: 350px;
+          height: 100vh;
+          background: linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(20, 20, 20, 0.95) 100%);
+          backdrop-filter: blur(20px);
+          z-index: 9999;
+          transition: right 0.3s ease-in-out;
+          overflow-y: auto;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          padding: 60px 30px 30px;
+        }
+        
+        .mobile-menu.active {
+          right: 0;
+        }
+        
+        .mobile-menu-links {
+          display: flex;
+          flex-direction: column;
+          gap: 25px;
+          width: 100%;
+          margin-bottom: 40px;
+        }
+        
+        .mobile-menu-link {
+          color: #fff;
+          font-size: 1.8rem;
+          font-weight: 600;
+          text-decoration: none;
+          text-align: center;
+          padding: 15px 20px;
+          border-radius: 12px;
+          background: rgba(255, 255, 255, 0.05);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          transition: all 0.3s ease;
+          letter-spacing: 0.05em;
+        }
+        
+        .mobile-menu-link:hover,
+        .mobile-menu-link:focus {
+          background: rgba(95, 164, 255, 0.2);
+          border-color: rgba(95, 164, 255, 0.5);
+          transform: translateY(-2px);
+          box-shadow: 0 5px 15px rgba(95, 164, 255, 0.3);
+        }
+        
+        .mobile-menu-contact {
+          width: 100%;
+          text-align: center;
+          border-top: 1px solid rgba(255, 255, 255, 0.1);
+          padding-top: 25px;
+        }
+        
+        .contact-item {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 10px;
+          margin-bottom: 15px;
+          color: rgba(255, 255, 255, 0.8);
+          font-size: 1.4rem;
+        }
+        
+        .flag {
+          font-size: 1.6rem;
+        }
+        
+        .phone {
+          font-weight: 500;
+          letter-spacing: 0.05em;
+        }
+        
+        /* ===== NAVEGACIÓN MÓVIL Y TABLET ===== */
+        @media (max-width: 768px) {
+          .container-large,
+          .container-medium,
+          .container-small {
+            padding-left: 20px !important;
+            padding-right: 20px !important;
+            margin: 0 auto !important;
+            text-align: center !important;
+          }
+          
+          .navbar-sticky__wrapper {
+            justify-content: space-between !important;
+            align-items: center !important;
+          }
+          
+          /* OCULTAR NAVEGACIÓN DESKTOP EN MÓVIL */
+          .nav-links {
+            display: none !important;
+          }
+          
+          .navbar-actions {
+            display: flex !important;
+            align-items: center !important;
+            gap: 15px !important;
+          }
+          
+          /* MOSTRAR HAMBURGUESA SOLO EN MÓVIL */
+          .mobile-menu-toggle {
+            display: flex !important;
+          }
+          
+          /* MOSTRAR MENÚ MÓVIL CUANDO ESTÉ ACTIVO */
+          .mobile-menu {
+            display: flex !important;
+          }
+        }
+        
+        /* ===== ASEGURAR DESKTOP LIMPIO ===== */
+        @media (min-width: 769px) {
+          .nav-links {
+            display: flex !important;
+          }
+          
+          .mobile-menu-toggle {
+            display: none !important;
+          }
+          
+          .mobile-menu {
+            display: none !important;
+          }
+          
+          .navbar-actions {
+            display: flex !important;
+            align-items: center !important;
+            gap: 15px !important;
+          }
+        }
+        
+        /* ===== NAVEGACIÓN DESKTOP - FORZAR REGLAS ===== */
+        .nav-links {
+          display: flex !important;
+        }
+        
+        .mobile-menu-toggle {
+          display: none !important;
+        }
+        
+        .mobile-menu {
+          display: none !important;
+        }
+        
+        /* ===== MEJORAS HAMBURGUESA - SOLO MÓVIL ===== */
+        .mobile-menu-toggle {
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          width: 45px;
+          height: 45px;
+          background: rgba(255, 255, 255, 0.1);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          border-radius: 8px;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          padding: 0.5rem;
+        }
+        
+        .mobile-menu-toggle:hover {
+          background: rgba(95, 164, 255, 0.2);
+          border-color: rgba(95, 164, 255, 0.5);
+        }
+        
+        .mobile-menu-toggle.active {
+          background: rgba(95, 164, 255, 0.3);
+          border-color: rgba(95, 164, 255, 0.7);
+        }
+        
+        .hamburger-line {
+          width: 25px;
+          height: 3px;
+          background: #fff;
+          margin: 2px 0;
+          transition: all 0.3s ease;
+          border-radius: 2px;
+        }
+        
+        .mobile-menu-toggle.active .hamburger-line:nth-child(1) {
+          transform: rotate(45deg) translate(6px, 6px);
+        }
+        
+        .mobile-menu-toggle.active .hamburger-line:nth-child(2) {
+          opacity: 0;
+        }
+        
+        .mobile-menu-toggle.active .hamburger-line:nth-child(3) {
+          transform: rotate(-45deg) translate(7px, -6px);
+        }
         </style>
 
       <!-- Estilos nuevos para banner separado -->
