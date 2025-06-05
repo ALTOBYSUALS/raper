@@ -1,0 +1,142 @@
+/* ===========================================
+   OPTIMIZACIONES DE RENDIMIENTO - SECCIÓN INTEGRANTES
+   =========================================== */
+
+/* Activar aceleración por hardware */
+.artist-card,
+.artist-card img,
+.card-glow {
+  will-change: transform;
+  backface-visibility: hidden;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+/* Optimización de hover effects usando transform3d */
+.artist-card {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 0.3s ease,
+              box-shadow 0.3s ease !important;
+}
+
+.artist-card:hover {
+  transform: translate3d(0, -12px, 0) scale3d(1.02, 1.02, 1) !important;
+  border-color: rgba(95,164,255,0.4) !important;
+  /* Sombra simplificada para mejor performance */
+  box-shadow: 0 20px 40px rgba(95,164,255,0.2) !important;
+}
+
+/* Optimización de imagen con transform3d */
+.artist-card img {
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.artist-card:hover img {
+  transform: translate3d(0, 0, 0) scale3d(1.08, 1.08, 1);
+}
+
+/* Optimización de gradientes - usar pseudo-elementos para mejor performance */
+.card-glow {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  /* Reducir blur para mejor performance */
+  filter: blur(8px);
+}
+
+.artist-card:hover .card-glow {
+  opacity: 0.6;
+}
+
+/* Contenement para prevenir layout shifts */
+.team-section-working {
+  contain: layout style paint;
+}
+
+.artist-card {
+  contain: layout style paint;
+  /* Optimización del repaint */
+  isolation: isolate;
+}
+
+/* Optimizar animaciones usando composite layers */
+.artist-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: transparent;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.artist-card:hover::before {
+  opacity: 1;
+  background: rgba(95, 164, 255, 0.05);
+}
+
+/* Optimización para dispositivos móviles */
+@media (max-width: 768px) {
+  .artist-card {
+    /* Reducir efectos en móvil para mejor performance */
+    will-change: auto;
+  }
+  
+  .artist-card:hover {
+    transform: translate3d(0, -8px, 0) !important;
+    box-shadow: 0 12px 24px rgba(95,164,255,0.15) !important;
+  }
+  
+  .artist-card:hover img {
+    transform: translate3d(0, 0, 0) scale3d(1.05, 1.05, 1);
+  }
+}
+
+/* Optimización para dispositivos de bajo rendimiento */
+@media (prefers-reduced-motion: reduce) {
+  .artist-card,
+  .artist-card img,
+  .card-glow {
+    transition: none !important;
+    animation: none !important;
+  }
+  
+  .artist-card:hover {
+    transform: none !important;
+  }
+}
+
+/* Lazy loading optimizations */
+.artist-card img {
+  content-visibility: auto;
+  contain-intrinsic-size: 200px;
+}
+
+/* Optimización de z-index layers */
+.artist-card {
+  z-index: 1;
+}
+
+.artist-card:hover {
+  z-index: 2;
+}
+
+/* Performance hint para el navegador */
+.team-container {
+  /* Hint al navegador sobre el contenido */
+  content-visibility: auto;
+}
+
+/* Throttling de hover effects para mejor UX */
+.artist-card {
+  pointer-events: auto;
+}
+
+.artist-card.processing-hover {
+  pointer-events: none;
+} 

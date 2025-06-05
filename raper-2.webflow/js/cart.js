@@ -77,6 +77,10 @@ function closeSideCart() {
 function renderCartContent(container) {
   if (!container) return;
   
+  // Sincronizar carrito con localStorage antes de renderizar
+  cart = JSON.parse(localStorage.getItem('raperCart')) || [];
+  console.log('🔄 Sincronizando carrito para renderizar:', cart.length, 'items');
+  
   if (cart.length === 0) {
     container.innerHTML = `
       <div class="empty-cart">
@@ -250,10 +254,15 @@ function showCartNotification(message) {
 
 // Función para actualizar el contador del carrito
 function updateCartCount() {
+  // Siempre sincronizar con localStorage primero
+  cart = JSON.parse(localStorage.getItem('raperCart')) || [];
+  
   const cartCount = document.getElementById('cart-count');
   if (cartCount) {
     const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
     cartCount.textContent = totalItems;
+    
+    console.log('🔢 Contador del carrito actualizado:', totalItems, 'items');
     
     // Efecto de animación
     cartCount.style.transform = 'scale(1.3)';

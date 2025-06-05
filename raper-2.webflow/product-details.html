@@ -720,7 +720,7 @@ body {
       }, 200);
     }
 
-    // Función para agregar al carrito (COMPLETAMENTE ARREGLADA)
+    // Función para agregar al carrito (SIMPLIFICADA Y ARREGLADA)
     function addToCart() {
       console.log('🛒 === INICIANDO PROCESO DE CARRITO ===');
       
@@ -768,42 +768,52 @@ body {
       
       let success = false;
       
-      // SISTEMA MEJORADO - TRIPLE MÉTODO
-      
-      // Método A: Sistema principal (si existe)
+      // USAR DIRECTAMENTE EL SISTEMA PRINCIPAL DE CART.JS
       try {
-        if (typeof window.addToCart !== 'undefined' && window.addToCart !== addToCart) {
-          console.log('🔄 Intentando con sistema principal...');
+        console.log('🔍 Estado del sistema:', {
+          hasGlobalAddToCart: typeof window.addToCart === 'function',
+          isItSameFunction: window.addToCart === addToCart,
+          productId: productId,
+          quantity: quantity
+        });
+        
+        if (typeof window.addToCart === 'function' && window.addToCart !== addToCart) {
+          console.log('🔄 Usando sistema principal de cart.js...');
+          
+          // Verificar el estado inicial del carrito
+          const initialCart = JSON.parse(localStorage.getItem('raperCart')) || [];
+          console.log('📋 Carrito inicial:', initialCart.length, 'items');
+          
+          // Agregar la cantidad correcta
+          success = true;
           for (let i = 0; i < quantity; i++) {
-            success = window.addToCart(productId);
-            if (!success) break;
+            const itemSuccess = window.addToCart(productId);
+            if (!itemSuccess) {
+              success = false;
+              console.error(`❌ Falló al agregar item ${i + 1}/${quantity}`);
+              break;
+            }
+            console.log(`✅ Item ${i + 1}/${quantity} agregado exitosamente`);
           }
-          if (success) console.log('✅ Éxito con sistema principal');
+          
+          if (success) {
+            // Verificar el estado final del carrito
+            const finalCart = JSON.parse(localStorage.getItem('raperCart')) || [];
+            console.log('📋 Carrito final:', finalCart.length, 'items');
+            console.log('✅ Éxito con cart.js');
+          }
+        } else {
+          console.log('🔄 Sistema cart.js no disponible, usando fallback...');
+          console.log('🔍 Razón:', {
+            globalAddToCartExists: typeof window.addToCart === 'function',
+            isSameFunction: window.addToCart === addToCart
+          });
+          success = addToCartDirectlyFixed(productId, quantity);
         }
       } catch (error) {
         console.error('❌ Error con sistema principal:', error);
-        success = false;
-      }
-      
-      // Método B: Sistema de cart.js (si existe)
-      if (!success) {
-        try {
-          if (typeof addToCartFromDetails === 'function') {
-            console.log('🔄 Intentando con cart.js...');
-            success = addToCartFromDetails(productId, quantity);
-            if (success) console.log('✅ Éxito con cart.js');
-          }
-        } catch (error) {
-          console.error('❌ Error con cart.js:', error);
-          success = false;
-        }
-      }
-      
-      // Método C: Fallback directo garantizado
-      if (!success) {
-        console.log('🔄 Usando método fallback GARANTIZADO...');
+        console.log('🔄 Usando fallback...');
         success = addToCartDirectlyFixed(productId, quantity);
-        if (success) console.log('✅ Éxito con método fallback');
       }
       
       // Mostrar resultado
@@ -816,6 +826,11 @@ body {
           // Efectos de éxito
           showProductSuccessNotification(productId, quantity);
           updateCartCountFromDetails();
+          
+          // Asegurarse de que el contador principal también se actualice
+          if (typeof window.updateCartCount === 'function') {
+            window.updateCartCount();
+          }
           
           console.log(`✅ === ÉXITO TOTAL: ${quantity} producto(s) agregado(s) ===`);
           

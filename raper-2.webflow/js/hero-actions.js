@@ -1,3 +1,66 @@
+// Información de la empresa RAPER Company
+const heroCompany = {
+  name: "RAPER Company",
+  tagline: "Producimos tu carrera",
+  description: "Sello discográfico y productora musical de vanguardia"
+};
+
+// Función para mostrar información de la empresa (sin carrito)
+function showCompanyInfo() {
+  console.log('Mostrando información de RAPER Company...');
+  
+  // Crear notificación informativa
+  const notification = document.createElement('div');
+  notification.className = 'company-notification';
+  notification.style.cssText = `
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    background: linear-gradient(135deg, #5fa4ff, #4fd1c5);
+    color: #000;
+    padding: 20px 28px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 14px;
+    z-index: 10000;
+    box-shadow: 0 8px 32px rgba(95, 164, 255, 0.4);
+    transform: translateX(300px);
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    max-width: 300px;
+  `;
+  
+  notification.innerHTML = `
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <span style="font-size: 18px;">🎵</span>
+      <div>
+        <div style="font-weight: 700; margin-bottom: 4px;">${heroCompany.name}</div>
+        <div style="font-size: 12px; opacity: 0.8; line-height: 1.3;">${heroCompany.tagline}</div>
+        <div style="font-size: 11px; opacity: 0.7; margin-top: 2px;">${heroCompany.description}</div>
+      </div>
+    </div>
+  `;
+  
+  document.body.appendChild(notification);
+  
+  // Animar entrada
+  setTimeout(() => {
+    notification.style.transform = 'translateX(0)';
+    notification.style.opacity = '1';
+  }, 100);
+  
+  // Animar salida después de 4 segundos
+  setTimeout(() => {
+    notification.style.transform = 'translateX(300px)';
+    notification.style.opacity = '0';
+    setTimeout(() => {
+      if (notification.parentNode) {
+        notification.parentNode.removeChild(notification);
+      }
+    }, 400);
+  }, 4000);
+}
+
 // Producto auricular celeste protagonista
 const heroProduct = {
   id: 1,
