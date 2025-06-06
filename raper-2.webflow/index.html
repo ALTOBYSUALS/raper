@@ -647,6 +647,12 @@ margin: 0rem !important;
       
       <!-- Mobile Menu -->
       <div class="mobile-menu" id="mobile-menu">
+        <!-- Botón de cerrar -->
+        <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Cerrar menú">
+          <span class="close-line close-line-1"></span>
+          <span class="close-line close-line-2"></span>
+        </button>
+        
         <div class="mobile-menu-links">
           <a href="/" class="mobile-menu-link">Inicio</a>
           <a href="/store.html" class="mobile-menu-link">Tienda</a>
@@ -730,66 +736,66 @@ margin: 0rem !important;
         <div class="luxury-particles" id="particles-container"></div>
       </div>
 
-      <!-- Banner de Próximo Estreno -->
+      <!-- Banner Musical Comprimido con iconos encima -->
       <section class="spotify-presave-banner">
-        <!-- Imagen de fondo con overlay -->
+        <!-- Imagen de fondo a 100vh -->
         <div class="spotify-banner-background">
-          <img src="https://res.cloudinary.com/dyrgyzca3/image/upload/v1748371554/BANNER3_qdi9ei.jpg" alt="Próximo Estreno RAPER" class="spotify-banner-image">
+            <img src="https://res.cloudinary.com/dyrgyzca3/image/upload/v1748371554/BANNER3_qdi9ei.jpg" alt="Próximo Estreno RAPER" class="spotify-banner-image">
           <div class="spotify-background-overlay"></div>
         </div>
         
-        <!-- Contenido del banner -->
+        <!-- Contenido del banner con iconos encima -->
         <div class="spotify-banner-content">
-          <!-- Título principal centrado -->
-          <div class="main-title-section">
-            <h2 class="estreno-title">PRÓXIMO ESTRENO 5/06</h2>
-          </div>
-          
-          <!-- Botón de play centrado -->
-          <div class="play-section">
+                <!-- Título del tema -->
+                <div class="song-title-section">
+                  <h2 class="song-title">RAP en NY- RAPER</h2>
+                </div>
+                
+                <!-- Iconos de plataformas ENCIMA -->
+                <div class="platforms-grid-overlay">
+                  <a href="https://open.spotify.com" target="_blank" class="platform-item spotify">
+                    <div class="platform-icon-wrapper">
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg" alt="Spotify">
+                    </div>
+                    <span>Spotify</span>
+                  </a>
+                  
+                  <a href="https://music.youtube.com" target="_blank" class="platform-item youtube-music">
+                    <div class="platform-icon-wrapper">
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Youtube_Music_icon.svg" alt="YouTube Music">
+                    </div>
+                    <span>YouTube Music</span>
+                  </a>
+                  
+                  <a href="https://music.apple.com" target="_blank" class="platform-item apple-music">
+                    <div class="platform-icon-wrapper">
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Apple_Music_icon.svg" alt="Apple Music">
+                    </div>
+                    <span>Apple Music</span>
+                  </a>
+                  
+                  <a href="https://www.youtube.com" target="_blank" class="platform-item youtube">
+                    <div class="platform-icon-wrapper">
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg" alt="YouTube">
+                        </div>
+                    <span>YouTube</span>
+                </a>
+                </div>
+                
+                <!-- Título de estreno -->
+                <div class="main-title-section">
+                  <h2 class="estreno-title">PRÓXIMO ESTRENO 5/06</h2>
+                </div>
+                
+                <!-- Botón de play centrado -->
+                <div class="play-section">
             <a href="https://open.spotify.com" target="_blank" class="spotify-play-button">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="play-icon">
-                <path d="M8 5.14V19.14L19 12.14L8 5.14Z" fill="currentColor"/>
-              </svg>
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="play-icon">
+                      <path d="M8 5.14V19.14L19 12.14L8 5.14Z" fill="currentColor"/>
+                    </svg>
             </a>
-          </div>
-        </div>
-      </section>
-
-      <!-- Sección separada para iconos de plataformas en móvil -->
-      <section class="platforms-section">
-        <div class="platforms-content">
-          <h3 class="platforms-title">Escúchalo en todas las plataformas</h3>
-          <div class="platforms-grid">
-            <a href="https://open.spotify.com" target="_blank" class="platform-item spotify">
-              <div class="platform-icon-wrapper">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg" alt="Spotify">
-              </div>
-              <span>Spotify</span>
-            </a>
-            
-            <a href="https://music.youtube.com" target="_blank" class="platform-item youtube-music">
-              <div class="platform-icon-wrapper">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Youtube_Music_icon.svg" alt="YouTube Music">
-              </div>
-              <span>YouTube Music</span>
-            </a>
-            
-            <a href="https://music.apple.com" target="_blank" class="platform-item apple-music">
-              <div class="platform-icon-wrapper">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Apple_Music_icon.svg" alt="Apple Music">
-              </div>
-              <span>Apple Music</span>
-            </a>
-            
-            <a href="https://www.youtube.com" target="_blank" class="platform-item youtube">
-              <div class="platform-icon-wrapper">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg" alt="YouTube">
-              </div>
-              <span>YouTube</span>
-            </a>
-          </div>
-        </div>
+                  </div>
+                </div>
       </section>
 
       <!-- Estilos nuevos para hero centrado -->
@@ -957,185 +963,190 @@ margin: 0rem !important;
         /* Tablets */
         @media (max-width: 768px) {
           .video-hero-section {
-            min-height: 600px;
+            min-height: 100vh;
+            height: auto;
             overflow-x: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
           }
           
           .hero-main-content {
-            grid-template-columns: 1fr;
-            gap: 3rem;
-            padding: 0 2rem;
-            text-align: center;
-            justify-items: center;
-            align-items: center;
-            overflow-x: hidden;
-            width: 100%;
-            max-width: 100%;
-          }
-          
-          .hero-product-info {
-            order: 2;
-            text-align: center;
-            padding-left: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            gap: 1rem;
             width: 100%;
-            max-width: 100%;
+            max-width: 500px;
+            text-align: center;
+            padding: 0;
+          }
+          
+          .hero-product-info {
+            order: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-bottom: 0.5rem;
           }
           
           .hero-auricular-section {
-            order: 1;
+            order: 2;
             display: flex;
             justify-content: center;
             align-items: center;
             width: 100%;
-            max-width: 100%;
-            overflow: hidden;
+            margin-top: -0.8rem;
           }
           
           .hero-auricular-container {
             width: 100%;
-            max-width: 400px;
+            max-width: 300px;
             display: flex;
             justify-content: center;
             align-items: center;
-            overflow: hidden;
+            position: relative;
           }
           
           .hero-product-title {
-            justify-content: center;
-            text-align: center;
+            display: flex;
+            flex-direction: row;
             align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 1rem;
           }
           
           .hero-logo-img {
-            height: 80px;
+            height: 70px;
+            width: auto;
           }
           
           .hero-company-text {
-            font-size: 4rem;
-            text-align: center;
+            font-size: 3.5rem;
+            line-height: 1;
           }
           
           .hero-product-subtitle {
-            font-size: 1.8rem;
-            text-align: center;
-            width: 100%;
+            font-size: 1.6rem;
+            margin-top: 0.5rem;
+            opacity: 0.9;
           }
           
           .hero-auricular-main {
             width: 100%;
-            max-width: 350px;
-            transform: scale(1.05);
-            margin: 0 auto;
-            display: block;
+            max-width: 280px;
+            height: auto;
+            transform: scale(1.1);
           }
         }
         
         /* Mobile */
         @media (max-width: 480px) {
           .video-hero-section {
-            min-height: 500px;
-            padding: 20px 15px;
-            overflow-x: hidden;
+            min-height: 100vh;
+            height: auto;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
           }
           
           .hero-main-content {
-            gap: 2rem;
-            padding: 0 1rem;
-            overflow-x: hidden;
-            justify-items: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            margin-top: -10vh;
           }
           
           .hero-product-info {
-            width: 100% !important;
-            max-width: 100% !important;
-            padding-left: 0 !important;
-            padding-right: 0 !important;
-            margin: 0 auto !important;
+            order: 2;
+            margin-bottom: 0;
           }
           
           .hero-product-title {
+            display: flex;
             flex-direction: column;
-            gap: 15px;
-            margin-bottom: 1.5rem;
-            justify-content: center !important;
-            align-items: center !important;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 0.4rem;
           }
           
           .hero-logo-img {
-            height: 60px;
-            margin-right: 0;
+            height: 50px;
+            width: auto;
           }
           
           .hero-company-text {
-            font-size: 2.8rem;
-            line-height: 0.9;
-            text-align: center !important;
+            font-size: 2.2rem;
+            line-height: 1;
+            margin: 0;
           }
           
           .hero-product-subtitle {
-            font-size: 1.4rem;
-            padding: 0 10px;
-            text-align: center !important;
-            width: 100% !important;
+            font-size: 1.2rem;
+            margin-top: 0.3rem;
+            margin-bottom: 0;
+            opacity: 0.9;
           }
           
           .hero-auricular-section {
-            opacity: 0.8;
-            width: 100% !important;
-            max-width: 100% !important;
-            overflow: hidden !important;
-            display: flex !important;
-            justify-content: center !important;
-            align-items: center !important;
+            order: 1;
+            width: 100%;
+            margin-bottom: -0.5rem;
           }
           
           .hero-auricular-container {
-            width: 100% !important;
-            max-width: 280px !important;
-            display: flex !important;
-            justify-content: center !important;
-            align-items: center !important;
-            overflow: hidden !important;
+            width: 100%;
+            max-width: 260px;
+            margin: 0 auto;
           }
           
           .hero-auricular-main {
-            width: 100% !important;
-            max-width: 250px !important;
-            transform: scale(1) !important;
-            margin: 0 auto !important;
-            display: block !important;
+            width: 100%;
+            max-width: 240px;
+            height: auto;
+            transform: scale(1.1);
           }
         }
         
         /* Very small mobile */
         @media (max-width: 360px) {
-          .hero-company-text {
-            font-size: 2.2rem;
-            text-align: center !important;
-          }
-          
-          .hero-product-subtitle {
-            font-size: 1.2rem;
-            text-align: center !important;
+          .hero-main-content {
+            max-width: 320px;
+            gap: 0.2rem;
           }
           
           .hero-logo-img {
-            height: 50px;
+            height: 45px;
           }
           
-          .hero-auricular-main {
-            width: 100% !important;
-            max-width: 220px !important;
-            transform: scale(1) !important;
-            margin: 0 auto !important;
+          .hero-company-text {
+            font-size: 2rem;
+            line-height: 1;
+          }
+          
+          .hero-product-subtitle {
+            font-size: 1.1rem;
           }
           
           .hero-auricular-container {
-            max-width: 250px !important;
+            max-width: 200px;
+          }
+          
+          .hero-auricular-main {
+            max-width: 180px;
+            transform: scale(1.3);
           }
         }
         
@@ -1241,6 +1252,52 @@ margin: 0rem !important;
           letter-spacing: 0.05em;
         }
         
+        /* ===== BOTÓN DE CERRAR MENÚ MÓVIL ===== */
+        .mobile-menu-close {
+          position: absolute;
+          top: 20px;
+          right: 20px;
+          width: 40px;
+          height: 40px;
+          background: rgba(255, 255, 255, 0.1);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          border-radius: 50%;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0;
+          z-index: 10000;
+        }
+        
+        .mobile-menu-close:hover {
+          background: rgba(95, 164, 255, 0.2);
+          border-color: rgba(95, 164, 255, 0.5);
+          transform: scale(1.1);
+        }
+        
+        .close-line {
+          position: absolute;
+          width: 18px;
+          height: 2px;
+          background: #fff;
+          border-radius: 1px;
+          transition: all 0.3s ease;
+        }
+        
+        .close-line-1 {
+          transform: rotate(45deg);
+        }
+        
+        .close-line-2 {
+          transform: rotate(-45deg);
+        }
+        
+        .mobile-menu-close:hover .close-line {
+          background: #5fa4ff;
+        }
+        
         /* ===== NAVEGACIÓN MÓVIL Y TABLET ===== */
         @media (max-width: 768px) {
           .container-large,
@@ -1300,73 +1357,79 @@ margin: 0rem !important;
           }
         }
         
-        /* ===== NAVEGACIÓN DESKTOP - FORZAR REGLAS ===== */
-        .nav-links {
-          display: flex !important;
-        }
-        
-        .mobile-menu-toggle {
-          display: none !important;
-        }
-        
-        .mobile-menu {
-          display: none !important;
+        /* ===== NAVEGACIÓN DESKTOP - FORZAR REGLAS SOLO EN DESKTOP ===== */
+        @media (min-width: 769px) {
+          .nav-links {
+            display: flex !important;
+          }
+          
+          .mobile-menu-toggle {
+            display: none !important;
+          }
+          
+          .mobile-menu {
+            display: none !important;
+          }
         }
         
         /* ===== MEJORAS HAMBURGUESA - SOLO MÓVIL ===== */
-        .mobile-menu-toggle {
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          width: 45px;
-          height: 45px;
-          background: rgba(255, 255, 255, 0.1);
-          border: 1px solid rgba(255, 255, 255, 0.2);
-          border-radius: 8px;
-          cursor: pointer;
-          transition: all 0.3s ease;
-          padding: 0.5rem;
+        @media (max-width: 768px) {
+          .mobile-menu-toggle {
+            display: flex !important;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            padding: 0.5rem;
+          }
         }
         
-        .mobile-menu-toggle:hover {
-          background: rgba(95, 164, 255, 0.2);
-          border-color: rgba(95, 164, 255, 0.5);
-        }
-        
-        .mobile-menu-toggle.active {
-          background: rgba(95, 164, 255, 0.3);
-          border-color: rgba(95, 164, 255, 0.7);
-        }
-        
-        .hamburger-line {
-          width: 25px;
-          height: 3px;
-          background: #fff;
-          margin: 2px 0;
-          transition: all 0.3s ease;
-          border-radius: 2px;
-        }
-        
-        .mobile-menu-toggle.active .hamburger-line:nth-child(1) {
-          transform: rotate(45deg) translate(6px, 6px);
-        }
-        
-        .mobile-menu-toggle.active .hamburger-line:nth-child(2) {
-          opacity: 0;
-        }
-        
-        .mobile-menu-toggle.active .hamburger-line:nth-child(3) {
-          transform: rotate(-45deg) translate(7px, -6px);
+          .mobile-menu-toggle:hover {
+            background: rgba(95, 164, 255, 0.2);
+            border-color: rgba(95, 164, 255, 0.5);
+          }
+          
+          .mobile-menu-toggle.active {
+            background: rgba(95, 164, 255, 0.3);
+            border-color: rgba(95, 164, 255, 0.7);
+          }
+          
+          .hamburger-line {
+            width: 25px;
+            height: 3px;
+            background: #fff;
+            margin: 2px 0;
+            transition: all 0.3s ease;
+            border-radius: 2px;
+          }
+          
+          .mobile-menu-toggle.active .hamburger-line:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+          }
+          
+          .mobile-menu-toggle.active .hamburger-line:nth-child(2) {
+            opacity: 0;
+          }
+          
+          .mobile-menu-toggle.active .hamburger-line:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+          }
         }
         </style>
 
       <!-- Estilos nuevos para banner separado -->
       <style>
-        /* ===== BANNER PRINCIPAL ===== */
+        /* ===== BANNER PRINCIPAL COMPRIMIDO ===== */
         .spotify-presave-banner {
           position: relative;
           width: 100%;
-          height: 500px;
+          height: 100vh;
           overflow: hidden;
           display: flex;
           align-items: center;
@@ -1399,7 +1462,7 @@ margin: 0rem !important;
           background: rgba(0, 0, 0, 0.5);
         }
         
-        /* Contenido del banner */
+        /* Contenido del banner reorganizado */
         .spotify-banner-content {
           position: relative;
           z-index: 2;
@@ -1410,18 +1473,44 @@ margin: 0rem !important;
           text-align: center;
           padding: 40px 20px;
           width: 100%;
-          max-width: 800px;
+          max-width: 1000px;
+          gap: 40px;
         }
         
-        /* Título */
+        /* Título del tema */
+        .song-title-section {
+          margin-bottom: 20px;
+        }
+        
+        .song-title {
+          color: white;
+          font-size: 3.5rem;
+          font-weight: 800;
+          text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+          margin: 0;
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+        }
+        
+        /* Iconos de plataformas ENCIMA */
+        .platforms-grid-overlay {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 25px;
+          max-width: 600px;
+          width: 100%;
+          margin: 0 auto;
+        }
+        
+        /* Título de estreno reposicionado */
         .main-title-section {
-          margin-bottom: 40px;
+          margin-bottom: 30px;
         }
         
         .estreno-title {
           color: white;
-          font-size: 4.5rem;
-          font-weight: 900;
+          font-size: 3rem;
+          font-weight: 700;
           text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
           margin: 0;
           letter-spacing: 0.1em;
@@ -1881,76 +1970,94 @@ margin: 0rem !important;
         
         @media (max-width: 768px) {
           .team-section-working {
-            padding: 60px 0 !important;
+            padding: 70px 0 !important;
+            min-height: 100vh !important;
           }
           
           .team-section-working h2 {
-            font-size: 3rem !important;
-            margin-bottom: 15px !important;
+            font-size: 3.2rem !important;
+            margin-bottom: 20px !important;
+            padding: 0 15px !important;
           }
           
           .team-section-working p {
-            font-size: 1.4rem !important;
-            margin-bottom: 50px !important;
+            font-size: 1.5rem !important;
+            margin-bottom: 55px !important;
+            padding: 0 15px !important;
+            line-height: 1.5 !important;
           }
           
           .team-container > div {
-            gap: 20px;
+            gap: 30px;
+            padding: 0 15px !important;
           }
           
           .artist-card {
-            width: 280px !important;
-            padding: 25px 20px !important;
+            width: 320px !important;
+            padding: 30px 25px !important;
+            margin-bottom: 15px !important;
+            min-height: 420px !important;
           }
           
           .artist-card h3 {
-            font-size: 2.2rem !important;
+            font-size: 2.3rem !important;
+            margin-bottom: 12px !important;
           }
           
           .artist-card p {
-            font-size: 1.2rem !important;
+            font-size: 1.3rem !important;
+            line-height: 1.5 !important;
           }
         }
         
         @media (max-width: 480px) {
           .team-section-working {
-            padding: 40px 0 !important;
+            padding: 80px 0 !important;
+            min-height: 100vh !important;
           }
           
           .team-section-working h2 {
-            font-size: 2.5rem !important;
-            margin-bottom: 10px !important;
+            font-size: 2.8rem !important;
+            margin-bottom: 25px !important;
+            padding: 0 15px !important;
           }
           
           .team-section-working p {
-            font-size: 1.2rem !important;
-            margin-bottom: 40px !important;
-            padding: 0 10px !important;
+            font-size: 1.3rem !important;
+            margin-bottom: 60px !important;
+            padding: 0 20px !important;
+            line-height: 1.5 !important;
           }
           
           .team-container > div {
-            gap: 15px;
+            gap: 35px;
             flex-direction: column !important;
             align-items: center !important;
+            padding: 0 15px !important;
           }
           
           .artist-card {
             width: 100% !important;
-            max-width: 300px !important;
-            padding: 20px 15px !important;
+            max-width: 340px !important;
+            padding: 35px 25px !important;
+            margin-bottom: 20px !important;
+            min-height: 450px !important;
           }
           
           .artist-card div[style*="width: 200px"] {
-            width: 150px !important;
-            height: 150px !important;
+            width: 180px !important;
+            height: 180px !important;
+            margin-bottom: 25px !important;
           }
           
           .artist-card h3 {
-            font-size: 1.8rem !important;
+            font-size: 2rem !important;
+            margin-bottom: 15px !important;
           }
           
           .artist-card p {
-            font-size: 1rem !important;
+            font-size: 1.1rem !important;
+            line-height: 1.6 !important;
           }
         }
       </style>
@@ -2728,7 +2835,14 @@ margin: 0rem !important;
     document.addEventListener('DOMContentLoaded', function() {
       const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
       const mobileMenu = document.getElementById('mobile-menu');
+      const mobileMenuClose = document.getElementById('mobile-menu-close');
       const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+      
+      function closeMenu() {
+        mobileMenuToggle.classList.remove('active');
+        mobileMenu.classList.remove('active');
+        document.body.style.overflow = '';
+      }
       
       if (mobileMenuToggle && mobileMenu) {
         // Toggle menu
@@ -2738,21 +2852,24 @@ margin: 0rem !important;
           document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
         });
         
+        // Close menu with X button
+        if (mobileMenuClose) {
+          mobileMenuClose.addEventListener('click', function() {
+            closeMenu();
+          });
+        }
+        
         // Close menu when clicking on links
         mobileMenuLinks.forEach(link => {
           link.addEventListener('click', function() {
-            mobileMenuToggle.classList.remove('active');
-            mobileMenu.classList.remove('active');
-            document.body.style.overflow = '';
+            closeMenu();
           });
         });
         
         // Close menu when clicking outside
         document.addEventListener('click', function(e) {
           if (!mobileMenu.contains(e.target) && !mobileMenuToggle.contains(e.target) && mobileMenu.classList.contains('active')) {
-            mobileMenuToggle.classList.remove('active');
-            mobileMenu.classList.remove('active');
-            document.body.style.overflow = '';
+            closeMenu();
           }
         });
       }

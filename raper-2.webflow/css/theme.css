@@ -2239,36 +2239,65 @@ html {
 }
 
 @media (max-width: 767px) {
+  .section_h2 {
+    padding: 80px 0 !important;
+    min-height: 100vh !important;
+  }
+  
+  .h2__audio-performance {
+    margin-bottom: 60px !important;
+    padding: 0 20px !important;
+  }
+  
+  .sub-heading {
+    font-size: 2.5rem !important;
+    margin-bottom: 20px !important;
+  }
+  
+  .heading-style-h2 {
+    font-size: 3.2rem !important;
+    margin-bottom: 40px !important;
+  }
+  
   .featured-products-grid {
     grid-template-columns: 1fr;
-    gap: 2rem;
-    padding: 0 1.5rem;
+    gap: 3.5rem;
+    padding: 0 20px;
+    margin-top: 40px !important;
   }
   
   .featured-product-card {
-    padding: 2rem;
+    padding: 3rem 2.5rem;
+    min-height: 500px !important;
+    margin-bottom: 20px;
   }
   
   .featured-icon {
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 25px;
   }
   
   .featured-title {
-    font-size: 1.8rem;
+    font-size: 2.2rem;
+    margin-bottom: 20px;
   }
   
   .featured-description {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
+    line-height: 1.7;
+    margin-bottom: 30px;
   }
   
   .featured-price {
-    font-size: 1.6rem;
+    font-size: 2rem;
+    margin-bottom: 25px;
   }
   
   .featured-cta-button {
     width: 100%;
-    padding: 1.2rem;
+    padding: 1.5rem;
+    font-size: 1.5rem;
   }
 }
 
@@ -3062,6 +3091,50 @@ html {
     margin: 1rem;
     padding: 2rem; /* Aumentado padding */
     border-radius: 16px;
+  }
+  
+  /* Descomprimir más en móviles muy pequeños */
+  .section_h2 {
+    padding: 100px 0 !important;
+    min-height: 120vh !important;
+  }
+  
+  .featured-products-grid {
+    gap: 4rem !important;
+    padding: 0 15px !important;
+  }
+  
+  .featured-product-card {
+    padding: 3.5rem 2rem !important;
+    min-height: 550px !important;
+    margin-bottom: 30px !important;
+  }
+  
+  .featured-icon {
+    width: 90px !important;
+    height: 90px !important;
+    margin-bottom: 30px !important;
+  }
+  
+  .featured-title {
+    font-size: 2.4rem !important;
+    margin-bottom: 25px !important;
+  }
+  
+  .featured-description {
+    font-size: 1.6rem !important;
+    line-height: 1.8 !important;
+    margin-bottom: 35px !important;
+  }
+  
+  .featured-price {
+    font-size: 2.2rem !important;
+    margin-bottom: 30px !important;
+  }
+  
+  .featured-cta-button {
+    padding: 1.8rem !important;
+    font-size: 1.6rem !important;
   }
   
   /* Asegurar que el texto sea legible en pantallas muy pequeñas */
