@@ -744,16 +744,31 @@ margin: 0rem !important;
           <div class="spotify-background-overlay"></div>
         </div>
         
-        <!-- Contenido del banner con iconos encima -->
+        <!-- Contenido del banner reorganizado -->
         <div class="spotify-banner-content">
                 <!-- Título del tema -->
                 <div class="song-title-section">
                   <h2 class="song-title">RAP en NY- RAPER</h2>
+                  <p class="song-subtitle">Nuevo movimiento</p>
+                  <p class="song-call-to-action">Ya disponible anda a darle amor</p>
                 </div>
                 
-                <!-- Iconos de plataformas ENCIMA -->
+                <!-- Título de estreno y botón juntos -->
+                <div class="main-title-section">
+                  <h2 class="estreno-title">PRÓXIMO ESTRENO 5/06</h2>
+                  <!-- Botón de play inmediatamente después -->
+                  <div class="play-section">
+                    <a href="https://open.spotify.com/intl-es/album/2OcHxSJRmQG1FfOcfxQ8qS?referral=labelaffiliate&utm_source=1100lAsWkpjF&utm_medium=Indie_Distrokid&utm_campaign=labelaffiliate" target="_blank" class="spotify-play-button">
+                      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="play-icon">
+                        <path d="M8 5.14V19.14L19 12.14L8 5.14Z" fill="currentColor"/>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+                
+                <!-- Iconos de plataformas al final -->
                 <div class="platforms-grid-overlay">
-                  <a href="https://open.spotify.com" target="_blank" class="platform-item spotify">
+                  <a href="https://open.spotify.com/intl-es/album/2OcHxSJRmQG1FfOcfxQ8qS?referral=labelaffiliate&utm_source=1100lAsWkpjF&utm_medium=Indie_Distrokid&utm_campaign=labelaffiliate" target="_blank" class="platform-item spotify">
                     <div class="platform-icon-wrapper">
                       <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg" alt="Spotify">
                     </div>
@@ -767,7 +782,7 @@ margin: 0rem !important;
                     <span>YouTube Music</span>
                   </a>
                   
-                  <a href="https://music.apple.com" target="_blank" class="platform-item apple-music">
+                  <a href="https://music.apple.com/us/album/rap-en-ny-single/1817225669" target="_blank" class="platform-item apple-music">
                     <div class="platform-icon-wrapper">
                       <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Apple_Music_icon.svg" alt="Apple Music">
                     </div>
@@ -781,20 +796,6 @@ margin: 0rem !important;
                     <span>YouTube</span>
                 </a>
                 </div>
-                
-                <!-- Título de estreno -->
-                <div class="main-title-section">
-                  <h2 class="estreno-title">PRÓXIMO ESTRENO 5/06</h2>
-                </div>
-                
-                <!-- Botón de play centrado -->
-                <div class="play-section">
-            <a href="https://open.spotify.com" target="_blank" class="spotify-play-button">
-                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="play-icon">
-                      <path d="M8 5.14V19.14L19 12.14L8 5.14Z" fill="currentColor"/>
-                    </svg>
-            </a>
-                  </div>
                 </div>
       </section>
 
@@ -841,6 +842,7 @@ margin: 0rem !important;
           width: 100%;
           max-width: 1400px;
           padding: 0 4rem;
+          transform: translateY(-6rem);
         }
         
         /* Información del producto - IZQUIERDA */
@@ -850,6 +852,9 @@ margin: 0rem !important;
           justify-content: center;
           text-align: left;
           padding-left: 2rem;
+          margin-top: -8rem;
+          position: relative;
+          z-index: 10;
         }
         
         .hero-product-title {
@@ -991,7 +996,8 @@ margin: 0rem !important;
             align-items: center;
             justify-content: center;
             text-align: center;
-            margin-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            margin-top: -5rem;
           }
           
           .hero-auricular-section {
@@ -1065,7 +1071,7 @@ margin: 0rem !important;
             width: 100%;
             max-width: 400px;
             text-align: center;
-            margin-top: -10vh;
+            margin-top: -15vh;
           }
           
           .hero-product-info {
@@ -1731,32 +1737,184 @@ margin: 0rem !important;
           }
         }
         
-        /* Móviles */
+        /* Estilos para el nuevo texto del banner */
+        .song-subtitle {
+          color: #5fa4ff;
+          font-size: 2rem;
+          font-weight: 600;
+          margin: 10px 0 5px 0;
+          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+          letter-spacing: 0.05em;
+        }
+        
+        .song-call-to-action {
+          color: rgba(255, 255, 255, 0.9);
+          font-size: 1.8rem;
+          font-weight: 500;
+          margin: 5px 0 0 0;
+          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+          font-style: italic;
+        }
+
+        /* Móviles - MEJORADO */
         @media (max-width: 480px) {
           .spotify-presave-banner {
-            height: 350px;
+            height: 100vh;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+          
+          .spotify-banner-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+          }
+          
+          .spotify-banner-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+          }
+          
+          .spotify-background-overlay {
+            background: rgba(0, 0, 0, 0.65);
           }
           
           .spotify-banner-content {
-            padding: 20px 15px;
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 30px 20px;
+            width: 100%;
+            gap: 25px;
+            max-width: 100%;
           }
           
-          .estreno-title {
-            font-size: 2.5rem;
+          .song-title-section {
+            margin-bottom: 15px;
+            text-align: center;
+          }
+          
+          .song-title {
+            font-size: 2.8rem;
+            line-height: 1.2;
+            margin-bottom: 15px;
+            text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.9);
+          }
+          
+          .song-subtitle {
+            font-size: 2.2rem;
+            line-height: 1.3;
+            margin: 8px 0;
+            color: #5fa4ff;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
+          }
+          
+          .song-call-to-action {
+            font-size: 1.6rem;
+            line-height: 1.4;
+            margin: 8px 0 0 0;
+            color: rgba(255, 255, 255, 0.95);
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
+            max-width: 280px;
+          }
+          
+          .platforms-grid-overlay {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            max-width: 280px;
+            width: 100%;
+            margin: 0 auto;
+          }
+          
+          .platform-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            background: linear-gradient(145deg, rgba(0,0,0,0.7), rgba(15,15,15,0.8));
+            border-radius: 15px;
+            padding: 15px 10px;
+            border: 1px solid rgba(95,164,255,0.3);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+          }
+          
+          .platform-item:hover {
+            background: linear-gradient(145deg, rgba(95,164,255,0.2), rgba(0,0,0,0.8));
+            border-color: rgba(95,164,255,0.5);
+            transform: translateY(-3px);
+          }
+          
+          .platform-icon-wrapper {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 8px;
+            background: rgba(95, 164, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+          
+          .platform-icon-wrapper img {
+            width: 28px;
+            height: 28px;
+          }
+          
+          .platform-item span {
+            font-size: 1rem;
+            font-weight: 500;
+            color: white;
+            text-align: center;
           }
           
           .main-title-section {
-            margin-bottom: 30px;
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+          }
+          
+          .estreno-title {
+            font-size: 2.4rem;
+            line-height: 1.2;
+            text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.9);
+            margin: 0;
+          }
+          
+          .play-section {
+            margin: 0;
           }
           
           .spotify-play-button {
-            width: 70px;
-            height: 70px;
+            width: 80px;
+            height: 80px;
+            background: rgba(29, 185, 84, 0.95);
+            box-shadow: 0 8px 25px rgba(29, 185, 84, 0.4);
+          }
+          
+          .spotify-play-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 35px rgba(29, 185, 84, 0.6);
           }
           
           .play-icon {
-            width: 28px;
-            height: 28px;
+            width: 32px;
+            height: 32px;
             margin-left: 4px;
           }
           
@@ -1774,32 +1932,69 @@ margin: 0rem !important;
             gap: 20px;
             max-width: 400px;
           }
+        }
+        
+        /* Móviles muy pequeños - MEJORADO */
+        @media (max-width: 360px) {
+          .spotify-banner-content {
+            padding: 25px 15px;
+            gap: 20px;
+          }
+          
+          .song-title {
+            font-size: 2.4rem;
+          }
+          
+          .song-subtitle {
+            font-size: 1.8rem;
+          }
+          
+          .song-call-to-action {
+            font-size: 1.4rem;
+            max-width: 250px;
+          }
+          
+          .platforms-grid-overlay {
+            max-width: 240px;
+            gap: 12px;
+          }
           
           .platform-item {
-            padding: 20px 15px;
-            border-radius: 15px;
+            padding: 12px 8px;
           }
           
           .platform-icon-wrapper {
-            width: 60px;
-            height: 60px;
-            margin-bottom: 15px;
+            width: 45px;
+            height: 45px;
+            margin-bottom: 6px;
           }
           
           .platform-icon-wrapper img {
-            width: 35px;
-            height: 35px;
+            width: 24px;
+            height: 24px;
           }
           
           .platform-item span {
-            font-size: 1.1rem;
+            font-size: 0.9rem;
           }
-        }
-        
-        /* Móviles muy pequeños */
-        @media (max-width: 360px) {
+          
+          .main-title-section {
+            gap: 15px;
+            margin-bottom: 10px;
+          }
+          
           .estreno-title {
             font-size: 2rem;
+          }
+          
+          .spotify-play-button {
+            width: 70px;
+            height: 70px;
+          }
+          
+          .play-icon {
+            width: 28px;
+            height: 28px;
           }
           
           .platforms-title {
@@ -1809,24 +2004,6 @@ margin: 0rem !important;
           .platforms-grid {
             max-width: 320px;
             gap: 15px;
-          }
-          
-          .platform-item {
-            padding: 18px 12px;
-          }
-          
-          .platform-icon-wrapper {
-            width: 55px;
-            height: 55px;
-          }
-          
-          .platform-icon-wrapper img {
-            width: 30px;
-            height: 30px;
-          }
-          
-          .platform-item span {
-            font-size: 1rem;
           }
         }
       </style>
