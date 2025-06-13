@@ -2014,10 +2014,10 @@ margin: 0rem !important;
           <h2 style="color: #5fa4ff; font-size: 4.5rem; margin-bottom: 20px; font-weight: 700; text-shadow: 0 0 20px rgba(95, 164, 255, 0.3); display: flex; align-items: center; justify-content: center; gap: 15px;">Artistas de <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/Asset%2019supreme%20(1).png" alt="RAPER" style="height: 80px; width: auto; filter: drop-shadow(0 0 15px rgba(95, 164, 255, 0.5));"></h2>
           <p style="color: rgba(255,255,255,0.7); font-size: 1.8rem; margin-bottom: 80px; max-width: 800px; margin-left: auto; margin-right: auto;">Los visionarios detrás de la revolución musical</p>
           
-          <!-- Distribución optimizada para 5 personas (3+2) -->
+          <!-- Contenedor principal de artistas - Desktop: 3+2, Mobile: Horizontal scroll -->
           <div class="team-container">
             <!-- Primera fila - 3 personas -->
-            <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 40px; margin-bottom: 40px;">
+            <div class="desktop-row" style="display: flex; justify-content: center; flex-wrap: wrap; gap: 40px; margin-bottom: 40px;">
               <!-- Perro Primo -->
               <div class="artist-card" data-member="perro-primo" style="width: 320px; background: linear-gradient(145deg, rgba(25,25,25,0.8), rgba(15,15,15,0.9)); border-radius: 15px; padding: 40px 30px; border: 1px solid rgba(95,164,255,0.2); transition: all 0.4s ease; position: relative; overflow: hidden;">
                 <div class="card-glow" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; background: radial-gradient(circle at 30% 20%, rgba(255, 165, 0, 0.1) 0%, transparent 70%); z-index: 1; pointer-events: none;"></div>
@@ -2068,7 +2068,7 @@ margin: 0rem !important;
             </div>
             
             <!-- Segunda fila - 2 personas centradas -->
-            <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 40px;">
+            <div class="desktop-row" style="display: flex; justify-content: center; flex-wrap: wrap; gap: 40px;">
               <!-- Alex Rodriguez -->
               <div class="artist-card" data-member="alex" style="width: 320px; background: linear-gradient(145deg, rgba(25,25,25,0.8), rgba(15,15,15,0.9)); border-radius: 15px; padding: 40px 30px; border: 1px solid rgba(95,164,255,0.2); transition: all 0.4s ease; position: relative; overflow: hidden;">
                 <div class="card-glow" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; background: radial-gradient(circle at 30% 20%, rgba(138, 43, 226, 0.1) 0%, transparent 70%); z-index: 1; pointer-events: none;"></div>
@@ -2098,6 +2098,87 @@ margin: 0rem !important;
                   </div>
                   <h3 style="color: #FFD700; font-size: 2.8rem; margin: 0 0 10px 0; font-weight: 700;">Fabio</h3>
                   <p style="color: #5fa4ff; font-size: 1.4rem; text-transform: uppercase; margin: 0; font-weight: 600; letter-spacing: 0.05em;">ARTISTA</p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Mobile scroll container - Solo visible en mobile -->
+            <div class="mobile-scroll-container" style="display: none; overflow-x: auto; overflow-y: hidden; margin: 0 -20px; padding: 20px; scrollbar-width: thin; scrollbar-color: #5fa4ff rgba(255, 255, 255, 0.1);">
+              <div class="mobile-artists-row" style="display: flex; gap: 30px; width: max-content; padding: 0 10px;">
+                <!-- Repetir todas las tarjetas para mobile -->
+                <div class="artist-card mobile-card" style="width: 280px; min-width: 280px; background: linear-gradient(145deg, rgba(25,25,25,0.8), rgba(15,15,15,0.9)); border-radius: 15px; padding: 30px 25px; border: 1px solid rgba(95,164,255,0.2); transition: all 0.4s ease; position: relative; overflow: hidden; flex-shrink: 0;">
+                  <div class="card-glow" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; background: radial-gradient(circle at 30% 20%, rgba(255, 165, 0, 0.1) 0%, transparent 70%); z-index: 1; pointer-events: none;"></div>
+                  <div style="position: relative; z-index: 2;">
+                    <div style="width: 180px; height: 180px; margin: 0 auto 25px; border-radius: 15px; overflow: hidden; border: 4px solid #FFA500; box-shadow: 0 10px 30px rgba(255, 165, 0, 0.2);">
+                      <img src="https://res.cloudinary.com/dyrgyzca3/image/upload/v1748460740/rapper_Artistas_amzahq.png" 
+                           alt="Perro Primo" 
+                           loading="lazy"
+                           decoding="async"
+                           style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                    </div>
+                    <h3 style="color: #FFA500; font-size: 2rem; margin: 0 0 10px 0; font-weight: 700;">PERROPRIMO</h3>
+                    <p style="color: #5fa4ff; font-size: 1.1rem; text-transform: uppercase; margin: 0; font-weight: 600; letter-spacing: 0.05em;">ARTISTA</p>
+                  </div>
+                </div>
+                
+                <div class="artist-card mobile-card" style="width: 280px; min-width: 280px; background: linear-gradient(145deg, rgba(25,25,25,0.8), rgba(15,15,15,0.9)); border-radius: 15px; padding: 30px 25px; border: 1px solid rgba(95,164,255,0.2); transition: all 0.4s ease; position: relative; overflow: hidden; flex-shrink: 0;">
+                  <div class="card-glow" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; background: radial-gradient(circle at 30% 20%, rgba(255, 20, 147, 0.1) 0%, transparent 70%); z-index: 1; pointer-events: none;"></div>
+                  <div style="position: relative; z-index: 2;">
+                    <div style="width: 180px; height: 180px; margin: 0 auto 25px; border-radius: 15px; overflow: hidden; border: 4px solid #FF1493; box-shadow: 0 10px 30px rgba(255, 20, 147, 0.2);">
+                      <img src="https://res.cloudinary.com/dyrgyzca3/image/upload/v1748460740/RAPERSOFIA_hbwfmx.png" 
+                           alt="Sofia Martinez" 
+                           loading="lazy"
+                           decoding="async"
+                           style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                    </div>
+                    <h3 style="color: #FF1493; font-size: 2rem; margin: 0 0 10px 0; font-weight: 700;">Sofía</h3>
+                    <p style="color: #5fa4ff; font-size: 1.1rem; text-transform: uppercase; margin: 0; font-weight: 600; letter-spacing: 0.05em;">ARTISTA</p>
+                  </div>
+                </div>
+                
+                <div class="artist-card mobile-card" style="width: 280px; min-width: 280px; background: linear-gradient(145deg, rgba(25,25,25,0.8), rgba(15,15,15,0.9)); border-radius: 15px; padding: 30px 25px; border: 1px solid rgba(95,164,255,0.2); transition: all 0.4s ease; position: relative; overflow: hidden; flex-shrink: 0;">
+                  <div class="card-glow" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; background: radial-gradient(circle at 30% 20%, rgba(0, 255, 127, 0.1) 0%, transparent 70%); z-index: 1; pointer-events: none;"></div>
+                  <div style="position: relative; z-index: 2;">
+                    <div style="width: 180px; height: 180px; margin: 0 auto 25px; border-radius: 15px; overflow: hidden; border: 4px solid #00FF7F; box-shadow: 0 10px 30px rgba(0, 255, 127, 0.2);">
+                      <img src="https://res.cloudinary.com/dyrgyzca3/image/upload/v1748460740/dex_1_ybdvz5.png" 
+                           alt="Dexter" 
+                           loading="lazy"
+                           decoding="async"
+                           style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                    </div>
+                    <h3 style="color: #00FF7F; font-size: 2rem; margin: 0 0 10px 0; font-weight: 700;">Dexter</h3>
+                    <p style="color: #5fa4ff; font-size: 1.1rem; text-transform: uppercase; margin: 0; font-weight: 600; letter-spacing: 0.05em;">ARTISTA</p>
+                  </div>
+                </div>
+                
+                <div class="artist-card mobile-card" style="width: 280px; min-width: 280px; background: linear-gradient(145deg, rgba(25,25,25,0.8), rgba(15,15,15,0.9)); border-radius: 15px; padding: 30px 25px; border: 1px solid rgba(95,164,255,0.2); transition: all 0.4s ease; position: relative; overflow: hidden; flex-shrink: 0;">
+                  <div class="card-glow" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; background: radial-gradient(circle at 30% 20%, rgba(138, 43, 226, 0.1) 0%, transparent 70%); z-index: 1; pointer-events: none;"></div>
+                  <div style="position: relative; z-index: 2;">
+                    <div style="width: 180px; height: 180px; margin: 0 auto 25px; border-radius: 15px; overflow: hidden; border: 4px solid #8A2BE2; box-shadow: 0 10px 30px rgba(138, 43, 226, 0.2);">
+                      <img src="https://res.cloudinary.com/dyrgyzca3/image/upload/v1748460740/WhatsApp_Image_2025-05-27_at_13.58.12_kzfvup.png" 
+                           alt="Alex Rodriguez" 
+                           loading="lazy"
+                           decoding="async"
+                           style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                    </div>
+                    <h3 style="color: #8A2BE2; font-size: 2rem; margin: 0 0 10px 0; font-weight: 700;">Raper</h3>
+                    <p style="color: #5fa4ff; font-size: 1.1rem; text-transform: uppercase; margin: 0; font-weight: 600; letter-spacing: 0.05em;">ARTISTA</p>
+                  </div>
+                </div>
+                
+                <div class="artist-card mobile-card" style="width: 280px; min-width: 280px; background: linear-gradient(145deg, rgba(25,25,25,0.8), rgba(15,15,15,0.9)); border-radius: 15px; padding: 30px 25px; border: 1px solid rgba(95,164,255,0.2); transition: all 0.4s ease; position: relative; overflow: hidden; flex-shrink: 0;">
+                  <div class="card-glow" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; background: radial-gradient(circle at 30% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 70%); z-index: 1; pointer-events: none;"></div>
+                  <div style="position: relative; z-index: 2;">
+                    <div style="width: 180px; height: 180px; margin: 0 auto 25px; border-radius: 15px; overflow: hidden; border: 4px solid #FFD700; box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);">
+                      <img src="https://res.cloudinary.com/dyrgyzca3/image/upload/v1748479709/23_d5lars.jpg" 
+                           alt="Lucas Mora" 
+                           loading="lazy"
+                           decoding="async"
+                           style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                    </div>
+                    <h3 style="color: #FFD700; font-size: 2rem; margin: 0 0 10px 0; font-weight: 700;">Fabio</h3>
+                    <p style="color: #5fa4ff; font-size: 1.1rem; text-transform: uppercase; margin: 0; font-weight: 600; letter-spacing: 0.05em;">ARTISTA</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -2171,62 +2252,38 @@ margin: 0rem !important;
             line-height: 1.5 !important;
           }
           
-          /* CAMBIAR A SCROLL HORIZONTAL SOLO EN MOBILE */
-          .team-container {
-            overflow-x: auto;
-            overflow-y: hidden;
-            margin: 0 -20px;
-            padding: 20px 0;
-            scrollbar-width: thin;
-            scrollbar-color: #5fa4ff rgba(255, 255, 255, 0.1);
+          /* Ocultar desktop layout en mobile */
+          .desktop-row {
+            display: none !important;
           }
           
-          .team-container::-webkit-scrollbar {
+          /* Mostrar mobile scroll container */
+          .mobile-scroll-container {
+            display: block !important;
+          }
+          
+          /* Estilo del scrollbar móvil */
+          .mobile-scroll-container::-webkit-scrollbar {
             height: 8px;
           }
           
-          .team-container::-webkit-scrollbar-track {
+          .mobile-scroll-container::-webkit-scrollbar-track {
             background: rgba(255, 255, 255, 0.1);
             border-radius: 4px;
           }
           
-          .team-container::-webkit-scrollbar-thumb {
+          .mobile-scroll-container::-webkit-scrollbar-thumb {
             background: #5fa4ff;
             border-radius: 4px;
           }
           
-          .team-container::-webkit-scrollbar-thumb:hover {
+          .mobile-scroll-container::-webkit-scrollbar-thumb:hover {
             background: #3d82d4;
           }
           
-          .team-container > div {
-            display: flex !important;
-            flex-direction: row !important;
-            gap: 30px !important;
-            padding: 0 20px;
-            width: max-content;
-            margin-bottom: 0 !important;
-          }
-          
-          .team-container > div:last-child {
-            padding-left: 0;
-          }
-          
-          .artist-card {
-            width: 280px !important;
-            padding: 30px 25px !important;
-            min-height: 420px !important;
-            flex-shrink: 0;
-          }
-          
-          .artist-card h3 {
-            font-size: 2.3rem !important;
-            margin-bottom: 12px !important;
-          }
-          
-          .artist-card p {
-            font-size: 1.3rem !important;
-            line-height: 1.5 !important;
+          /* Estilos para las tarjetas en mobile */
+          .mobile-card:hover {
+            transform: translateY(-10px) !important;
           }
         }
         
@@ -2252,36 +2309,20 @@ margin: 0rem !important;
             line-height: 1.5 !important;
           }
           
-          .team-container-horizontal {
-            margin: 0 -15px;
+          /* Ajustes adicionales para móviles pequeños */
+          .mobile-scroll-container {
+            margin: 0 -15px !important;
+            padding: 15px !important;
           }
           
-          .team-scroll-wrapper {
-            padding-left: 15px !important;
-            padding-right: 15px !important;
+          .mobile-artists-row {
             gap: 25px !important;
           }
           
-          .artist-card {
+          .mobile-card {
             width: 260px !important;
-            padding: 30px 20px !important;
-            min-height: 400px !important;
-          }
-          
-          .artist-card div[style*="width: 200px"] {
-            width: 180px !important;
-            height: 180px !important;
-            margin-bottom: 25px !important;
-          }
-          
-          .artist-card h3 {
-            font-size: 2rem !important;
-            margin-bottom: 15px !important;
-          }
-          
-          .artist-card p {
-            font-size: 1.1rem !important;
-            line-height: 1.6 !important;
+            min-width: 260px !important;
+            padding: 25px 20px !important;
           }
         }
       </style>
