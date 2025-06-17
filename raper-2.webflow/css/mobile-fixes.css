@@ -1446,4 +1446,45 @@
   .card-bio {
     font-size: 0.85rem !important;
   }
+}
+
+/* === RESETEO ARTISTAS - FUERZA CENTRADO === */
+.artist-card .image-container {
+  position: relative !important;
+  width: 280px !important;
+  height: 280px !important;
+  overflow: hidden !important;
+  margin: 0 auto 25px !important;
+  box-sizing: border-box !important;
+}
+
+.artist-card .image-container::before {
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: rgba(0,0,0,0.2) !important;
+  z-index: 1 !important;
+}
+
+.artist-card .image-container img {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  width: auto !important;
+  height: auto !important;
+  display: block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  object-fit: contain !important;
+  z-index: 2 !important;
+}
+
+.artist-card:hover .image-container img {
+  transform: translate(-50%, -50%) scale(1.1) !important;
 } 
