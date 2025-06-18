@@ -2,7 +2,7 @@
 <html data-wf-page="68269b7c12f8a3ad86be7f60" data-wf-site="68269b7b12f8a3ad86be7d56">
 <head>
   <meta charset="utf-8">
-  <title>Store - Raper</title>
+  <title>Categorías - Raper</title>
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <meta content="Webflow" name="generator">
   <link href="css/normalize.css" rel="stylesheet" type="text/css">
@@ -83,6 +83,170 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }
+
+/* Estilos específicos para categorías */
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 4rem;
+  margin-top: 4rem;
+}
+
+.category-card {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+  border-radius: 2rem;
+  padding: 3rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.category-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, rgba(95, 164, 255, 0.1) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.category-card:hover::before {
+  opacity: 1;
+}
+
+.category-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  border-color: #5fa4ff;
+  box-shadow: 0 20px 40px rgba(95, 164, 255, 0.2);
+}
+
+.category-icon {
+  font-size: 6rem;
+  margin-bottom: 2rem;
+  filter: drop-shadow(0 0 20px rgba(95, 164, 255, 0.3));
+  transition: all 0.4s ease;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.category-product-image {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid rgba(95, 164, 255, 0.4);
+  transition: all 0.4s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.category-card:hover .category-icon {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 30px rgba(95, 164, 255, 0.6));
+}
+
+.category-card:hover .category-product-image {
+  border-color: rgba(95, 164, 255, 0.8);
+  box-shadow: 0 15px 40px rgba(95, 164, 255, 0.4);
+  transform: scale(1.05);
+}
+
+.category-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.category-description {
+  font-size: 1.6rem;
+  color: #b0b0b0;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.category-count {
+  display: inline-block;
+  background: linear-gradient(135deg, #5fa4ff 0%, #4fd1c5 100%);
+  color: #000;
+  padding: 0.8rem 1.6rem;
+  border-radius: 2rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+@media screen and (max-width: 991px) {
+  .categories-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .category-card {
+    min-height: 300px;
+  }
+  
+  .category-icon {
+    font-size: 5rem;
+    width: 100px;
+    height: 100px;
+  }
+  
+  .category-product-image {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .category-title {
+    font-size: 2.4rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .categories-grid {
+    gap: 2rem;
+  }
+  
+  .category-card {
+    padding: 2rem;
+    min-height: 250px;
+  }
+  
+  .category-icon {
+    font-size: 4rem;
+    width: 80px;
+    height: 80px;
+  }
+  
+  .category-product-image {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .category-title {
+    font-size: 2rem;
+  }
+  
+  .category-description {
+    font-size: 1.4rem;
+  }
+}
 </style>
     </div>
 
@@ -95,8 +259,8 @@ body {
             </a>
             <div class="navbar-sticky__links-wrapper">
               <div class="nav-links">
-                <a href="index.html" class="navbar-sticky__link">Overview</a>
-                <a href="store.html" class="navbar-sticky__link">Store</a>
+                <a href="index.html" class="navbar-sticky__link">Inicio</a>
+                <a href="store.html" class="navbar-sticky__link">Tienda</a>
                 <a href="careers.html" class="navbar-sticky__link">Trabaja con Nosotros</a>
               </div>
             </div>
@@ -141,98 +305,54 @@ body {
         </div>
       </div>
     </div>
+    
     <main class="main-wrapper">
       <div class="section_store">
         <div class="container-large">
           <div class="padding-global">
-            <h1 class="heading-style-h1">Auriculares RAPER</h1>
-            <div class="store-grid">
-              <!-- Auriculares RAPER Celeste Místico - $250.000 -->
-              <div class="product-card" data-product-id="1" onclick="goToProductDetails(1)">
-                <div class="product-image-wrapper">
-                  <img src="https://res.cloudinary.com/dyrgyzca3/image/upload/v1748398980/9_tl7qox.jpg" alt="Auriculares RAPER Celeste Místico" class="product-image">
+            <h1 class="heading-style-h1">Nuestras Categorías</h1>
+            <p style="text-align: center; color: #b0b0b0; font-size: 1.8rem; margin-bottom: 2rem;">
+              Descubre nuestra exclusiva colección de productos premium
+            </p>
+            
+            <div class="categories-grid">
+              <!-- Categoría Auriculares -->
+              <div class="category-card" onclick="goToCategory('auriculares')">
+                <div class="category-icon">
+                  <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/audifono.jpg" alt="Auriculares RAPER" class="category-product-image">
                 </div>
-                <h3 class="product-title">RAPER Celeste Místico</h3>
-                <p class="product-description">Edición limitada en celeste místico. Sonido premium con tecnología de cancelación de ruido avanzada.</p>
-                <div class="product-price">$250.000 ARS</div>
-                <a href="#" class="button-2 w-button" onclick="event.stopPropagation(); addToCart(1)">Agregar al Carrito</a>
+                <h2 class="category-title">Auriculares</h2>
+                <p class="category-description">
+                  Experimenta el sonido premium con nuestra colección exclusiva de auriculares RAPER. 
+                  Tecnología de cancelación de ruido, diseño elegante y calidad excepcional.
+                </p>
+                <div class="category-count">8 Modelos Disponibles</div>
               </div>
               
-              <!-- Auriculares RAPER Violeta Real - $250.000 -->
-              <div class="product-card" data-product-id="2" onclick="goToProductDetails(2)">
-                <div class="product-image-wrapper">
-                  <img src="https://res.cloudinary.com/dyrgyzca3/image/upload/v1748398979/1_bkqjfk.jpg" alt="Auriculares RAPER Violeta Real" class="product-image">
+              <!-- Categoría Basket -->
+              <div class="category-card" onclick="goToCategory('basket')">
+                <div class="category-icon">
+                  <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/balon.jpg" alt="Balón RAPER" class="category-product-image">
                 </div>
-                <h3 class="product-title">RAPER Violeta Real</h3>
-                <p class="product-description">Exclusivos auriculares en violeta real. Diseño elegante con calidad de audio profesional.</p>
-                <div class="product-price">$250.000 ARS</div>
-                <a href="#" class="button-2 w-button" onclick="event.stopPropagation(); addToCart(2)">Agregar al Carrito</a>
+                <h2 class="category-title">Basket</h2>
+                <p class="category-description">
+                  Equípate con estilo urbano. Nuestra línea de productos para basketball combina 
+                  funcionalidad deportiva con el diseño característico de RAPER.
+                </p>
+                <div class="category-count">Próximamente</div>
               </div>
               
-              <!-- Auriculares RAPER Negro Obsidiana - $250.000 -->
-              <div class="product-card" data-product-id="3" onclick="goToProductDetails(3)">
-                <div class="product-image-wrapper">
-                  <img src="https://res.cloudinary.com/dyrgyzca3/image/upload/v1748451429/10_oriq88.jpg" alt="Auriculares RAPER Negro Obsidiana" class="product-image">
+              <!-- Categoría Silla para Milkmakers -->
+              <div class="category-card" onclick="goToCategory('silla-milkmakers')">
+                <div class="category-icon">
+                  <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/silla.jpg" alt="Silla RAPER" class="category-product-image">
                 </div>
-                <h3 class="product-title">RAPER Negro Obsidiana</h3>
-                <p class="product-description">La elegancia en negro obsidiana. Auriculares premium con acabado mate y sonido cristalino.</p>
-                <div class="product-price">$250.000 ARS</div>
-                <a href="#" class="button-2 w-button" onclick="event.stopPropagation(); addToCart(3)">Agregar al Carrito</a>
-              </div>
-              
-              <!-- Auriculares RAPER Blanco Perla - $199.000 -->
-              <div class="product-card" data-product-id="4" onclick="goToProductDetails(4)">
-                <div class="product-image-wrapper">
-                  <img src="https://res.cloudinary.com/dyrgyzca3/image/upload/v1748398979/4_ljygwt.jpg" alt="Auriculares RAPER Blanco Perla" class="product-image">
-                </div>
-                <h3 class="product-title">RAPER Blanco Perla</h3>
-                <p class="product-description">Pureza en blanco perla. Auriculares con diseño minimalista y tecnología de vanguardia.</p>
-                <div class="product-price">$199.000 ARS</div>
-                <a href="#" class="button-2 w-button" onclick="event.stopPropagation(); addToCart(4)">Agregar al Carrito</a>
-              </div>
-
-              <!-- Auriculares RAPER Gris Titanio - $199.000 -->
-              <div class="product-card" data-product-id="5" onclick="goToProductDetails(5)">
-                <div class="product-image-wrapper">
-                  <img src="https://res.cloudinary.com/dyrgyzca3/image/upload/v1748398979/5_1_jygqx3.jpg" alt="Auriculares RAPER Gris Titanio" class="product-image">
-                </div>
-                <h3 class="product-title">RAPER Gris Titanio</h3>
-                <p class="product-description">Sofisticación en gris titanio. Resistencia y estilo en perfecta armonía sonora.</p>
-                <div class="product-price">$199.000 ARS</div>
-                <a href="#" class="button-2 w-button" onclick="event.stopPropagation(); addToCart(5)">Agregar al Carrito</a>
-              </div>
-
-              <!-- Auriculares RAPER Azul Océano - $199.000 -->
-              <div class="product-card" data-product-id="6" onclick="goToProductDetails(6)">
-                <div class="product-image-wrapper">
-                  <img src="https://res.cloudinary.com/dyrgyzca3/image/upload/v1748398979/6_mt8tn6.jpg" alt="Auriculares RAPER Azul Océano" class="product-image">
-                </div>
-                <h3 class="product-title">RAPER Azul Océano</h3>
-                <p class="product-description">Profundidad del azul océano. Inmersión total en un mar de sonidos cristalinos.</p>
-                <div class="product-price">$199.000 ARS</div>
-                <a href="#" class="button-2 w-button" onclick="event.stopPropagation(); addToCart(6)">Agregar al Carrito</a>
-              </div>
-
-              <!-- Auriculares RAPER Verde Esmeralda - $199.000 -->
-              <div class="product-card" data-product-id="7" onclick="goToProductDetails(7)">
-                <div class="product-image-wrapper">
-                  <img src="https://res.cloudinary.com/dyrgyzca3/image/upload/v1748398978/7_1_zq3fig.jpg" alt="Auriculares RAPER Verde Esmeralda" class="product-image">
-                </div>
-                <h3 class="product-title">RAPER Verde Esmeralda</h3>
-                <p class="product-description">Vibrante verde esmeralda. Energía y frescura en cada nota musical.</p>
-                <div class="product-price">$199.000 ARS</div>
-                <a href="#" class="button-2 w-button" onclick="event.stopPropagation(); addToCart(7)">Agregar al Carrito</a>
-              </div>
-
-              <!-- Auriculares RAPER Rojo Carmesí - $199.000 -->
-              <div class="product-card" data-product-id="8" onclick="goToProductDetails(8)">
-                <div class="product-image-wrapper">
-                  <img src="https://res.cloudinary.com/dyrgyzca3/image/upload/v1748398978/8_1_ixbyop.jpg" alt="Auriculares RAPER Rojo Carmesí" class="product-image">
-                </div>
-                <h3 class="product-title">RAPER Rojo Carmesí</h3>
-                <p class="product-description">Pasión en rojo carmesí. Intensidad y potencia en cada frecuencia.</p>
-                <div class="product-price">$199.000 ARS</div>
-                <a href="#" class="button-2 w-button" onclick="event.stopPropagation(); addToCart(8)">Agregar al Carrito</a>
+                <h2 class="category-title">Silla para Milkmakers</h2>
+                <p class="category-description">
+                  Comodidad y ergonomía para los creadores de contenido. Sillas diseñadas 
+                  especialmente para largas sesiones de trabajo y streaming.
+                </p>
+                <div class="category-count">Próximamente</div>
               </div>
             </div>
           </div>
@@ -286,34 +406,46 @@ body {
   </div>
 
   <script>
-    // Función para navegar a los detalles del producto
-    function goToProductDetails(productId) {
-      const productCard = document.querySelector(`[data-product-id="${productId}"]`);
-      if (productCard) {
-        productCard.style.transform = 'scale(0.95)';
-        productCard.style.opacity = '0.8';
-        
-        setTimeout(() => {
-          window.location.href = `product-details.html?id=${productId}`;
-        }, 200);
-      } else {
-        window.location.href = `product-details.html?id=${productId}`;
-      }
+    // Función para navegar a las categorías
+    function goToCategory(category) {
+      const categoryCard = event.currentTarget;
+      
+      // Efecto visual
+      categoryCard.style.transform = 'scale(0.95)';
+      categoryCard.style.opacity = '0.8';
+      
+      setTimeout(() => {
+        switch(category) {
+          case 'auriculares':
+            window.location.href = 'auriculares.html';
+            break;
+          case 'basket':
+            window.location.href = 'basket.html';
+            break;
+          case 'silla-milkmakers':
+            window.location.href = 'silla-milkmakers.html';
+            break;
+          default:
+            console.log('Categoría no encontrada');
+        }
+      }, 200);
     }
 
     // Inicialización
     document.addEventListener('DOMContentLoaded', function() {
-      // Efectos de hover para las tarjetas de productos
-      const productCards = document.querySelectorAll('.product-card');
-      productCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-          this.style.cursor = 'pointer';
-          this.style.boxShadow = '0 15px 30px rgba(95, 164, 255, 0.15)';
-        });
+      // Efectos de animación para las categorías
+      const categoryCards = document.querySelectorAll('.category-card');
+      
+      // Animación de entrada
+      categoryCards.forEach((card, index) => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(30px)';
+        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         
-        card.addEventListener('mouseleave', function() {
-          this.style.boxShadow = '';
-        });
+        setTimeout(() => {
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0)';
+        }, 200 + (index * 150));
       });
 
       // Mobile Menu Toggle
