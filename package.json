@@ -6,7 +6,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "node local-dev-server.js",
     "start": "node local-dev-server.js",
-    "serve": "node local-dev-server.js"
+    "serve": "node local-dev-server.js",
+    "build": "node build-production.js",
+    "deploy:local": "npm run build && node production-server.js",
+    "preview": "node production-server.js"
   },
   "keywords": [],
   "author": "",

@@ -756,11 +756,17 @@ margin: 0rem !important;
             </div>
           </div>
           
-          <!-- Sección central con disco de vinilo -->
+          <!-- Sección central con disco de vinilo y botón superpuesto -->
           <div class="vinyl-section">
             <div class="vinyl-container">
               <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/disco.png" alt="Disco de Vinilo RAP EN NY" class="vinyl-record">
               <div class="vinyl-glow"></div>
+              <!-- Botón de play superpuesto encima del disco -->
+              <a href="https://open.spotify.com/intl-es/album/2OcHxSJRmQG1FfOcfxQ8qS?referral=labelaffiliate&utm_source=1100lAsWkpjF&utm_medium=Indie_Distrokid&utm_campaign=labelaffiliate" target="_blank" class="spotify-play-button-overlay">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="play-icon-overlay">
+                  <path d="M8 5.14V19.14L19 12.14L8 5.14Z" fill="currentColor"/>
+                </svg>
+              </a>
             </div>
           </div>
           
@@ -768,13 +774,6 @@ margin: 0rem !important;
           <div class="banner-bottom-section">
             <div class="release-info">
               <h2 class="estreno-title">PRÓXIMO ESTRENO 5/06</h2>
-              <div class="play-section">
-                <a href="https://open.spotify.com/intl-es/album/2OcHxSJRmQG1FfOcfxQ8qS?referral=labelaffiliate&utm_source=1100lAsWkpjF&utm_medium=Indie_Distrokid&utm_campaign=labelaffiliate" target="_blank" class="spotify-play-button">
-                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="play-icon">
-                    <path d="M8 5.14V19.14L19 12.14L8 5.14Z" fill="currentColor"/>
-                  </svg>
-                </a>
-              </div>
             </div>
             
             <!-- Iconos de plataformas -->
@@ -1576,6 +1575,41 @@ margin: 0rem !important;
           z-index: -1;
         }
 
+        /* Botón de play superpuesto encima del disco */
+        .spotify-play-button-overlay {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 70px; /* Más pequeño como solicita el usuario */
+          height: 70px;
+          background: linear-gradient(135deg, #5fa4ff, #4fd1c5);
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-decoration: none;
+          transition: all 0.4s ease;
+          box-shadow: 0 8px 25px rgba(95, 164, 255, 0.4);
+          z-index: 5;
+          backdrop-filter: blur(10px);
+          border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .spotify-play-button-overlay:hover {
+          transform: translate(-50%, -50%) scale(1.15);
+          box-shadow: 0 12px 35px rgba(95, 164, 255, 0.6);
+          background: linear-gradient(135deg, #4fd1c5, #5fa4ff);
+        }
+
+        .play-icon-overlay {
+          width: 28px; /* Proporcionalmente más pequeño */
+          height: 28px;
+          color: white;
+          margin-left: 3px; /* Ajuste visual para centrar el triángulo */
+          filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+        }
+
         @keyframes vinylSpin {
           0% {
             transform: rotate(0deg);
@@ -1918,6 +1952,17 @@ margin: 0rem !important;
             width: 250px;
             height: 250px;
           }
+
+          /* Botón superpuesto responsive */
+          .spotify-play-button-overlay {
+            width: 60px;
+            height: 60px;
+          }
+
+          .play-icon-overlay {
+            width: 24px;
+            height: 24px;
+          }
           
           .release-info .estreno-title {
             font-size: 2.4rem;
@@ -1991,6 +2036,18 @@ margin: 0rem !important;
           .vinyl-record {
             width: 200px;
             height: 200px;
+          }
+
+          /* Botón superpuesto para móvil pequeño */
+          .spotify-play-button-overlay {
+            width: 50px;
+            height: 50px;
+          }
+
+          .play-icon-overlay {
+            width: 20px;
+            height: 20px;
+            margin-left: 2px;
           }
           
           .release-info .estreno-title {
@@ -2256,7 +2313,7 @@ margin: 0rem !important;
           .main-title-section {
             gap: 15px;
             margin-bottom: 10px;
-        }
+          }
         
           .estreno-title {
             font-size: 2rem;
@@ -2464,60 +2521,35 @@ margin: 0rem !important;
             <div class="z-index-2">
               <div class="container-large">
                 <div class="padding-global">
-                  <!-- Sección Crear Historia con Nosotros -->
-                  <section class="create-history-section">
-                    <div class="create-history-content">
-                      <div class="create-history-wrapper">
-                        <div class="create-history-text">
-                          <div class="section-badge">
+                  <!-- Sección Crear Historia con Nosotros - REDISEÑADA LIMPIA -->
+                  <section class="create-history-section-clean">
+                    <div class="container-large">
+                      <div class="create-history-wrapper-clean">
+                        <div class="create-history-text-clean">
+                          <div class="section-badge-clean">
                             <span>◆ RAPER COMPANY</span>
                           </div>
-                          <h2 class="create-history-title">
+                          <h2 class="create-history-title-clean">
                             ¿Listo para <span class="highlight-blue">Crear Historia</span> con Nosotros?
                           </h2>
-                          <p class="create-history-subtitle">
+                          <p class="create-history-subtitle-clean">
                             Si compartes nuestra pasión por la música y quieres ser parte de proyectos que marquen la diferencia, queremos conocerte.
                           </p>
                           
-                          <div class="contact-methods">
-                            <div class="contact-item">
-                              <div class="contact-icon">◆</div>
-                              <div class="contact-details">
-                                <h4>Email Profesional</h4>
-                                <p>info@rapercompany.com</p>
-                              </div>
-                            </div>
-                            
-                            <div class="contact-item">
-                              <div class="contact-icon">◆</div>
-                              <div class="contact-details">
-                                <h4>Contacto Directo</h4>
-                                <p>🇺🇸 +1 (786) 978-1978</p>
-                                <p>🇦🇷 +54 9 11 3422 6971</p>
-                              </div>
-                            </div>
-                            
-                            <div class="contact-item">
-                              <div class="contact-icon">◆</div>
-                              <div class="contact-details">
-                                <h4>Redes Sociales</h4>
-                                <p>@rapercompany</p>
-                              </div>
-                            </div>
-                          </div>
+                          <!-- Información de contacto removida para evitar duplicación con footer -->
                         </div>
                         
-                        <div class="create-history-form">
-                          <div class="form-container">
+                        <div class="create-history-form-clean">
+                          <div class="form-container-clean">
                             <h3>Envía tu Propuesta</h3>
-                            <form class="history-form" id="historyForm">
-                              <div class="form-group">
+                            <form class="history-form-clean" id="historyFormClean">
+                              <div class="form-group-clean">
                                 <input type="text" name="name" placeholder="Nombre completo" required>
                               </div>
-                              <div class="form-group">
+                              <div class="form-group-clean">
                                 <input type="email" name="email" placeholder="Email profesional" required>
                               </div>
-                              <div class="form-group">
+                              <div class="form-group-clean">
                                 <select name="interest" required>
                                   <option value="">Tipo de colaboración</option>
                                   <option value="artista">Artista / Músico</option>
@@ -2528,12 +2560,12 @@ margin: 0rem !important;
                                   <option value="otro">Otro</option>
                                 </select>
                               </div>
-                              <div class="form-group">
+                              <div class="form-group-clean">
                                 <textarea name="message" placeholder="Cuéntanos tu propuesta, experiencia y cómo puedes contribuir a RAPER Company..." rows="4" required></textarea>
                               </div>
-                              <button type="submit" class="submit-btn">
+                              <button type="submit" class="submit-btn-clean">
                                 Enviar Propuesta
-                                <span class="btn-icon">◆</span>
+                                <span class="btn-icon-clean">◆</span>
                               </button>
                             </form>
                           </div>
@@ -3250,39 +3282,23 @@ margin: 0rem !important;
       }
     }
 
-    /* ===== CREAR HISTORIA SECTION STYLES ===== */
-    .create-history-section {
-      background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+    /* ===== CREAR HISTORIA SECTION STYLES - LIMPIO Y MINIMAL ===== */
+    .create-history-section-clean {
+      background: transparent;
       padding: 8rem 0;
       position: relative;
-      overflow: hidden;
     }
 
-    .create-history-section::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: radial-gradient(circle at 30% 70%, rgba(95, 164, 255, 0.1) 0%, transparent 50%),
-                  radial-gradient(circle at 70% 30%, rgba(79, 209, 197, 0.1) 0%, transparent 50%);
-      z-index: 0;
-    }
-
-    .create-history-content {
-      position: relative;
-      z-index: 1;
-    }
-
-    .create-history-wrapper {
+    .create-history-wrapper-clean {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 6rem;
-      align-items: start;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
-    .section-badge {
+    .section-badge-clean {
       display: inline-block;
       background: rgba(95, 164, 255, 0.1);
       border: 1px solid rgba(95, 164, 255, 0.3);
@@ -3291,14 +3307,14 @@ margin: 0rem !important;
       margin-bottom: 2rem;
     }
 
-    .section-badge span {
+    .section-badge-clean span {
       color: #5fa4ff;
       font-size: 1.2rem;
       font-weight: 600;
       letter-spacing: 0.1em;
     }
 
-    .create-history-title {
+    .create-history-title-clean {
       font-size: 4rem;
       font-weight: 800;
       color: white;
@@ -3313,105 +3329,106 @@ margin: 0rem !important;
       background-clip: text;
     }
 
-    .create-history-subtitle {
-      font-size: 1.8rem;
+    .create-history-subtitle-clean {
+      font-size: 1.6rem;
       color: rgba(255, 255, 255, 0.8);
       line-height: 1.6;
       margin-bottom: 3rem;
     }
 
-    .contact-methods {
+    .contact-methods-clean {
       display: flex;
       flex-direction: column;
       gap: 2rem;
     }
 
-    .contact-item {
+    .contact-item-clean {
       display: flex;
-      align-items: flex-start;
+      align-items: center;
       gap: 1.5rem;
-    }
-
-    .contact-icon {
-      color: #5fa4ff;
-      font-size: 1.5rem;
-      margin-top: 0.5rem;
-    }
-
-    .contact-details h4 {
-      color: white;
-      font-size: 1.6rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-    }
-
-    .contact-details p {
-      color: rgba(255, 255, 255, 0.7);
-      font-size: 1.4rem;
-      margin: 0;
-    }
-
-    /* Form Styles */
-    .form-container {
+      padding: 2rem;
       background: rgba(255, 255, 255, 0.05);
+      border-radius: 15px;
       border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 20px;
-      padding: 3rem;
-      backdrop-filter: blur(10px);
     }
 
-    .form-container h3 {
+    .contact-icon-clean {
+      color: #5fa4ff;
+      font-size: 2.5rem;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(95, 164, 255, 0.2);
+      border-radius: 50%;
+    }
+
+    .contact-details-clean h4 {
       color: white;
-      font-size: 2.4rem;
-      font-weight: 700;
+      margin-bottom: 0.5rem;
+      font-size: 1.4rem;
+    }
+
+    .contact-details-clean p {
+      color: rgba(255, 255, 255, 0.8);
+      margin: 0.2rem 0;
+    }
+
+    /* Form Styles - LIMPIO Y MINIMAL */
+    .form-container-clean {
+      background: transparent;
+      padding: 3rem;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: none;
+    }
+
+    .form-container-clean h3 {
+      color: white;
+      font-size: 2.2rem;
       margin-bottom: 2rem;
       text-align: center;
     }
 
-    .form-group {
-      margin-bottom: 2rem;
+    .form-group-clean {
+      margin-bottom: 1.5rem;
     }
 
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
+    .form-group-clean input,
+    .form-group-clean select,
+    .form-group-clean textarea {
       width: 100%;
-      padding: 1.5rem;
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 12px;
+      padding: 1.2rem;
+      background: transparent;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 10px;
       color: white;
       font-size: 1.4rem;
       transition: all 0.3s ease;
-      box-sizing: border-box;
     }
 
-    .form-group input::placeholder,
-    .form-group textarea::placeholder {
-      color: rgba(255, 255, 255, 0.5);
-    }
-
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
+    .form-group-clean input:focus,
+    .form-group-clean select:focus,
+    .form-group-clean textarea:focus {
       outline: none;
       border-color: #5fa4ff;
-      box-shadow: 0 0 0 3px rgba(95, 164, 255, 0.2);
-      background: rgba(255, 255, 255, 0.15);
+      background: transparent;
+      box-shadow: 0 0 0 3px rgba(95, 164, 255, 0.1);
     }
 
-    .form-group select option {
-      background: #1a1a1a;
-      color: white;
+    .form-group-clean input::placeholder,
+    .form-group-clean textarea::placeholder {
+      color: rgba(255, 255, 255, 0.6);
     }
 
-    .submit-btn {
+    .submit-btn-clean {
       width: 100%;
-      padding: 1.8rem 2rem;
-      background: linear-gradient(135deg, #5fa4ff, #4fd1c5);
-      border: none;
-      border-radius: 12px;
+      padding: 1.5rem 2rem;
+      background: linear-gradient(135deg, #5fa4ff 0%, #4fd1c5 100%);
       color: white;
+      border: none;
+      border-radius: 10px;
       font-size: 1.6rem;
       font-weight: 600;
       cursor: pointer;
@@ -3422,46 +3439,67 @@ margin: 0rem !important;
       gap: 1rem;
     }
 
-    .submit-btn:hover {
+    .submit-btn-clean:hover {
       transform: translateY(-2px);
-      box-shadow: 0 10px 30px rgba(95, 164, 255, 0.4);
-    }
-
-    .btn-icon {
-      font-size: 1.2rem;
+      box-shadow: 0 10px 25px rgba(95, 164, 255, 0.4);
     }
 
     /* Responsive */
     @media screen and (max-width: 991px) {
-      .create-history-wrapper {
+      .create-history-wrapper-clean {
         grid-template-columns: 1fr;
         gap: 4rem;
+        text-align: center;
       }
       
-      .create-history-title {
+      .create-history-title-clean {
         font-size: 3.2rem;
       }
     }
 
     @media screen and (max-width: 767px) {
-      .create-history-section {
-        padding: 6rem 0;
+      .create-history-section-clean {
+        padding: 4rem 0;
       }
       
-      .create-history-title {
+      .create-history-title-clean {
         font-size: 2.8rem;
       }
       
-      .create-history-subtitle {
-        font-size: 1.6rem;
+      .create-history-subtitle-clean {
+        font-size: 1.4rem;
       }
       
-      .form-container {
+      .form-container-clean {
         padding: 2rem;
+        border: 1px solid rgba(255, 255, 255, 0.2);
       }
       
-      .contact-methods {
-        gap: 1.5rem;
+      .form-group-clean input,
+      .form-group-clean select,
+      .form-group-clean textarea {
+        font-size: 1.6rem;
+        padding: 1.5rem;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .create-history-section-clean {
+        padding: 3rem 0;
+      }
+      
+      .create-history-title-clean {
+        font-size: 2.4rem;
+        line-height: 1.3;
+      }
+      
+      .form-container-clean {
+        padding: 1.5rem;
+        margin: 0 1rem;
+      }
+      
+      .form-container-clean h3 {
+        font-size: 1.8rem;
       }
     }
   </style>
@@ -3523,7 +3561,7 @@ margin: 0rem !important;
 
     // Form submission handler for Create History section
     document.addEventListener('DOMContentLoaded', function() {
-      const form = document.getElementById('historyForm');
+      const form = document.getElementById('historyFormClean');
       if (form) {
         form.addEventListener('submit', function(e) {
           e.preventDefault();
@@ -3533,9 +3571,9 @@ margin: 0rem !important;
           const data = Object.fromEntries(formData);
           
           // Show loading state
-          const submitBtn = form.querySelector('.submit-btn');
+          const submitBtn = form.querySelector('.submit-btn-clean');
           const originalText = submitBtn.innerHTML;
-          submitBtn.innerHTML = 'Enviando... <span class="btn-icon">◆</span>';
+          submitBtn.innerHTML = 'Enviando... <span class="btn-icon-clean">◆</span>';
           submitBtn.disabled = true;
           
           // Simulate form submission (replace with actual API call)

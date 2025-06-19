@@ -2,7 +2,7 @@
 <html data-wf-page="68269b7c12f8a3ad86be7f60" data-wf-site="68269b7b12f8a3ad86be7d56">
 <head>
   <meta charset="utf-8">
-  <title>Silla para Milkmakers - RAPER</title>
+  <title>Silla de Director - RAPER</title>
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <link href="css/normalize.css" rel="stylesheet" type="text/css">
   <link href="css/webflow.css" rel="stylesheet" type="text/css">
@@ -458,6 +458,10 @@
             font-size: 1.2rem;
             padding: 0.8rem 1.5rem;
           }
+          .detail-image-wrapper {
+            padding: 1rem;
+            transform: none !important;
+          }
         }
       </style>
     </div>
@@ -518,7 +522,7 @@
           </div>
           
           <h1 class="hero-main-title">
-            Silla para <span class="highlight">Milkmakers</span>
+            Silla de <span class="highlight">Director</span>
           </h1>
           
           <h2 class="hero-subtitle">
@@ -575,31 +579,36 @@
       </div>
       
       <!-- Additional Content Section -->
-      <section style="background: #000; padding: 8rem 0; text-align: center;">
-        <div style="max-width: 1000px; margin: 0 auto; padding: 0 2rem;">
-          <h2 style="font-size: 3.5rem; color: white; margin-bottom: 3rem; font-weight: 700;">
-            Perfección en <span style="color: #5fa4ff;">Cada Detalle</span>
+      <section style="background: #000; padding: 10rem 0; text-align: center; overflow: hidden;">
+        <div style="max-width: 900px; margin: 0 auto; padding: 0 2rem;">
+          <h2 style="font-size: 3.5rem; color: white; margin-bottom: 2rem; font-weight: 700;">
+            Diseño que <span style="color: #4fd1c5;">Inspira</span>
           </h2>
-          <p style="font-size: 1.8rem; color: rgba(255,255,255,0.8); line-height: 1.7; margin-bottom: 4rem;">
-            Años de investigación y desarrollo han culminado en una silla que no solo soporta tu cuerpo, 
-            sino que potencia tu creatividad. Con ajustes infinitos, materiales sostenibles y la estética 
-            inconfundible de RAPER, esta silla redefine lo que significa trabajar con estilo.
+          <p style="font-size: 1.8rem; color: rgba(255,255,255,0.8); line-height: 1.7; margin-bottom: 5rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+            Cada elemento, desde el chasis de aleación ligera hasta el tejido transpirable, 
+            ha sido seleccionado para crear una sinfonía de confort y estilo.
+            Es la pieza central que tu espacio creativo merece.
           </p>
           
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; margin-top: 5rem;">
-            <div style="background: rgba(95, 164, 255, 0.1); padding: 3rem; border-radius: 20px; border: 1px solid rgba(95, 164, 255, 0.3);">
-              <h3 style="color: #5fa4ff; font-size: 2rem; margin-bottom: 1.5rem;">25 Horas</h3>
-              <p style="color: rgba(255,255,255,0.8);">De comodidad ininterrumpida en sesiones de streaming</p>
-            </div>
-            
-            <div style="background: rgba(95, 164, 255, 0.1); padding: 3rem; border-radius: 20px; border: 1px solid rgba(95, 164, 255, 0.3);">
-              <h3 style="color: #5fa4ff; font-size: 2rem; margin-bottom: 1.5rem;">360°</h3>
-              <p style="color: rgba(255,255,255,0.8);">De ajuste personalizable para tu postura perfecta</p>
-            </div>
-            
-            <div style="background: rgba(95, 164, 255, 0.1); padding: 3rem; border-radius: 20px; border: 1px solid rgba(95, 164, 255, 0.3);">
-              <h3 style="color: #5fa4ff; font-size: 2rem; margin-bottom: 1.5rem;">5 Años</h3>
-              <p style="color: rgba(255,255,255,0.8);">De garantía premium RAPER Company</p>
+          <div style="position: relative; margin-top: 5rem; perspective: 1000px;">
+            <div class="detail-image-wrapper" style="
+              background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0));
+              border-radius: 25px; 
+              border: 1px solid rgba(255, 255, 255, 0.1);
+              padding: 1.5rem;
+              backdrop-filter: blur(15px);
+              box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+              transform: rotateX(0deg) rotateY(0deg) scale(1);
+              transition: transform 0.2s ease-out;
+            ">
+              <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/silla-detalle.png" 
+                   alt="Detalle de la Silla RAPER" 
+                   style="
+                     width: 100%; 
+                     height: auto; 
+                     border-radius: 15px; 
+                     display: block;
+                   ">
             </div>
           </div>
         </div>
@@ -720,6 +729,25 @@
         if (video) {
           videoObserver.observe(video);
         }
+      }
+      
+      // Add mouse-move parallax effect for the new detail image
+      const detailImageContainer = document.querySelector('div[style*="perspective"]');
+      if (detailImageContainer) {
+        detailImageContainer.addEventListener('mousemove', function(e) {
+          const { left, top, width, height } = this.getBoundingClientRect();
+          const x = (e.clientX - left) / width - 0.5;
+          const y = (e.clientY - top) / height - 0.5;
+          
+          const rotateX = y * -10; // Invert y-axis for natural rotation
+          const rotateY = x * 10;
+          
+          this.firstElementChild.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+        });
+
+        detailImageContainer.addEventListener('mouseleave', function() {
+          this.firstElementChild.style.transform = 'rotateX(0deg) rotateY(0deg) scale(1)';
+        });
       }
       
       // Add click handlers for buttons
