@@ -29,18 +29,17 @@
   <link href="css/clean-banner.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-  <!-- Preloader RAPER -->
-  <div id="preloader" class="preloader">
-    <div class="preloader-content">
-      <div class="preloader-logo">
-        <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/Asset%2019supreme%20(1).png" alt="RAPER" style="height: 50px; width: auto;">
-      </div>
-      <div class="preloader-bar">
-        <div class="preloader-progress"></div>
-      </div>
-      <div class="preloader-text">LOADING EXCELLENCE</div>
-    </div>
+  <!-- Simple Preloader -->
+  <div id="preloader" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #000; display: flex; justify-content: center; align-items: center; z-index: 99999;">
+    <div style="width: 40px; height: 40px; border: 4px solid #333; border-top: 4px solid #5fa4ff; border-radius: 50%; animation: spin 1s linear infinite;"></div>
   </div>
+
+  <style>
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
 
   <div class="page-wrapper is-relative">
     <!-- Banner de Sello Discográfico -->
@@ -3505,14 +3504,12 @@ margin: 0rem !important;
   </style>
 
   <script>
-    // Preloader
+    // Simple Preloader
     window.addEventListener('load', function() {
-      setTimeout(function() {
-        document.getElementById('preloader').classList.add('fade-out');
-        setTimeout(function() {
-          document.getElementById('preloader').style.display = 'none';
-        }, 500);
-      }, 2000); // Simula 2 segundos de carga
+      const preloader = document.getElementById('preloader');
+      if (preloader) {
+        preloader.style.display = 'none';
+      }
     });
 
     // Mobile Menu Toggle
