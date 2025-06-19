@@ -137,14 +137,17 @@ function addToCart(productId) {
     return false;
   }
 
+  // Normalizar el ID como string para consistencia
+  const normalizedId = String(productId);
+  
   // Buscar si el producto ya existe en el carrito
-  const existingItem = cart.find(item => item.id === productId);
+  const existingItem = cart.find(item => String(item.id) === normalizedId);
   
   if (existingItem) {
     existingItem.quantity += 1;
   } else {
     cart.push({
-      id: productId,
+      id: normalizedId, // Guardar como string
       name: product.name,
       price: product.price,
       image: product.image,
@@ -168,8 +171,13 @@ function addToCart(productId) {
 
 // Función para actualizar cantidad en el carrito
 function updateCartQuantity(productId, change) {
-  const item = cart.find(item => item.id === productId);
-  if (!item) return;
+  // Asegurar que el productId sea string para comparación
+  const normalizedId = String(productId);
+  const item = cart.find(item => String(item.id) === normalizedId);
+  if (!item) {
+    console.error(`No se encontró el producto con ID: ${productId}`);
+    return;
+  }
   
   item.quantity += change;
   
@@ -181,6 +189,8 @@ function updateCartQuantity(productId, change) {
   localStorage.setItem('raperCart', JSON.stringify(cart));
   updateCartCount();
   
+  console.log(`🔄 Cantidad actualizada: ${item.name} - Cantidad: ${item.quantity}`);
+  
   // Re-renderizar carrito si está abierto
   const sideCartContent = document.getElementById('side-cart-content');
   if (sideCartContent && document.getElementById('side-cart-container').classList.contains('is-open')) {
@@ -190,9 +200,20 @@ function updateCartQuantity(productId, change) {
 
 // Función para remover del carrito
 function removeFromCart(productId) {
-  cart = cart.filter(item => item.id !== productId);
+  // Asegurar que el productId sea string para comparación
+  const normalizedId = String(productId);
+  const originalLength = cart.length;
+  cart = cart.filter(item => String(item.id) !== normalizedId);
+  
+  if (cart.length === originalLength) {
+    console.error(`No se pudo eliminar el producto con ID: ${productId}`);
+    return;
+  }
+  
   localStorage.setItem('raperCart', JSON.stringify(cart));
   updateCartCount();
+  
+  console.log(`🗑️ Producto eliminado del carrito: ID ${productId}`);
   
   // Re-renderizar carrito si está abierto
   const sideCartContent = document.getElementById('side-cart-content');
