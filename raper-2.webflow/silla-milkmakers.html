@@ -92,7 +92,7 @@
           align-items: start;
         }
 
-        /* ===== GALERÍA DE IMÁGENES ===== */
+                  /* ===== GALERÍA DE IMÁGENES Y VIDEO ===== */
         .chair-image-section {
           display: flex;
           flex-direction: column;
@@ -122,6 +122,54 @@
 
         .chair-main-image:hover {
           transform: scale(1.05);
+        }
+
+        .chair-main-video {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.5s ease;
+          border-radius: 2rem;
+        }
+
+        .chair-main-video:hover {
+          transform: scale(1.02);
+        }
+
+        .video-controls-overlay {
+          position: absolute;
+          bottom: 20px;
+          left: 50%;
+          transform: translateX(-50%);
+          background: rgba(0, 0, 0, 0.8);
+          border-radius: 50px;
+          padding: 10px 20px;
+          display: flex;
+          align-items: center;
+          gap: 15px;
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(95, 164, 255, 0.3);
+          transition: opacity 0.3s ease;
+        }
+
+        .video-play-btn {
+          background: linear-gradient(135deg, #5fa4ff 0%, #4fd1c5 100%);
+          border: none;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          color: #000;
+          font-size: 16px;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: all 0.3s ease;
+        }
+
+        .video-play-btn:hover {
+          transform: scale(1.1);
+          box-shadow: 0 5px 15px rgba(95, 164, 255, 0.4);
         }
 
         .chair-thumbnail-gallery {
@@ -523,22 +571,46 @@
           <div class="chair-product-layout">
             <!-- Image Section with Gallery -->
             <div class="chair-image-section">
-              <div class="chair-main-image-container">
-                <img id="main-chair-image" src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/silla.jpg" alt="Silla de Director RAPER" class="chair-main-image">
+              <div class="chair-main-image-container" id="main-media-container">
+                <video id="main-chair-video" src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/menorcalidad_niki.mp4" 
+                       class="chair-main-video" 
+                       controls 
+                       autoplay 
+                       muted
+                       loop
+                       preload="auto"
+                       poster="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/silla.jpg"
+                       alt="Video de la Silla de Director RAPER">
+                  Tu navegador no soporta la reproducción de videos.
+                </video>
+                <img id="main-chair-image" src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/silla.jpg" alt="Silla de Director RAPER" class="chair-main-image" style="display: none;">
+                
+                <div class="video-controls-overlay" id="video-overlay">
+                  <button class="video-play-btn" onclick="toggleMainVideo()" id="main-video-btn">
+                    ▶
+                  </button>
+                  <span style="color: #fff; font-size: 14px; font-weight: 600;">Video Promocional</span>
+                </div>
               </div>
               
               <!-- Thumbnail Gallery -->
               <div class="chair-thumbnail-gallery">
-                <div class="thumbnail-item active" onclick="changeMainImage('https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/silla.jpg', this)">
+                <div class="thumbnail-item active" onclick="showMainVideo(this)" data-type="video">
+                  <div style="position: relative; width: 100%; height: 100%; background: linear-gradient(135deg, #5fa4ff 0%, #4fd1c5 100%); display: flex; align-items: center; justify-content: center;">
+                    <span style="color: #000; font-size: 24px; font-weight: bold;">▶</span>
+                    <span style="position: absolute; bottom: 5px; left: 50%; transform: translateX(-50%); color: #000; font-size: 10px; font-weight: 600;">VIDEO</span>
+                  </div>
+                </div>
+                <div class="thumbnail-item" onclick="changeMainImage('https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/silla.jpg', this)" data-type="image">
                   <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/silla.jpg" alt="Vista principal">
                 </div>
-                <div class="thumbnail-item" onclick="changeMainImage('https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/silla_1%20(2).png', this)">
+                <div class="thumbnail-item" onclick="changeMainImage('https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/silla_1%20(2).png', this)" data-type="image">
                   <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/silla_1%20(2).png" alt="Vista lateral">
                 </div>
-                <div class="thumbnail-item" onclick="changeMainImage('https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/detalle_silla1.jpg', this)">
+                <div class="thumbnail-item" onclick="changeMainImage('https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/detalle_silla1.jpg', this)" data-type="image">
                   <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/detalle_silla1.jpg" alt="Detalle 1">
                 </div>
-                <div class="thumbnail-item" onclick="changeMainImage('https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/detalle_silla2.jpg', this)">
+                <div class="thumbnail-item" onclick="changeMainImage('https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/detalle_silla2.jpg', this)" data-type="image">
                   <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/detalle_silla2.jpg" alt="Detalle 2">
                 </div>
               </div>
@@ -662,9 +734,22 @@
   </div>
 
   <script>
-    // ===== FUNCIONES DE GALERÍA DE IMÁGENES =====
+    // ===== FUNCIONES DE GALERÍA DE IMÁGENES Y VIDEO =====
     function changeMainImage(imageSrc, thumbnailElement) {
       const mainImage = document.getElementById('main-chair-image');
+      const mainVideo = document.getElementById('main-chair-video');
+      const videoOverlay = document.getElementById('video-overlay');
+      
+      // Mostrar imagen, ocultar video
+      mainImage.style.display = 'block';
+      mainVideo.style.display = 'none';
+      videoOverlay.style.display = 'none';
+      
+      // Pausar video si está reproduciéndose
+      if (!mainVideo.paused) {
+        mainVideo.pause();
+      }
+      
       mainImage.src = imageSrc;
       
       // Actualizar thumbnail activo
@@ -678,6 +763,63 @@
       setTimeout(() => {
         mainImage.style.opacity = '1';
       }, 200);
+    }
+
+    function showMainVideo(thumbnailElement) {
+      const mainImage = document.getElementById('main-chair-image');
+      const mainVideo = document.getElementById('main-chair-video');
+      const videoOverlay = document.getElementById('video-overlay');
+      const videoBtn = document.getElementById('main-video-btn');
+      
+      // Mostrar video, ocultar imagen
+      mainImage.style.display = 'none';
+      mainVideo.style.display = 'block';
+      videoOverlay.style.display = 'flex';
+      
+      // Actualizar thumbnail activo
+      document.querySelectorAll('.thumbnail-item').forEach(item => {
+        item.classList.remove('active');
+      });
+      thumbnailElement.classList.add('active');
+      
+      // Actualizar botón según estado del video
+      videoBtn.textContent = mainVideo.paused ? '▶' : '⏸';
+      
+      // Reiniciar autoplay si fue pausado
+      if (mainVideo.paused) {
+        const playPromise = mainVideo.play();
+        if (playPromise !== undefined) {
+          playPromise.then(() => {
+            videoBtn.textContent = '⏸';
+            console.log('▶️ Video reanudado automáticamente');
+          }).catch(error => {
+            console.log('🔇 No se pudo reanudar automáticamente');
+          });
+        }
+      }
+      
+      // Efecto de transición
+      mainVideo.style.opacity = '0.7';
+      setTimeout(() => {
+        mainVideo.style.opacity = '1';
+      }, 200);
+
+      console.log('🎥 Video principal mostrado y configurado');
+    }
+
+    function toggleMainVideo() {
+      const mainVideo = document.getElementById('main-chair-video');
+      const videoBtn = document.getElementById('main-video-btn');
+      
+      if (mainVideo.paused) {
+        mainVideo.play();
+        videoBtn.textContent = '⏸';
+        console.log('▶️ Video reproduciendo');
+      } else {
+        mainVideo.pause();
+        videoBtn.textContent = '▶';
+        console.log('⏸️ Video pausado');
+      }
     }
 
     function openLightbox(imageSrc) {
@@ -824,12 +966,79 @@
         console.log('🔓 Botón de agregar al carrito listo');
       }
 
-      // Agregar click para lightbox en imagen principal
+      // Agregar click para lightbox en imagen principal (solo cuando está visible)
       const mainImage = document.getElementById('main-chair-image');
       if (mainImage) {
         mainImage.addEventListener('click', function() {
-          openLightbox(this.src);
+          // Solo abrir lightbox si la imagen está visible (no el video)
+          if (mainImage.style.display !== 'none') {
+            openLightbox(this.src);
+          }
         });
+      }
+
+      // ===== CONFIGURACIÓN DEL VIDEO =====
+      const mainVideo = document.getElementById('main-chair-video');
+      const videoBtn = document.getElementById('main-video-btn');
+      const videoOverlay = document.getElementById('video-overlay');
+
+      if (mainVideo && videoBtn) {
+        // Configurar autoplay si está soportado
+        mainVideo.addEventListener('loadeddata', function() {
+          console.log('🎬 Video cargado y listo para reproducir automáticamente');
+          // Actualizar botón inicial basado en autoplay
+          videoBtn.textContent = mainVideo.paused ? '▶' : '⏸';
+        });
+
+        // Eventos del video
+        mainVideo.addEventListener('play', function() {
+          videoBtn.textContent = '⏸';
+          console.log('🎥 Video iniciado (autoplay o manual)');
+        });
+
+        mainVideo.addEventListener('pause', function() {
+          videoBtn.textContent = '▶';
+          console.log('⏸️ Video pausado');
+        });
+
+        mainVideo.addEventListener('ended', function() {
+          videoBtn.textContent = '▶';
+          console.log('🔄 Video finalizado - se reiniciará por loop');
+        });
+
+        // Manejar errores de autoplay (algunos navegadores lo bloquean)
+        mainVideo.addEventListener('error', function(e) {
+          console.log('⚠️ Error en video:', e);
+        });
+
+        // Intentar autoplay si falló inicialmente
+        const playPromise = mainVideo.play();
+        if (playPromise !== undefined) {
+          playPromise.then(() => {
+            console.log('✅ Autoplay iniciado exitosamente');
+            videoBtn.textContent = '⏸';
+          }).catch(error => {
+            console.log('🔇 Autoplay bloqueado por el navegador, se requiere interacción del usuario');
+            videoBtn.textContent = '▶';
+          });
+        }
+
+        // Overlay simplificado - siempre visible pero transparente durante reproducción
+        const mediaContainer = document.getElementById('main-media-container');
+        if (mediaContainer && videoOverlay) {
+          mediaContainer.addEventListener('mouseenter', function() {
+            videoOverlay.style.opacity = '1';
+          });
+
+          mediaContainer.addEventListener('mouseleave', function() {
+            // Solo ocultar si está reproduciéndose
+            if (!mainVideo.paused) {
+              videoOverlay.style.opacity = '0.3';
+            }
+          });
+        }
+
+        console.log('🎬 Configuración de video con autoplay completada');
       }
 
       // Cerrar lightbox con ESC
