@@ -1289,3 +1289,91 @@ html body .side-cart-overlay {
     margin-bottom: 0 !important;
   }
 }
+
+/* ===== SPOTIFY SECTION RECONSTRUIDA - SIMPLE Y GRANDE ===== */
+
+/* Móvil - Sección Spotify simple y grande como embed real */
+@media (max-width: 768px) {
+  .raper-spotify-section {
+    padding: 50px 20px;
+    background: #000;
+    position: relative;
+  }
+
+  .spotify-section-container {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .spotify-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #5fa4ff;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 0.05em;
+  }
+
+  /* Container simple que se parece al embed real de Spotify */
+  .spotify-hybrid-container {
+    background: #121212;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    margin: 0 auto;
+    max-width: 100%;
+  }
+
+  /* Header compacto y simple */
+  .raper-player-header {
+    display: none; /* Eliminamos el header customizado */
+  }
+
+  /* Embed container que ocupa todo el espacio */
+  .spotify-embed-container {
+    padding: 0;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #121212;
+  }
+
+  .spotify-embed-container iframe {
+    border-radius: 16px;
+    display: block;
+    height: 450px; /* Mucho más grande */
+    width: 100%;
+    border: none;
+  }
+}
+
+/* Móvil pequeño */
+@media (max-width: 480px) {
+  .raper-spotify-section {
+    padding: 40px 15px;
+  }
+
+  .spotify-title {
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+  }
+
+  .spotify-embed-container iframe {
+    height: 400px; /* Grande pero adaptado */
+    border-radius: 12px;
+  }
+
+  .spotify-hybrid-container {
+    border-radius: 12px;
+  }
+}
+
+/* Extra pequeño */
+@media (max-width: 360px) {
+  .spotify-title {
+    font-size: 2rem;
+  }
+
+  .spotify-embed-container iframe {
+    height: 380px;
+  }
+}

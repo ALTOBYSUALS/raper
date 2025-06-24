@@ -592,79 +592,70 @@
           transform: rotate(-45deg) translate(7px, -6px);
         }
 
-        /* ===== MENÚ MÓVIL ===== */
+        /* ===== MENÚ MÓVIL - CONGRUENTE CON SILLAS ===== */
         .mobile-menu {
           position: fixed;
           top: 0;
-          left: 0;
+          right: -100%;
           width: 100%;
+          max-width: 350px;
           height: 100vh;
           background: rgba(0, 0, 0, 0.95);
-          backdrop-filter: blur(10px);
-          z-index: 9998;
-          display: none;
+          z-index: 999;
+          transition: right 0.25s ease;
+          overflow: hidden;
+          display: flex;
           flex-direction: column;
           justify-content: center;
           align-items: center;
-          opacity: 0;
-          transition: opacity 0.3s ease;
+          padding: 60px 30px 30px;
         }
 
         .mobile-menu.active {
-          opacity: 1;
+          right: 0;
         }
 
         .mobile-menu-links {
           display: flex;
           flex-direction: column;
-          align-items: center;
-          gap: 3rem;
-          margin-bottom: 4rem;
+          gap: 25px;
+          width: 100%;
+          margin-bottom: 40px;
         }
 
         .mobile-menu-link {
           color: #fff;
-          font-size: 2.5rem;
+          font-size: 1.8rem;
           font-weight: 600;
           text-decoration: none;
-          text-transform: uppercase;
-          letter-spacing: 0.1em;
-          transition: all 0.3s ease;
-          position: relative;
+          text-align: center;
+          padding: 15px 20px;
+          border-radius: 12px;
+          background: rgba(255, 255, 255, 0.05);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          transition: background 0.2s ease, color 0.2s ease;
+          letter-spacing: 0.05em;
         }
 
-        .mobile-menu-link:hover {
+        .mobile-menu-link:hover,
+        .mobile-menu-link:focus {
+          background: rgba(95, 164, 255, 0.2);
           color: #5fa4ff;
-          transform: scale(1.1);
-        }
-
-        .mobile-menu-link::after {
-          content: '';
-          position: absolute;
-          bottom: -10px;
-          left: 50%;
-          transform: translateX(-50%);
-          width: 0;
-          height: 2px;
-          background: linear-gradient(90deg, #5fa4ff, #4fd1c5);
-          transition: width 0.3s ease;
-        }
-
-        .mobile-menu-link:hover::after {
-          width: 100%;
         }
 
         .mobile-menu-contact {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 1.5rem;
+          width: 100%;
+          text-align: center;
+          border-top: 1px solid rgba(255, 255, 255, 0.1);
+          padding-top: 25px;
         }
 
         .contact-item {
           display: flex;
           align-items: center;
-          gap: 1rem;
+          justify-content: center;
+          gap: 10px;
+          margin-bottom: 15px;
           color: rgba(255, 255, 255, 0.8);
           font-size: 1.4rem;
         }
@@ -744,7 +735,7 @@
           opacity: 1 !important;
         }
 
-        /* ===== RESPONSIVE DESIGN ===== */
+        /* ===== RESPONSIVE DESIGN - CONGRUENTE ===== */
         @media (max-width: 768px) {
           .nav-links {
             display: none !important;
@@ -760,6 +751,14 @@
 
           .navbar-sticky__wrapper {
             padding: 0 20px !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+          }
+
+          .navbar-actions {
+            display: flex !important;
+            align-items: center !important;
+            gap: 15px !important;
           }
         }
 
@@ -774,6 +773,12 @@
 
           .mobile-menu {
             display: none !important;
+          }
+
+          .navbar-actions {
+            display: flex !important;
+            align-items: center !important;
+            gap: 15px !important;
           }
         }
       </style>
@@ -1093,34 +1098,38 @@
         console.log('🔓 Botón de agregar al carrito listo');
       }
 
-      // ===== MENÚ HAMBURGUESA ===== 
+      // ===== MENÚ HAMBURGUESA - CONGRUENTE CON SILLAS ===== 
       const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
       const mobileMenu = document.getElementById('mobile-menu');
       const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
       
+      function closeMenu() {
+        mobileMenuToggle.classList.remove('active');
+        mobileMenu.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+      
       if (mobileMenuToggle && mobileMenu) {
-        // Toggle del menú
+        // Toggle del menú con hamburguesa
         mobileMenuToggle.addEventListener('click', function() {
           mobileMenuToggle.classList.toggle('active');
           mobileMenu.classList.toggle('active');
           document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
         });
 
-        // Cerrar menú al hacer clic en un enlace
+        // Cerrar menú al hacer clic en enlaces
         mobileMenuLinks.forEach(link => {
           link.addEventListener('click', function() {
-            mobileMenuToggle.classList.remove('active');
-            mobileMenu.classList.remove('active');
-            document.body.style.overflow = '';
+            closeMenu();
           });
         });
 
         // Cerrar menú al hacer clic fuera
-        mobileMenu.addEventListener('click', function(e) {
-          if (e.target === mobileMenu) {
-            mobileMenuToggle.classList.remove('active');
-            mobileMenu.classList.remove('active');
-            document.body.style.overflow = '';
+        document.addEventListener('click', function(e) {
+          if (mobileMenu.classList.contains('active') && 
+              !mobileMenu.contains(e.target) && 
+              !mobileMenuToggle.contains(e.target)) {
+            closeMenu();
           }
         });
       }
