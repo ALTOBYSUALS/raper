@@ -1,7 +1,19 @@
 {
   "version": 2,
+  "builds": [
+    {
+      "src": "local-dev-server.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/local-dev-server.js"
+    }
+  ],
   "outputDirectory": "raper-2.webflow",
   "github": {
     "silent": false
   }
-} 
+}

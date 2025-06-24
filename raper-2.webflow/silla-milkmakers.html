@@ -8,6 +8,7 @@
   <link href="css/webflow.css" rel="stylesheet" type="text/css">
   <link href="css/raper-2.webflow.css" rel="stylesheet" type="text/css">
   <link href="css/theme.css" rel="stylesheet" type="text/css">
+  <link href="css/mobile-responsive-fixes.css?v=20250624-silla" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
   <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
@@ -54,413 +55,399 @@
           100% { text-shadow: 0 0 15px rgba(95, 164, 255, 0.8), 0 0 20px rgba(95, 164, 255, 0.4); }
         }
 
-        /* ===== CINEMATIC VIDEO HERO SECTION ===== */
-        .video-hero-section {
-          position: relative;
-          width: 100%;
-          height: 100vh;
-          overflow: hidden;
-          display: flex;
-          align-items: center;
-          justify-content: center;
+        /* ===== ESTILOS PARA LA PÁGINA DE PRODUCTO DE SILLA ===== */
+        .chair-product-section {
+          background-color: #000;
+          padding: 12rem 0 8rem 0;
+          min-height: 100vh;
         }
 
-        .video-background {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          min-width: 100%;
-          min-height: 100%;
-          width: auto;
-          height: auto;
-          z-index: 0;
-          transform: translate(-50%, -50%);
-          object-fit: cover;
+        .chair-product-container {
+          max-width: 1400px;
+          margin: 0 auto;
+          padding: 0 4rem;
         }
 
-        .video-overlay {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: linear-gradient(
-            135deg,
-            rgba(0, 0, 0, 0.7) 0%,
-            rgba(95, 164, 255, 0.1) 30%,
-            rgba(0, 0, 0, 0.5) 70%,
-            rgba(0, 0, 0, 0.8) 100%
-          );
-          z-index: 1;
-        }
-
-        .hero-content-wrapper {
-          position: relative;
-          z-index: 2;
+        .product-header {
           text-align: center;
-          max-width: 1000px;
-          padding: 0 2rem;
-          animation: heroFadeIn 2s ease-out;
+          margin-bottom: 6rem;
         }
 
-        @keyframes heroFadeIn {
-          from {
-            opacity: 0;
-            transform: translateY(50px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        .chair-badge {
-          display: inline-block;
-          background: rgba(95, 164, 255, 0.2);
-          color: #5fa4ff;
-          padding: 1rem 2rem;
-          border-radius: 50px;
-          border: 2px solid rgba(95, 164, 255, 0.5);
-          font-size: 1.4rem;
+        .product-header h1 {
+          font-size: 4.5rem;
           font-weight: 700;
-          letter-spacing: 0.2em;
-          text-transform: uppercase;
-          margin-bottom: 3rem;
-          backdrop-filter: blur(15px);
-          animation: pulseGlow 3s ease-in-out infinite alternate;
-        }
-
-        @keyframes pulseGlow {
-          0% {
-            box-shadow: 0 0 20px rgba(95, 164, 255, 0.3);
-            border-color: rgba(95, 164, 255, 0.5);
-          }
-          100% {
-            box-shadow: 0 0 40px rgba(95, 164, 255, 0.6);
-            border-color: rgba(95, 164, 255, 0.8);
-          }
-        }
-
-        .hero-main-title {
-          font-size: 6rem;
-          font-weight: 900;
-          color: white;
-          line-height: 1.1;
-          margin-bottom: 2rem;
-          text-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
-          animation: titleFloat 6s ease-in-out infinite;
-        }
-
-        @keyframes titleFloat {
-          0%, 100% {
-            transform: translateY(0px);
-          }
-          50% {
-            transform: translateY(-10px);
-          }
-        }
-
-        .hero-main-title .highlight {
-          background: linear-gradient(135deg, #5fa4ff 0%, #4fd1c5 50%, #ff6b6b 100%);
+          background: linear-gradient(135deg, #5fa4ff 0%, #4fd1c5 100%);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
-          background-size: 200% 200%;
-          animation: gradientShift 4s ease-in-out infinite;
+          margin-bottom: 1rem;
+          text-transform: uppercase;
+          letter-spacing: 0.1em;
         }
 
-        @keyframes gradientShift {
-          0%, 100% {
-            background-position: 0% 50%;
-          }
-          50% {
-            background-position: 100% 50%;
-          }
+        .chair-product-layout {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 6rem;
+          align-items: start;
         }
 
-        .hero-subtitle {
-          font-size: 2.4rem;
-          color: rgba(255, 255, 255, 0.9);
-          font-weight: 300;
-          margin-bottom: 3rem;
-          text-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
-          animation: subtitleSlide 1.5s ease-out 0.5s both;
-        }
-
-        @keyframes subtitleSlide {
-          from {
-            opacity: 0;
-            transform: translateX(-30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
-
-        .hero-description {
-          font-size: 1.8rem;
-          color: rgba(255, 255, 255, 0.8);
-          line-height: 1.7;
-          margin-bottom: 4rem;
-          max-width: 800px;
-          margin-left: auto;
-          margin-right: auto;
-          text-shadow: 0 3px 10px rgba(0, 0, 0, 0.8);
-          animation: descriptionFade 2s ease-out 1s both;
-        }
-
-        @keyframes descriptionFade {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        .hero-features {
+        /* ===== GALERÍA DE IMÁGENES ===== */
+        .chair-image-section {
           display: flex;
-          justify-content: center;
-          gap: 4rem;
-          margin-bottom: 4rem;
-          flex-wrap: wrap;
-          animation: featuresAppear 2.5s ease-out 1.5s both;
+          flex-direction: column;
+          align-items: center;
         }
 
-        @keyframes featuresAppear {
-          from {
-            opacity: 0;
-            transform: scale(0.8);
-          }
-          to {
-            opacity: 1;
-            transform: scale(1);
-          }
+        .chair-main-image-container {
+          position: relative;
+          width: 100%;
+          max-width: 500px;
+          height: 500px;
+          border-radius: 2rem;
+          overflow: hidden;
+          background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+          border: 2px solid rgba(95, 164, 255, 0.3);
+          box-shadow: 0 20px 60px rgba(95, 164, 255, 0.2);
+          margin-bottom: 2rem;
+          cursor: pointer;
+        }
+
+        .chair-main-image {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.5s ease;
+        }
+
+        .chair-main-image:hover {
+          transform: scale(1.05);
+        }
+
+        .chair-thumbnail-gallery {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 1rem;
+          width: 100%;
+          max-width: 500px;
+        }
+
+        .thumbnail-item {
+          width: 100px;
+          height: 100px;
+          border-radius: 1rem;
+          overflow: hidden;
+          border: 2px solid transparent;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          background: #1a1a1a;
+        }
+
+        .thumbnail-item.active {
+          border-color: #5fa4ff;
+          box-shadow: 0 0 20px rgba(95, 164, 255, 0.5);
+        }
+
+        .thumbnail-item:hover {
+          border-color: #4fd1c5;
+          transform: scale(1.05);
+        }
+
+        .thumbnail-item img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        /* ===== INFORMACIÓN DEL PRODUCTO ===== */
+        .chair-info-section {
+          display: flex;
+          flex-direction: column;
+          gap: 3rem;
+        }
+
+        .chair-product-title {
+          font-size: 3.5rem;
+          font-weight: 700;
+          color: #fff;
+          margin-bottom: 2rem;
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+        }
+
+        .chair-product-price {
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+          margin-bottom: 2rem;
+        }
+
+        .chair-price-current {
+          font-size: 3rem;
+          font-weight: 700;
+          background: linear-gradient(135deg, #5fa4ff 0%, #4fd1c5 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+
+        .price-label {
+          font-size: 1.4rem;
+          color: #888;
+          text-transform: uppercase;
+          letter-spacing: 0.1em;
+        }
+
+        .chair-product-description {
+          font-size: 1.8rem;
+          line-height: 1.6;
+          color: #e0e0e0;
+          margin-bottom: 3rem;
+        }
+
+        .product-features {
+          background: #1a1a1a;
+          border-radius: 1.5rem;
+          padding: 3rem;
+          margin-bottom: 3rem;
+        }
+
+        .features-title {
+          font-size: 2.2rem;
+          font-weight: 600;
+          color: #5fa4ff;
+          margin-bottom: 2rem;
+        }
+
+        .features-list {
+          list-style: none;
+          padding: 0;
+          margin: 0;
         }
 
         .feature-item {
           display: flex;
-          flex-direction: column;
           align-items: center;
-          text-align: center;
-          max-width: 200px;
+          gap: 1.5rem;
+          padding: 1rem 0;
+          border-bottom: 1px solid #333;
+          font-size: 1.6rem;
+          color: #e0e0e0;
+        }
+
+        .feature-item:last-child {
+          border-bottom: none;
         }
 
         .feature-icon {
-          width: 80px;
-          height: 80px;
-          background: rgba(95, 164, 255, 0.2);
-          border-radius: 50%;
+          color: #5fa4ff;
+          font-weight: 700;
+          font-size: 1.8rem;
+        }
+
+        .chair-actions {
+          display: flex;
+          gap: 2rem;
+          align-items: center;
+        }
+
+        .quantity-selector {
           display: flex;
           align-items: center;
-          justify-content: center;
-          margin-bottom: 1.5rem;
-          backdrop-filter: blur(10px);
-          border: 2px solid rgba(95, 164, 255, 0.3);
+          gap: 1rem;
+          background: #1a1a1a;
+          border-radius: 1rem;
+          padding: 1rem;
+        }
+
+        .quantity-btn {
+          background: #5fa4ff;
+          color: #fff;
+          border: none;
+          width: 4rem;
+          height: 4rem;
+          border-radius: 0.5rem;
+          font-size: 2rem;
+          font-weight: 700;
+          cursor: pointer;
           transition: all 0.3s ease;
         }
 
-        .feature-icon:hover {
+        .quantity-btn:hover {
+          background: #4fd1c5;
           transform: scale(1.1);
-          background: rgba(95, 164, 255, 0.3);
-          border-color: rgba(95, 164, 255, 0.6);
         }
 
-        .feature-icon span {
-          font-size: 2.5rem;
-          color: #5fa4ff;
-        }
-
-        .feature-text {
-          color: rgba(255, 255, 255, 0.9);
-          font-size: 1.4rem;
+        .quantity-input {
+          background: transparent;
+          border: none;
+          color: #fff;
+          font-size: 1.8rem;
           font-weight: 600;
-          text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+          text-align: center;
+          width: 5rem;
         }
 
-        .hero-actions {
-          display: flex;
-          gap: 2rem;
-          justify-content: center;
-          flex-wrap: wrap;
-          animation: actionsSlideUp 3s ease-out 2s both;
-        }
-
-        @keyframes actionsSlideUp {
-          from {
-            opacity: 0;
-            transform: translateY(40px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        .btn-primary {
+        .chair-add-to-cart {
           background: linear-gradient(135deg, #5fa4ff 0%, #4fd1c5 100%);
           color: #000;
+          border: none;
           padding: 1.8rem 4rem;
           font-size: 1.6rem;
           font-weight: 700;
-          border-radius: 15px;
-          text-decoration: none;
           text-transform: uppercase;
-          letter-spacing: 1px;
-          transition: all 0.4s ease;
-          border: none;
+          letter-spacing: 0.1em;
+          border-radius: 1rem;
           cursor: pointer;
-          position: relative;
-          overflow: hidden;
-          box-shadow: 0 15px 35px rgba(95, 164, 255, 0.4);
+          transition: all 0.3s ease;
+          box-shadow: 0 10px 30px rgba(95, 164, 255, 0.3);
         }
 
-        .btn-primary::before {
-          content: '';
-          position: absolute;
+        .chair-add-to-cart:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 15px 40px rgba(95, 164, 255, 0.5);
+        }
+
+        .product-meta {
+          display: flex;
+          flex-direction: column;
+          gap: 1.5rem;
+          padding: 2rem 0;
+          border-top: 1px solid #333;
+          margin-top: 3rem;
+        }
+
+        .meta-row {
+          display: flex;
+          gap: 2rem;
+        }
+
+        .meta-label {
+          color: #888;
+          font-weight: 600;
+          min-width: 100px;
+        }
+
+        .meta-value {
+          color: #e0e0e0;
+        }
+
+        /* ===== LIGHTBOX PARA IMÁGENES ===== */
+        .lightbox {
+          position: fixed;
           top: 0;
-          left: -100%;
+          left: 0;
           width: 100%;
           height: 100%;
-          background: linear-gradient(90deg, 
-            transparent 0%, 
-            rgba(255, 255, 255, 0.3) 50%, 
-            transparent 100%);
-          transition: left 0.6s ease;
-        }
-
-        .btn-primary:hover::before {
-          left: 100%;
-        }
-
-        .btn-primary:hover {
-          transform: translateY(-5px) scale(1.05);
-          box-shadow: 0 25px 50px rgba(95, 164, 255, 0.6);
-          text-decoration: none;
-          color: #000;
-        }
-
-        .btn-secondary {
-          background: transparent;
-          color: white;
-          padding: 1.8rem 4rem;
-          font-size: 1.6rem;
-          font-weight: 700;
-          border: 2px solid rgba(255, 255, 255, 0.6);
-          border-radius: 15px;
-          text-decoration: none;
-          text-transform: uppercase;
-          letter-spacing: 1px;
-          transition: all 0.4s ease;
-          cursor: pointer;
-          backdrop-filter: blur(15px);
-        }
-
-        .btn-secondary:hover {
-          background: rgba(255, 255, 255, 0.1);
-          border-color: #5fa4ff;
-          color: #5fa4ff;
-          transform: translateY(-3px);
-          text-decoration: none;
-          box-shadow: 0 15px 30px rgba(95, 164, 255, 0.3);
-        }
-
-        /* Scroll indicator */
-        .scroll-indicator {
-          position: absolute;
-          bottom: 3rem;
-          left: 50%;
-          transform: translateX(-50%);
-          z-index: 3;
-          animation: bounce 2s infinite;
-        }
-
-        @keyframes bounce {
-          0%, 20%, 50%, 80%, 100% {
-            transform: translateX(-50%) translateY(0);
-          }
-          40% {
-            transform: translateX(-50%) translateY(-10px);
-          }
-          60% {
-            transform: translateX(-50%) translateY(-5px);
-          }
-        }
-
-        .scroll-arrow {
-          width: 40px;
-          height: 40px;
-          border: 2px solid rgba(255, 255, 255, 0.6);
-          border-radius: 50%;
-          display: flex;
+          background: rgba(0, 0, 0, 0.95);
+          z-index: 10000;
+          display: none;
           align-items: center;
           justify-content: center;
-          color: rgba(255, 255, 255, 0.8);
-          font-size: 1.8rem;
           backdrop-filter: blur(10px);
         }
 
-        /* Responsive Design */
-        @media screen and (max-width: 1200px) {
-          .hero-main-title {
-            font-size: 5rem;
-          }
-          .hero-features {
-            gap: 2rem;
-          }
+        .lightbox.active {
+          display: flex;
         }
 
+        .lightbox-content {
+          position: relative;
+          max-width: 90%;
+          max-height: 90%;
+        }
+
+        .lightbox-image {
+          width: 100%;
+          height: auto;
+          border-radius: 1rem;
+          box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+        }
+
+        .lightbox-close {
+          position: absolute;
+          top: -40px;
+          right: 0;
+          background: none;
+          border: none;
+          color: #fff;
+          font-size: 3rem;
+          cursor: pointer;
+          transition: all 0.3s ease;
+        }
+
+        .lightbox-close:hover {
+          color: #5fa4ff;
+          transform: scale(1.2);
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
         @media screen and (max-width: 991px) {
-          .hero-main-title {
-            font-size: 4rem;
+          .chair-product-layout {
+            grid-template-columns: 1fr;
+            gap: 4rem;
           }
-          .hero-subtitle {
-            font-size: 2rem;
+          
+          .chair-product-container {
+            padding: 0 2rem;
           }
-          .hero-description {
-            font-size: 1.6rem;
+
+          .chair-thumbnail-gallery {
+            grid-template-columns: repeat(4, 1fr);
+            max-width: 400px;
           }
-          .hero-features {
-            flex-direction: column;
-            align-items: center;
-            gap: 2rem;
+
+          .thumbnail-item {
+            width: 80px;
+            height: 80px;
           }
         }
 
         @media screen and (max-width: 767px) {
-          .video-hero-section {
-            height: 100vh;
+          .product-header h1 {
+            font-size: 3rem;
           }
-          .hero-main-title {
-            font-size: 3.5rem;
+          
+          .chair-product-title {
+            font-size: 2.5rem;
           }
-          .hero-subtitle {
-            font-size: 1.8rem;
+          
+          .chair-price-current {
+            font-size: 2.5rem;
           }
-          .hero-description {
-            font-size: 1.5rem;
-            margin-bottom: 3rem;
-          }
-          .hero-actions {
+          
+          .chair-actions {
             flex-direction: column;
-            align-items: center;
+            align-items: stretch;
           }
-          .btn-primary,
-          .btn-secondary {
-            width: 280px;
-            padding: 1.5rem 2rem;
-            font-size: 1.4rem;
+
+          .chair-thumbnail-gallery {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
           }
-          .chair-badge {
-            font-size: 1.2rem;
-            padding: 0.8rem 1.5rem;
+
+          .thumbnail-item {
+            width: 120px;
+            height: 120px;
           }
-          .detail-image-wrapper {
-            padding: 1rem;
-            transform: none !important;
+        }
+
+        @media screen and (max-width: 480px) {
+          .chair-product-container {
+            padding: 0 1rem;
+          }
+
+          .chair-main-image-container {
+            height: 350px;
+          }
+
+          .chair-thumbnail-gallery {
+            grid-template-columns: repeat(2, 1fr);
+          }
+
+          .thumbnail-item {
+            width: 100px;
+            height: 100px;
           }
         }
       </style>
@@ -490,7 +477,33 @@
                 </svg>
                 <div id="cart-count">0</div>
               </div>
+              <!-- Mobile Menu Button -->
+              <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+              </button>
             </div>
+          </div>
+        </div>
+      </div>
+      <div class="navbar-sticky__background"></div>
+          
+      <!-- Mobile Menu -->
+      <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-links">
+          <a href="index.html" class="mobile-menu-link">Inicio</a>
+          <a href="store.html" class="mobile-menu-link">Tienda</a>
+          <a href="careers.html" class="mobile-menu-link">Trabaja con Nosotros</a>
+        </div>
+        <div class="mobile-menu-contact">
+          <div class="contact-item">
+            <span class="flag">🇺🇸</span>
+            <span class="phone">+1 (786) 978-1978</span>
+          </div>
+          <div class="contact-item">
+            <span class="flag">🇦🇷</span>
+            <span class="phone">+54 9 11 3422 6971</span>
           </div>
         </div>
       </div>
@@ -498,121 +511,128 @@
 
     <!-- Main Content -->
     <main class="main-wrapper">
-      <!-- Cinematic Video Hero Section -->
-      <div class="video-hero-section">
-        <!-- Background Video -->
-        <video 
-          class="video-background" 
-          autoplay 
-          muted 
-          loop 
-          playsinline
-          preload="auto">
-          <source src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/2.mp4" type="video/mp4">
-          Tu navegador no soporta videos HTML5.
-        </video>
-        
-        <!-- Video Overlay -->
-        <div class="video-overlay"></div>
-        
-        <!-- Hero Content -->
-        <div class="hero-content-wrapper">
-          <div class="chair-badge">
-            ◆ RAPER ERGONOMICS
+      <div class="chair-product-section">
+        <div class="chair-product-container">
+          <!-- Header -->
+          <div class="product-header">
+            <h1>Silla de Director RAPER</h1>
+            <p style="color: #b0b0b0; font-size: 1.8rem;">La revolución del confort digital</p>
+          </div>
+
+          <!-- Product Display -->
+          <div class="chair-product-layout">
+            <!-- Image Section with Gallery -->
+            <div class="chair-image-section">
+              <div class="chair-main-image-container">
+                <img id="main-chair-image" src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/silla.jpg" alt="Silla de Director RAPER" class="chair-main-image">
+              </div>
+              
+              <!-- Thumbnail Gallery -->
+              <div class="chair-thumbnail-gallery">
+                <div class="thumbnail-item active" onclick="changeMainImage('https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/silla.jpg', this)">
+                  <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/silla.jpg" alt="Vista principal">
+                </div>
+                <div class="thumbnail-item" onclick="changeMainImage('https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/silla_1%20(2).png', this)">
+                  <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/silla_1%20(2).png" alt="Vista lateral">
+                </div>
+                <div class="thumbnail-item" onclick="changeMainImage('https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/detalle_silla1.jpg', this)">
+                  <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/detalle_silla1.jpg" alt="Detalle 1">
+                </div>
+                <div class="thumbnail-item" onclick="changeMainImage('https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/detalle_silla2.jpg', this)">
+                  <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/detalle_silla2.jpg" alt="Detalle 2">
+                </div>
+              </div>
           </div>
           
-          <h1 class="hero-main-title">
-            Silla de <span class="highlight">Director</span>
-          </h1>
-          
-          <h2 class="hero-subtitle">
-            La Revolución del Confort Digital
-          </h2>
-          
-          <p class="hero-description">
-            Diseñada para los visionarios del contenido digital. Cada línea, cada curva, cada detalle ha sido 
-            meticulosamente crafteado para ofrecer la experiencia de asiento definitiva. Esta no es solo una silla, 
-            es tu trono creativo donde nacen las ideas que cambian el mundo.
-          </p>
-          
-          <!-- Feature Highlights -->
-          <div class="hero-features">
-            <div class="feature-item">
-              <div class="feature-icon">
-                <span>◆</span>
+            <!-- Info Section -->
+            <div class="chair-info-section">
+              <h2 class="chair-product-title">RAPER Director Chair Premium</h2>
+              
+              <div class="chair-product-price">
+                <span class="chair-price-current">$149.999 ARS</span>
+                <span class="price-label">Precio final</span>
               </div>
-              <div class="feature-text">Ergonomía Avanzada</div>
+              
+              <p class="chair-product-description">
+                La Silla de Director RAPER representa la culminación de años de investigación en ergonomía y diseño. 
+                Creada específicamente para creadores de contenido, streamers y profesionales digitales que pasan largas 
+                horas frente a la pantalla. Cada detalle ha sido meticulosamente diseñado para ofrecer el máximo confort 
+                sin comprometer el estilo característico de RAPER Company.
+              </p>
+
+              <!-- Características Técnicas -->
+              <div class="product-features">
+                <h3 class="features-title">Especificaciones Técnicas</h3>
+                <ul class="features-list">
+                  <li class="feature-item">
+                    <span class="feature-icon">◆</span>
+                    <span>Estructura de aleación de aluminio ultraligera</span>
+                  </li>
+                  <li class="feature-item">
+                    <span class="feature-icon">◇</span>
+                    <span>Tapizado en cuero sintético premium transpirable</span>
+                  </li>
+                  <li class="feature-item">
+                    <span class="feature-icon">◈</span>
+                    <span>Sistema de reclinación de 90° a 160°</span>
+                  </li>
+                  <li class="feature-item">
+                    <span class="feature-icon">◉</span>
+                    <span>Reposabrazos ajustables 4D con memory foam</span>
+                  </li>
+                  <li class="feature-item">
+                    <span class="feature-icon">◐</span>
+                    <span>Soporte lumbar ergonómico ajustable</span>
+                  </li>
+                  <li class="feature-item">
+                    <span class="feature-icon">◑</span>
+                    <span>Base giratoria 360° con ruedas silenciosas</span>
+                  </li>
+                  <li class="feature-item">
+                    <span class="feature-icon">◒</span>
+                    <span>Capacidad de peso: hasta 150kg</span>
+                  </li>
+                  <li class="feature-item">
+                    <span class="feature-icon">◓</span>
+                    <span>Garantía RAPER de 3 años</span>
+                  </li>
+                </ul>
             </div>
             
-            <div class="feature-item">
-              <div class="feature-icon">
-                <span>◆</span>
+              <div class="chair-actions">
+                <div class="quantity-selector">
+                  <button class="quantity-btn" onclick="updateChairQuantity(-1)">-</button>
+                  <input type="number" id="chair-quantity" class="quantity-input" value="1" min="1" readonly>
+                  <button class="quantity-btn" onclick="updateChairQuantity(1)">+</button>
               </div>
-              <div class="feature-text">Materiales Premium</div>
+                <button class="chair-add-to-cart" onclick="addChairToCart()">
+                  AGREGAR AL CARRITO
+                </button>
             </div>
             
-            <div class="feature-item">
-              <div class="feature-icon">
-                <span>◆</span>
+              <!-- Metadatos del Producto -->
+              <div class="product-meta">
+                <div class="meta-row">
+                  <span class="meta-label">SKU:</span>
+                  <span class="meta-value">RAPER-CHAIR-001</span>
               </div>
-              <div class="feature-text">Diseño RAPER</div>
+                <div class="meta-row">
+                  <span class="meta-label">Categoría:</span>
+                  <span class="meta-value">Sillas de Director Premium</span>
             </div>
+                <div class="meta-row">
+                  <span class="meta-label">Características:</span>
+                  <span class="meta-value">ergonómica, premium, ajustable, gaming</span>
           </div>
-          
-          <!-- Call to Actions -->
-          <div class="hero-actions">
-            <a href="#notify" class="btn-primary">
-              Notificarme al Lanzamiento
-            </a>
-            <a href="store.html" class="btn-secondary">
-              Ver Otras Categorías
-            </a>
+                <div class="meta-row">
+                  <span class="meta-label">Envío:</span>
+                  <span class="meta-value">Gratis a todo el país</span>
           </div>
         </div>
-        
-        <!-- Scroll Indicator -->
-        <div class="scroll-indicator">
-          <div class="scroll-arrow">
-            ↓
           </div>
         </div>
       </div>
-      
-      <!-- Additional Content Section -->
-      <section style="background: #000; padding: 10rem 0; text-align: center; overflow: hidden;">
-        <div style="max-width: 900px; margin: 0 auto; padding: 0 2rem;">
-          <h2 style="font-size: 3.5rem; color: white; margin-bottom: 2rem; font-weight: 700;">
-            Diseño que <span style="color: #4fd1c5;">Inspira</span>
-          </h2>
-          <p style="font-size: 1.8rem; color: rgba(255,255,255,0.8); line-height: 1.7; margin-bottom: 5rem; max-width: 700px; margin-left: auto; margin-right: auto;">
-            Cada elemento, desde el chasis de aleación ligera hasta el tejido transpirable, 
-            ha sido seleccionado para crear una sinfonía de confort y estilo.
-            Es la pieza central que tu espacio creativo merece.
-          </p>
-          
-          <div style="position: relative; margin-top: 5rem; perspective: 1000px;">
-            <div class="detail-image-wrapper" style="
-              background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0));
-              border-radius: 25px; 
-              border: 1px solid rgba(255, 255, 255, 0.1);
-              padding: 1.5rem;
-              backdrop-filter: blur(15px);
-              box-shadow: 0 25px 50px rgba(0,0,0,0.5);
-              transform: rotateX(0deg) rotateY(0deg) scale(1);
-              transition: transform 0.2s ease-out;
-            ">
-              <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/silla-detalle.png" 
-                   alt="Detalle de la Silla RAPER" 
-                   style="
-                     width: 100%; 
-                     height: auto; 
-                     border-radius: 15px; 
-                     display: block;
-                   ">
             </div>
-          </div>
-        </div>
-      </section>
     </main>
   </div>
 
@@ -633,193 +653,231 @@
     </div>
   </div>
 
+  <!-- Lightbox para imágenes -->
+  <div id="lightbox" class="lightbox">
+    <div class="lightbox-content">
+      <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+      <img id="lightbox-image" class="lightbox-image" src="" alt="">
+    </div>
+  </div>
+
   <script>
+    // ===== FUNCIONES DE GALERÍA DE IMÁGENES =====
+    function changeMainImage(imageSrc, thumbnailElement) {
+      const mainImage = document.getElementById('main-chair-image');
+      mainImage.src = imageSrc;
+      
+      // Actualizar thumbnail activo
+      document.querySelectorAll('.thumbnail-item').forEach(item => {
+        item.classList.remove('active');
+      });
+      thumbnailElement.classList.add('active');
+      
+      // Efecto de transición
+      mainImage.style.opacity = '0.7';
+      setTimeout(() => {
+        mainImage.style.opacity = '1';
+      }, 200);
+    }
+
+    function openLightbox(imageSrc) {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImage = document.getElementById('lightbox-image');
+      lightboxImage.src = imageSrc;
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      const lightbox = document.getElementById('lightbox');
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    // ===== FUNCIONES DEL CARRITO =====
+    function updateChairQuantity(change) {
+      const quantityInput = document.getElementById('chair-quantity');
+      const currentValue = parseInt(quantityInput.value) || 1;
+      const newValue = Math.max(1, currentValue + change);
+      quantityInput.value = newValue;
+
+      quantityInput.style.transform = 'scale(1.1)';
+      setTimeout(() => {
+        quantityInput.style.transform = 'scale(1)';
+      }, 200);
+    }
+
+    function addChairToCart() {
+      console.log('🪑 Agregando silla al carrito...');
+      
+      const quantity = parseInt(document.getElementById('chair-quantity').value) || 1;
+      const button = document.querySelector('.chair-add-to-cart');
+      
+      // Efecto visual inmediato
+      button.style.transform = 'scale(0.95)';
+      button.textContent = 'AGREGANDO...';
+      button.disabled = true;
+      
+      try {
+        // Cargar carrito actual desde localStorage
+        let cart = JSON.parse(localStorage.getItem('raperCart')) || [];
+        console.log('📦 Carrito actual:', cart.length, 'items');
+        
+        // Definir producto silla
+        const chairProduct = {
+          id: '200',
+          name: 'RAPER Director Chair Premium',
+          price: 149999,
+          image: 'https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/silla.jpg',
+          quantity: quantity
+        };
+        
+        // Buscar si el producto ya existe
+        const existingItemIndex = cart.findIndex(item => String(item.id) === '200');
+        
+        if (existingItemIndex !== -1) {
+          // Si existe, aumentar cantidad
+          cart[existingItemIndex].quantity += quantity;
+          console.log(`➕ Cantidad aumentada: ${cart[existingItemIndex].quantity}`);
+        } else {
+          // Si no existe, agregarlo
+          cart.push(chairProduct);
+          console.log('🆕 Producto agregado al carrito');
+        }
+        
+        // Guardar en localStorage
+        localStorage.setItem('raperCart', JSON.stringify(cart));
+        console.log('💾 Carrito guardado en localStorage');
+        
+        // Actualizar contador del carrito
+        const cartCount = document.getElementById('cart-count');
+        if (cartCount) {
+          const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+          cartCount.textContent = totalItems;
+          
+          // Animación del contador
+          cartCount.style.transform = 'scale(1.3)';
+          setTimeout(() => {
+            cartCount.style.transform = 'scale(1)';
+          }, 300);
+          
+          console.log(`🔢 Contador actualizado: ${totalItems} items`);
+        }
+        
+        // Feedback exitoso
+        setTimeout(() => {
+          button.textContent = '✓ AGREGADO AL CARRITO';
+          button.style.background = 'linear-gradient(135deg, #4fd1c5 0%, #5fa4ff 100%)';
+          button.style.color = '#000';
+          button.style.transform = 'scale(1)';
+          button.disabled = false;
+          
+          console.log(`✅ ${quantity} Silla(s) agregada(s) exitosamente`);
+          
+          // Restaurar botón después de 2 segundos
+          setTimeout(() => {
+            button.textContent = 'AGREGAR AL CARRITO';
+            button.style.background = '';
+            button.style.color = '';
+          }, 2000);
+        }, 500);
+        
+      } catch (error) {
+        console.error('❌ Error al agregar al carrito:', error);
+        
+        // Feedback de error
+        setTimeout(() => {
+          button.textContent = '❌ ERROR';
+          button.style.background = '#ff4444';
+          button.style.color = '#fff';
+          button.style.transform = 'scale(1)';
+          button.disabled = false;
+          
+          // Restaurar botón después de 2 segundos
+          setTimeout(() => {
+            button.textContent = 'AGREGAR AL CARRITO';
+            button.style.background = '';
+            button.style.color = '';
+          }, 2000);
+        }, 500);
+      }
+    }
+
+    // ===== INICIALIZACIÓN =====
     document.addEventListener('DOMContentLoaded', function() {
-      if (typeof window.updateCartCount === 'function') {
-        window.updateCartCount();
+      console.log('🚀 Página de silla cargada');
+      
+      // Actualizar contador del carrito al cargar
+      const cart = JSON.parse(localStorage.getItem('raperCart')) || [];
+      const cartCount = document.getElementById('cart-count');
+      if (cartCount) {
+        const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+        cartCount.textContent = totalItems;
+        console.log(`🔢 Contador inicial: ${totalItems} items`);
       }
       
-      // Enhanced video experience
-      const video = document.querySelector('.video-background');
-      const heroSection = document.querySelector('.video-hero-section');
-      
-      if (video) {
-        // Ensure video loads and plays smoothly
-        video.addEventListener('loadeddata', function() {
-          console.log('🎬 Video cargado exitosamente');
-          video.style.opacity = '1';
+      // Habilitar botón inmediatamente
+      const addButton = document.querySelector('.chair-add-to-cart');
+      if (addButton) {
+        addButton.disabled = false;
+        addButton.style.opacity = '1';
+        console.log('🔓 Botón de agregar al carrito listo');
+      }
+
+      // Agregar click para lightbox en imagen principal
+      const mainImage = document.getElementById('main-chair-image');
+      if (mainImage) {
+        mainImage.addEventListener('click', function() {
+          openLightbox(this.src);
         });
-        
-        // Fallback for autoplay issues
-        video.addEventListener('canplay', function() {
-          if (video.paused) {
-            video.play().catch(e => {
-              console.log('Video autoplay prevented, user interaction required');
-            });
+      }
+
+      // Cerrar lightbox con ESC
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          closeLightbox();
+        }
+      });
+
+      // Cerrar lightbox al hacer click en el fondo
+      const lightbox = document.getElementById('lightbox');
+      if (lightbox) {
+        lightbox.addEventListener('click', function(e) {
+          if (e.target === lightbox) {
+            closeLightbox();
           }
         });
-        
-        // Optimize video performance
-        video.addEventListener('loadstart', function() {
-          video.style.opacity = '0.8';
-        });
       }
+
+      // ===== MENÚ HAMBURGUESA ===== 
+      const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
       
-      // Smooth scroll for scroll indicator
-      const scrollIndicator = document.querySelector('.scroll-indicator');
-      if (scrollIndicator) {
-        scrollIndicator.addEventListener('click', function() {
-          const nextSection = document.querySelector('.video-hero-section').nextElementSibling;
-          if (nextSection) {
-            nextSection.scrollIntoView({ 
-              behavior: 'smooth',
-              block: 'start'
-            });
-          }
-        });
-      }
-      
-      // Parallax effect on scroll
-      let ticking = false;
-      function updateParallax() {
-        const scrolled = window.pageYOffset;
-        const heroHeight = heroSection ? heroSection.offsetHeight : 0;
-        
-        if (scrolled < heroHeight && video) {
-          const rate = scrolled * -0.5;
-          video.style.transform = `translate(-50%, calc(-50% + ${rate}px))`;
-        }
-        
-        ticking = false;
-      }
-      
-      function requestTick() {
-        if (!ticking) {
-          requestAnimationFrame(updateParallax);
-          ticking = true;
-        }
-      }
-      
-      // Add scroll listener for parallax effect
-      window.addEventListener('scroll', requestTick);
-      
-      // Optimize video loading based on connection
-      if ('connection' in navigator) {
-        const connection = navigator.connection;
-        if (connection && (connection.effectiveType === 'slow-2g' || connection.effectiveType === '2g')) {
-          // Reduce video quality for slow connections
-          video?.setAttribute('preload', 'metadata');
-        }
-      }
-      
-      // Add intersection observer for performance
-      if ('IntersectionObserver' in window) {
-        const videoObserver = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              // Video is visible, ensure it's playing
-              video?.play().catch(e => console.log('Video play failed:', e));
-            } else {
-              // Video is not visible, pause to save resources
-              video?.pause();
-            }
-          });
-        }, { threshold: 0.1 });
-        
-        if (video) {
-          videoObserver.observe(video);
-        }
-      }
-      
-      // Add mouse-move parallax effect for the new detail image
-      const detailImageContainer = document.querySelector('div[style*="perspective"]');
-      if (detailImageContainer) {
-        detailImageContainer.addEventListener('mousemove', function(e) {
-          const { left, top, width, height } = this.getBoundingClientRect();
-          const x = (e.clientX - left) / width - 0.5;
-          const y = (e.clientY - top) / height - 0.5;
-          
-          const rotateX = y * -10; // Invert y-axis for natural rotation
-          const rotateY = x * 10;
-          
-          this.firstElementChild.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+      if (mobileMenuToggle && mobileMenu) {
+        // Toggle del menú
+        mobileMenuToggle.addEventListener('click', function() {
+          mobileMenuToggle.classList.toggle('active');
+          mobileMenu.classList.toggle('active');
+          document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
         });
 
-        detailImageContainer.addEventListener('mouseleave', function() {
-          this.firstElementChild.style.transform = 'rotateX(0deg) rotateY(0deg) scale(1)';
+        // Cerrar menú al hacer clic en un enlace
+        mobileMenuLinks.forEach(link => {
+          link.addEventListener('click', function() {
+            mobileMenuToggle.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+          });
         });
-      }
-      
-      // Add click handlers for buttons
-      const notifyBtn = document.querySelector('a[href="#notify"]');
-      if (notifyBtn) {
-        notifyBtn.addEventListener('click', function(e) {
-          e.preventDefault();
-          
-          // Create elegant notification system
-          const notification = document.createElement('div');
-          notification.innerHTML = `
-            <div style="
-              position: fixed;
-              top: 50%;
-              left: 50%;
-              transform: translate(-50%, -50%);
-              background: linear-gradient(135deg, rgba(95, 164, 255, 0.95), rgba(79, 209, 197, 0.95));
-              color: #000;
-              padding: 3rem 4rem;
-              border-radius: 20px;
-              text-align: center;
-              font-weight: 700;
-              font-size: 1.8rem;
-              z-index: 10000;
-              backdrop-filter: blur(20px);
-              box-shadow: 0 25px 50px rgba(95, 164, 255, 0.5);
-              animation: notificationSlide 0.5s ease-out;
-            ">
-              <h3 style="margin: 0 0 1rem 0; font-size: 2.2rem;">¡Genial elección!</h3>
-              <p style="margin: 0; opacity: 0.9;">Te notificaremos cuando la Silla RAPER esté disponible.</p>
-              <div style="margin-top: 2rem;">
-                <button onclick="this.parentElement.parentElement.parentElement.remove()" 
-                        style="background: #000; color: #fff; border: none; padding: 1rem 2rem; border-radius: 10px; cursor: pointer; font-weight: 600;">
-                  Cerrar
-                </button>
-              </div>
-            </div>
-            <div style="
-              position: fixed;
-              top: 0;
-              left: 0;
-              width: 100%;
-              height: 100%;
-              background: rgba(0, 0, 0, 0.7);
-              z-index: 9999;
-              backdrop-filter: blur(5px);
-            " onclick="this.parentElement.remove()"></div>
-          `;
-          
-          // Add animation styles
-          const style = document.createElement('style');
-          style.textContent = `
-            @keyframes notificationSlide {
-              from {
-                opacity: 0;
-                transform: translate(-50%, -50%) scale(0.8);
-              }
-              to {
-                opacity: 1;
-                transform: translate(-50%, -50%) scale(1);
-              }
-            }
-          `;
-          document.head.appendChild(style);
-          document.body.appendChild(notification);
-          
-          // Auto remove after 5 seconds
-          setTimeout(() => {
-            if (notification.parentElement) {
-              notification.remove();
-            }
-          }, 5000);
+
+        // Cerrar menú al hacer clic fuera
+        mobileMenu.addEventListener('click', function(e) {
+          if (e.target === mobileMenu) {
+            mobileMenuToggle.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+          }
         });
       }
     });

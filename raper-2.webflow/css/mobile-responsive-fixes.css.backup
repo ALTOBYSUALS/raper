@@ -738,554 +738,333 @@ body.menu-open {
 /* Alternativa: Si quieres que NO se pueda hacer scroll del background cuando el menú está abierto, 
    cambia 'auto' por 'hidden' en la regla de arriba */
 
-/* Timestamp: Tue Jun 24 11:25:00 -03 2025 - NAVBAR MOBILE FIXES */
+/* Timestamp: Tue Jun 24 11:45:00 -03 2025 - ARTISTS B&W MOBILE STYLING */
 
-/* NAVBAR TEXT STYLING - TRANSPARENT WITH BRAND BLUE GLOW */
-/* Navbar link styling with brand-consistent blue glow */
-html body .navbar-sticky__link {
-  background: transparent !important;
-  color: #ffffff !important;
-  font-weight: 500 !important;
-  text-shadow: 0 0 8px rgba(95, 164, 255, 0.3) !important;
-  transition: all 0.3s ease !important;
-  opacity: 0.9 !important;
-  position: relative !important;
+/* ===== COMPONENTE PLAYLISTS RAPER - SOLO MÓVIL ===== */
+
+/* Ocultar en desktop por defecto */
+.raper-music-widget {
+  display: none;
 }
 
-html body .navbar-sticky__link:hover {
-  color: #5fa4ff !important;
-  text-shadow: 0 0 15px rgba(95, 164, 255, 0.6), 0 0 25px rgba(95, 164, 255, 0.4) !important;
-  opacity: 1 !important;
-  transform: translateY(-1px) !important;
+.raper-playlists-widget {
+  display: none;
 }
 
-html body .navbar-sticky__link.link--active {
-  color: #5fa4ff !important;
-  text-shadow: 0 0 12px rgba(95, 164, 255, 0.5), 0 0 20px rgba(95, 164, 255, 0.3) !important;
-  opacity: 1 !important;
-  font-weight: 600 !important;
-}
-
-/* Logo styling with subtle glow */
-html body .navbar-logo {
-  filter: drop-shadow(0 0 8px rgba(95, 164, 255, 0.2)) !important;
-  transition: all 0.3s ease !important;
-}
-
-html body .navbar-logo:hover {
-  filter: drop-shadow(0 0 15px rgba(95, 164, 255, 0.4)) !important;
-  transform: scale(1.02) !important;
-}
-
-/* Cart icon with brand glow - ENSURE VISIBILITY */
-html body .cart-icon {
-  color: #ffffff !important;
-  filter: drop-shadow(0 0 6px rgba(95, 164, 255, 0.3)) !important;
-  transition: all 0.3s ease !important;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-html body .cart-icon-wrapper {
-  display: flex !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-  position: relative !important;
-  cursor: pointer !important;
-}
-
-html body .cart-icon-wrapper:hover .cart-icon {
-  color: #5fa4ff !important;
-  filter: drop-shadow(0 0 12px rgba(95, 164, 255, 0.6)) !important;
-}
-
-html body #cart-count {
-  display: flex !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-  position: absolute !important;
-  top: -8px !important;
-  right: -8px !important;
-  background: linear-gradient(90deg, #3b82f6, #2dd4bf) !important;
-  color: white !important;
-  font-size: 1.1rem !important;
-  font-weight: 600 !important;
-  width: 18px !important;
-  height: 18px !important;
-  border-radius: 50% !important;
-  align-items: center !important;
-  justify-content: center !important;
-  z-index: 10 !important;
-}
-
-/* Navbar actions - ensure visibility */
-html body .navbar-actions {
-  display: flex !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-  align-items: center !important;
-  justify-content: flex-end !important;
-  gap: 15px !important;
-}
-
-/* Navbar background - keep transparent but add subtle backdrop */
-html body .navbar-sticky {
-  background: rgba(0, 0, 0, 0.85) !important;
-  backdrop-filter: blur(10px) !important;
-  border-bottom: none !important;
-}
-
-html body .navbar-sticky.scrolled {
-  background: rgba(0, 0, 0, 0.95) !important;
-  border-bottom: none !important;
-}
-
-/* Mobile menu toggle with brand colors */
-html body .mobile-menu-toggle {
-  color: #ffffff !important;
-}
-
-html body .mobile-menu-toggle:hover {
-  color: #5fa4ff !important;
-  filter: drop-shadow(0 0 8px rgba(95, 164, 255, 0.4)) !important;
-}
-
-html body .hamburger-line {
-  background: #ffffff !important;
-  box-shadow: 0 0 4px rgba(95, 164, 255, 0.2) !important;
-}
-
-html body .mobile-menu-toggle:hover .hamburger-line {
-  background: #5fa4ff !important;
-  box-shadow: 0 0 8px rgba(95, 164, 255, 0.5) !important;
-}
-
-/* Cart sidebar - ensure visibility and functionality */
-html body .side-cart-container {
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-  z-index: 9999 !important;
-}
-
-html body .side-cart {
-  display: block !important;
-  visibility: visible !important;
-}
-
-html body .side-cart-overlay {
-  display: block !important;
-  visibility: visible !important;
-}
-
-/* BANNER SELLO DISCOGRÁFICO - RESTORED */
-/* Estilos para el banner del sello discográfico */
-.record-label-banner {
-  width: 100%;
-  background: linear-gradient(90deg, rgba(0,0,0,0.9) 0%, rgba(95, 164, 255, 0.2) 50%, rgba(0,0,0,0.9) 100%);
-  padding: 15px 0;
-  position: relative;
-  z-index: 100;
-  border-bottom: 1px solid rgba(95, 164, 255, 0.3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 50px;
-}
-
-.record-label-banner .container-large {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-}
-
-.record-label-text {
-  text-align: center;
-  color: #fff;
-  font-size: 1.4rem;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  margin: 0;
-  padding: 0;
-  line-height: 1.2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-shadow: 0 0 10px rgba(95, 164, 255, 0.5);
-  animation: glow 3s ease-in-out infinite alternate;
-}
-
-@keyframes glow {
-  0% {
-    text-shadow: 0 0 5px rgba(95, 164, 255, 0.5);
-  }
-  100% {
-    text-shadow: 0 0 15px rgba(95, 164, 255, 0.8), 0 0 20px rgba(95, 164, 255, 0.4);
-  }
-}
-
-@media (max-width: 767px) {
-  .record-label-banner {
-    padding: 12px 0;
-    min-height: 45px;
-  }
-  
-  .record-label-text {
-    font-size: 1.2rem;
-    letter-spacing: 0.15em;
-  }
-}
-
-@media (max-width: 480px) {
-  .record-label-banner {
-    padding: 10px 0;
-    min-height: 40px;
-  }
-  
-  .record-label-text {
-    font-size: 1.1rem;
-    letter-spacing: 0.12em;
-  }
-}
-
-/* RAPER SPOTIFY EMBED SECTION */
-/* Sección principal del reproductor Spotify con colores RAPER */
-.raper-spotify-section {
-  width: 100%;
-  padding: 80px 20px;
-  background: transparent;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: auto;
-}
-
-.spotify-section-container {
-  max-width: 800px;
-  width: 100%;
-  text-align: center;
-}
-
-/* Header del reproductor */
-.spotify-header {
-  margin-bottom: 40px;
-  text-align: center;
-}
-
-.spotify-title {
-  font-size: 7rem;
-  font-weight: 900;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  background: linear-gradient(135deg, #5fa4ff 0%, #4fd1c5 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin: 0;
-  text-shadow: 0 0 40px rgba(95, 164, 255, 0.4);
-}
-
-.spotify-subtitle {
-  color: #5fa4ff;
-  font-size: 1.4rem;
-  font-weight: 600;
-  margin: 0 0 8px 0;
-  text-shadow: 0 0 10px rgba(95, 164, 255, 0.4);
-}
-
-.spotify-description {
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 1.1rem;
-  margin: 0;
-}
-
-/* Contenedor híbrido */
-.spotify-hybrid-container {
-  background: linear-gradient(145deg, rgba(20, 20, 20, 0.95) 0%, rgba(30, 30, 30, 0.95) 100%);
-  border-radius: 20px;
-  padding: 0;
-  border: 2px solid rgba(95, 164, 255, 0.2);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(95, 164, 255, 0.1);
-  backdrop-filter: blur(20px);
-  position: relative;
-  overflow: hidden;
-  transition: all 0.4s ease;
-}
-
-.spotify-hybrid-container:hover {
-  border-color: rgba(95, 164, 255, 0.4);
-  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.9), 0 0 60px rgba(95, 164, 255, 0.2);
-  transform: translateY(-5px);
-}
-
-/* Header personalizado RAPER */
-.raper-player-header {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  padding: 30px;
-  border-bottom: 1px solid rgba(95, 164, 255, 0.1);
-}
-
-/* Cover del álbum RAPER */
-.raper-album-cover {
-  width: 120px;
-  height: 120px;
-  position: relative;
-  background: linear-gradient(135deg, #5fa4ff 0%, #4fd1c5 100%);
-  border-radius: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 15px 40px rgba(95, 164, 255, 0.3);
-  transition: all 0.3s ease;
-  flex-shrink: 0;
-}
-
-.raper-album-cover:hover {
-  transform: scale(1.05);
-  box-shadow: 0 20px 50px rgba(95, 164, 255, 0.4);
-}
-
-.raper-logo-container {
-  position: relative;
-  z-index: 2;
-}
-
-.raper-logo-text {
-  font-size: 2.5rem;
-  font-weight: 900;
-  color: #000;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-}
-
-.raper-logo-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-}
-
-.spotify-icon {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  width: 30px;
-  height: 30px;
-  background: rgba(0, 0, 0, 0.7);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 3;
-}
-
-.spotify-icon svg {
-  width: 18px;
-  height: 18px;
-}
-
-/* Información de la pista RAPER */
-.raper-track-info {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.raper-track-title {
-  color: #fff;
-  font-size: 1.8rem;
-  font-weight: 700;
-  margin: 0;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-}
-
-.raper-track-artist {
-  color: #5fa4ff;
-  font-size: 1.1rem;
-  font-weight: 500;
-  margin: 0;
-  text-shadow: 0 0 10px rgba(95, 164, 255, 0.4);
-}
-
-/* Botón abrir en Spotify */
-.raper-open-spotify {
-  background: linear-gradient(135deg, #1DB954 0%, #1ed760 100%);
-  color: #fff;
-  padding: 8px 16px;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(29, 185, 84, 0.3);
-  margin-top: 8px;
-  align-self: flex-start;
-}
-
-.raper-open-spotify:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(29, 185, 84, 0.4);
-  text-decoration: none;
-  color: #fff;
-}
-
-.raper-open-spotify svg {
-  width: 14px;
-  height: 14px;
-}
-
-/* Contenedor del embed real */
-.spotify-embed-container {
-  padding: 0;
-  border-radius: 0 0 20px 20px;
-  overflow: hidden;
-}
-
-.spotify-embed-container iframe {
-  border-radius: 0 0 18px 18px;
-  display: block;
-}
-
-/* Responsive para diseño híbrido */
+/* Mostrar solo en móvil */
 @media (max-width: 768px) {
-  .raper-spotify-section {
-    padding: 60px 15px;
-    min-height: auto;
+  .raper-playlists-widget {
+    display: block;
+    margin: 3rem 1.5rem;
+    position: relative;
   }
-  
-  .spotify-title {
-    font-size: 5rem;
-  }
-  
-  .raper-player-header {
-    flex-direction: column;
-    text-align: center;
-    gap: 15px;
-    padding: 25px 20px;
-  }
-  
-  .raper-album-cover {
-    width: 100px;
-    height: 100px;
-  }
-  
-  .raper-logo-text {
-    font-size: 1.8rem;
-  }
-  
-  .raper-logo-image {
-    border-radius: 12px;
-  }
-  
-  .raper-track-title {
-    font-size: 1.6rem;
-  }
-  
-  .raper-track-artist {
-    font-size: 1rem;
-  }
-  
-  .raper-track-info {
-    align-items: center;
-  }
-  
-  .spotify-embed-container iframe {
-    height: 300px;
-  }
-}
 
-@media (max-width: 480px) {
-  .spotify-title {
-    font-size: 4rem;
+  /* Título PLAYLISTS */
+  .playlists-header {
+    margin-bottom: 2rem;
   }
-  
-  .raper-player-header {
-    padding: 20px 15px;
+
+  .playlists-title {
+    font-size: 3.2rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 50%, #ffa726 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 0;
+    text-align: left;
+    text-shadow: 0 0 30px rgba(255, 107, 53, 0.3);
   }
-  
-  .raper-album-cover {
+
+  /* Tarjeta principal de playlist */
+  .playlist-card-main {
+    background: linear-gradient(145deg, 
+      rgba(139, 69, 19, 0.95) 0%, 
+      rgba(160, 82, 45, 0.95) 50%, 
+      rgba(139, 69, 19, 0.95) 100%);
+    border-radius: 20px;
+    padding: 2rem;
+    border: 1px solid rgba(255, 107, 53, 0.3);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(15px);
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Efecto shimmer */
+  .playlist-card-main::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 107, 53, 0.1), transparent);
+    animation: playlistShimmer 8s ease-in-out infinite;
+  }
+
+  @keyframes playlistShimmer {
+    0%, 100% { left: -100%; }
+    50% { left: 100%; }
+  }
+
+  /* Header de la playlist */
+  .playlist-card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Cover de la playlist */
+  .playlist-cover {
     width: 80px;
     height: 80px;
+    background: linear-gradient(135deg, #5fa4ff 0%, #4fd1c5 100%);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(95, 164, 255, 0.4);
+    flex-shrink: 0;
   }
-  
+
   .raper-logo-text {
-    font-size: 1.4rem;
+    color: #000;
+    font-weight: 800;
+    font-size: 1rem;
+    letter-spacing: 0.1em;
   }
-  
-  .raper-logo-image {
-    border-radius: 10px;
+
+  /* Información de la playlist */
+  .playlist-info {
+    flex: 1;
+    min-width: 0;
   }
-  
-  .raper-track-title {
-    font-size: 1.4rem;
+
+  .playlist-name {
+    color: #fff;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem 0;
+    line-height: 1.2;
   }
-  
-  .raper-track-artist {
-    font-size: 0.9rem;
+
+  .playlist-artist {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: 0 0 1rem 0;
   }
-  
-  .raper-open-spotify {
-    font-size: 0.8rem;
-    padding: 6px 12px;
+
+  /* Botón de Spotify */
+  .save-spotify-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
   }
-  
-  .spotify-embed-container iframe {
-    height: 280px;
+
+  .save-spotify-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-1px);
+  }
+
+  .spotify-icon {
+    width: 16px;
+    height: 16px;
+    color: #1db954;
+  }
+
+  /* Controles de reproducción */
+  .playlist-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .control-buttons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .control-btn {
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .control-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    transform: scale(1.05);
+  }
+
+  .control-btn svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .play-btn-main {
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, #5fa4ff 0%, #4fd1c5 100%);
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(95, 164, 255, 0.4);
+    color: #000;
+  }
+
+  .play-btn-main:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(95, 164, 255, 0.5);
+  }
+
+  .play-btn-main svg {
+    width: 24px;
+    height: 24px;
+    margin-left: 2px;
+  }
+
+  /* Lista de canciones */
+  .playlist-tracks {
+    position: relative;
+    z-index: 2;
+  }
+
+  .track-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .track-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    border-radius: 8px;
+    border-bottom-color: transparent;
+  }
+
+  .track-item:last-child {
+    border-bottom: none;
+  }
+
+  .track-number {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1.1rem;
+    font-weight: 500;
+    width: 20px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+
+  .track-details {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .track-name {
+    display: block;
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .track-artist-name {
+    display: block;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1rem;
+    font-weight: 400;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .track-duration {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1.1rem;
+    font-weight: 500;
+    flex-shrink: 0;
   }
 }
 
-/* ===== OCULTAR SECCIÓN FORMULARIO EN MÓVIL ===== */
-@media (max-width: 768px) {
-  /* Ocultar específicamente la sección que contiene el formulario */
-  .section_h2:has(.create-history-section-clean),
-  .section_h2 .create-history-section-clean {
-    display: none !important;
+/* Versión más compacta para móviles pequeños */
+@media (max-width: 480px) {
+  .raper-playlists-widget {
+    margin: 2rem 1rem;
   }
-  
-  /* Para mayor compatibilidad, ocultar el div padre completo */
-  main > .section_h2:last-child {
-    display: none !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    height: 0 !important;
-    min-height: 0 !important;
-    max-height: 0 !important;
+
+  .playlists-title {
+    font-size: 2.8rem;
   }
-  
-  /* Asegurar que no haya espacios residuales en todos los elementos relacionados */
-  .create-history-section-clean,
-  .create-history-wrapper-clean,
-  .create-history-text-clean,
-  .create-history-form-clean,
-  .form-container-clean,
-  .section_h2 .h2,
-  .section_h2 .h2__intro,
-  .section_h2 .z-index-2 {
-    display: none !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    height: 0 !important;
-    min-height: 0 !important;
-    max-height: 0 !important;
-    overflow: hidden !important;
+
+  .playlist-card-main {
+    padding: 1.5rem;
   }
-  
-  /* Eliminar cualquier espacio entre secciones */
-  .artists-mobile-section + .section_h2,
-  .section_h2:last-child {
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
+
+  .playlist-card-header {
+    gap: 1rem;
+  }
+
+  .playlist-cover {
+    width: 70px;
+    height: 70px;
+  }
+
+  .playlist-name {
+    font-size: 1.6rem;
+  }
+
+  .play-btn-main {
+    width: 48px;
+    height: 48px;
+  }
+
+  .play-btn-main svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .track-name {
+    font-size: 1.2rem;
   }
 }

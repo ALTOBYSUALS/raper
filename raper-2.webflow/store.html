@@ -77,6 +77,19 @@ font-size : 1.6rem; /* 1REM = 10PX => 1.6REM = 16PX */
   }
 }
 
+/* Fix para el logo clickeable */
+.navbar-sticky__heading {
+  position: relative;
+  z-index: 1000 !important;
+  pointer-events: auto !important;
+  cursor: pointer !important;
+}
+
+.navbar-logo {
+  pointer-events: auto !important;
+  cursor: pointer !important;
+}
+
 /* Make text look crisper and more legible in all browsers */
 body {
   -webkit-font-smoothing: antialiased;
@@ -254,7 +267,7 @@ body {
       <div class="padding-global is_full-height">
         <div class="container-large is_full-height">
           <div class="navbar-sticky__wrapper">
-            <a href="#" class="navbar-sticky__heading">
+            <a href="index.html" class="navbar-sticky__heading">
               <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/Asset%2019supreme%20(1).png" alt="Raper Logo" class="navbar-logo">
             </a>
             <div class="navbar-sticky__links-wrapper">
@@ -433,6 +446,18 @@ body {
 
     // Inicialización
     document.addEventListener('DOMContentLoaded', function() {
+      // Debug: Verificar que el logo sea clickeable
+      const logoLink = document.querySelector('.navbar-sticky__heading');
+      if (logoLink) {
+        console.log('🔍 Logo encontrado:', logoLink);
+        logoLink.addEventListener('click', function(e) {
+          console.log('🖱️ Logo clickeado!', e);
+          console.log('📍 Navegando a:', this.href);
+        });
+      } else {
+        console.error('❌ Logo no encontrado');
+      }
+      
       // Efectos de animación para las categorías
       const categoryCards = document.querySelectorAll('.category-card');
       

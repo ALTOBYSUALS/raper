@@ -13,7 +13,7 @@
   <link href="css/cart.css" rel="stylesheet" type="text/css">
   <link href="css/mobile-fixes.css" rel="stylesheet" type="text/css">
   <link href="css/performance-optimizations.css" rel="stylesheet" type="text/css">
-  <link href="css/mobile-responsive-fixes.css?v=20250624-cart-fix" rel="stylesheet" type="text/css">
+  <link href="css/mobile-responsive-fixes.css?v=20250624-playlists-new" rel="stylesheet" type="text/css">
   <!-- CSS limpio para el banner será movido al final -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
@@ -50,7 +50,14 @@
       </div>
     </div>
 
-
+    <!-- ESTE ES EL LUGAR CORRECTO PARA EL FORMULARIO -->
+    <div class="form-center-container">
+      <div class="create-history-form-clean">
+        <!-- ... aquí va todo el contenido del formulario ... -->
+        <!-- ASUMO QUE EL FORMULARIO ESTABA EN OTRO SITIO Y LO MUEVO AQUÍ -->
+        <!-- SI ESTO NO ES CORRECTO, NECESITARÉ VER LA ESTRUCTURA ORIGINAL DEL FORMULARIO -->
+      </div>
+    </div>
 
     <div class="global-styles w-embed">
       <style>
@@ -62,7 +69,43 @@ body{
 font-size : 1.6rem; /* 1REM = 10PX => 1.6REM = 16PX */
 }
 
+/* Estilos para el banner del sello discográfico */
+.record-label-banner {
+  width: 100%;
+  background: linear-gradient(90deg, rgba(0,0,0,0.9) 0%, rgba(95, 164, 255, 0.2) 50%, rgba(0,0,0,0.9) 100%);
+  padding: 10px 0;
+  position: relative;
+  z-index: 100;
+  border-bottom: 1px solid rgba(95, 164, 255, 0.3);
+}
 
+.record-label-text {
+  text-align: center;
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin: 0;
+  text-shadow: 0 0 10px rgba(95, 164, 255, 0.5);
+  animation: glow 3s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 5px rgba(95, 164, 255, 0.5);
+  }
+  100% {
+    text-shadow: 0 0 15px rgba(95, 164, 255, 0.8), 0 0 20px rgba(95, 164, 255, 0.4);
+  }
+}
+
+@media (max-width: 767px) {
+  .record-label-text {
+    font-size: 1.2rem;
+    letter-spacing: 0.15em;
+  }
+}
 
 /* Make text look crisper and more legible in all browsers */
 body {
@@ -581,7 +624,7 @@ margin: 0rem !important;
       <div class="padding-global is_full-height">
         <div class="container-large is_full-height">
           <div class="navbar-sticky__wrapper">
-            <a href="index.html" class="navbar-sticky__heading">
+            <a href="#" class="navbar-sticky__heading">
               <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/Asset%2019supreme%20(1).png" alt="Raper Logo" class="navbar-logo">
             </a>
             <div class="navbar-sticky__links-wrapper">
@@ -697,55 +740,75 @@ margin: 0rem !important;
         <div class="luxury-particles" id="particles-container"></div>
       </div>
 
-      <!-- RAPER SPOTIFY HYBRID SECTION - Diseño RAPER + Embed Real -->
-      <section class="raper-spotify-section">
-        <div class="spotify-section-container">
-          <!-- Header con diseño RAPER -->
-          <div class="spotify-header">
-            <h2 class="spotify-title">NUESTRA PLAYLIST</h2>
+      <!-- Banner Musical Comprimido con iconos encima -->
+      <section class="spotify-presave-banner">
+        <!-- Nuevo fondo -->
+        <div class="spotify-banner-background">
+          <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/FONDO.png" alt="Próximo Estreno RAPER" class="spotify-banner-image">
+          <div class="spotify-background-overlay"></div>
+        </div>
+        
+        <!-- Contenido del banner con disco de vinilo -->
+        <div class="spotify-banner-content">
+          <!-- Sección superior con texto -->
+          <div class="banner-top-section">
+            <div class="new-song-badge">NEW SONG !</div>
+            <div class="song-info">
+              <h2 class="song-title">RAP EN NY- RAPER</h2>
+              <p class="song-subtitle">Nuevo movimiento</p>
+              <p class="song-call-to-action">Ya disponible anda a darle amor</p>
+            </div>
           </div>
           
-          <!-- Contenedor híbrido: Diseño RAPER + Embed real -->
-          <div class="spotify-hybrid-container">
-            <!-- Header personalizado RAPER -->
-            <div class="raper-player-header">
-              <!-- Album Cover con logo RAPER -->
-              <div class="raper-album-cover">
-                <div class="raper-logo-container">
-                  <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/BANNER3.jpg" alt="RAPER" class="raper-logo-image">
-                </div>
-                <div class="spotify-icon">
-                  <svg viewBox="0 0 24 24" fill="#1DB954">
-                    <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.42 1.56-.299.421-1.02.599-1.559.3z"/>
-                  </svg>
-                </div>
-              </div>
-              
-              <!-- Info del track -->
-              <div class="raper-track-info">
-                <h3 class="raper-track-title">RAP EN NY</h3>
-                <p class="raper-track-artist">RAPER Company</p>
-                <a href="https://open.spotify.com/intl-es/album/2OcHxSJRmQG1FfOcfxQ8qS?referral=labelaffiliate&utm_source=1100lAsWkpjF&utm_medium=Indie_Distrokid&utm_campaign=labelaffiliate" 
-                   target="_blank" 
-                   class="raper-open-spotify">
-                  <svg viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.42 1.56-.299.421-1.02.599-1.559.3z"/>
-                  </svg>
-                  Abrir en Spotify
-                </a>
-              </div>
+          <!-- Sección central con disco de vinilo y botón superpuesto -->
+          <div class="vinyl-section">
+            <div class="vinyl-container">
+              <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/disco.png" alt="Disco de Vinilo RAP EN NY" class="vinyl-record">
+              <div class="vinyl-glow"></div>
+              <!-- Botón de play superpuesto encima del disco -->
+              <a href="https://open.spotify.com/intl-es/album/2OcHxSJRmQG1FfOcfxQ8qS?referral=labelaffiliate&utm_source=1100lAsWkpjF&utm_medium=Indie_Distrokid&utm_campaign=labelaffiliate" target="_blank" class="spotify-play-button-overlay">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="play-icon-overlay">
+                  <path d="M8 5.14V19.14L19 12.14L8 5.14Z" fill="currentColor"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+          
+          <!-- Sección inferior con estreno y plataformas -->
+          <div class="banner-bottom-section">
+            <div class="release-info">
+              <h2 class="estreno-title">PRÓXIMO ESTRENO 5/06</h2>
             </div>
             
-            <!-- EMBED REAL DE SPOTIFY -->
-            <div class="spotify-embed-container">
-              <iframe src="https://open.spotify.com/embed/album/2OcHxSJRmQG1FfOcfxQ8qS?utm_source=generator&theme=0" 
-                      width="100%" 
-                      height="352" 
-                      frameborder="0" 
-                      allowfullscreen="" 
-                      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-                      loading="lazy">
-              </iframe>
+            <!-- Iconos de plataformas -->
+            <div class="platforms-grid-overlay">
+              <a href="https://open.spotify.com/intl-es/album/2OcHxSJRmQG1FfOcfxQ8qS?referral=labelaffiliate&utm_source=1100lAsWkpjF&utm_medium=Indie_Distrokid&utm_campaign=labelaffiliate" target="_blank" class="platform-item spotify">
+                <div class="platform-icon-wrapper">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg" alt="Spotify">
+                </div>
+                <span>Spotify</span>
+              </a>
+              
+              <a href="https://music.youtube.com" target="_blank" class="platform-item youtube-music">
+                <div class="platform-icon-wrapper">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Youtube_Music_icon.svg" alt="YouTube Music">
+                </div>
+                <span>YouTube Music</span>
+              </a>
+              
+              <a href="https://music.apple.com/us/album/rap-en-ny-single/1817225669" target="_blank" class="platform-item apple-music">
+                <div class="platform-icon-wrapper">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Apple_Music_icon.svg" alt="Apple Music">
+                </div>
+                <span>Apple Music</span>
+              </a>
+              
+              <a href="https://www.youtube.com" target="_blank" class="platform-item youtube">
+                <div class="platform-icon-wrapper">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg" alt="YouTube">
+                </div>
+                <span>YouTube</span>
+              </a>
             </div>
           </div>
         </div>
@@ -2297,9 +2360,9 @@ margin: 0rem !important;
               <div style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; background: radial-gradient(circle at 30% 20%, rgba(255, 165, 0, 0.1) 0%, transparent 70%); z-index: 1; pointer-events: none;"></div>
               <div style="position: relative; z-index: 2; text-align: center;">
                 <div class="image-container-clean" style="width: 280px; height: 280px; margin: 0 auto 25px; border: 4px solid #FFA500; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(255, 165, 0, 0.2); position: relative;">
-                  <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/PERROPRIMOBYN.png" 
+                  <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/3.png" 
                        alt="Perro Primo" 
-                       style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center;">
+                       style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); max-width: 100%; max-height: 100%; object-fit: contain;">
                 </div>
                 <h3 style="color: #FFA500; font-size: 2.8rem; margin: 0 0 10px 0; font-weight: 700;">PERROPRIMO</h3>
                 <p style="color: #5fa4ff; font-size: 1.4rem; text-transform: uppercase; margin: 0; font-weight: 600; letter-spacing: 0.05em;">ARTISTA</p>
@@ -2311,9 +2374,9 @@ margin: 0rem !important;
               <div style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; background: radial-gradient(circle at 30% 20%, rgba(255, 20, 147, 0.1) 0%, transparent 70%); z-index: 1; pointer-events: none;"></div>
               <div style="position: relative; z-index: 2; text-align: center;">
                 <div class="image-container-clean" style="width: 280px; height: 280px; margin: 0 auto 25px; border: 4px solid #FF1493; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(255, 20, 147, 0.2); position: relative;">
-                  <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/SOFIABYN.png" 
+                  <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/5.png" 
                        alt="Sofia Martinez" 
-                       style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center;">
+                       style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); max-width: 100%; max-height: 100%; object-fit: contain;">
                 </div>
                 <h3 style="color: #FF1493; font-size: 2.8rem; margin: 0 0 10px 0; font-weight: 700;">Sofía</h3>
                 <p style="color: #5fa4ff; font-size: 1.4rem; text-transform: uppercase; margin: 0; font-weight: 600; letter-spacing: 0.05em;">ARTISTA</p>
@@ -2325,9 +2388,9 @@ margin: 0rem !important;
               <div style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; background: radial-gradient(circle at 30% 20%, rgba(0, 255, 127, 0.1) 0%, transparent 70%); z-index: 1; pointer-events: none;"></div>
               <div style="position: relative; z-index: 2; text-align: center;">
                 <div class="image-container-clean" style="width: 280px; height: 280px; margin: 0 auto 25px; border: 4px solid #00FF7F; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 255, 127, 0.2); position: relative;">
-                  <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/DEXTERBLANCOYNEGRO.png" 
+                  <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/2.png" 
                        alt="Dexter" 
-                       style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center;">
+                       style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); max-width: 100%; max-height: 100%; object-fit: contain;">
                 </div>
                 <h3 style="color: #00FF7F; font-size: 2.8rem; margin: 0 0 10px 0; font-weight: 700;">Dexter</h3>
                 <p style="color: #5fa4ff; font-size: 1.4rem; text-transform: uppercase; margin: 0; font-weight: 600; letter-spacing: 0.05em;">ARTISTA</p>
@@ -2339,9 +2402,9 @@ margin: 0rem !important;
               <div style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; background: radial-gradient(circle at 30% 20%, rgba(138, 43, 226, 0.1) 0%, transparent 70%); z-index: 1; pointer-events: none;"></div>
               <div style="position: relative; z-index: 2; text-align: center;">
                 <div class="image-container-clean" style="width: 280px; height: 280px; margin: 0 auto 25px; border: 4px solid #8A2BE2; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(138, 43, 226, 0.2); position: relative;">
-                  <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/RAPERBYN.png" 
+                  <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/1.png" 
                        alt="Alex Rodriguez" 
-                       style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center;">
+                       style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); max-width: 100%; max-height: 100%; object-fit: contain;">
                 </div>
                 <h3 style="color: #8A2BE2; font-size: 2.8rem; margin: 0 0 10px 0; font-weight: 700;">Raper</h3>
                 <p style="color: #5fa4ff; font-size: 1.4rem; text-transform: uppercase; margin: 0; font-weight: 600; letter-spacing: 0.05em;">ARTISTA</p>
@@ -2353,67 +2416,15 @@ margin: 0rem !important;
               <div style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; background: radial-gradient(circle at 30% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 70%); z-index: 1; pointer-events: none;"></div>
               <div style="position: relative; z-index: 2; text-align: center;">
                 <div class="image-container-clean" style="width: 280px; height: 280px; margin: 0 auto 25px; border: 4px solid #FFD700; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2); position: relative;">
-                  <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/FALAFABIOBYN.png" 
+                  <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/4.png" 
                        alt="Lucas Mora" 
-                       style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center;">
+                       style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); max-width: 100%; max-height: 100%; object-fit: contain;">
                 </div>
                 <h3 style="color: #FFD700; font-size: 2.8rem; margin: 0 0 10px 0; font-weight: 700;">Fabio</h3>
                 <p style="color: #5fa4ff; font-size: 1.4rem; text-transform: uppercase; margin: 0; font-weight: 600; letter-spacing: 0.05em;">ARTISTA</p>
               </div>
             </div>
             
-          </div>
-        </div>
-      </section>
-      
-              <!-- NUEVA SECCIÓN MÓVIL CON ENCABEZADO ELEGANTE - UPDATED 24/06/2025 17:55 -->
-      <section class="artists-mobile-section">
-        <!-- Encabezado elegante para móvil -->
-        <div class="artists-mobile-header">
-          <div class="artists-mobile-title-container">
-            <h2 class="artists-mobile-title">NUESTROS ARTISTAS</h2>
-            <div class="artists-mobile-subtitle">Los visionarios detrás de la revolución musical</div>
-            <div class="artists-mobile-line"></div>
-          </div>
-        </div>
-        
-        <!-- PERROPRIMO -->
-        <div class="artist-mobile-card">
-          <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/PERROPRIMOBYN.png" alt="PERROPRIMO" class="artist-mobile-image">
-          <div class="artist-mobile-overlay">
-            <h2 class="artist-mobile-name">PERROPRIMO</h2>
-          </div>
-        </div>
-        
-        <!-- SOFÍA -->
-        <div class="artist-mobile-card">
-          <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/SOFIABYN.png" alt="SOFÍA" class="artist-mobile-image">
-          <div class="artist-mobile-overlay">
-            <h2 class="artist-mobile-name">SOFÍA</h2>
-          </div>
-        </div>
-        
-        <!-- DEXTER -->
-        <div class="artist-mobile-card">
-          <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/DEXTERBLANCOYNEGRO.png" alt="DEXTER" class="artist-mobile-image">
-          <div class="artist-mobile-overlay">
-            <h2 class="artist-mobile-name">DEXTER</h2>
-          </div>
-        </div>
-        
-        <!-- RAPER -->
-        <div class="artist-mobile-card">
-          <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/RAPERBYN.png" alt="RAPER" class="artist-mobile-image">
-          <div class="artist-mobile-overlay">
-            <h2 class="artist-mobile-name">RAPER</h2>
-          </div>
-        </div>
-        
-        <!-- FABIO -->
-        <div class="artist-mobile-card">
-          <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/FALAFABIOBYN.png" alt="FABIO" class="artist-mobile-image">
-          <div class="artist-mobile-overlay">
-            <h2 class="artist-mobile-name">FABIO</h2>
           </div>
         </div>
       </section>
@@ -2440,263 +2451,69 @@ margin: 0rem !important;
         }
         
         div[style*="background: linear-gradient(145deg, rgba(25,25,25,0.8)"] .image-container-clean:hover img {
-          transform: scale(1.05);
+          transform: translate(-50%, -50%) scale(1.05);
         }
         
-        /* ===== RESPONSIVE PARA MÓVILES - ESTILO BLANCO Y NEGRO ALTERNADO ===== */
+        /* ===== RESPONSIVE PARA MÓVILES ===== */
         @media (max-width: 768px) {
-          /* Ocultar la sección original en móvil */
           section[style*="background: #000"] {
-            display: none !important;
+            padding: 70px 0 !important;
+          }
+          
+          h2[style*="color: #5fa4ff"] {
+            font-size: 3.2rem !important;
+            padding: 0 15px !important;
+            flex-wrap: wrap !important;
+          }
+          
+          h2[style*="color: #5fa4ff"] img {
+            height: 60px !important;
+          }
+          
+          p[style*="color: rgba(255,255,255,0.7)"] {
+            font-size: 1.5rem !important;
+            margin-bottom: 55px !important;
+            padding: 0 15px !important;
+          }
+          
+          div[style*="display: grid"] {
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+            gap: 30px !important;
+          }
+          
+          .image-container-clean {
+            width: 220px !important;
+            height: 220px !important;
           }
         }
         
-        /* ===== NUEVA SECCIÓN MÓVIL - ESTILO REFERENCIA ===== */
-        .artists-mobile-section {
-          display: none;
-          width: 100%;
-          margin: 0;
-          padding: 0;
-        }
-        
-        @media (max-width: 768px) {
-          .artists-mobile-section {
-            display: block !important;
-          }
-        }
-        
-        /* ===== ENCABEZADO ELEGANTE PARA MÓVIL ===== */
-        .artists-mobile-header {
-          background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
-          padding: 60px 20px;
-          text-align: center;
-          position: relative;
-          overflow: hidden;
-        }
-        
-        .artists-mobile-header::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background: radial-gradient(circle at center, rgba(95, 164, 255, 0.1) 0%, transparent 70%);
-          z-index: 1;
-        }
-        
-        .artists-mobile-title-container {
-          position: relative;
-          z-index: 2;
-        }
-        
-        .artists-mobile-title {
-          font-family: 'Montserrat', sans-serif;
-          font-size: 2.8rem;
-          font-weight: 900;
-          color: #ffffff;
-          text-transform: uppercase;
-          letter-spacing: 0.15em;
-          margin: 0 0 15px 0;
-          text-shadow: 0 0 20px rgba(95, 164, 255, 0.5);
-          animation: titleGlow 3s ease-in-out infinite alternate;
-        }
-        
-        .artists-mobile-subtitle {
-          font-family: 'Montserrat', sans-serif;
-          font-size: 1.4rem;
-          font-weight: 400;
-          color: rgba(255, 255, 255, 0.8);
-          margin: 0 0 25px 0;
-          letter-spacing: 0.05em;
-          line-height: 1.4;
-        }
-        
-        .artists-mobile-line {
-          width: 60px;
-          height: 2px;
-          background: linear-gradient(90deg, transparent, #5fa4ff, transparent);
-          margin: 0 auto;
-          border-radius: 1px;
-          box-shadow: 0 0 10px rgba(95, 164, 255, 0.6);
-        }
-        
-        @keyframes titleGlow {
-          0% {
-            text-shadow: 0 0 20px rgba(95, 164, 255, 0.5);
-          }
-          100% {
-            text-shadow: 0 0 30px rgba(95, 164, 255, 0.8), 0 0 40px rgba(95, 164, 255, 0.3);
-          }
-        }
-        
-        /* Responsive para el encabezado */
         @media (max-width: 480px) {
-          .artists-mobile-header {
-            padding: 50px 15px;
+          section[style*="background: #000"] {
+            padding: 60px 0 !important;
           }
           
-          .artists-mobile-title {
-            font-size: 2.4rem;
-            letter-spacing: 0.1em;
+          h2[style*="color: #5fa4ff"] {
+            font-size: 2.8rem !important;
           }
           
-          .artists-mobile-subtitle {
-            font-size: 1.2rem;
-          }
-        }
-        
-        @media (max-width: 360px) {
-          .artists-mobile-header {
-            padding: 40px 15px;
+          h2[style*="color: #5fa4ff"] img {
+            height: 50px !important;
           }
           
-          .artists-mobile-title {
-            font-size: 2rem;
+          p[style*="color: rgba(255,255,255,0.7)"] {
+            font-size: 1.3rem !important;
+            margin-bottom: 40px !important;
+            padding: 0 20px !important;
           }
           
-          .artists-mobile-subtitle {
-            font-size: 1.1rem;
-          }
-        }
-        
-        .artist-mobile-card {
-          width: 100%;
-          height: 50vh; /* Reducido de 100vh a 50vh */
-          position: relative;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          overflow: hidden;
-        }
-        
-                 .artist-mobile-image {
-           position: absolute;
-           top: 0;
-           left: 0;
-           width: 100%;
-           height: 100%;
-           object-fit: cover;
-           filter: grayscale(100%) brightness(0.7);
-           transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-         }
-        
-        .artist-mobile-overlay {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          z-index: 2;
-        }
-        
-                 .artist-mobile-name {
-           font-family: 'Montserrat', sans-serif;
-           font-size: 3rem;
-           font-weight: 900;
-           text-transform: uppercase;
-           letter-spacing: 0.1em;
-           text-align: center;
-           transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-           text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
-           position: relative;
-           z-index: 3;
-         }
-         
-         /* Efecto de partículas sutiles en hover */
-         .artist-mobile-name::after {
-           content: '';
-           position: absolute;
-           top: 50%;
-           left: 50%;
-           width: 0;
-           height: 0;
-           background: radial-gradient(circle, rgba(95, 164, 255, 0.3) 0%, transparent 70%);
-           border-radius: 50%;
-           transform: translate(-50%, -50%);
-           transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-           z-index: -1;
-           opacity: 0;
-         }
-         
-         .artist-mobile-card:hover .artist-mobile-name::after {
-           width: 200px;
-           height: 200px;
-           opacity: 1;
-         }
-        
-                 /* Diseño oscuro uniforme para todos los artistas */
-         .artist-mobile-card {
-           background: #000000;
-         }
-         
-         .artist-mobile-overlay {
-           background: rgba(0, 0, 0, 0.75);
-           transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-         }
-         
-         .artist-mobile-name {
-           color: #ffffff;
-           text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
-         }
-         
-         /* Efectos hover sutiles y elegantes para móvil */
-         .artist-mobile-card:hover .artist-mobile-overlay {
-           background: rgba(0, 0, 0, 0.6);
-           backdrop-filter: blur(2px);
-         }
-         
-         .artist-mobile-card:hover .artist-mobile-image {
-           filter: grayscale(0%) brightness(1.1);
-           transform: scale(1.02);
-         }
-         
-         .artist-mobile-card:hover .artist-mobile-name {
-           transform: scale(1.08);
-           text-shadow: 0 0 15px rgba(95, 164, 255, 0.6), 2px 2px 8px rgba(0, 0, 0, 0.9);
-           color: #5fa4ff;
-         }
-         
-         /* Efecto sutil de brillo en los bordes */
-         .artist-mobile-card::before {
-           content: '';
-           position: absolute;
-           top: 0;
-           left: 0;
-           right: 0;
-           bottom: 0;
-           background: linear-gradient(45deg, transparent, rgba(95, 164, 255, 0.1), transparent);
-           opacity: 0;
-           transition: opacity 0.4s ease;
-           z-index: 1;
-           pointer-events: none;
-         }
-         
-         .artist-mobile-card:hover::before {
-           opacity: 1;
-         }
-        
-        /* Responsive para móviles más pequeños */
-        @media (max-width: 480px) {
-          .artist-mobile-card {
-            height: 45vh; /* Aún más pequeño en móviles pequeños */
+          div[style*="display: grid"] {
+            grid-template-columns: 1fr !important;
+            gap: 25px !important;
           }
           
-          .artist-mobile-name {
-            font-size: 2.5rem;
-          }
-        }
-        
-        @media (max-width: 360px) {
-          .artist-mobile-card {
-            height: 40vh; /* Más compacto en pantallas muy pequeñas */
-          }
-          
-          .artist-mobile-name {
-            font-size: 2rem;
+          .image-container-clean {
+            width: 200px !important;
+            height: 200px !important;
           }
         }
       </style>
@@ -2762,6 +2579,95 @@ margin: 0rem !important;
                   </section>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <!-- ===== COMPONENTE PLAYLISTS RAPER - SOLO MÓVIL ===== -->
+      <div class="raper-playlists-widget">
+        <!-- Título principal -->
+        <div class="playlists-header">
+          <h2 class="playlists-title">PLAYLISTS</h2>
+        </div>
+
+        <!-- Playlist principal -->
+        <div class="playlist-card-main">
+          <!-- Header con logo de plataforma -->
+          <div class="playlist-card-header">
+            <div class="playlist-cover">
+              <div class="playlist-logo">
+                <span class="raper-logo-text">RAPER</span>
+              </div>
+            </div>
+            
+            <div class="playlist-info">
+              <h3 class="playlist-name">The Richlist</h3>
+              <p class="playlist-artist">RAPER Company</p>
+              <button class="save-spotify-btn">
+                <svg class="spotify-icon" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.42 1.56-.299.421-1.02.599-1.559.3z"/>
+                </svg>
+                Guardar en Spotify
+              </button>
+            </div>
+          </div>
+
+          <!-- Controles de reproducción -->
+          <div class="playlist-controls">
+            <div class="control-buttons">
+              <button class="control-btn prev">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/>
+                </svg>
+              </button>
+              <button class="control-btn next">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/>
+                </svg>
+              </button>
+              <button class="control-btn more">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+                </svg>
+              </button>
+            </div>
+            <button class="play-btn-main">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Lista de canciones -->
+          <div class="playlist-tracks">
+            <div class="track-item">
+              <span class="track-number">1</span>
+              <div class="track-details">
+                <span class="track-name">Scammer</span>
+                <span class="track-artist-name">RAPER</span>
+              </div>
+              <span class="track-duration">02:21</span>
+            </div>
+
+            <div class="track-item">
+              <span class="track-number">2</span>
+              <div class="track-details">
+                <span class="track-name">Rap en NY</span>
+                <span class="track-artist-name">RAPER, Nuevo Movimiento</span>
+              </div>
+              <span class="track-duration">03:32</span>
+            </div>
+
+            <div class="track-item">
+              <span class="track-number">3</span>
+              <div class="track-details">
+                <span class="track-name">Ñengo</span>
+                <span class="track-artist-name">RAPER</span>
+              </div>
+              <span class="track-duration">02:25</span>
             </div>
           </div>
         </div>

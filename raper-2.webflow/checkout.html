@@ -358,66 +358,442 @@
       font-size: 1.6rem;
     }
     
-    /* Responsive */
+    /* ===== RESPONSIVE DESIGN COMPLETAMENTE REDISEÑADO ===== */
+    
+    /* Tablet */
     @media (max-width: 1200px) {
       .checkout-grid {
         gap: 4rem;
       }
     }
     
+    /* Tablet pequeño */
     @media (max-width: 991px) {
       .checkout-grid {
         grid-template-columns: 1fr;
-        gap: 3rem;
+        gap: 4rem;
       }
       
       .checkout-summary {
         position: static;
+        order: -1; /* Resumen arriba en tablet */
       }
       
       .checkout-title {
-        font-size: 3rem;
+        font-size: 3.2rem;
       }
       
       .checkout-progress {
-        flex-direction: column;
-        gap: 1rem;
-      }
-      
-      .progress-line {
-        width: 2px;
-        height: 30px;
-      }
-    }
-    
-    @media (max-width: 767px) {
-      .checkout-section {
-        padding: 10rem 0 6rem;
-      }
-      
-      .checkout-container {
-        padding: 0 1.5rem;
-      }
-      
-      .checkout-form-section {
-        padding: 2.5rem;
-      }
-      
-      .form-row {
-        grid-template-columns: 1fr;
+        flex-direction: row;
+        justify-content: center;
         gap: 1.5rem;
       }
       
-      .card-row {
-        grid-template-columns: 1fr;
+      .progress-line {
+        width: 40px;
+        height: 2px;
+      }
+      
+      .step-text {
+        display: none; /* Ocultar texto en tablet */
+      }
+    }
+    
+    /* ===== MOBILE DESIGN COMPLETAMENTE NUEVO ===== */
+    @media (max-width: 767px) {
+      /* Sección principal */
+      .checkout-section {
+        padding: 8rem 0 4rem;
+        background: #000;
+      }
+      
+      .checkout-container {
+        padding: 0;
+        max-width: 100%;
+      }
+      
+      /* Header móvil rediseñado */
+      .checkout-header {
+        padding: 0 2rem 3rem;
+        margin-bottom: 0;
+        text-align: center;
       }
       
       .checkout-title {
-        font-size: 2.5rem;
+        font-size: 2.8rem;
+        font-weight: 800;
+        margin-bottom: 1rem;
+        line-height: 1.2;
       }
       
       .checkout-subtitle {
+        font-size: 1.4rem;
+        margin-bottom: 3rem;
+        max-width: 280px;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.4;
+      }
+      
+      /* Progress bar móvil minimalista */
+      .checkout-progress {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 0;
+      }
+      
+      .progress-step {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      
+      .step-number {
+        width: 32px;
+        height: 32px;
+        font-size: 1.4rem;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #5fa4ff 0%, #4fd1c5 100%);
+        color: #000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+      }
+      
+      .step-text {
+        font-size: 1.1rem;
+        color: rgba(255, 255, 255, 0.8);
+        font-weight: 500;
+      }
+      
+      .progress-line {
+        width: 30px;
+        height: 2px;
+        background: rgba(95, 164, 255, 0.3);
+        margin: 0;
+      }
+      
+      /* Grid móvil */
+      .checkout-grid {
+        display: block;
+        gap: 0;
+      }
+      
+      /* Resumen móvil rediseñado - VA ARRIBA */
+      .checkout-summary {
+        background: linear-gradient(145deg, rgba(25,25,25,0.95), rgba(15,15,15,0.95));
+        border: 1px solid rgba(95, 164, 255, 0.3);
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+        padding: 2.5rem 2rem;
+        backdrop-filter: blur(15px);
+        position: static;
+        margin: 3rem 0 0 0;
+        order: -1;
+      }
+      
+      .summary-title {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 2rem;
+        text-align: left;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+      
+      .summary-title::before {
+        content: '◆';
+        color: #5fa4ff;
         font-size: 1.6rem;
+      }
+      
+      .summary-items {
+        margin-bottom: 2rem;
+      }
+      
+      .summary-item {
+        display: flex;
+        align-items: center;
+        gap: 1.2rem;
+        padding: 1.2rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      
+      .summary-item:last-child {
+        border-bottom: none;
+      }
+      
+      .summary-item-image {
+        width: 50px;
+        height: 50px;
+        border-radius: 8px;
+        object-fit: contain;
+        background: rgba(255, 255, 255, 0.05);
+        padding: 6px;
+        border: 1px solid rgba(95, 164, 255, 0.2);
+      }
+      
+      .summary-item-details {
+        flex: 1;
+        min-width: 0;
+      }
+      
+      .summary-item-name {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: #fff;
+        margin-bottom: 0.3rem;
+        line-height: 1.3;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      
+      .summary-item-quantity {
+        font-size: 1.1rem;
+        color: rgba(255, 255, 255, 0.6);
+      }
+      
+      .summary-item-price {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: #5fa4ff;
+        text-align: right;
+      }
+      
+      /* Totales móvil */
+      .summary-totals {
+        border-top: 1px solid rgba(95, 164, 255, 0.2);
+        padding-top: 1.5rem;
+        margin-bottom: 2rem;
+      }
+      
+      .summary-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0.8rem;
+      }
+      
+      .summary-row.total {
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: #fff;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 1rem;
+        margin-top: 1rem;
+        margin-bottom: 0;
+      }
+      
+      .summary-row.total .summary-value {
+        color: #5fa4ff;
+      }
+      
+      .summary-label {
+        font-size: 1.3rem;
+        color: rgba(255, 255, 255, 0.8);
+      }
+      
+      .summary-value {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: #fff;
+      }
+      
+      /* Botón móvil */
+      .place-order-btn {
+        width: 100%;
+        background: linear-gradient(135deg, #5fa4ff 0%, #4fd1c5 100%);
+        color: #000;
+        border: none;
+        padding: 1.8rem;
+        font-size: 1.6rem;
+        font-weight: 700;
+        border-radius: 12px;
+        cursor: pointer;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 1.5rem;
+      }
+      
+      .place-order-btn:active {
+        transform: scale(0.98);
+      }
+      
+      /* Security badges móvil */
+      .security-badges {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+        margin-top: 0;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      
+      .security-badge {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 1.1rem;
+      }
+      
+      .security-icon {
+        color: #4fd1c5;
+        font-size: 1.3rem;
+      }
+      
+      /* Formulario móvil rediseñado */
+      .checkout-form-section {
+        background: #000;
+        border: none;
+        border-radius: 0;
+        padding: 0;
+        backdrop-filter: none;
+        position: static;
+        overflow: visible;
+        margin-top: 3rem;
+      }
+      
+      .checkout-form-section::before {
+        display: none;
+      }
+      
+      /* Secciones del formulario */
+      .form-section {
+        background: linear-gradient(145deg, rgba(30,30,30,0.8), rgba(20,20,20,0.8));
+        border: 1px solid rgba(95, 164, 255, 0.2);
+        border-radius: 16px;
+        padding: 2rem;
+        margin: 0 2rem 2rem;
+        backdrop-filter: blur(10px);
+        position: relative;
+      }
+      
+      .form-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba(95, 164, 255, 0.6), transparent);
+      }
+      
+      .form-section-title {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 2rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+      
+      .form-section-icon {
+        width: 24px;
+        height: 24px;
+        background: linear-gradient(135deg, #5fa4ff 0%, #4fd1c5 100%);
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #000;
+        font-size: 1.2rem;
+        font-weight: 700;
+      }
+      
+      /* Filas del formulario móvil */
+      .form-row {
+        display: block;
+      }
+      
+      .card-row {
+        display: block;
+      }
+      
+      /* Grupos del formulario */
+      .form-group {
+        margin-bottom: 1.8rem;
+      }
+      
+      .form-label {
+        display: block;
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: rgba(255, 255, 255, 0.9);
+        margin-bottom: 0.8rem;
+      }
+      
+      /* Inputs móvil */
+      .form-input {
+        width: 100%;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(95, 164, 255, 0.2);
+        border-radius: 10px;
+        padding: 1.4rem;
+        color: #fff;
+        font-size: 1.5rem;
+        transition: all 0.3s ease;
+        box-sizing: border-box;
+      }
+      
+      .form-input:focus {
+        outline: none;
+        border-color: #5fa4ff;
+        box-shadow: 0 0 0 2px rgba(95, 164, 255, 0.1);
+        background: rgba(255, 255, 255, 0.08);
+        transform: translateY(-1px);
+      }
+      
+      .form-input::placeholder {
+        color: rgba(255, 255, 255, 0.4);
+        font-size: 1.4rem;
+      }
+    }
+    
+    /* Mobile extra pequeño */
+    @media (max-width: 480px) {
+      .checkout-title {
+        font-size: 2.4rem;
+      }
+      
+      .checkout-subtitle {
+        font-size: 1.3rem;
+        max-width: 260px;
+      }
+      
+      .form-section {
+        margin: 0 1.5rem 2rem;
+        padding: 1.8rem;
+      }
+      
+      .checkout-summary {
+        padding: 2rem 1.5rem;
+      }
+      
+      .step-text {
+        font-size: 1rem;
+      }
+      
+      .summary-item-name {
+        font-size: 1.2rem;
+      }
+      
+      .form-input {
+        padding: 1.3rem;
+        font-size: 1.4rem;
       }
     }
   </style>

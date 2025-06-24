@@ -10,8 +10,15 @@ const productData = {
   5: { name: 'RAPER Gris Titanio', price: 199000, image: 'https://res.cloudinary.com/dyrgyzca3/image/upload/v1748398979/5_1_jygqx3.jpg' },
   6: { name: 'RAPER Azul Océano', price: 199000, image: 'https://res.cloudinary.com/dyrgyzca3/image/upload/v1748398979/6_mt8tn6.jpg' },
   7: { name: 'RAPER Verde Esmeralda', price: 199000, image: 'https://res.cloudinary.com/dyrgyzca3/image/upload/v1748398978/7_1_zq3fig.jpg' },
-  8: { name: 'RAPER Rojo Carmesí', price: 199000, image: 'https://res.cloudinary.com/dyrgyzca3/image/upload/v1748398978/8_1_ixbyop.jpg' }
+  8: { name: 'RAPER Rojo Carmesí', price: 199000, image: 'https://res.cloudinary.com/dyrgyzca3/image/upload/v1748398978/8_1_ixbyop.jpg' },
+  100: { name: 'RAPER Basketball Premium', price: 89999, image: 'https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/balon.jpg' },
+  200: { name: 'RAPER Director Chair Premium', price: 149999, image: 'https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/silla.jpg' }
 };
+
+// Función para mostrar el carrito (llamada desde el navbar)
+function showCart() {
+  openSideCart();
+}
 
 // Inicialización
 document.addEventListener('DOMContentLoaded', function() {
@@ -23,6 +30,11 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log(`Carrito cargado con ${cart.length} productos`);
   }
 });
+
+// Hacer las funciones disponibles globalmente
+window.addToCart = addToCart;
+window.updateCartCount = updateCartCount;
+window.showCart = showCart;
 
 // Configurar eventos del carrito
 function setupCartEvents() {
@@ -43,11 +55,6 @@ function setupCartEvents() {
       closeSideCart();
     }
   });
-}
-
-// Función para mostrar el carrito (llamada desde el navbar)
-function showCart() {
-  openSideCart();
 }
 
 // Función para abrir el carrito lateral
