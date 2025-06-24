@@ -1117,6 +1117,196 @@ margin: 0rem !important;
           box-shadow: 0 10px 25px rgba(95, 164, 255, 0.4);
         }
         
+        /* ===== ESTILOS DEL MENÚ HAMBURGUESA Y MÓVIL - IDÉNTICO A BASKET ===== */
+        .mobile-menu-toggle {
+          display: none;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          width: 45px;
+          height: 45px;
+          background: rgba(255, 255, 255, 0.1);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          border-radius: 8px;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          padding: 0.5rem;
+        }
+
+        .mobile-menu-toggle:hover {
+          background: rgba(95, 164, 255, 0.2);
+          border-color: rgba(95, 164, 255, 0.5);
+        }
+
+        .mobile-menu-toggle.active {
+          background: rgba(95, 164, 255, 0.3);
+          border-color: rgba(95, 164, 255, 0.7);
+        }
+
+        .hamburger-line {
+          width: 25px;
+          height: 3px;
+          background: #fff;
+          margin: 2px 0;
+          transition: all 0.3s ease;
+          border-radius: 2px;
+        }
+
+        .mobile-menu-toggle.active .hamburger-line:nth-child(1) {
+          transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        .mobile-menu-toggle.active .hamburger-line:nth-child(2) {
+          opacity: 0;
+        }
+
+        .mobile-menu-toggle.active .hamburger-line:nth-child(3) {
+          transform: rotate(-45deg) translate(7px, -6px);
+        }
+
+        /* ===== MENÚ MÓVIL - CONGRUENTE CON BASKET ===== */
+        .mobile-menu {
+          position: fixed;
+          top: 0;
+          right: -100%;
+          width: 100%;
+          max-width: 350px;
+          height: 100vh;
+          background: rgba(0, 0, 0, 0.95);
+          z-index: 999;
+          transition: right 0.25s ease;
+          overflow: hidden;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          padding: 60px 30px 30px;
+        }
+
+        .mobile-menu.active {
+          right: 0;
+        }
+
+        .mobile-menu-links {
+          display: flex;
+          flex-direction: column;
+          gap: 25px;
+          width: 100%;
+          margin-bottom: 40px;
+        }
+
+        .mobile-menu-link {
+          color: #fff;
+          font-size: 1.8rem;
+          font-weight: 600;
+          text-decoration: none;
+          text-align: center;
+          padding: 15px 20px;
+          border-radius: 12px;
+          background: rgba(255, 255, 255, 0.05);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          transition: background 0.2s ease, color 0.2s ease;
+          letter-spacing: 0.05em;
+        }
+
+        .mobile-menu-link:hover,
+        .mobile-menu-link:focus {
+          background: rgba(95, 164, 255, 0.2);
+          color: #5fa4ff;
+        }
+
+        .mobile-menu-contact {
+          width: 100%;
+          text-align: center;
+          border-top: 1px solid rgba(255, 255, 255, 0.1);
+          padding-top: 25px;
+        }
+
+        .contact-item {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 10px;
+          margin-bottom: 15px;
+          color: rgba(255, 255, 255, 0.8);
+          font-size: 1.4rem;
+        }
+
+        .flag {
+          font-size: 1.6rem;
+        }
+
+        .phone {
+          font-weight: 500;
+          letter-spacing: 0.05em;
+        }
+
+        /* ===== NAVBAR RESPONSIVE ===== */
+        .navbar-sticky__wrapper {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
+          height: 100%;
+        }
+
+        .navbar-actions {
+          display: flex !important;
+          align-items: center !important;
+          gap: 15px !important;
+          visibility: visible !important;
+          opacity: 1 !important;
+        }
+
+        /* ===== ESTILOS DEL CARRITO - IDÉNTICO A BASKET ===== */
+        .cart-icon-wrapper {
+          position: relative;
+          cursor: pointer;
+          padding: 8px;
+          border-radius: 50%;
+          transition: all 0.3s ease;
+          display: flex !important;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .cart-icon-wrapper:hover {
+          background: rgba(95, 164, 255, 0.1);
+          transform: scale(1.1);
+        }
+
+        .cart-icon {
+          width: 24px;
+          height: 24px;
+          stroke: #fff;
+          stroke-width: 2;
+          transition: all 0.3s ease;
+        }
+
+        .cart-icon-wrapper:hover .cart-icon {
+          stroke: #5fa4ff;
+        }
+
+        #cart-count {
+          position: absolute;
+          top: -2px;
+          right: -2px;
+          background: linear-gradient(135deg, #5fa4ff 0%, #4fd1c5 100%);
+          color: #000;
+          border-radius: 50%;
+          width: 20px;
+          height: 20px;
+          display: flex !important;
+          align-items: center;
+          justify-content: center;
+          font-size: 0.8rem;
+          font-weight: 700;
+          min-width: 20px;
+          transition: all 0.3s ease;
+          visibility: visible !important;
+          opacity: 1 !important;
+        }
+
         /* DESKTOP NAVIGATION - Forzar reglas */
         @media (min-width: 769px) {
           .nav-links {
@@ -1129,6 +1319,53 @@ margin: 0rem !important;
           
           .mobile-menu {
             display: none !important;
+          }
+        }
+
+        /* ===== RESPONSIVE DESIGN - CONGRUENTE ===== */
+        @media (max-width: 768px) {
+          .nav-links {
+            display: none !important;
+          }
+
+          .mobile-menu-toggle {
+            display: flex !important;
+          }
+
+          .mobile-menu {
+            display: flex !important;
+          }
+
+          .navbar-sticky__wrapper {
+            padding: 0 20px !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+          }
+
+          .navbar-actions {
+            display: flex !important;
+            align-items: center !important;
+            gap: 15px !important;
+          }
+        }
+
+        @media (min-width: 769px) {
+          .nav-links {
+            display: flex !important;
+          }
+
+          .mobile-menu-toggle {
+            display: none !important;
+          }
+
+          .mobile-menu {
+            display: none !important;
+          }
+
+          .navbar-actions {
+            display: flex !important;
+            align-items: center !important;
+            gap: 15px !important;
           }
         }
 
@@ -1192,6 +1429,64 @@ margin: 0rem !important;
       </div>
     </div>
   </div>
+
+  <script>
+    // ===== MENÚ HAMBURGUESA - CONGRUENTE CON DEMÁS PÁGINAS ===== 
+    document.addEventListener('DOMContentLoaded', function() {
+      console.log('🚀 Página de careers cargada');
+      
+      const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+      
+      function closeMenu() {
+        if (mobileMenuToggle) mobileMenuToggle.classList.remove('active');
+        if (mobileMenu) mobileMenu.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+      
+      if (mobileMenuToggle && mobileMenu) {
+        // Toggle del menú con hamburguesa
+        mobileMenuToggle.addEventListener('click', function() {
+          mobileMenuToggle.classList.toggle('active');
+          mobileMenu.classList.toggle('active');
+          document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+          console.log('🍔 Menú hamburguesa toggled');
+        });
+
+        // Cerrar menú al hacer clic en enlaces
+        mobileMenuLinks.forEach(link => {
+          link.addEventListener('click', function() {
+            closeMenu();
+            console.log('📱 Menú cerrado por clic en enlace');
+          });
+        });
+
+        // Cerrar menú al hacer clic fuera
+        document.addEventListener('click', function(e) {
+          if (mobileMenu.classList.contains('active') && 
+              !mobileMenu.contains(e.target) && 
+              !mobileMenuToggle.contains(e.target)) {
+            closeMenu();
+            console.log('👆 Menú cerrado por clic fuera');
+          }
+        });
+        
+        console.log('✅ Event listeners del menú hamburguesa configurados');
+      } else {
+        console.error('❌ No se encontraron elementos del menú móvil');
+      }
+
+      // Actualizar contador del carrito al cargar
+      const cart = JSON.parse(localStorage.getItem('raperCart')) || [];
+      const cartCount = document.getElementById('cart-count');
+      if (cartCount) {
+        const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+        cartCount.textContent = totalItems;
+        console.log(`🔢 Contador del carrito: ${totalItems} items`);
+      }
+    });
+  </script>
 
 </body>
 </html> 
