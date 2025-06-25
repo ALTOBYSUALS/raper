@@ -294,828 +294,543 @@ margin: 0rem !important;
       </div>
     </div>
     <main class="main-wrapper">
-      <!-- Minimal Hero Section -->
-      <section class="minimal-careers-hero">
-        <div class="minimal-hero-background"></div>
+      <!-- Careers Hero with Gradient Flow -->
+      <section class="careers-hero-flow">
+        <div class="hero-background-gradient"></div>
         
-        <div class="minimal-hero-content">
-          <div class="container-large">
-            <div class="minimal-hero-wrapper">
-              
-              <!-- Logo Central -->
-              <div class="minimal-logo-section">
-                <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/Asset%2019supreme%20(1).png" 
-                     alt="RAPER Company" 
-                     class="minimal-logo">
-              </div>
-              
-              <!-- Título Minimalista -->
-              <div class="minimal-title-section">
-                <h1 class="minimal-main-title">Trabaja con Nosotros</h1>
-                <div class="minimal-subtitle">Sello Discográfico & Empresa Creativa</div>
-              </div>
-              
-              <!-- Texto de Filosofía Condensado -->
-              <div class="minimal-philosophy">
-                <p class="minimal-description">
-                  <strong>RAPER Company</strong> es un sello discográfico y empresa creativa que potencia artistas con identidad propia. 
-                  Ofrecemos producción musical, videoclips, desarrollo artístico y merch exclusivo.
-                </p>
-                <p class="minimal-mission">
-                  Más que un sello, somos una marca de autor que eleva talento con visión y estilo.
-                </p>
-              </div>
-              
-              <!-- Servicios Minimalistas -->
-              <div class="minimal-services">
-                <div class="service-minimal">
-                  <span class="service-dot"></span>
-                  <span>Producción Musical</span>
-                </div>
-                <div class="service-minimal">
-                  <span class="service-dot"></span>
-                  <span>Videoclips</span>
-                </div>
-                <div class="service-minimal">
-                  <span class="service-dot"></span>
-                  <span>Desarrollo Artístico</span>
-                </div>
-                <div class="service-minimal">
-                  <span class="service-dot"></span>
-                  <span>Merch Exclusivo</span>
-                </div>
-              </div>
-              
-              <!-- CTA Simple -->
-              <div class="minimal-cta">
-                <div class="cta-line"></div>
-                <p class="cta-minimal-text">¿Tienes talento? Envía tu propuesta</p>
-                <div class="cta-arrow-minimal">↓</div>
-              </div>
-              
-            </div>
+        <!-- Elementos decorativos -->
+        <div class="hero-decorations">
+          <span class="decoration-x left">×</span>
+          <div class="wave-decoration">
+            <svg viewBox="0 0 400 100" preserveAspectRatio="none">
+              <path d="M0,50 Q100,20 200,50 T400,50" stroke="#f47660" stroke-width="3" fill="none" opacity="0.8"/>
+            </svg>
           </div>
+          <span class="decoration-x right">×</span>
         </div>
-      </section>
-
-
-
-
-
-      <!-- Minimal Contact Section -->
-      <section class="minimal-contact-section">
+        
         <div class="container-large">
-          <div class="minimal-contact-wrapper">
-            
-            <!-- Contact Info Minimalista -->
-            <div class="minimal-contact-info">
-              <div class="contact-line"></div>
-              <h2 class="contact-title">Envía tu Propuesta</h2>
+          <!-- Primera Sección - Hero -->
+          <div class="hero-content">
+            <div class="company-badge">RAPER COMPANY</div>
+            <h1 class="hero-title">Producimos tu carrera</h1>
+            <p class="hero-subtitle">Sello discográfico & empresa creativa</p>
+          </div>
+          
+          <!-- Transición Visual -->
+          <div class="playlist-transition">
+            <div class="playlist-line"></div>
+            <h2 class="playlist-title">NUESTRA PLAYLIST</h2>
+            <div class="playlist-line"></div>
+          </div>
+          
+          <!-- Segunda Sección - Contenido -->
+          <div class="careers-main-content">
+            <div class="content-grid">
               
-              <div class="contact-methods-minimal">
-                <div class="contact-method">
-                  <span class="contact-label">Email</span>
-                  <span class="contact-value">careers@rapercompany.com</span>
-                </div>
+              <!-- Info Column -->
+              <div class="info-column">
+                <h3 class="info-title">¿Qué hacemos?</h3>
+                <p class="info-text">
+                  Transformamos talento en carreras exitosas. Producción musical, videoclips, 
+                  desarrollo artístico y distribución global.
+                </p>
                 
-                <div class="contact-method">
-                  <span class="contact-label">Teléfono</span>
-                  <span class="contact-value">+1 (786) 978-1978</span>
-                </div>
-                
-                <div class="contact-method">
-                  <span class="contact-label">Argentina</span>
-                  <span class="contact-value">+54 9 11 3422 6971</span>
-                </div>
-                
-                <div class="contact-method">
-                  <span class="contact-label">Redes</span>
-                  <span class="contact-value">@rapercompany</span>
+                <div class="service-list">
+                  <div class="service-item">
+                    <span class="service-icon">🎵</span>
+                    <span>Producción Musical</span>
+                  </div>
+                  <div class="service-item">
+                    <span class="service-icon">🎬</span>
+                    <span>Videoclips</span>
+                  </div>
+                  <div class="service-item">
+                    <span class="service-icon">🎨</span>
+                    <span>Branding Artístico</span>
+                  </div>
+                  <div class="service-item">
+                    <span class="service-icon">🌎</span>
+                    <span>Distribución Global</span>
+                  </div>
                 </div>
               </div>
+              
+              <!-- Form Column -->
+              <div class="form-column">
+                <div class="form-card">
+                  <h3 class="form-card-title">Únete a nosotros</h3>
+                  <form class="careers-form" id="careers-form">
+                    <input 
+                      type="text" 
+                      name="name" 
+                      placeholder="Nombre artístico" 
+                      required 
+                      class="form-input"
+                    >
+                    
+                    <input 
+                      type="email" 
+                      name="email" 
+                      placeholder="Email" 
+                      required 
+                      class="form-input"
+                    >
+                    
+                    <select name="area" required class="form-input">
+                      <option value="">Tu especialidad</option>
+                      <option value="artista">Artista</option>
+                      <option value="productor">Productor</option>
+                      <option value="compositor">Compositor</option>
+                      <option value="visual">Creador Visual</option>
+                      <option value="otro">Otro</option>
+                    </select>
+                    
+                    <textarea 
+                      name="message" 
+                      placeholder="Cuéntanos tu visión artística..." 
+                      rows="3" 
+                      required 
+                      class="form-input"
+                    ></textarea>
+                    
+                    <button type="submit" class="form-submit">
+                      ENVIAR PROPUESTA
+                    </button>
+                  </form>
+                  
+                  <div class="form-footer">
+                    <p>O contáctanos directamente:</p>
+                    <a href="tel:+17869781978" class="contact-link">+1 (786) 978-1978</a>
+                  </div>
+                </div>
+              </div>
+              
             </div>
-            
-            <!-- Form Minimalista -->
-            <div class="minimal-form-section">
-              <form class="minimal-form">
-                <div class="form-field">
-                  <input type="text" placeholder="Nombre" required>
-                </div>
-                <div class="form-field">
-                  <input type="email" placeholder="Email" required>
-                </div>
-                <div class="form-field">
-                  <select required>
-                    <option value="">Área de especialidad</option>
-                    <option value="produccion">Producción Musical</option>
-                    <option value="visual">Contenido Visual</option>
-                    <option value="marketing">Marketing Digital</option>
-                    <option value="diseno">Diseño Gráfico</option>
-                    <option value="desarrollo">Desarrollo Web</option>
-                    <option value="gestion">Gestión Artística</option>
-                    <option value="otro">Otro</option>
-                  </select>
-                </div>
-                <div class="form-field">
-                  <textarea placeholder="Tu propuesta..." rows="4" required></textarea>
-                </div>
-                <button type="submit" class="minimal-submit-btn">
-                  Enviar
-                </button>
-              </form>
-            </div>
-            
           </div>
         </div>
       </section>
 
       <!-- Estilos específicos para la página de careers -->
       <style>
-        /* ===== MINIMAL CAREERS PAGE STYLES ===== */
+        /* ===== CAREERS HERO FLOW STYLES ===== */
         
-        /* Minimal Hero Section */
-        .minimal-careers-hero {
+        /* Hero Flow Section */
+        .careers-hero-flow {
           position: relative;
           min-height: 100vh;
-          background: #000000;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          padding: 8rem 0 6rem 0;
+          background: #000;
+          overflow: hidden;
+          padding: 80px 0 100px;
         }
         
-        .minimal-hero-background {
+        /* Background Gradient */
+        .hero-background-gradient {
           position: absolute;
           top: 0;
           left: 0;
           width: 100%;
           height: 100%;
-          background: radial-gradient(circle at center, rgba(95, 164, 255, 0.03) 0%, transparent 70%);
+          background: radial-gradient(ellipse at center top, rgba(95, 164, 255, 0.15) 0%, transparent 50%),
+                      radial-gradient(ellipse at center bottom, rgba(79, 209, 197, 0.1) 0%, transparent 50%);
           z-index: 0;
         }
         
-        .minimal-hero-content {
+        /* Decorative Elements */
+        .hero-decorations {
+          position: absolute;
+          top: 50%;
+          left: 0;
+          width: 100%;
+          transform: translateY(-50%);
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0 5%;
+          z-index: 1;
+          opacity: 0.5;
+        }
+        
+        .decoration-x {
+          font-size: 15rem;
+          font-weight: 300;
+          color: #f47660;
+          opacity: 0.3;
+          animation: float 6s ease-in-out infinite;
+        }
+        
+        .decoration-x.left {
+          animation-delay: 0s;
+        }
+        
+        .decoration-x.right {
+          animation-delay: 3s;
+        }
+        
+        .wave-decoration {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          width: 400px;
+          height: 100px;
+        }
+        
+        .wave-decoration svg {
+          width: 100%;
+          height: 100%;
+        }
+        
+        @keyframes float {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-20px); }
+        }
+        
+        /* Hero Content */
+        .hero-content {
           position: relative;
           z-index: 2;
-          width: 100%;
-        }
-        
-        .minimal-hero-wrapper {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
           text-align: center;
-          gap: 4rem;
-          max-width: 800px;
-          margin: 0 auto;
-          padding: 0 2rem;
+          padding: 60px 0 80px;
         }
         
-        /* Logo Minimalista */
-        .minimal-logo-section {
-          margin-bottom: 2rem;
-        }
-        
-        .minimal-logo {
-          height: 60px;
-          width: auto;
-          opacity: 0.9;
-          transition: all 0.3s ease;
-        }
-        
-        .minimal-logo:hover {
-          opacity: 1;
-          transform: scale(1.02);
-        }
-        
-        /* Título Minimalista */
-        .minimal-title-section {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 1rem;
-        }
-        
-        .minimal-main-title {
-          font-size: clamp(3rem, 6vw, 4.5rem);
-          font-weight: 300;
-          color: #ffffff;
-          line-height: 1.2;
-          margin: 0;
-          letter-spacing: 0.02em;
-        }
-        
-        .minimal-subtitle {
-          font-size: 1.4rem;
-          color: rgba(95, 164, 255, 0.8);
-          font-weight: 400;
-          letter-spacing: 0.1em;
-          text-transform: uppercase;
-        }
-        
-        /* Filosofía Minimalista */
-        .minimal-philosophy {
-          max-width: 600px;
-          margin: 0 auto;
-          display: flex;
-          flex-direction: column;
-          gap: 2rem;
-        }
-        
-        .minimal-description {
-          font-size: 1.6rem;
-          line-height: 1.7;
-          color: rgba(255, 255, 255, 0.8);
-          margin: 0;
-          font-weight: 300;
-        }
-        
-        .minimal-description strong {
-          color: #ffffff;
-          font-weight: 500;
-        }
-        
-        .minimal-mission {
-          font-size: 1.8rem;
-          line-height: 1.6;
-          color: rgba(255, 255, 255, 0.9);
-          margin: 0;
-          font-weight: 300;
-          font-style: italic;
-        }
-        
-        /* Servicios Minimalistas */
-        .minimal-services {
-          display: flex;
-          flex-direction: column;
-          gap: 1.5rem;
-          margin: 2rem 0;
-        }
-        
-        .service-minimal {
-          display: flex;
-          align-items: center;
-          gap: 1.5rem;
-          font-size: 1.4rem;
-          color: rgba(255, 255, 255, 0.7);
-          font-weight: 300;
-          transition: all 0.3s ease;
-        }
-        
-        .service-minimal:hover {
-          color: rgba(255, 255, 255, 0.9);
-        }
-        
-        .service-dot {
-          width: 6px;
-          height: 6px;
-          background: rgba(95, 164, 255, 0.6);
-          border-radius: 50%;
-          flex-shrink: 0;
-          transition: all 0.3s ease;
-        }
-        
-        .service-minimal:hover .service-dot {
-          background: rgba(95, 164, 255, 1);
-          transform: scale(1.2);
-        }
-        
-        /* CTA Minimalista */
-        .minimal-cta {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 2rem;
-          margin-top: 3rem;
-        }
-        
-        .cta-line {
-          width: 60px;
-          height: 1px;
-          background: rgba(95, 164, 255, 0.4);
-        }
-        
-        .cta-minimal-text {
-          font-size: 1.5rem;
-          color: rgba(255, 255, 255, 0.7);
-          margin: 0;
-          font-weight: 300;
-        }
-        
-        .cta-arrow-minimal {
-          font-size: 2rem;
-          color: rgba(95, 164, 255, 0.6);
-          animation: fadeUpDown 3s ease-in-out infinite;
-        }
-        
-        @keyframes fadeUpDown {
-          0%, 100% {
-            transform: translateY(0);
-            opacity: 0.6;
-          }
-          50% {
-            transform: translateY(8px);
-            opacity: 1;
-          }
-        }
-        
-        /* ===== MINIMAL CONTACT SECTION ===== */
-        
-        .minimal-contact-section {
-          background: #000000;
-          padding: 8rem 0;
-          border-top: 1px solid rgba(95, 164, 255, 0.1);
-        }
-        
-        .minimal-contact-wrapper {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 6rem;
-          max-width: 1000px;
-          margin: 0 auto;
-          padding: 0 2rem;
-        }
-        
-        /* Contact Info */
-        .minimal-contact-info {
-          display: flex;
-          flex-direction: column;
-          gap: 3rem;
-        }
-        
-        .contact-line {
-          width: 80px;
-          height: 1px;
-          background: rgba(95, 164, 255, 0.4);
-        }
-        
-        .contact-title {
-          font-size: 2.5rem;
-          font-weight: 300;
-          color: #ffffff;
-          margin: 0;
-          letter-spacing: 0.02em;
-        }
-        
-        .contact-methods-minimal {
-          display: flex;
-          flex-direction: column;
-          gap: 2rem;
-        }
-        
-        .contact-method {
-          display: flex;
-          flex-direction: column;
-          gap: 0.5rem;
-        }
-        
-        .contact-label {
-          font-size: 1.2rem;
-          color: rgba(95, 164, 255, 0.7);
-          font-weight: 400;
-          text-transform: uppercase;
-          letter-spacing: 0.1em;
-        }
-        
-        .contact-value {
-          font-size: 1.5rem;
-          color: rgba(255, 255, 255, 0.9);
-          font-weight: 300;
-        }
-        
-        /* Minimal Form */
-        .minimal-form-section {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-        }
-        
-        .minimal-form {
-          display: flex;
-          flex-direction: column;
-          gap: 2rem;
-        }
-        
-        .form-field {
-          display: flex;
-          flex-direction: column;
-        }
-        
-        .form-field input,
-        .form-field select,
-        .form-field textarea {
-          background: transparent;
-          border: none;
-          border-bottom: 1px solid rgba(95, 164, 255, 0.3);
-          color: #ffffff;
-          font-size: 1.4rem;
-          font-weight: 300;
-          padding: 1rem 0;
-          transition: all 0.3s ease;
-          font-family: inherit;
-        }
-        
-        .form-field input:focus,
-        .form-field select:focus,
-        .form-field textarea:focus {
-          outline: none;
-          border-bottom-color: rgba(95, 164, 255, 0.8);
-        }
-        
-        .form-field input::placeholder,
-        .form-field textarea::placeholder {
-          color: rgba(255, 255, 255, 0.5);
-          font-weight: 300;
-        }
-        
-        .form-field select {
-          cursor: pointer;
-        }
-        
-        .form-field select option {
-          background: #000000;
-          color: #ffffff;
-        }
-        
-        .form-field textarea {
-          resize: vertical;
-          min-height: 100px;
-        }
-        
-        .minimal-submit-btn {
-          background: transparent;
-          border: 1px solid rgba(95, 164, 255, 0.4);
-          color: rgba(95, 164, 255, 0.8);
-          font-size: 1.4rem;
-          font-weight: 400;
-          padding: 1.5rem 3rem;
-          cursor: pointer;
-          transition: all 0.3s ease;
-          font-family: inherit;
-          letter-spacing: 0.05em;
-          text-transform: uppercase;
-          margin-top: 1rem;
-        }
-        
-        .minimal-submit-btn:hover {
-          background: rgba(95, 164, 255, 0.1);
-          border-color: rgba(95, 164, 255, 0.8);
-          color: rgba(95, 164, 255, 1);
-        }
-        
-        /* ===== RESPONSIVE DESIGN MINIMALISTA ===== */
-        
-        /* Tablet */
-        @media screen and (max-width: 991px) {
-          .minimal-careers-hero {
-            padding: 6rem 0 4rem 0;
-          }
-          
-          .minimal-hero-wrapper {
-            gap: 3rem;
-          }
-          
-          .minimal-logo {
-            height: 55px;
-          }
-          
-          .minimal-main-title {
-            font-size: clamp(2.8rem, 6vw, 4rem);
-          }
-          
-          .minimal-description {
-            font-size: 1.5rem;
-          }
-          
-          .minimal-mission {
-            font-size: 1.7rem;
-          }
-          
-          .minimal-contact-wrapper {
-            gap: 4rem;
-          }
-          
-          .contact-title {
-            font-size: 2.2rem;
-          }
-        }
-        
-        /* Mobile */
-        @media screen and (max-width: 767px) {
-          .minimal-careers-hero {
-            min-height: auto;
-            padding: 4rem 0 3rem 0;
-          }
-          
-          .minimal-hero-wrapper {
-            gap: 2.5rem;
-            padding: 0 1.5rem;
-            max-width: 100%;
-          }
-          
-          .minimal-logo-section {
-            margin-bottom: 1.5rem;
-          }
-          
-          .minimal-logo {
-            height: 50px;
-          }
-          
-          .minimal-title-section {
-            gap: 0.8rem;
-          }
-          
-          .minimal-main-title {
-            font-size: clamp(2.5rem, 7vw, 3.5rem);
-            line-height: 1.1;
-          }
-          
-          .minimal-subtitle {
-            font-size: 1.2rem;
-            letter-spacing: 0.08em;
-          }
-          
-          .minimal-philosophy {
-            gap: 1.5rem;
-            max-width: 100%;
-          }
-          
-          .minimal-description {
-            font-size: 1.4rem;
-            line-height: 1.6;
-          }
-          
-          .minimal-mission {
-            font-size: 1.6rem;
-            line-height: 1.5;
-          }
-          
-          .minimal-services {
-            gap: 1.2rem;
-            margin: 1.5rem 0;
-          }
-          
-          .service-minimal {
-            font-size: 1.3rem;
-            gap: 1.2rem;
-          }
-          
-          .service-dot {
-            width: 5px;
-            height: 5px;
-          }
-          
-          .minimal-cta {
-            gap: 1.5rem;
-            margin-top: 2rem;
-          }
-          
-          .cta-line {
-            width: 40px;
-          }
-          
-          .cta-minimal-text {
-            font-size: 1.3rem;
-          }
-          
-          .cta-arrow-minimal {
-            font-size: 1.8rem;
-          }
-          
-          .minimal-contact-section {
-            padding: 4rem 0;
-          }
-          
-          .minimal-contact-wrapper {
-            grid-template-columns: 1fr;
-            gap: 3rem;
-            padding: 0 1.5rem;
-          }
-          
-          .contact-title {
-            font-size: 2rem;
-          }
-          
-          .contact-methods-minimal {
-            gap: 1.5rem;
-          }
-          
-          .contact-label {
-            font-size: 1.1rem;
-          }
-          
-          .contact-value {
-            font-size: 1.3rem;
-          }
-          
-          .form-field input,
-          .form-field select,
-          .form-field textarea {
-            font-size: 1.3rem;
-          }
-          
-          .minimal-submit-btn {
-            font-size: 1.2rem;
-            padding: 1.2rem 2rem;
-          }
-        }
-        
-        /* Mobile pequeño */
-        @media screen and (max-width: 480px) {
-          .minimal-hero-wrapper {
-            padding: 0 1rem;
-            gap: 2rem;
-          }
-          
-          .minimal-logo {
-            height: 45px;
-          }
-          
-          .minimal-main-title {
-            font-size: clamp(2.2rem, 7vw, 3rem);
-          }
-          
-          .minimal-subtitle {
-            font-size: 1.1rem;
-          }
-          
-          .minimal-description {
-            font-size: 1.3rem;
-          }
-          
-          .minimal-mission {
-            font-size: 1.5rem;
-          }
-          
-          .service-minimal {
-            font-size: 1.2rem;
-          }
-          
-          .cta-minimal-text {
-            font-size: 1.2rem;
-          }
-          
-          .minimal-contact-wrapper {
-            padding: 0 1rem;
-          }
-          
-          .contact-title {
-            font-size: 1.8rem;
-          }
-          
-          .form-field input,
-          .form-field select,
-          .form-field textarea {
-            font-size: 1.2rem;
-          }
-          
-          .minimal-submit-btn {
-            font-size: 1.1rem;
-            padding: 1rem 1.5rem;
-          }
-        }
-        
-        /* ===== FORMULARIO SECTION STYLES ===== */
-        
-        /* CTA Section */
-        .careers-cta-section {
-          padding: 8rem 0;
-          background: linear-gradient(135deg, #1a1a1a 0%, #000 100%);
-        }
-        
-        .cta-wrapper {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 6rem;
-          align-items: start;
-        }
-        
-        .cta-title {
-          font-size: 4rem;
-          font-weight: 800;
-          color: white;
-          margin-bottom: 2rem;
-        }
-        
-        .highlight-blue {
+        .company-badge {
+          display: inline-block;
           background: linear-gradient(135deg, #5fa4ff 0%, #4fd1c5 100%);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
+          font-size: 2rem;
+          font-weight: 700;
+          letter-spacing: 0.3em;
+          text-transform: uppercase;
+          margin-bottom: 2rem;
         }
         
-        .cta-subtitle {
-          font-size: 1.6rem;
-          color: rgba(255, 255, 255, 0.8);
-          margin-bottom: 3rem;
-          line-height: 1.6;
+        .hero-title {
+          font-size: clamp(3.5rem, 8vw, 6rem);
+          font-weight: 700;
+          color: #fff;
+          margin: 0 0 1rem 0;
+          line-height: 1.1;
         }
         
-        .contact-methods {
-          display: flex;
-          flex-direction: column;
-          gap: 2rem;
+        .hero-subtitle {
+          font-size: 1.8rem;
+          color: rgba(255, 255, 255, 0.6);
+          margin: 0;
+          font-weight: 300;
+          letter-spacing: 0.1em;
         }
         
-        .contact-item {
-          display: flex;
-          align-items: center;
-          gap: 1.5rem;
-          padding: 2rem;
-          background: rgba(255, 255, 255, 0.05);
-          border-radius: 15px;
-          border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .contact-icon {
-          font-size: 2.5rem;
-          width: 60px;
-          height: 60px;
+        /* Playlist Transition */
+        .playlist-transition {
+          position: relative;
+          z-index: 2;
           display: flex;
           align-items: center;
           justify-content: center;
-          background: rgba(95, 164, 255, 0.2);
-          border-radius: 50%;
+          gap: 3rem;
+          margin: 80px 0;
+          opacity: 0.8;
         }
         
-        .contact-details h4 {
-          color: white;
-          margin-bottom: 0.5rem;
-          font-size: 1.4rem;
+        .playlist-line {
+          height: 1px;
+          width: 100px;
+          background: linear-gradient(90deg, transparent, rgba(95, 164, 255, 0.5), transparent);
         }
         
-        .contact-details p {
-          color: rgba(255, 255, 255, 0.8);
-          margin: 0.2rem 0;
-        }
-        
-        /* Form */
-        .form-container {
-          background: rgba(255, 255, 255, 0.05);
-          padding: 3rem;
-          border-radius: 20px;
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          backdrop-filter: blur(10px);
-        }
-        
-        .form-container h3 {
-          color: white;
+        .playlist-title {
           font-size: 2.2rem;
-          margin-bottom: 2rem;
+          color: #5fa4ff;
+          margin: 0;
+          font-weight: 600;
+          letter-spacing: 0.2em;
+          text-transform: uppercase;
+        }
+        
+        /* Main Content */
+        .careers-main-content {
+          position: relative;
+          z-index: 2;
+        }
+        
+        .content-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 80px;
+          align-items: start;
+          max-width: 1100px;
+          margin: 0 auto;
+        }
+        
+        /* Info Column */
+        .info-column {
+          padding-right: 40px;
+        }
+        
+        .info-title {
+          font-size: 2.5rem;
+          color: #fff;
+          margin: 0 0 20px 0;
+          font-weight: 600;
+        }
+        
+        .info-text {
+          font-size: 1.6rem;
+          line-height: 1.8;
+          color: rgba(255, 255, 255, 0.8);
+          margin: 0 0 40px 0;
+        }
+        
+        .service-list {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+        }
+        
+        .service-item {
+          display: flex;
+          align-items: center;
+          gap: 15px;
+          padding: 15px 20px;
+          background: rgba(255, 255, 255, 0.03);
+          border-radius: 12px;
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          transition: all 0.3s ease;
+        }
+        
+        .service-item:hover {
+          background: rgba(95, 164, 255, 0.1);
+          border-color: rgba(95, 164, 255, 0.3);
+          transform: translateX(10px);
+        }
+        
+        .service-icon {
+          font-size: 2rem;
+          width: 40px;
           text-align: center;
         }
         
-        .form-group {
-          margin-bottom: 1.5rem;
+        .service-item span:last-child {
+          color: rgba(255, 255, 255, 0.9);
+          font-size: 1.5rem;
+          font-weight: 500;
         }
         
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-          width: 100%;
-          padding: 1.2rem;
-          background: rgba(255, 255, 255, 0.1);
-          border: 1px solid rgba(255, 255, 255, 0.2);
-          border-radius: 10px;
-          color: white;
-          font-size: 1.4rem;
+        /* Form Column */
+        .form-card {
+          background: rgba(255, 255, 255, 0.03);
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          border-radius: 24px;
+          padding: 40px;
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .form-card-title {
+          font-size: 2.2rem;
+          color: #fff;
+          margin: 0 0 30px 0;
+          text-align: center;
+        }
+        
+        .careers-form {
+          display: flex;
+          flex-direction: column;
+          gap: 18px;
+        }
+        
+        .form-input {
+          background: rgba(255, 255, 255, 0.05);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          border-radius: 12px;
+          padding: 15px 18px;
+          color: #fff;
+          font-size: 1.5rem;
+          font-family: inherit;
           transition: all 0.3s ease;
         }
         
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
+        .form-input:focus {
           outline: none;
-          border-color: #5fa4ff;
-          background: rgba(255, 255, 255, 0.15);
+          background: rgba(255, 255, 255, 0.08);
+          border-color: rgba(95, 164, 255, 0.6);
+          box-shadow: 0 0 0 3px rgba(95, 164, 255, 0.1);
         }
         
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-          color: rgba(255, 255, 255, 0.6);
+        .form-input::placeholder {
+          color: rgba(255, 255, 255, 0.4);
         }
         
-        .submit-btn {
-          width: 100%;
-          padding: 1.5rem 2rem;
+        select.form-input {
+          cursor: pointer;
+        }
+        
+        select.form-input option {
+          background: #1a1a1a;
+          color: #fff;
+        }
+        
+        textarea.form-input {
+          resize: vertical;
+          min-height: 80px;
+          font-family: inherit;
+        }
+        
+        .form-submit {
           background: linear-gradient(135deg, #5fa4ff 0%, #4fd1c5 100%);
-          color: white;
           border: none;
-          border-radius: 10px;
-          font-size: 1.6rem;
-          font-weight: 600;
+          border-radius: 12px;
+          padding: 16px 32px;
+          color: #000;
+          font-size: 1.5rem;
+          font-weight: 700;
           cursor: pointer;
           transition: all 0.3s ease;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          gap: 1rem;
+          text-transform: uppercase;
+          letter-spacing: 0.1em;
+          margin-top: 10px;
         }
         
-        .submit-btn:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 10px 25px rgba(95, 164, 255, 0.4);
+        .form-submit:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 15px 35px rgba(95, 164, 255, 0.4);
         }
+        
+        .form-submit:active {
+          transform: translateY(-1px);
+        }
+        
+        .form-footer {
+          text-align: center;
+          margin-top: 25px;
+          padding-top: 25px;
+          border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .form-footer p {
+          color: rgba(255, 255, 255, 0.6);
+          font-size: 1.3rem;
+          margin: 0 0 10px 0;
+        }
+        
+        .contact-link {
+          color: #5fa4ff;
+          text-decoration: none;
+          font-size: 1.6rem;
+          font-weight: 600;
+          transition: color 0.3s ease;
+        }
+        
+        .contact-link:hover {
+          color: #4fd1c5;
+        }
+        
+        /* Responsive Design */
+        @media screen and (max-width: 991px) {
+          .content-grid {
+            grid-template-columns: 1fr;
+            gap: 60px;
+          }
+          
+          .info-column {
+            padding-right: 0;
+          }
+          
+          .hero-title {
+            font-size: 4.5rem;
+          }
+          
+          .decoration-x {
+            font-size: 10rem;
+          }
+          
+          .wave-decoration {
+            width: 300px;
+          }
+        }
+        
+        @media screen and (max-width: 767px) {
+          .careers-hero-flow {
+            padding: 60px 20px 80px;
+          }
+          
+          .hero-content {
+            padding: 40px 0 60px;
+          }
+          
+          .company-badge {
+            font-size: 1.6rem;
+          }
+          
+          .hero-title {
+            font-size: 3.5rem;
+          }
+          
+          .hero-subtitle {
+            font-size: 1.5rem;
+          }
+          
+          .playlist-transition {
+            margin: 60px 0;
+          }
+          
+          .playlist-title {
+            font-size: 1.8rem;
+          }
+          
+          .playlist-line {
+            width: 60px;
+          }
+          
+          .info-title {
+            font-size: 2rem;
+          }
+          
+          .info-text {
+            font-size: 1.4rem;
+          }
+          
+          .form-card {
+            padding: 30px 20px;
+          }
+          
+          .decoration-x {
+            font-size: 8rem;
+          }
+          
+          .wave-decoration {
+            width: 250px;
+            height: 80px;
+          }
+          
+          .service-item {
+            padding: 12px 15px;
+          }
+          
+          .service-icon {
+            font-size: 1.6rem;
+            width: 30px;
+          }
+          
+          .service-item span:last-child {
+            font-size: 1.3rem;
+          }
+        }
+        
+        @media screen and (max-width: 480px) {
+          .hero-title {
+            font-size: 3rem;
+          }
+          
+          .decoration-x {
+            display: none;
+          }
+        }
+        
+        /* NO MORE OLD STYLES - ONLY NEW MINIMAL CAREERS STYLES ABOVE */
         
         /* ===== ESTILOS DEL MENÚ HAMBURGUESA Y MÓVIL - IDÉNTICO A BASKET ===== */
         .mobile-menu-toggle {
@@ -1369,48 +1084,7 @@ margin: 0rem !important;
           }
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-          .careers-hero-wrapper,
-          .cta-wrapper {
-            grid-template-columns: 1fr;
-            gap: 3rem;
-          }
-          
-          .careers-hero-title {
-            font-size: 3.5rem;
-          }
-          
-          .section-title,
-          .cta-title {
-            font-size: 3rem;
-          }
-          
-          .careers-hero-stats {
-            justify-content: center;
-            gap: 2rem;
-          }
-          
-          .careers-hero-img {
-            width: 300px;
-            height: 300px;
-          }
-          
-          .areas-grid {
-            grid-template-columns: 1fr;
-          }
-        }
-        
-        @keyframes pulse {
-          0%, 100% {
-            opacity: 0.3;
-            transform: scale(1);
-          }
-          50% {
-            opacity: 0.6;
-            transform: scale(1.05);
-          }
-        }
+        /* END OF CAREERS PAGE STYLES */
       </style>
     </main>
   </div>
@@ -1431,61 +1105,106 @@ margin: 0rem !important;
   </div>
 
   <script>
-    // ===== MENÚ HAMBURGUESA - CONGRUENTE CON DEMÁS PÁGINAS ===== 
-    document.addEventListener('DOMContentLoaded', function() {
-      console.log('🚀 Página de careers cargada');
-      
-      const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-      const mobileMenu = document.getElementById('mobile-menu');
-      const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
-      
-      function closeMenu() {
-        if (mobileMenuToggle) mobileMenuToggle.classList.remove('active');
-        if (mobileMenu) mobileMenu.classList.remove('active');
-        document.body.style.overflow = '';
-      }
-      
-      if (mobileMenuToggle && mobileMenu) {
-        // Toggle del menú con hamburguesa
-        mobileMenuToggle.addEventListener('click', function() {
-          mobileMenuToggle.classList.toggle('active');
-          mobileMenu.classList.toggle('active');
-          document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
-          console.log('🍔 Menú hamburguesa toggled');
-        });
-
-        // Cerrar menú al hacer clic en enlaces
-        mobileMenuLinks.forEach(link => {
-          link.addEventListener('click', function() {
-            closeMenu();
-            console.log('📱 Menú cerrado por clic en enlace');
-          });
-        });
-
-        // Cerrar menú al hacer clic fuera
-        document.addEventListener('click', function(e) {
-          if (mobileMenu.classList.contains('active') && 
-              !mobileMenu.contains(e.target) && 
-              !mobileMenuToggle.contains(e.target)) {
-            closeMenu();
-            console.log('👆 Menú cerrado por clic fuera');
-          }
-        });
+          // ===== MENÚ HAMBURGUESA - CONGRUENTE CON DEMÁS PÁGINAS ===== 
+      document.addEventListener('DOMContentLoaded', function() {
+        console.log('🚀 Página de careers cargada');
         
-        console.log('✅ Event listeners del menú hamburguesa configurados');
-      } else {
-        console.error('❌ No se encontraron elementos del menú móvil');
-      }
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+        
+        function closeMenu() {
+          if (mobileMenuToggle) mobileMenuToggle.classList.remove('active');
+          if (mobileMenu) mobileMenu.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+        
+        if (mobileMenuToggle && mobileMenu) {
+          // Toggle del menú con hamburguesa
+          mobileMenuToggle.addEventListener('click', function() {
+            mobileMenuToggle.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+            console.log('🍔 Menú hamburguesa toggled');
+          });
 
-      // Actualizar contador del carrito al cargar
-      const cart = JSON.parse(localStorage.getItem('raperCart')) || [];
-      const cartCount = document.getElementById('cart-count');
-      if (cartCount) {
-        const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-        cartCount.textContent = totalItems;
-        console.log(`🔢 Contador del carrito: ${totalItems} items`);
-      }
-    });
+          // Cerrar menú al hacer clic en enlaces
+          mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', function() {
+              closeMenu();
+              console.log('📱 Menú cerrado por clic en enlace');
+            });
+          });
+
+          // Cerrar menú al hacer clic fuera
+          document.addEventListener('click', function(e) {
+            if (mobileMenu.classList.contains('active') && 
+                !mobileMenu.contains(e.target) && 
+                !mobileMenuToggle.contains(e.target)) {
+              closeMenu();
+              console.log('👆 Menú cerrado por clic fuera');
+            }
+          });
+          
+          console.log('✅ Event listeners del menú hamburguesa configurados');
+        } else {
+          console.error('❌ No se encontraron elementos del menú móvil');
+        }
+
+        // Actualizar contador del carrito al cargar
+        const cart = JSON.parse(localStorage.getItem('raperCart')) || [];
+        const cartCount = document.getElementById('cart-count');
+        if (cartCount) {
+          const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+          cartCount.textContent = totalItems;
+          console.log(`🔢 Contador del carrito: ${totalItems} items`);
+        }
+
+        // ===== FORMULARIO DE CAREERS FUNCIONAL =====
+        const careersForm = document.getElementById('careers-form');
+        if (careersForm) {
+          careersForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = {
+              name: careersForm.name.value,
+              email: careersForm.email.value,
+              area: careersForm.area.value,
+              message: careersForm.message.value
+            };
+            
+            console.log('📧 Enviando propuesta:', formData);
+            
+            // Visual feedback
+            const submitBtn = careersForm.querySelector('.form-submit');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'ENVIANDO...';
+            submitBtn.disabled = true;
+            
+            // Simulación de envío (aquí podrías integrar con tu backend)
+            setTimeout(() => {
+              // Success feedback
+              submitBtn.textContent = '✓ ENVIADO';
+              submitBtn.style.background = '#4fd1c5';
+              submitBtn.style.color = '#000';
+              
+              // Reset form
+              careersForm.reset();
+              
+              // Show success message
+              alert('¡Gracias por tu propuesta! Te contactaremos pronto.');
+              
+              // Restore button after 3 seconds
+              setTimeout(() => {
+                submitBtn.textContent = originalText;
+                submitBtn.style.background = '';
+                submitBtn.style.color = '';
+                submitBtn.disabled = false;
+              }, 3000);
+            }, 1500);
+          });
+        }
+      });
   </script>
 
 </body>
