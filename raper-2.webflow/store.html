@@ -97,29 +97,26 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-/* Estilos específicos para categorías */
+/* Estilos específicos para categorías - DISEÑO GRANDE */
 .categories-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 4rem;
-  margin-top: 4rem;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 5rem;
+  margin-top: 6rem;
 }
 
 .category-card {
   background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
-  border-radius: 2rem;
-  padding: 3rem;
-  text-align: center;
-  cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  border: 2px solid transparent;
-  position: relative;
+  border-radius: 2.5rem;
   overflow: hidden;
-  min-height: 350px;
+  border: 2px solid rgba(95, 164, 255, 0.2);
+  transition: all 0.5s ease;
+  cursor: pointer;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  min-height: 550px;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .category-card::before {
@@ -139,91 +136,95 @@ body {
 }
 
 .category-card:hover {
-  transform: translateY(-10px) scale(1.02);
-  border-color: #5fa4ff;
-  box-shadow: 0 20px 40px rgba(95, 164, 255, 0.2);
+  border-color: rgba(95, 164, 255, 0.6);
+  transform: translateY(-15px);
+  box-shadow: 0 25px 60px rgba(95, 164, 255, 0.3);
 }
 
 .category-icon {
-  font-size: 6rem;
-  margin-bottom: 2rem;
-  filter: drop-shadow(0 0 20px rgba(95, 164, 255, 0.3));
-  transition: all 0.4s ease;
-  width: 120px;
-  height: 120px;
+  position: relative;
+  height: 350px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 3rem;
 }
 
 .category-product-image {
-  width: 120px;
-  height: 120px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 3px solid rgba(95, 164, 255, 0.4);
-  transition: all 0.4s ease;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.5s ease;
+  filter: drop-shadow(0 15px 35px rgba(95, 164, 255, 0.2));
 }
 
 .category-card:hover .category-icon {
-  transform: scale(1.1);
   filter: drop-shadow(0 0 30px rgba(95, 164, 255, 0.6));
 }
 
 .category-card:hover .category-product-image {
-  border-color: rgba(95, 164, 255, 0.8);
-  box-shadow: 0 15px 40px rgba(95, 164, 255, 0.4);
   transform: scale(1.05);
+}
+
+.category-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 3.5rem;
 }
 
 .category-title {
   font-size: 2.8rem;
   font-weight: 700;
-  color: #fff;
+  color: white;
   margin-bottom: 1.5rem;
+  line-height: 1.2;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.05em;
 }
 
 .category-description {
   font-size: 1.6rem;
   color: #b0b0b0;
   line-height: 1.6;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
+  flex: 1;
 }
 
 .category-count {
   display: inline-block;
   background: linear-gradient(135deg, #5fa4ff 0%, #4fd1c5 100%);
   color: #000;
-  padding: 0.8rem 1.6rem;
+  padding: 1rem 2rem;
   border-radius: 2rem;
   font-size: 1.4rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  margin-top: auto;
+  align-self: flex-start;
 }
 
 @media screen and (max-width: 991px) {
   .categories-grid {
-    grid-template-columns: 1fr;
-    gap: 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 4rem;
   }
   
   .category-card {
-    min-height: 300px;
+    min-height: 480px;
   }
   
   .category-icon {
-    font-size: 5rem;
-    width: 100px;
-    height: 100px;
+    height: 280px;
+    padding: 2.5rem;
   }
   
-  .category-product-image {
-    width: 100px;
-    height: 100px;
+  .category-info {
+    padding: 3rem;
   }
   
   .category-title {
@@ -233,31 +234,29 @@ body {
 
 @media screen and (max-width: 767px) {
   .categories-grid {
-    gap: 2rem;
+    grid-template-columns: 1fr;
+    gap: 3rem;
   }
   
   .category-card {
-    padding: 2rem;
-    min-height: 250px;
+    min-height: 420px;
   }
   
   .category-icon {
-    font-size: 4rem;
-    width: 80px;
-    height: 80px;
+    height: 250px;
+    padding: 2rem;
   }
   
-  .category-product-image {
-    width: 80px;
-    height: 80px;
+  .category-info {
+    padding: 2.5rem;
   }
   
   .category-title {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
   
   .category-description {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
   }
 }
 </style>
@@ -334,12 +333,14 @@ body {
                 <div class="category-icon">
                   <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/audifono.jpg" alt="Auriculares RAPER" class="category-product-image">
                 </div>
-                <h2 class="category-title">Headphones RAPERS</h2>
-                <p class="category-description">
-                  Experimenta el sonido premium con nuestra colección exclusiva de auriculares RAPER. 
-                  Tecnología de cancelación de ruido, diseño elegante y calidad excepcional.
-                </p>
-                <div class="category-count">2 Modelos Disponibles</div>
+                <div class="category-info">
+                  <h2 class="category-title">Headphones RAPERS</h2>
+                  <p class="category-description">
+                    Experimenta el sonido premium con nuestra colección exclusiva de auriculares RAPER. 
+                    Tecnología de cancelación de ruido, diseño elegante y calidad excepcional.
+                  </p>
+                  <div class="category-count">2 Modelos Disponibles</div>
+                </div>
               </div>
               
               <!-- Categoría Basket -->
@@ -347,25 +348,29 @@ body {
                 <div class="category-icon">
                   <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/balon.jpg" alt="Balón RAPER" class="category-product-image">
                 </div>
-                <h2 class="category-title">Basket</h2>
-                <p class="category-description">
-                  Equípate con estilo urbano. Nuestra línea de productos para basketball combina 
-                  funcionalidad deportiva con el diseño característico de RAPER.
-                </p>
-                <div class="category-count">Próximamente</div>
+                <div class="category-info">
+                  <h2 class="category-title">Basket</h2>
+                  <p class="category-description">
+                    Equípate con estilo urbano. Nuestra línea de productos para basketball combina 
+                    funcionalidad deportiva con el diseño característico de RAPER.
+                  </p>
+                  <div class="category-count">Próximamente</div>
+                </div>
               </div>
               
               <!-- Categoría Sillas de Director -->
-              <div class="category-card" onclick="goToCategory('silla-milkmakers')">
+              <div class="category-card" onclick="goToCategory('sillas-list')">
                 <div class="category-icon">
                   <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/silla.jpg" alt="Silla RAPER" class="category-product-image">
                 </div>
-                <h2 class="category-title">Sillas de Director</h2>
-                <p class="category-description">
-                  Elegancia y comodidad premium. Sillas de director diseñadas con 
-                  la calidad y estilo característicos de RAPER Company.
-                </p>
-                <div class="category-count">Próximamente</div>
+                <div class="category-info">
+                  <h2 class="category-title">Sillas de Director</h2>
+                  <p class="category-description">
+                    Elegancia y comodidad premium. Sillas de director diseñadas con 
+                    la calidad y estilo característicos de RAPER Company.
+                  </p>
+                  <div class="category-count">2 Modelos Disponibles</div>
+                </div>
               </div>
             </div>
           </div>
@@ -434,6 +439,9 @@ body {
             break;
           case 'basket':
             window.location.href = 'basket.html';
+            break;
+          case 'sillas-list':
+            window.location.href = 'sillas-list.html';
             break;
           case 'silla-milkmakers':
             window.location.href = 'silla-milkmakers.html';
