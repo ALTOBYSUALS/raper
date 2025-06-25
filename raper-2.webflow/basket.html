@@ -735,6 +735,63 @@
           opacity: 1 !important;
         }
 
+        /* ===== SISTEMA DE DESCRIPCIÓN COLAPSABLE ===== */
+        
+        .product-description-section {
+          width: 100%;
+          margin-bottom: 3rem;
+        }
+        
+        .description-toggle-btn {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+          background: linear-gradient(135deg, #5fa4ff 0%, #4fd1c5 100%);
+          color: #000;
+          font-size: 2.2rem;
+          font-weight: 700;
+          padding: 2rem 3rem;
+          border: none;
+          border-radius: 1.5rem;
+          cursor: pointer;
+          transition: all 0.4s ease;
+          text-transform: uppercase;
+          letter-spacing: 0.1em;
+          box-shadow: 0 8px 25px rgba(95, 164, 255, 0.3);
+          margin-bottom: 0;
+        }
+        
+        .description-toggle-btn:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 12px 35px rgba(95, 164, 255, 0.4);
+          background: linear-gradient(135deg, #4fd1c5 0%, #5fa4ff 100%);
+        }
+        
+        .toggle-icon {
+          font-size: 2rem;
+          font-weight: 700;
+          transition: transform 0.4s ease;
+        }
+        
+        .description-toggle-btn.active .toggle-icon {
+          transform: rotate(180deg);
+        }
+        
+        .description-content {
+          max-height: 0;
+          overflow: hidden;
+          transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+          opacity: 0;
+          padding: 0 0.5rem;
+        }
+        
+        .description-content.open {
+          max-height: 2000px;
+          opacity: 1;
+          padding: 2rem 0.5rem 0 0.5rem;
+        }
+
         /* ===== RESPONSIVE DESIGN - CONGRUENTE ===== */
         @media (max-width: 768px) {
           .nav-links {
@@ -759,6 +816,11 @@
             display: flex !important;
             align-items: center !important;
             gap: 15px !important;
+          }
+          
+          .description-toggle-btn {
+            font-size: 1.8rem;
+            padding: 1.5rem 2rem;
           }
         }
 
@@ -873,43 +935,53 @@
                 Fabricado con materiales premium que garantizan durabilidad, grip superior y el rebote perfecto en cualquier superficie.
               </p>
 
-              <!-- Características Técnicas -->
-              <div class="product-features">
-                <h3 class="features-title">Especificaciones Técnicas</h3>
-                <ul class="features-list">
-                  <li class="feature-item">
-                    <span class="feature-icon">◆</span>
-                    <span>Tamaño oficial FIBA - Circunferencia 75-78cm</span>
-                  </li>
-                  <li class="feature-item">
-                    <span class="feature-icon">◇</span>
-                    <span>Material: Cuero sintético premium antideslizante</span>
-                  </li>
-                  <li class="feature-item">
-                    <span class="feature-icon">◈</span>
-                    <span>Cámara de butilo de alta resistencia</span>
-                  </li>
-                  <li class="feature-item">
-                    <span class="feature-icon">◉</span>
-                    <span>Diseño exclusivo RAPER Company</span>
-                  </li>
-                  <li class="feature-item">
-                    <span class="feature-icon">◐</span>
-                    <span>Grip texturizado para máximo control</span>
-                  </li>
-                  <li class="feature-item">
-                    <span class="feature-icon">◑</span>
-                    <span>Apto para interior y exterior</span>
-                  </li>
-                  <li class="feature-item">
-                    <span class="feature-icon">◒</span>
-                    <span>Peso reglamentario: 567-650 gramos</span>
-                  </li>
-                  <li class="feature-item">
-                    <span class="feature-icon">◓</span>
-                    <span>Certificación oficial para competencias</span>
-                  </li>
-                </ul>
+              <!-- Descripción Colapsable -->
+              <div class="product-description-section">
+                <button class="description-toggle-btn" onclick="toggleDescription()">
+                  <span>Descripción</span>
+                  <span class="toggle-icon">▼</span>
+                </button>
+                
+                <div class="description-content" id="description-content">
+                  <!-- Características Técnicas -->
+                  <div class="product-features">
+                    <h3 class="features-title">Especificaciones Técnicas</h3>
+                    <ul class="features-list">
+                      <li class="feature-item">
+                        <span class="feature-icon">◆</span>
+                        <span>Tamaño oficial FIBA - Circunferencia 75-78cm</span>
+                      </li>
+                      <li class="feature-item">
+                        <span class="feature-icon">◇</span>
+                        <span>Material: Cuero sintético premium antideslizante</span>
+                      </li>
+                      <li class="feature-item">
+                        <span class="feature-icon">◈</span>
+                        <span>Cámara de butilo de alta resistencia</span>
+                      </li>
+                      <li class="feature-item">
+                        <span class="feature-icon">◉</span>
+                        <span>Diseño exclusivo RAPER Company</span>
+                      </li>
+                      <li class="feature-item">
+                        <span class="feature-icon">◐</span>
+                        <span>Grip texturizado para máximo control</span>
+                      </li>
+                      <li class="feature-item">
+                        <span class="feature-icon">◑</span>
+                        <span>Apto para interior y exterior</span>
+                      </li>
+                      <li class="feature-item">
+                        <span class="feature-icon">◒</span>
+                        <span>Peso reglamentario: 567-650 gramos</span>
+                      </li>
+                      <li class="feature-item">
+                        <span class="feature-icon">◓</span>
+                        <span>Certificación oficial para competencias</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </div>
 
               <div class="basketball-actions">
@@ -967,6 +1039,20 @@
   </div>
 
   <script>
+    // Función para toggle de descripción
+    function toggleDescription() {
+      const content = document.getElementById('description-content');
+      const button = document.querySelector('.description-toggle-btn');
+      
+      if (content.classList.contains('open')) {
+        content.classList.remove('open');
+        button.classList.remove('active');
+      } else {
+        content.classList.add('open');
+        button.classList.add('active');
+      }
+    }
+
     // Función para actualizar cantidad
     function updateQuantity(change) {
       const quantityInput = document.getElementById('quantity');
