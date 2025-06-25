@@ -1639,32 +1639,27 @@
               <!-- Product Thumbnails Gallery -->
               <div class="product-thumbnails">
                 <div class="thumbnail-item active" data-product-id="1" onclick="switchProduct(1)">
-                                  <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/SKYBLUE%20EDITION%20%233%20NENA%20TRAP.jpg" alt="SKYBLUE EDITION #3 NENA TRAP">
+                                  <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/SKYBLUE%20EDITION%20%233%20NENA%20TRAP.jpg" alt="Headphones EDITION #3 NENA TRAP">
                 <div class="thumbnail-overlay">
-                  <span class="thumbnail-name">SKYBLUE EDITION #3 NENA TRAP</span>
+                  <span class="thumbnail-name">Headphones EDITION #3 NENA TRAP</span>
                 </div>
                 </div>
                 
-                <div class="thumbnail-item" data-product-id="2" onclick="switchProduct(2)">
-                                  <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/BLACK%20EDITION%20%234%20(2).jpg" alt="BLACK EDITION #4 (Próximamente)">
-                <div class="thumbnail-overlay">
-                  <span class="thumbnail-name">BLACK EDITION #4 (Próximamente)</span>
-                </div>
-                </div>
+
               </div>
             </div>
 
             <!-- Info Section -->
             <div class="dynamic-info-section">
-              <h2 id="dynamic-title" class="dynamic-product-title">SKYBLUE EDITION #3 NENA TRAP</h2>
+              <h2 id="dynamic-title" class="dynamic-product-title">Headphones EDITION #3 NENA TRAP PRÓXIMAMENTE</h2>
               
-              <div class="dynamic-product-price">
-                <span id="dynamic-price" class="dynamic-price-current">$250.000 ARS</span>
-                <span class="price-label">Precio final</span>
+              <div class="dynamic-product-price" style="display: none;">
+                <span id="dynamic-price" class="dynamic-price-current">Próximamente</span>
+                <span class="price-label">Precio disponible próximamente</span>
               </div>
               
               <p id="dynamic-description" class="dynamic-product-description">
-                Edición limitada SKYBLUE #3 NENA TRAP. Sonido premium con tecnología de cancelación de ruido avanzada.
+                La nueva generación de auriculares RAPER. Diseño revolucionario con tecnología de cancelación de ruido avanzada. Próximamente disponible.
               </p>
 
               <!-- Descripción Colapsable -->
@@ -1681,7 +1676,7 @@
                     <div class="specs-grid">
                       <div class="spec-item">
                         <span class="spec-icon">◆</span>
-                        <span id="dynamic-box-product">Auriculares SKYBLUE EDITION #3 NENA TRAP</span>
+                        <span id="dynamic-box-product">Headphones EDITION #3 NENA TRAP</span>
                       </div>
                       <div class="spec-item">
                         <span class="spec-icon">◆</span>
@@ -1805,18 +1800,11 @@
     // Base de datos de productos
     const productsDatabase = {
       1: {
-        name: 'SKYBLUE EDITION #3 NENA TRAP',
-        price: 250000,
+        name: 'Headphones EDITION #3 NENA TRAP PRÓXIMAMENTE',
+        price: 0,
         image: 'https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/SKYBLUE%20EDITION%20%233%20NENA%20TRAP.jpg',
-        description: 'Edición limitada SKYBLUE #3 NENA TRAP. Sonido premium con tecnología de cancelación de ruido avanzada.',
-        sku: 'RAPER-SE3-001'
-      },
-      2: {
-        name: 'BLACK EDITION #4 (Próximamente)',
-        price: 349999,
-        image: 'https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/BLACK%20EDITION%20%234%20(2).jpg',
-        description: 'Exclusivos auriculares BLACK EDITION #4. Diseño elegante con calidad de audio profesional. ¡Próximamente disponible!',
-        sku: 'RAPER-BE4-002'
+        description: 'La nueva generación de auriculares RAPER. Diseño revolucionario con tecnología de cancelación de ruido avanzada. Próximamente disponible.',
+        sku: 'RAPER-HE3-001'
       },
       3: {
         name: 'RAPER Negro Obsidiana',
