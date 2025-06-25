@@ -1,0 +1,356 @@
+/* ===========================================
+   OPTIMIZACIONES CRÍTICAS DE RENDIMIENTO MÓVIL
+   Especialmente para Android - Sin cambios visuales
+   =========================================== */
+
+/* ===== OPTIMIZACIÓN CRÍTICA DEL HERO ===== */
+.video-hero-section {
+  /* Activar aceleración por hardware */
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  /* Reducir repaints */
+  contain: layout style paint;
+}
+
+.hero-background-image {
+  /* Optimización crítica para la animación de fondo */
+  will-change: transform;
+  transform: translateZ(0) scale3d(1.05, 1.05, 1);
+  backface-visibility: hidden;
+  /* Reducir calidad de blur en móvil */
+  filter: blur(2px);
+}
+
+/* Optimización de animaciones hero para móvil */
+@media (max-width: 768px) {
+  .hero-background-image {
+    /* Desactivar animación costosa en móvil */
+    animation: none !important;
+    transform: translateZ(0) scale3d(1.02, 1.02, 1) !important;
+    filter: blur(1px) !important;
+  }
+  
+  /* Reducir animaciones de glow en móvil */
+  .hero-company-text {
+    animation-duration: 4s !important;
+    animation-iteration-count: 3 !important;
+  }
+  
+  .hero-product-subtitle {
+    animation: none !important;
+  }
+  
+  .auricular-glow {
+    animation-duration: 4s !important;
+    opacity: 0.2 !important;
+  }
+}
+
+/* ===== OPTIMIZACIÓN CRÍTICA DE SPOTIFY ===== */
+.raper-spotify-section {
+  /* Activar composite layer */
+  will-change: transform;
+  transform: translateZ(0);
+  contain: layout style paint;
+}
+
+/* Optimización del iframe de Spotify */
+.spotify-embed-container iframe {
+  /* Activar aceleración por hardware */
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  /* Lazy loading mejorado */
+  loading: lazy;
+  /* Reducir calidad en móvil */
+  image-rendering: optimizeSpeed;
+}
+
+/* Optimización específica para móvil del embed */
+@media (max-width: 768px) {
+  .spotify-embed-container {
+    /* Reducir altura en móvil para mejor performance */
+    height: 300px !important;
+    overflow: hidden;
+  }
+  
+  .spotify-embed-container iframe {
+    height: 300px !important;
+    /* Optimización de rendering */
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: optimize-contrast;
+  }
+}
+
+/* ===== OPTIMIZACIÓN DE TRANSICIONES GLOBALES ===== */
+@media (max-width: 768px) {
+  /* Reducir todas las transiciones en móvil */
+  * {
+    transition-duration: 0.2s !important;
+  }
+  
+  /* Eliminar transiciones costosas */
+  .platform-logo-button,
+  .spotify-play-button,
+  .hero-auricular-main {
+    transition: transform 0.15s ease !important;
+  }
+  
+  /* Optimizar hover effects para touch */
+  .platform-logo-button:hover,
+  .spotify-play-button:hover {
+    transform: none !important;
+  }
+}
+
+/* ===== OPTIMIZACIÓN DE IMÁGENES ===== */
+.hero-auricular-main,
+.raper-logo-image,
+.hero-logo-img {
+  /* Optimización de rendering de imágenes */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: optimize-contrast;
+  /* Activar aceleración por hardware */
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* ===== OPTIMIZACIÓN DE GRADIENTES ===== */
+@media (max-width: 768px) {
+  /* Simplificar gradientes complejos en móvil */
+  .hero-company-text,
+  .hero-product-subtitle {
+    /* Usar color sólido en lugar de gradiente en móvil */
+    background: none !important;
+    -webkit-text-fill-color: #5fa4ff !important;
+    color: #5fa4ff !important;
+  }
+  
+  .platform-logo-button {
+    background: rgba(255, 255, 255, 0.1) !important;
+  }
+}
+
+/* ===== OPTIMIZACIÓN DE FILTROS Y SOMBRAS ===== */
+@media (max-width: 768px) {
+  /* Reducir filtros costosos */
+  .hero-auricular-main {
+    filter: none !important;
+  }
+  
+  .hero-logo-img {
+    filter: none !important;
+  }
+  
+  /* Simplificar text-shadow */
+  .hero-company-text,
+  .hero-product-subtitle {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
+  }
+}
+
+/* ===== OPTIMIZACIÓN DE PRELOADER ===== */
+.preloader {
+  /* Activar aceleración por hardware */
+  will-change: opacity, transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.preloader-progress {
+  /* Optimizar animación de carga */
+  will-change: width;
+  transform: translateZ(0);
+}
+
+/* ===== OPTIMIZACIÓN DE SCROLL ===== */
+@media (max-width: 768px) {
+  /* Optimizar scroll en móvil */
+  body {
+    -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;
+  }
+  
+  /* Reducir repaints durante scroll */
+  .video-hero-section,
+  .raper-spotify-section {
+    transform: translateZ(0);
+    will-change: scroll-position;
+  }
+}
+
+/* ===== OPTIMIZACIÓN DE ANIMACIONES INFINITAS ===== */
+@media (max-width: 768px) {
+  /* Pausar animaciones infinitas cuando no están visibles */
+  @keyframes textGlow {
+    0%, 100% {
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
+  }
+  
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 0.3;
+      transform: translateZ(0) scale3d(1, 1, 1);
+    }
+  }
+  
+  @keyframes slow-pan {
+    0%, 100% {
+      transform: translateZ(0) scale3d(1.02, 1.02, 1);
+    }
+  }
+}
+
+/* ===== OPTIMIZACIÓN PARA ANDROID ESPECÍFICAMENTE ===== */
+@media (max-width: 768px) and (-webkit-min-device-pixel-ratio: 1) {
+  /* Optimizaciones específicas para Android */
+  
+  /* Reducir complejidad visual */
+  .spotify-background-overlay {
+    background: rgba(0, 0, 0, 0.8) !important;
+  }
+  
+  /* Simplificar efectos de hover */
+  .platform-logo-button:active {
+    transform: scale(0.95) !important;
+    transition: transform 0.1s ease !important;
+  }
+  
+  /* Optimizar rendering de texto */
+  .hero-company-text,
+  .hero-product-subtitle {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeSpeed !important;
+  }
+}
+
+/* ===== OPTIMIZACIÓN DE MEMORIA ===== */
+@media (max-width: 768px) {
+  /* Reducir uso de memoria en móvil */
+  .hero-background-image {
+    background-size: cover;
+    background-attachment: scroll !important;
+  }
+  
+  /* Optimizar composite layers */
+  .video-hero-section {
+    isolation: isolate;
+  }
+  
+  .raper-spotify-section {
+    isolation: isolate;
+  }
+}
+
+/* ===== OPTIMIZACIÓN DE TOUCH EVENTS ===== */
+@media (max-width: 768px) {
+  /* Optimizar eventos touch */
+  .platform-logo-button,
+  .spotify-play-button,
+  .raper-open-spotify {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  /* Mejorar responsividad de touch */
+  .platform-logo-button:active,
+  .spotify-play-button:active {
+    transform: scale(0.95);
+    transition: transform 0.1s ease;
+  }
+}
+
+/* ===== OPTIMIZACIÓN CRÍTICA PARA DEVICES DE BAJA GAMA ===== */
+@media (max-width: 768px) and (max-resolution: 1.5dppx) {
+  /* Para dispositivos Android de baja gama */
+  
+  /* Desactivar todas las animaciones */
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+  
+  /* Simplificar efectos visuales */
+  .hero-background-image {
+    display: none !important;
+  }
+  
+  .video-hero-section {
+    background: linear-gradient(135deg, #000 0%, #1a1a1a 100%) !important;
+  }
+  
+  /* Usar colores sólidos */
+  .hero-company-text {
+    color: #5fa4ff !important;
+    background: none !important;
+    -webkit-text-fill-color: #5fa4ff !important;
+  }
+}
+
+/* ===== OPTIMIZACIÓN DE INTERSECTION OBSERVER ===== */
+.lazy-load {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.lazy-load.loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== OPTIMIZACIÓN DE CRITICAL CSS ===== */
+/* Estilos críticos que deben cargarse primero */
+.video-hero-section {
+  background: #000;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-company-text {
+  color: #5fa4ff;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+/* ===== MEDIA QUERIES PARA CONEXIONES LENTAS ===== */
+@media (prefers-reduced-data: reduce) {
+  /* Para conexiones lentas */
+  .hero-background-image {
+    display: none !important;
+  }
+  
+  .spotify-embed-container iframe {
+    loading: lazy;
+    height: 200px !important;
+  }
+  
+  /* Reducir calidad de imágenes */
+  .hero-auricular-main,
+  .raper-logo-image {
+    image-rendering: pixelated;
+  }
+}
+
+/* ===== OPTIMIZACIÓN FINAL PARA PERFORMANCE ===== */
+@media (max-width: 768px) {
+  /* Contenement para prevenir layout thrashing */
+  .video-hero-section,
+  .raper-spotify-section {
+    contain: layout style paint;
+  }
+  
+  /* Optimizar repaint areas */
+  .hero-main-content,
+  .spotify-hybrid-container {
+    isolation: isolate;
+    will-change: transform;
+    transform: translateZ(0);
+  }
+} 
