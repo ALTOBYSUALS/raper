@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <title>raper</title>
   <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta name="format-detection" content="telephone=no">
   <meta content="Webflow" name="generator">
   <link href="css/normalize.css" rel="stylesheet" type="text/css">
   <link href="css/webflow.css" rel="stylesheet" type="text/css">
@@ -1044,8 +1045,9 @@ margin: 0rem !important;
           }
           
           .hero-product-info {
-            order: 2;
-            margin-bottom: 0;
+            order: 1;
+            margin-bottom: 1.5rem;
+            margin-top: -20vh;
           }
           
           .hero-product-title {
@@ -1076,7 +1078,7 @@ margin: 0rem !important;
           }
           
           .hero-auricular-section {
-            order: 1;
+            order: 2;
             width: 100%;
             margin-bottom: -0.5rem;
           }
@@ -2774,6 +2776,46 @@ margin: 0rem !important;
   </div>
 
   <style>
+    /* ===== FIX ESPECÍFICO PARA IOS SAFARI - TEXT DECORATION ===== */
+    .phone, 
+    .contact-item .phone,
+    span.phone {
+      -webkit-text-decoration: none !important;
+      text-decoration: none !important;
+      -webkit-text-decoration-line: none !important;
+      text-decoration-line: none !important;
+      -webkit-text-decoration-color: transparent !important;
+      text-decoration-color: transparent !important;
+      color: rgba(255, 255, 255, 0.7) !important;
+      font-weight: 500 !important;
+      letter-spacing: 0.05em !important;
+    }
+    
+    .contact-item .phone:hover {
+      color: rgba(95, 164, 255, 0.9) !important;
+      text-decoration: none !important;
+      -webkit-text-decoration: none !important;
+    }
+    
+    /* Forzar estilos en todos los estados */
+    .phone:link,
+    .phone:visited,
+    .phone:hover,
+    .phone:active {
+      text-decoration: none !important;
+      -webkit-text-decoration: none !important;
+      color: inherit !important;
+    }
+    
+    /* Evitar auto-detección de teléfonos en iOS */
+    .contact-item {
+      -webkit-touch-callout: none !important;
+      -webkit-user-select: none !important;
+      -moz-user-select: none !important;
+      -ms-user-select: none !important;
+      user-select: none !important;
+    }
+    
     /* Animación de pulso para el brillo del auricular */
     @keyframes pulse {
       0% {
@@ -3660,15 +3702,29 @@ margin: 0rem !important;
   </style>
 
   <script>
-    // Preloader
-    window.addEventListener('load', function() {
-      setTimeout(function() {
-        document.getElementById('preloader').classList.add('fade-out');
+    // Preloader - VERSIÓN CONFIABLE CON FALLBACK
+    let preloaderRemoved = false;
+    
+    function hidePreloader() {
+      if (preloaderRemoved) return;
+      preloaderRemoved = true;
+      
+      const preloader = document.getElementById('preloader');
+      if (preloader) {
+        preloader.classList.add('fade-out');
         setTimeout(function() {
-          document.getElementById('preloader').style.display = 'none';
+          preloader.style.display = 'none';
         }, 500);
-      }, 2000); // Simula 2 segundos de carga
+      }
+    }
+    
+    // Método principal: DOMContentLoaded es más confiable
+    document.addEventListener('DOMContentLoaded', function() {
+      setTimeout(hidePreloader, 1500);
     });
+    
+    // Fallback de seguridad: Si algo falla, forzar después de 3 segundos
+    setTimeout(hidePreloader, 3000);
 
     // Mobile Menu Toggle - OPTIMIZADO
     document.addEventListener('DOMContentLoaded', function() {
