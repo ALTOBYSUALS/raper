@@ -1,6 +1,6 @@
 /* ===== MOBILE RESPONSIVE FIXES - RAPER COMPANY ===== */
 
-/* DESKTOP - Asegurar navegación correcta */
+/* === DESKTOP - FORZAR OCULTACIÓN COMPLETA === */
 @media (min-width: 769px) {
   .nav-links {
     display: flex !important;
@@ -8,14 +8,31 @@
   
   .mobile-menu-toggle {
     display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
   }
   
   .mobile-menu {
     display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    right: -100% !important;
+    transform: translateX(-200vw) !important;
+  }
+  
+  .mobile-menu.active {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    right: -100% !important;
+    transform: translateX(-200vw) !important;
   }
 }
 
-/* Navegación principal en móvil */
+/* === MÓVIL - CONFIGURACIÓN CORRECTA === */
 @media (max-width: 768px) {
   .navbar-sticky__wrapper {
     display: flex !important;
@@ -36,32 +53,57 @@
   
   .mobile-menu-toggle {
     display: flex !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+  
+  /* Menú móvil: Oculto por defecto, visible al activar */
+  .mobile-menu {
+    display: flex !important;
+    right: -100% !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: none !important;
+  }
+  
+  .mobile-menu.active {
+    right: 0 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: none !important;
   }
 }
 
-/* Menú móvil mejorado */
+/* === MENÚ MÓVIL GLOBAL FIX - TODAS LAS PÁGINAS === */
 .mobile-menu {
-  position: fixed;
-  top: 0;
-  right: -100%;
-  width: 100%;
-  max-width: 350px;
-  height: 100vh;
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(20, 20, 20, 0.95) 100%);
-  backdrop-filter: blur(20px);
-  z-index: 9999;
-  transition: right 0.3s ease-in-out;
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 60px 30px 30px;
-  box-shadow: -5px 0 25px rgba(0, 0, 0, 0.5);
+  position: fixed !important;
+  top: 0 !important;
+  right: -100% !important;
+  width: 100% !important;
+  max-width: 350px !important;
+  height: 100vh !important;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(20, 20, 20, 0.95) 100%) !important;
+  backdrop-filter: blur(20px) !important;
+  z-index: 9999 !important;
+  transition: right 0.3s ease-in-out !important;
+  overflow-y: auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  padding: 60px 30px 30px !important;
+  box-shadow: -5px 0 25px rgba(0, 0, 0, 0.5) !important;
+  transform: none !important;
+  left: auto !important;
 }
 
 .mobile-menu.active {
-  right: 0;
+  right: 0 !important;
+  transform: none !important;
+  left: auto !important;
 }
 
 .mobile-menu-links {
@@ -1375,5 +1417,95 @@ html body .side-cart-overlay {
 
   .spotify-embed-container iframe {
     height: 380px;
+  }
+}
+
+/* ============================================
+   OVERRIDE FINAL - ELIMINAR MENÚ MÓVIL EXTRAÑO
+   ============================================ */
+
+/* GLOBAL OVERRIDE - Máxima prioridad para sobreescribir TODO */
+html body .mobile-menu,
+body .mobile-menu,
+.mobile-menu {
+  position: fixed !important;
+  top: 0 !important;
+  right: -100% !important;
+  left: auto !important;
+  width: 100% !important;
+  max-width: 350px !important;
+  height: 100vh !important;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(20, 20, 20, 0.95) 100%) !important;
+  backdrop-filter: blur(20px) !important;
+  z-index: 9999 !important;
+  transition: right 0.3s ease-in-out !important;
+  transform: none !important;
+  overflow-y: auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  padding: 60px 30px 30px !important;
+  box-shadow: -5px 0 25px rgba(0, 0, 0, 0.5) !important;
+}
+
+html body .mobile-menu.active,
+body .mobile-menu.active,
+.mobile-menu.active {
+  right: 0 !important;
+  left: auto !important;
+  transform: none !important;
+}
+
+/* DESKTOP: Eliminar completamente */
+@media (min-width: 769px) {
+  html body .mobile-menu,
+  body .mobile-menu,
+  .mobile-menu {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    right: -200vw !important;
+    left: auto !important;
+    transform: none !important;
+  }
+  
+  html body .mobile-menu.active,
+  body .mobile-menu.active,
+  .mobile-menu.active {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    right: -200vw !important;
+    left: auto !important;
+    transform: none !important;
+  }
+}
+
+/* MOBILE: Control preciso */
+@media (max-width: 768px) {
+  html body .mobile-menu,
+  body .mobile-menu,
+  .mobile-menu {
+    display: flex !important;
+    right: -100% !important;
+    left: auto !important;
+    transform: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+  
+  html body .mobile-menu.active,
+  body .mobile-menu.active,
+  .mobile-menu.active {
+    right: 0 !important;
+    left: auto !important;
+    transform: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
   }
 }
