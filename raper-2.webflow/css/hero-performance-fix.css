@@ -1,0 +1,213 @@
+/* ===== HERO PERFORMANCE FIX - MÁXIMA PRIORIDAD ===== */
+/* Este archivo debe cargarse AL FINAL para override completo */
+
+/* DESACTIVAR TODAS LAS ANIMACIONES COSTOSAS DEL HERO */
+.hero-product-title,
+.hero-product-subtitle,
+.hero-auricular-container,
+.hero-background-image,
+.company-text,
+.hero-company-text {
+  animation: none !important;
+  will-change: auto !important;
+  transform: translateZ(0) !important;
+}
+
+/* ELIMINAR animaciones específicas que causan lag */
+@keyframes heroTitleGlow {
+  0%, 100% { /* VACÍO INTENCIONALMENTE */ }
+}
+
+@keyframes heroFloat {
+  0%, 100% { /* VACÍO INTENCIONALMENTE */ }
+}
+
+@keyframes gradientShift {
+  0%, 100% { /* VACÍO INTENCIONALMENTE */ }
+}
+
+@keyframes subtitlePulse {
+  0%, 100% { /* VACÍO INTENCIONALMENTE */ }
+}
+
+@keyframes breathe {
+  0%, 100% { /* VACÍO INTENCIONALMENTE */ }
+}
+
+@keyframes slow-pan {
+  0%, 100% { /* VACÍO INTENCIONALMENTE */ }
+}
+
+/* FORZAR optimizaciones en elementos específicos */
+.video-hero-section {
+  will-change: auto !important;
+  transform: translateZ(0) !important;
+  backface-visibility: hidden !important;
+  perspective: 1000px !important;
+  overflow: hidden !important;
+}
+
+.hero-main-content {
+  will-change: auto !important;
+  transform: translateZ(0) !important;
+  backface-visibility: hidden !important;
+}
+
+.hero-product-title {
+  font-size: 5.5rem !important;
+  font-weight: 900 !important;
+  color: #fff !important;
+  line-height: 1.1 !important;
+  margin: 0 0 20px 0 !important;
+  /* Efecto estático sin animación */
+  text-shadow: 0 0 30px rgba(95, 164, 255, 0.8) !important;
+  letter-spacing: 0.02em !important;
+  display: flex !important;
+  align-items: center !important;
+  /* ELIMINAR CUALQUIER ANIMACIÓN */
+  animation: none !important;
+  will-change: auto !important;
+  transform: translateZ(0) !important;
+}
+
+.hero-company-text,
+.company-text {
+  background: linear-gradient(135deg, #5fa4ff, #4fd1c5) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  font-weight: 900 !important;
+  /* ELIMINAR ANIMACIÓN DE GRADIENTE */
+  animation: none !important;
+  background-size: 100% 100% !important;
+  will-change: auto !important;
+}
+
+.hero-product-subtitle {
+  font-size: 2.2rem !important;
+  font-weight: 600 !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  margin: 0 !important;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6) !important;
+  letter-spacing: 0.05em !important;
+  line-height: 1.3 !important;
+  /* ELIMINAR ANIMACIÓN */
+  animation: none !important;
+  will-change: auto !important;
+}
+
+.hero-auricular-container {
+  animation: none !important;
+  will-change: auto !important;
+  transform: translateZ(0) !important;
+  backface-visibility: hidden !important;
+}
+
+.hero-background-image {
+  animation: none !important;
+  will-change: auto !important;
+  transform: scale(1.02) !important;
+  backface-visibility: hidden !important;
+}
+
+/* Optimizar hover effects - MÁS LIGEROS */
+.hero-auricular-main:hover {
+  transform: scale(1.1) !important;
+  filter: drop-shadow(0 0 20px rgba(95, 164, 255, 0.6)) !important;
+  transition: all 0.3s ease !important;
+  will-change: auto !important;
+}
+
+.hero-product-title:hover {
+  text-shadow: 0 0 40px rgba(95, 164, 255, 1) !important;
+  transition: text-shadow 0.3s ease !important;
+  animation: none !important;
+}
+
+/* MOBILE OPTIMIZATIONS - SIN ANIMACIONES */
+@media (max-width: 768px) {
+  .hero-product-title {
+    font-size: 3.5rem !important;
+    animation: none !important;
+    will-change: auto !important;
+  }
+  
+  .hero-auricular-main:hover {
+    transform: scale(1.05) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-product-title {
+    font-size: 2.5rem !important;
+    animation: none !important;
+  }
+  
+  .hero-auricular-main:hover {
+    transform: none !important;
+  }
+  
+  .hero-product-title:hover {
+    text-shadow: 0 0 20px rgba(95, 164, 255, 0.6) !important;
+    animation: none !important;
+  }
+}
+
+/* FORZAR LIMPIEZA DE ANIMACIONES EN TODO EL HERO */
+.video-hero-section *,
+.hero-main-content *,
+.hero-product-info *,
+.hero-auricular-section * {
+  animation-duration: 0s !important;
+  animation-iteration-count: 1 !important;
+  animation-fill-mode: none !important;
+  will-change: auto !important;
+}
+
+/* Asegurar que NO hay transforms costosos */
+.video-hero-section .hero-product-title,
+.video-hero-section .hero-company-text,
+.video-hero-section .hero-product-subtitle {
+  animation: none !important;
+  transform: translateZ(0) !important;
+  will-change: auto !important;
+  backface-visibility: hidden !important;
+}
+
+/* OVERRIDE FINAL - Eliminar cualquier keyframe restante */
+@keyframes heroTitleGlow {
+  from, to { 
+    transform: none !important;
+    text-shadow: inherit !important;
+  }
+}
+
+@keyframes heroFloat {
+  from, to { 
+    transform: none !important;
+  }
+}
+
+@keyframes gradientShift {
+  from, to { 
+    background-position: 0% 50% !important;
+  }
+}
+
+@keyframes subtitlePulse {
+  from, to { 
+    opacity: 1 !important;
+  }
+}
+
+@keyframes breathe {
+  from, to { 
+    transform: none !important;
+  }
+}
+
+@keyframes slow-pan {
+  from, to { 
+    transform: none !important;
+  }
+} 

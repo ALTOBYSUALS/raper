@@ -139,4 +139,144 @@
 
 .artist-card.processing-hover {
   pointer-events: none;
+}
+
+/* ===== OPTIMIZACIONES CRÍTICAS PARA HERO SECTION ===== */
+
+/* Desactivar animaciones costosas en el hero */
+.hero-product-title {
+  /* ELIMINAR: animation: heroTitleGlow 4s ease-in-out infinite alternate, heroFloat 6s ease-in-out infinite !important; */
+  animation: none !important;
+  /* Mantener el efecto visual pero estático */
+  text-shadow: 0 0 30px rgba(95, 164, 255, 0.8) !important;
+  font-size: 5.5rem !important;
+  font-weight: 900 !important;
+  color: #fff !important;
+  line-height: 1.1 !important;
+  margin: 0 0 20px 0 !important;
+  letter-spacing: 0.02em !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* Simplificar gradient animado - MANTENER ESTÁTICO */
+.company-text {
+  background: linear-gradient(135deg, #5fa4ff, #4fd1c5) !important;
+  /* ELIMINAR: background-size: 300% 300% !important; */
+  /* ELIMINAR: animation: gradientShift 3s ease-in-out infinite alternate !important; */
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  font-weight: 900 !important;
+}
+
+/* Optimizar subtitle - ELIMINAR ANIMACIÓN */
+.hero-product-subtitle {
+  /* ELIMINAR: animation: subtitlePulse 4s ease-in-out infinite alternate !important; */
+  animation: none !important;
+  font-size: 2.2rem !important;
+  font-weight: 600 !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  margin: 0 !important;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6) !important;
+  letter-spacing: 0.05em !important;
+  line-height: 1.3 !important;
+}
+
+/* ELIMINAR animación de respiración costosa */
+.hero-auricular-container {
+  /* ELIMINAR: animation: breathe 12s ease-in-out infinite; */
+  animation: none !important;
+  will-change: auto;
+  transform: translateZ(0);
+}
+
+/* Optimizar hover del auricular - REDUCIR ESCALA */
+.hero-auricular-main:hover {
+  /* CAMBIAR de 1.55 a 1.1 para menos costo */
+  transform: scale(1.1) !important;
+  /* SIMPLIFICAR drop-shadow */
+  filter: drop-shadow(0 0 20px rgba(95, 164, 255, 0.6)) !important;
+  animation-play-state: paused !important;
+  transition: all 0.3s ease !important;
+}
+
+/* ELIMINAR animación slow-pan del background */
+.hero-background-image {
+  /* ELIMINAR: animation: slow-pan 30s ease-in-out infinite alternate; */
+  animation: none !important;
+  will-change: auto;
+  transform: scale(1.02);
+}
+
+/* OPTIMIZACIONES DE PERFORMANCE GENERALES */
+.video-hero-section {
+  /* Mejorar rendering */
+  will-change: auto;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.hero-main-content {
+  will-change: auto;
+  transform: translateZ(0);
+}
+
+/* ELIMINAR KEYFRAMES COSTOSOS */
+@keyframes heroTitleGlow {
+  /* ELIMINAR COMPLETAMENTE */
+}
+
+@keyframes heroFloat {
+  /* ELIMINAR COMPLETAMENTE */
+}
+
+@keyframes gradientShift {
+  /* ELIMINAR COMPLETAMENTE */
+}
+
+@keyframes subtitlePulse {
+  /* ELIMINAR COMPLETAMENTE */
+}
+
+@keyframes breathe {
+  /* ELIMINAR COMPLETAMENTE */
+}
+
+@keyframes slow-pan {
+  /* ELIMINAR COMPLETAMENTE */
+}
+
+/* SOLO hover effects ligeros para interactividad */
+.hero-product-title:hover {
+  text-shadow: 0 0 40px rgba(95, 164, 255, 1) !important;
+  transition: text-shadow 0.3s ease !important;
+}
+
+/* Performance boost para mobile */
+@media (max-width: 768px) {
+  .hero-product-title {
+    font-size: 3.5rem !important;
+    will-change: auto;
+  }
+  
+  .hero-auricular-main:hover {
+    transform: scale(1.05) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-product-title {
+    font-size: 2.5rem !important;
+  }
+  
+  .hero-auricular-main:hover {
+    transform: none !important;
+  }
+  
+  /* Eliminar effects costosos en mobile */
+  .hero-product-title:hover {
+    text-shadow: 0 0 20px rgba(95, 164, 255, 0.6) !important;
+  }
 } 

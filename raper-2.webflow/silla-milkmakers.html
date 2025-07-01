@@ -380,54 +380,7 @@
           color: #e0e0e0;
         }
 
-        /* ===== LIGHTBOX PARA IMÁGENES ===== */
-        .lightbox {
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: rgba(0, 0, 0, 0.95);
-          z-index: 10000;
-          display: none;
-          align-items: center;
-          justify-content: center;
-          backdrop-filter: blur(10px);
-        }
 
-        .lightbox.active {
-          display: flex;
-        }
-
-        .lightbox-content {
-          position: relative;
-          max-width: 90%;
-          max-height: 90%;
-        }
-
-        .lightbox-image {
-          width: 100%;
-          height: auto;
-          border-radius: 1rem;
-          box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
-        }
-
-        .lightbox-close {
-          position: absolute;
-          top: -40px;
-          right: 0;
-          background: none;
-          border: none;
-          color: #fff;
-          font-size: 3rem;
-          cursor: pointer;
-          transition: all 0.3s ease;
-        }
-
-        .lightbox-close:hover {
-          color: #5fa4ff;
-          transform: scale(1.2);
-        }
 
         /* ===== RESPONSIVE DESIGN ===== */
         @media screen and (max-width: 991px) {
@@ -634,7 +587,7 @@
             <!-- Image Section with Gallery -->
             <div class="chair-image-section">
               <div class="chair-main-image-container" id="main-media-container">
-                <video id="main-chair-video" src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/menorcalidad_niki.mp4" 
+                <video id="main-chair-video" src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/varias_girando.mp4" 
                        class="chair-main-video" 
                        controls 
                        autoplay 
@@ -797,13 +750,7 @@
     </div>
   </div>
 
-  <!-- Lightbox para imágenes -->
-  <div id="lightbox" class="lightbox">
-    <div class="lightbox-content">
-      <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
-      <img id="lightbox-image" class="lightbox-image" src="" alt="">
-    </div>
-  </div>
+
 
   <script>
     // ===== FUNCIONES DE GALERÍA DE IMÁGENES Y VIDEO =====
@@ -894,19 +841,7 @@
       }
     }
 
-    function openLightbox(imageSrc) {
-      const lightbox = document.getElementById('lightbox');
-      const lightboxImage = document.getElementById('lightbox-image');
-      lightboxImage.src = imageSrc;
-      lightbox.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }
 
-    function closeLightbox() {
-      const lightbox = document.getElementById('lightbox');
-      lightbox.classList.remove('active');
-      document.body.style.overflow = '';
-    }
 
     // ===== FUNCIÓN DE DESCRIPCIÓN COLAPSABLE =====
     function toggleDescription() {
@@ -1052,16 +987,7 @@
         console.log('🔓 Botón de agregar al carrito listo');
       }
 
-      // Agregar click para lightbox en imagen principal (solo cuando está visible)
-      const mainImage = document.getElementById('main-chair-image');
-      if (mainImage) {
-        mainImage.addEventListener('click', function() {
-          // Solo abrir lightbox si la imagen está visible (no el video)
-          if (mainImage.style.display !== 'none') {
-            openLightbox(this.src);
-          }
-        });
-      }
+
 
       // ===== CONFIGURACIÓN DEL VIDEO =====
       const mainVideo = document.getElementById('main-chair-video');
@@ -1127,22 +1053,7 @@
         console.log('🎬 Configuración de video con autoplay completada');
       }
 
-      // Cerrar lightbox con ESC
-      document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') {
-          closeLightbox();
-        }
-      });
 
-      // Cerrar lightbox al hacer click en el fondo
-      const lightbox = document.getElementById('lightbox');
-      if (lightbox) {
-        lightbox.addEventListener('click', function(e) {
-          if (e.target === lightbox) {
-            closeLightbox();
-          }
-        });
-      }
 
       // ===== MENÚ HAMBURGUESA ===== 
       const mobileMenuToggle = document.getElementById('mobile-menu-toggle');

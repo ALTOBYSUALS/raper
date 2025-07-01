@@ -2,7 +2,7 @@
 <html data-wf-page="68269b7c12f8a3ad86be7f60" data-wf-site="68269b7b12f8a3ad86be7d56">
 <head>
   <meta charset="utf-8">
-  <title>Sillas RAPER - Lista de Productos</title>
+  <title>Sillas RAPER - Colección Exclusiva</title>
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <link href="css/normalize.css" rel="stylesheet" type="text/css">
   <link href="css/webflow.css" rel="stylesheet" type="text/css">
@@ -27,7 +27,7 @@
     <div class="global-styles w-embed">
       <style>
         :root { font-size: 62.5%; }
-        body { font-size: 1.6rem; }
+        body { font-size: 1.6rem; background: #000; }
 
         .record-label-banner {
           width: 100%;
@@ -55,193 +55,178 @@
           100% { text-shadow: 0 0 15px rgba(95, 164, 255, 0.8), 0 0 20px rgba(95, 164, 255, 0.4); }
         }
 
-        /* ===== ESTILOS PARA LISTA DE SILLAS ===== */
-        .chairs-list-section {
-          background-color: #000;
-          padding: 12rem 0 8rem 0;
+        /* ===== DISEÑO VERTICAL DOS COLUMNAS ===== */
+        .sillas-grid-section {
+          background: #000;
           min-height: 100vh;
+          padding: 6rem 2rem 4rem 2rem;
         }
 
-        .chairs-container {
-          max-width: 1400px;
-          margin: 0 auto;
-          padding: 0 4rem;
-        }
-
-        .chairs-header {
-          text-align: center;
-          margin-bottom: 8rem;
-        }
-
-        .chairs-header h1 {
-          font-size: 5rem;
-          font-weight: 700;
-          background: linear-gradient(135deg, #5fa4ff 0%, #4fd1c5 100%);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-          margin-bottom: 2rem;
-          text-transform: uppercase;
-          letter-spacing: 0.1em;
-        }
-
-        .chairs-subtitle {
-          font-size: 1.8rem;
-          color: #b0b0b0;
-          line-height: 1.6;
+        .sillas-grid-container {
           max-width: 800px;
           margin: 0 auto;
         }
 
-        .chairs-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-          gap: 4rem;
+        .sillas-grid-header {
+          text-align: center;
+          margin-bottom: 4rem;
         }
 
-        .chair-card {
-          background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
-          border-radius: 2rem;
-          overflow: hidden;
-          border: 2px solid rgba(95, 164, 255, 0.2);
-          transition: all 0.5s ease;
-          cursor: pointer;
-          display: flex;
-          flex-direction: column;
-          min-height: 500px;
-          position: relative;
-        }
-
-        .chair-card:hover {
-          border-color: rgba(95, 164, 255, 0.6);
-          transform: translateY(-10px);
-          box-shadow: 0 20px 60px rgba(95, 164, 255, 0.3);
-        }
-
-        .chair-image-container {
-          position: relative;
-          height: 300px;
-          overflow: hidden;
-          background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          padding: 2rem;
-        }
-
-        .chair-image {
-          width: 100%;
-          height: 100%;
-          object-fit: contain;
-          transition: transform 0.5s ease;
-          filter: drop-shadow(0 15px 35px rgba(95, 164, 255, 0.2));
-        }
-
-        /* Estilos específicos para Tracy para coherencia visual */
-        .chair-card:nth-child(2) .chair-image {
-          object-fit: contain;
-          object-position: center;
-          padding: 20px;
-          background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
-          filter: contrast(1.1) brightness(1.05) drop-shadow(0 15px 35px rgba(95, 164, 255, 0.2));
-        }
-
-        .chair-info {
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-          padding: 3rem;
-        }
-
-        .chair-title {
-          font-size: 2.4rem;
+        .sillas-grid-title {
+          font-size: 3.2rem;
           font-weight: 700;
-          color: white;
-          margin-bottom: 1rem;
-          line-height: 1.2;
-          text-transform: uppercase;
-          letter-spacing: 0.05em;
-        }
-
-        .chair-description {
-          font-size: 1.5rem;
-          color: #b0b0b0;
-          line-height: 1.6;
+          color: #fff;
           margin-bottom: 2rem;
-          flex: 1;
-        }
-
-        .chair-artist {
-          font-size: 1.4rem;
-          color: #5fa4ff;
-          font-weight: 600;
-          margin-bottom: 1rem;
           text-transform: uppercase;
           letter-spacing: 0.1em;
         }
 
-        .chair-status {
-          display: inline-block;
-          background: linear-gradient(135deg, #5fa4ff 0%, #4fd1c5 100%);
-          color: #000;
-          padding: 0.8rem 1.6rem;
-          border-radius: 2rem;
-          font-size: 1.3rem;
-          font-weight: 600;
+        .sillas-grid-subtitle {
+          font-size: 1.6rem;
+          color: #888;
+          max-width: 600px;
+          margin: 0 auto;
+          line-height: 1.6;
+        }
+
+        .sillas-video-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 2rem 2.5rem;
+          margin: 0 auto;
+        }
+
+        .silla-video-card {
+          position: relative;
+          aspect-ratio: 3/4;
+          border-radius: 1.2rem;
+          overflow: hidden;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          border: 2px solid rgba(255, 255, 255, 0.1);
+          background: rgba(0, 0, 0, 0.5);
+        }
+
+        .silla-video-card:hover {
+          transform: scale(1.03);
+          border-color: rgba(95, 164, 255, 0.6);
+          box-shadow: 0 10px 25px rgba(95, 164, 255, 0.3);
+        }
+
+        .silla-video {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.4s ease;
+        }
+
+        .silla-video-overlay {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+          padding: 2rem;
+          transform: translateY(100%);
+          transition: transform 0.4s ease;
+        }
+
+        .silla-video-card:hover .silla-video-overlay {
+          transform: translateY(0);
+        }
+
+        .silla-title {
+          color: #fff;
+          font-size: 1.8rem;
+          font-weight: 700;
+          margin-bottom: 0.5rem;
           text-transform: uppercase;
           letter-spacing: 0.05em;
-          margin-top: auto;
-          align-self: flex-start;
         }
 
-        .chair-status.coming-soon {
-          background: linear-gradient(135deg, #ff6b6b 0%, #ffa500 100%);
-          color: white;
+
+
+        .silla-play-icon {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 60px;
+          height: 60px;
+          background: rgba(255, 255, 255, 0.9);
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          opacity: 0;
+          transition: all 0.4s ease;
         }
 
-        /* Responsive Design */
-        @media screen and (max-width: 991px) {
-          .chairs-grid {
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 3rem;
-          }
-          
-          .chairs-header h1 {
-            font-size: 3.5rem;
-          }
-          
-          .chair-card {
-            min-height: 450px;
-          }
+        .silla-video-card:hover .silla-play-icon {
+          opacity: 1;
+          transform: translate(-50%, -50%) scale(1.1);
         }
 
+        .silla-play-icon::after {
+          content: "▶";
+          font-size: 2rem;
+          color: #000;
+          margin-left: 3px;
+        }
+
+        /* ===== RESPONSIVE DOS COLUMNAS VERTICAL ===== */
         @media screen and (max-width: 767px) {
-          .chairs-container {
-            padding: 0 2rem;
+          .sillas-grid-section {
+            padding: 4rem 1rem 3rem 1rem;
           }
           
-          .chairs-grid {
-            grid-template-columns: 1fr;
-            gap: 2.5rem;
+          .sillas-video-grid {
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem 1rem;
           }
           
-          .chairs-header h1 {
-            font-size: 3rem;
+          .silla-video-card {
+            aspect-ratio: 3/4;
+            border-radius: 1rem;
           }
           
-          .chair-card {
-            min-height: 400px;
+          .sillas-grid-title {
+            font-size: 2.4rem;
           }
           
-          .chair-image-container {
-            height: 250px;
-            padding: 2rem;
+          .silla-title {
+            font-size: 1.4rem;
           }
           
-          .chair-title {
-            font-size: 2rem;
+          .silla-video-overlay {
+            padding: 1.5rem;
           }
+        }
+
+        @media screen and (min-width: 768px) and (max-width: 991px) {
+          .sillas-video-grid {
+            grid-template-columns: 1fr 1fr;
+            gap: 1.8rem 2rem;
+          }
+          
+                     .sillas-grid-container {
+             max-width: 650px;
+           }
+        }
+
+        @media screen and (min-width: 992px) {
+          .sillas-video-grid {
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem 3rem;
+          }
+          
+          .sillas-grid-title {
+            font-size: 3.8rem;
+          }
+          
+                     .sillas-grid-container {
+             max-width: 850px;
+           }
         }
       </style>
     </div>
@@ -270,85 +255,99 @@
                 </svg>
                 <div id="cart-count">0</div>
               </div>
+              <!-- Mobile Menu Button -->
+              <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+              </button>
             </div>
           </div>
         </div>
       </div>
       <div class="navbar-sticky__background"></div>
+      
+      <!-- Mobile Menu -->
+      <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-links">
+          <a href="index.html" class="mobile-menu-link">Inicio</a>
+          <a href="store.html" class="mobile-menu-link">Tienda</a>
+          <a href="careers.html" class="mobile-menu-link">Trabaja con Nosotros</a>
+        </div>
+      </div>
     </div>
     
     <main class="main-wrapper">
-      <div class="chairs-list-section">
-        <div class="chairs-container">
-          <div class="chairs-header">
-            <h1>Sillas RAPER</h1>
-            <p class="chairs-subtitle">
-              Descubre nuestra colección exclusiva de sillas de director premium. 
-              Cada modelo está diseñado en colaboración con artistas reconocidos, combinando comodidad, estilo y arte.
-            </p>
+      <div class="sillas-grid-section">
+        <div class="sillas-grid-container">
+          <div class="sillas-grid-header">
+            <h1 class="sillas-grid-title">COLECCIÓN SILLAS RAPER</h1>
           </div>
           
-          <div class="chairs-grid">
-            <!-- Silla Niki -->
-            <div class="chair-card" onclick="goToProduct('silla-milkmakers.html')">
-              <div class="chair-image-container">
-                <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/silla.jpg" alt="Silla Niki RAPER" class="chair-image">
-              </div>
-              <div class="chair-info">
-                <div class="chair-artist">Colaboración con Niki</div>
-                <h2 class="chair-title">Silla Director Niki Edition</h2>
-                <p class="chair-description">
-                  Una fusión perfecta entre arte urbano y comodidad premium. Diseñada en colaboración con el artista Niki, 
-                  esta silla de director representa la expresión más auténtica del estilo RAPER.
-                </p>
-                <div class="chair-status">Disponible</div>
+          <div class="sillas-video-grid">
+            <!-- NICKI NICOLE Edition -->
+            <div class="silla-video-card" onclick="goToProduct('silla-milkmakers.html')">
+              <video class="silla-video" autoplay muted loop preload="auto" poster="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/silla.jpg">
+                <source src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/varias_girando.mp4" type="video/mp4">
+              </video>
+              <div class="silla-play-icon"></div>
+              <div class="silla-video-overlay">
+                <h3 class="silla-title">NICKI NICOLE</h3>
               </div>
             </div>
 
-            <!-- Silla Tracy -->
-            <div class="chair-card" onclick="goToProduct('silla-tracy.html')">
-              <div class="chair-image-container">
-                <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/tracy%201.jpg" alt="Silla Tracy Edition" class="chair-image" style="object-fit: contain; object-position: center; padding: 20px; background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%); filter: contrast(1.1) brightness(1.05);">
-              </div>
-              <div class="chair-info">
-                <div class="chair-artist">Colaboración con Tracy</div>
-                <h2 class="chair-title">Silla Director Tracy Edition</h2>
-                <p class="chair-description">
-                  Elegancia urbana con inspiración en el trap contemporáneo. Diseño minimalista que refleja la sofisticación del género musical.
-                </p>
-                <div class="chair-status">Disponible</div>
+            <!-- ERICK BELTRAN Edition -->
+            <div class="silla-video-card" onclick="goToProduct('silla-erick.html')">
+              <video class="silla-video" autoplay muted loop preload="auto" poster="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/silla.jpg">
+                <source src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/varias_girando.mp4" type="video/mp4">
+              </video>
+              <div class="silla-play-icon"></div>
+              <div class="silla-video-overlay">
+                <h3 class="silla-title">ERICK BELTRAN</h3>
               </div>
             </div>
 
-            <!-- Silla Perro Primo -->
-            <div class="chair-card" onclick="goToProduct('silla-perro-primo.html')">
-              <div class="chair-image-container">
-                <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/perro%20primo.jpg" alt="Silla Perro Primo Edition" class="chair-image">
-              </div>
-              <div class="chair-info">
-                <div class="chair-artist">Colaboración con Perro Primo</div>
-                <h2 class="chair-title">Silla Director Perro Primo Edition</h2>
-                <p class="chair-description">
-                  Esencia rebelde y auténtica del rap underground. Diseño robusto que refleja la realidad de las calles y la cultura hip-hop más pura.
-                </p>
-                <div class="chair-status">Disponible</div>
+            <!-- SUPREME Edition -->
+            <div class="silla-video-card" onclick="goToProduct('silla-supreme.html')">
+              <video class="silla-video" autoplay muted loop preload="auto" poster="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/silla.jpg">
+                <source src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/varias_girando.mp4" type="video/mp4">
+              </video>
+              <div class="silla-play-icon"></div>
+              <div class="silla-video-overlay">
+                <h3 class="silla-title">SUPREME</h3>
               </div>
             </div>
 
-            <!-- Próximamente - Erick -->
-            <div class="chair-card" style="opacity: 0.6; cursor: not-allowed;" onclick="return false;">
-              <div class="chair-image-container">
-                <div style="display: flex; align-items: center; justify-content: center; height: 100%; background: linear-gradient(135deg, #333 0%, #555 100%); border-radius: 1rem;">
-                  <span style="color: #888; font-size: 2rem; font-weight: 700;">PRÓXIMAMENTE</span>
-                </div>
+            <!-- PERRO PRIMO Edition -->
+            <div class="silla-video-card" onclick="goToProduct('silla-perro-primo.html')">
+              <video class="silla-video" autoplay muted loop preload="auto" poster="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/perro%20primo.jpg">
+                <source src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/varias_girando.mp4" type="video/mp4">
+              </video>
+              <div class="silla-play-icon"></div>
+              <div class="silla-video-overlay">
+                <h3 class="silla-title">PERRO PRIMO</h3>
               </div>
-              <div class="chair-info">
-                <div class="chair-artist">Colaboración con Erick</div>
-                <h2 class="chair-title">Silla Director Erick Edition</h2>
-                <p class="chair-description">
-                  Próximamente disponible. La culminación de la creatividad artística y la ingeniería de comodidad.
-                </p>
-                <div class="chair-status coming-soon">Próximamente</div>
+            </div>
+
+            <!-- TRACY CORTEZ Edition -->
+            <div class="silla-video-card" onclick="goToProduct('silla-tracy.html')">
+              <video class="silla-video" autoplay muted loop preload="auto" poster="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/tracy%201.jpg">
+                <source src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/varias_girando.mp4" type="video/mp4">
+              </video>
+              <div class="silla-play-icon"></div>
+              <div class="silla-video-overlay">
+                <h3 class="silla-title">TRACY CORTEZ</h3>
+              </div>
+            </div>
+
+            <!-- COLECCIÓN ESPECIAL Edition -->
+            <div class="silla-video-card" onclick="goToProduct('silla-especial.html')">
+              <video class="silla-video" autoplay muted loop preload="auto" poster="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/silla.jpg">
+                <source src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/varias_girando.mp4" type="video/mp4">
+              </video>
+              <div class="silla-play-icon"></div>
+              <div class="silla-video-overlay">
+                <h3 class="silla-title">COLECCIÓN ESPECIAL</h3>
               </div>
             </div>
           </div>
@@ -389,6 +388,7 @@
   <script src="js/webflow.js" type="text/javascript"></script>
   <script src="js/cart.js" type="text/javascript"></script>
   <script src="js/theme.js" type="text/javascript"></script>
+  <script src="js/mobile-cart-fixes.js" type="text/javascript"></script>
 
   <div id="side-cart-container" class="side-cart-container">
     <div id="side-cart-overlay" class="side-cart-overlay"></div>
@@ -406,7 +406,7 @@
       const card = event.currentTarget;
       
       // Efecto visual
-      card.style.transform = 'scale(0.95)';
+      card.style.transform = 'scale(0.98)';
       card.style.opacity = '0.8';
       
       setTimeout(() => {
@@ -417,19 +417,58 @@
     // Inicialización
     document.addEventListener('DOMContentLoaded', function() {
       // Efectos de animación para las tarjetas
-      const chairCards = document.querySelectorAll('.chair-card');
+      const videoCards = document.querySelectorAll('.silla-video-card');
       
-      // Animación de entrada
-      chairCards.forEach((card, index) => {
+      // Animación de entrada escalonada
+      videoCards.forEach((card, index) => {
         card.style.opacity = '0';
-        card.style.transform = 'translateY(50px)';
-        card.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+        card.style.transform = 'translateY(50px) scale(0.9)';
+        card.style.transition = 'all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
         
         setTimeout(() => {
           card.style.opacity = '1';
-          card.style.transform = 'translateY(0)';
-        }, 300 + (index * 150));
+          card.style.transform = 'translateY(0) scale(1)';
+        }, 200 + (index * 100));
       });
+
+      // Cart counter
+      const cart = JSON.parse(localStorage.getItem('raperCart')) || [];
+      const cartCount = document.getElementById('cart-count');
+      if (cartCount) {
+        const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+        cartCount.textContent = totalItems;
+      }
+
+      // Mobile Menu
+      const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+      
+      if (mobileMenuToggle && mobileMenu) {
+        mobileMenuToggle.addEventListener('click', function() {
+          mobileMenuToggle.classList.toggle('active');
+          mobileMenu.classList.toggle('active');
+          document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+        });
+        
+        mobileMenuLinks.forEach(link => {
+          link.addEventListener('click', function() {
+            mobileMenuToggle.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+          });
+        });
+        
+        document.addEventListener('click', function(e) {
+          if (!mobileMenu.contains(e.target) && !mobileMenuToggle.contains(e.target) && mobileMenu.classList.contains('active')) {
+            mobileMenuToggle.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+          }
+        });
+      }
+
+      console.log('🎬 Nueva grilla de sillas RAPER cargada exitosamente');
     });
   </script>
 
