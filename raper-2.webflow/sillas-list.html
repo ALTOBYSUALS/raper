@@ -262,14 +262,14 @@
           transition: transform 0.4s ease;
         }
 
-        .silla-video-card:hover .silla-video-overlay {
-          transform: translateY(0);
-        }
-
-        /* NICKI NICOLE - Texto siempre visible */
-        .silla-video-card:first-child .silla-video-overlay {
+        /* TODAS LAS SILLAS - Texto siempre visible */
+        .silla-video-overlay {
           transform: translateY(0) !important;
           background: linear-gradient(transparent 30%, rgba(0, 0, 0, 0.9));
+        }
+
+        .silla-video-card:hover .silla-video-overlay {
+          background: linear-gradient(transparent 20%, rgba(0, 0, 0, 0.95));
         }
 
         .silla-title {
