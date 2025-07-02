@@ -173,16 +173,40 @@
         }
 
         .chair-thumbnail-gallery {
-          display: grid;
-          grid-template-columns: repeat(4, 1fr);
+          display: flex;
+          flex-direction: row;
           gap: 1rem;
           width: 100%;
           max-width: 500px;
+          overflow-x: auto;
+          scrollbar-width: thin;
+          scrollbar-color: rgba(95, 164, 255, 0.6) rgba(0, 0, 0, 0.2);
+          padding-bottom: 8px;
+        }
+
+        .chair-thumbnail-gallery::-webkit-scrollbar {
+          height: 6px;
+        }
+
+        .chair-thumbnail-gallery::-webkit-scrollbar-track {
+          background: rgba(0, 0, 0, 0.2);
+          border-radius: 10px;
+        }
+
+        .chair-thumbnail-gallery::-webkit-scrollbar-thumb {
+          background: linear-gradient(90deg, #5fa4ff, #4fd1c5);
+          border-radius: 10px;
+        }
+
+        .chair-thumbnail-gallery::-webkit-scrollbar-thumb:hover {
+          background: linear-gradient(90deg, #4fd1c5, #5fa4ff);
         }
 
         .thumbnail-item {
           width: 100px;
           height: 100px;
+          min-width: 100px;
+          flex-shrink: 0;
           border-radius: 1rem;
           overflow: hidden;
           border: 2px solid transparent;
@@ -394,13 +418,13 @@
           }
 
           .chair-thumbnail-gallery {
-            grid-template-columns: repeat(4, 1fr);
             max-width: 400px;
           }
 
           .thumbnail-item {
             width: 80px;
             height: 80px;
+            min-width: 80px;
           }
         }
 
@@ -423,13 +447,14 @@
           }
 
           .chair-thumbnail-gallery {
-            grid-template-columns: repeat(2, 1fr);
             gap: 1.5rem;
+            max-width: 350px;
           }
 
           .thumbnail-item {
             width: 120px;
             height: 120px;
+            min-width: 120px;
           }
         }
 
@@ -500,12 +525,13 @@
           }
 
           .chair-thumbnail-gallery {
-            grid-template-columns: repeat(2, 1fr);
+            max-width: 320px;
           }
 
           .thumbnail-item {
             width: 100px;
             height: 100px;
+            min-width: 100px;
           }
           
           .description-toggle-btn {

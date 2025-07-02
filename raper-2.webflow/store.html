@@ -518,9 +518,12 @@ body {
                          autoplay 
                          muted
                          loop
+                         playsinline
+                         webkit-playsinline
                          preload="auto"
                          poster="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/silla.jpg"
-                         alt="Video de Sillas de Director RAPER">
+                         alt="Video de Sillas de Director RAPER"
+                         data-autoplay="true">
                     Tu navegador no soporta la reproducción de videos.
                   </video>
                 </div>
@@ -666,6 +669,82 @@ body {
       } else {
         console.error('❌ Logo no encontrado');
       }
+      
+      // ===== FORZAR AUTOPLAY EN MOBILE =====
+      function forceVideoAutoplay() {
+        const videos = document.querySelectorAll('video[data-autoplay="true"]');
+        
+        videos.forEach(video => {
+          // Intentar reproducir inmediatamente
+          const playPromise = video.play();
+          
+          if (playPromise !== undefined) {
+            playPromise.catch(error => {
+              console.log('🎥 Autoplay inicial falló, intentando con intersection observer:', error);
+            });
+          }
+          
+          // Intersection Observer para reproducir cuando sea visible
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                const targetVideo = entry.target;
+                if (targetVideo.paused) {
+                  const retryPromise = targetVideo.play();
+                  if (retryPromise !== undefined) {
+                    retryPromise.then(() => {
+                      console.log('✅ Video reproduciéndose automáticamente en mobile');
+                    }).catch(err => {
+                      console.log('❌ No se pudo reproducir automáticamente:', err);
+                    });
+                  }
+                }
+              }
+            });
+          }, {
+            threshold: 0.5,
+            rootMargin: '50px'
+          });
+          
+          observer.observe(video);
+        });
+      }
+      
+      // Ejecutar después de un breve delay
+      setTimeout(forceVideoAutoplay, 500);
+      
+      // ===== ACTIVAR VIDEOS EN PRIMERA INTERACCIÓN =====
+      function enableVideoAutoplayOnInteraction() {
+        const videos = document.querySelectorAll('video[data-autoplay="true"]');
+        
+        function playAllVideos() {
+          videos.forEach(video => {
+            if (video.paused) {
+              video.play().catch(err => {
+                console.log('⚠️ Video no pudo reproducirse:', err);
+              });
+            }
+          });
+        }
+        
+        // Eventos de primera interacción
+        const firstInteractionEvents = ['touchstart', 'touchend', 'mousedown', 'keydown', 'scroll'];
+        
+        function handleFirstInteraction() {
+          playAllVideos();
+          // Remover listeners después de la primera interacción
+          firstInteractionEvents.forEach(event => {
+            document.removeEventListener(event, handleFirstInteraction, true);
+          });
+        }
+        
+        // Agregar listeners para primera interacción
+        firstInteractionEvents.forEach(event => {
+          document.addEventListener(event, handleFirstInteraction, true);
+        });
+      }
+      
+      enableVideoAutoplayOnInteraction();
       
       // Efectos de animación para las categorías
       const categoryCards = document.querySelectorAll('.category-card');
