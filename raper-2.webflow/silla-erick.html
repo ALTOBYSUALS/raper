@@ -406,7 +406,7 @@
         }
 
         /* ===== RESPONSIVE DESIGN ===== */
-        @media (max-width: 1024px) {
+        @media screen and (max-width: 1024px) {
           .chair-product-layout {
             grid-template-columns: 1fr;
             gap: 4rem;
@@ -423,9 +423,21 @@
           .chair-product-title {
             font-size: 2.8rem;
           }
+
+          .chair-thumbnail-gallery {
+            justify-content: center;
+            gap: 1.5rem;
+            max-width: 350px;
+          }
+
+          .thumbnail-item {
+            width: 120px;
+            height: 120px;
+            min-width: 120px;
+          }
         }
 
-        @media (max-width: 768px) {
+        @media screen and (max-width: 768px) {
           .chair-product-section {
             padding: 8rem 0 4rem 0;
           }
@@ -448,95 +460,156 @@
             width: 100%;
             text-align: center;
           }
+
+          .chair-thumbnail-gallery {
+            justify-content: center;
+            gap: 1.5rem;
+            max-width: 350px;
+          }
+
+          .thumbnail-item {
+            width: 120px;
+            height: 120px;
+            min-width: 120px;
+          }
         }
 
-        /* ===== DESCRIPCIÓN COLAPSABLE ===== */
+        @media screen and (max-width: 480px) {
+          .chair-product-container {
+            padding: 0 1rem;
+          }
+
+          .chair-main-image-container {
+            height: 350px;
+          }
+
+          .chair-thumbnail-gallery {
+            max-width: 320px;
+          }
+
+          .thumbnail-item {
+            width: 100px;
+            height: 100px;
+            min-width: 100px;
+          }
+          
+          .description-toggle-btn {
+            font-size: 1.8rem;
+            padding: 1.5rem 2rem;
+          }
+        }
+
+        /* ===== SISTEMA DE DESCRIPCIÓN COLAPSABLE ===== */
+        
         .product-description-section {
-          margin-bottom: 2rem;
-        }
-
-        .description-toggle-btn {
           width: 100%;
-          background: #1a1a1a;
-          border: 1px solid #333;
-          color: #fff;
-          padding: 1.5rem 2rem;
-          border-radius: 1rem;
-          cursor: pointer;
+          margin-bottom: 3rem;
+        }
+        
+        .description-toggle-btn {
           display: flex;
-          justify-content: space-between;
           align-items: center;
-          font-size: 1.6rem;
-          font-weight: 600;
-          transition: all 0.3s ease;
+          justify-content: space-between;
+          width: 100%;
+          background: linear-gradient(135deg, #5fa4ff 0%, #4fd1c5 100%);
+          color: #000;
+          font-size: 2.2rem;
+          font-weight: 700;
+          padding: 2rem 3rem;
+          border: none;
+          border-radius: 1.5rem;
+          cursor: pointer;
+          transition: all 0.4s ease;
+          text-transform: uppercase;
+          letter-spacing: 0.1em;
+          box-shadow: 0 8px 25px rgba(95, 164, 255, 0.3);
+          margin-bottom: 0;
         }
-
+        
         .description-toggle-btn:hover {
-          background: #2a2a2a;
-          border-color: #5fa4ff;
+          transform: translateY(-3px);
+          box-shadow: 0 12px 35px rgba(95, 164, 255, 0.4);
+          background: linear-gradient(135deg, #4fd1c5 0%, #5fa4ff 100%);
         }
-
+        
         .toggle-icon {
-          transition: transform 0.3s ease;
+          font-size: 2rem;
+          font-weight: 700;
+          transition: transform 0.4s ease;
         }
-
+        
         .description-toggle-btn.active .toggle-icon {
           transform: rotate(180deg);
         }
-
+        
         .description-content {
           max-height: 0;
           overflow: hidden;
-          transition: max-height 0.3s ease;
+          transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+          opacity: 0;
+          padding: 0 0.5rem;
         }
-
-        .description-content.active {
-          max-height: 1000px;
-          padding-top: 2rem;
+        
+        .description-content.open {
+          max-height: 2000px;
+          opacity: 1;
+          padding: 2rem 0.5rem 0 0.5rem;
         }
       </style>
     </div>
 
-    <!-- Navbar -->
+    <!-- Navigation -->
     <div class="navbar-sticky">
-      <div class="navbar-container">
-        <div class="navbar-brand">
-          <a href="index.html" aria-current="page" class="navbar-logo w-nav-brand w--current">
-            <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/Asset%2019supreme%20(1).png" loading="lazy" alt="RAPER" class="navbar-logo-image">
-          </a>
-        </div>
-        <div class="navbar-menu">
-          <div class="navbar-links">
-            <a href="index.html" class="navbar-link">Inicio</a>
-            <a href="store.html" class="navbar-link">Tienda</a>
-            <a href="careers.html" class="navbar-link">Trabaja con Nosotros</a>
+      <div class="padding-global is_full-height">
+        <div class="container-large is_full-height">
+          <div class="navbar-sticky__wrapper">
+            <a href="index.html" class="navbar-sticky__heading">
+              <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/Asset%2019supreme%20(1).png" alt="Raper Logo" class="navbar-logo">
+            </a>
+            <div class="navbar-sticky__links-wrapper">
+              <div class="nav-links">
+                <a href="index.html" class="navbar-sticky__link">Inicio</a>
+                <a href="store.html" class="navbar-sticky__link">Tienda</a>
+                <a href="careers.html" class="navbar-sticky__link">Trabaja con Nosotros</a>
+              </div>
+            </div>
+            <div class="navbar-actions">
+              <div class="cart-icon-wrapper" onclick="showCart()">
+                <svg class="cart-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9 22C9.55228 22 10 21.5523 10 21C10 20.4477 9.55228 20 9 20C8.44772 20 8 20.4477 8 21C8 21.5523 8.44772 22 9 22Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M20 22C20.5523 22 21 21.5523 21 21C21 20.4477 20.5523 20 20 20C19.4477 20 19 20.4477 19 21C19 21.5523 19.4477 22 20 22Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M1 1H5L7.68 14.39C7.77144 14.8504 8.02191 15.264 8.38755 15.5583C8.75318 15.8526 9.2107 16.009 9.68 16H19.4C19.8693 16.009 20.3268 15.8526 20.6925 15.5583C21.0581 15.264 21.3086 14.8504 21.4 14.39L23 6H6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <div id="cart-count">0</div>
+              </div>
+              <!-- Mobile Menu Button -->
+              <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+              </button>
+            </div>
           </div>
-          <div class="navbar-actions">
-            <button class="cart-icon-button" onclick="openSideCart()">
-              <svg class="cart-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M3 3H5L5.4 5M7 13H17L21 5H5.4M7 13L5.4 5M7 13L4.7 15.3C4.3 15.7 4.6 16.5 5.1 16.5H17M17 13V16.5M9 19.5C9.8 19.5 10.5 20.2 10.5 21S9.8 22.5 9 22.5 7.5 21.8 7.5 21 8.2 19.5 9 19.5ZM20 19.5C20.8 19.5 21.5 20.2 21.5 21S20.8 22.5 20 22.5 18.5 21.8 18.5 21 19.2 19.5 20 19.5Z" 
-                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-              <span id="cart-count" class="cart-count">0</span>
-            </button>
-          </div>
-        </div>
-        <div class="navbar-mobile">
-          <button class="mobile-menu-toggle" id="mobile-menu-toggle">
-            <div class="hamburger-line"></div>
-            <div class="hamburger-line"></div>
-            <div class="hamburger-line"></div>
-          </button>
         </div>
       </div>
       <div class="navbar-sticky__background"></div>
-      
+          
       <!-- Mobile Menu -->
       <div class="mobile-menu" id="mobile-menu">
         <div class="mobile-menu-links">
           <a href="index.html" class="mobile-menu-link">Inicio</a>
           <a href="store.html" class="mobile-menu-link">Tienda</a>
           <a href="careers.html" class="mobile-menu-link">Trabaja con Nosotros</a>
+        </div>
+        <div class="mobile-menu-contact">
+          <div class="contact-item">
+            <span class="flag">🇺🇸</span>
+            <span class="phone">+1 (786) 978-1978</span>
+          </div>
+          <div class="contact-item">
+            <span class="flag">🇦🇷</span>
+            <span class="phone">+54 9 11 3422 6971</span>
+          </div>
         </div>
       </div>
     </div>
@@ -862,7 +935,7 @@
       const content = document.getElementById('description-content');
       
       toggleBtn.classList.toggle('active');
-      content.classList.toggle('active');
+      content.classList.toggle('open');
     }
 
     function updateCartUI() {
@@ -871,7 +944,23 @@
       if (cartCount) {
         const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
         cartCount.textContent = totalItems;
-        cartCount.style.display = totalItems > 0 ? 'flex' : 'none';
+        cartCount.style.display = totalItems > 0 ? 'block' : 'none';
+      }
+    }
+
+    // Función para mostrar carrito (compatibilidad con navbar)
+    function showCart() {
+      console.log('🛒 Mostrar carrito - función llamada');
+      // Si existe la función openSideCart del sistema de carrito, usarla
+      if (typeof openSideCart === 'function') {
+        openSideCart();
+      } else {
+        // Fallback: mostrar el carrito lateral si existe
+        const sideCart = document.getElementById('side-cart-container');
+        if (sideCart) {
+          sideCart.style.display = 'block';
+          sideCart.classList.add('active');
+        }
       }
     }
 
