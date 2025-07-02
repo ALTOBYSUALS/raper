@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html data-wf-page="68269b7c12f8a3ad86be7f60" data-wf-site="68269b7b12f8a3ad86be7d56">
+<head>
+  <meta charset="utf-8">
+  <title>Silla de Director SUPREME - RAPER</title>
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <link href="css/normalize.css" rel="stylesheet" type="text/css">
+  <link href="css/webflow.css" rel="stylesheet" type="text/css">
+  <link href="css/raper-2.webflow.css" rel="stylesheet" type="text/css">
+  <link href="css/theme.css" rel="stylesheet" type="text/css">
+  <link href="css/mobile-responsive-fixes.css?v=20250624-silla" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
+  <script type="text/javascript">WebFont.load({  google: {    families: ["Montserrat:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic"]  }});</script>
+  <link href="https://res.cloudinary.com/dt5pkdr0k/image/upload/v1747379718/fabicon_2_1_j76m5a.png" rel="shortcut icon" type="image/x-icon">
+</head>
+<body>
+  <div class="page-wrapper is-relative">
+    <!-- Banner de Sello Discográfico -->
+    <div class="record-label-banner">
+      <div class="container-large">
+        <p class="record-label-text">SELLO DISCOGRÁFICO RAPER COMPANY</p>
+      </div>
+    </div>
+
+    <div class="global-styles w-embed">
+      <style>
+        :root { font-size: 62.5%; }
+        body { font-size: 1.6rem; }
+
+        .record-label-banner {
+          width: 100%;
+          background: linear-gradient(90deg, rgba(0,0,0,0.9) 0%, rgba(95, 164, 255, 0.2) 50%, rgba(0,0,0,0.9) 100%);
+          padding: 10px 0;
+          position: relative;
+          z-index: 100;
+          border-bottom: 1px solid rgba(95, 164, 255, 0.3);
+        }
+
+        .record-label-text {
+          text-align: center;
+          color: #fff;
+          font-size: 1.4rem;
+          font-weight: 600;
+          letter-spacing: 0.2em;
+          text-transform: uppercase;
+          margin: 0;
+          text-shadow: 0 0 10px rgba(95, 164, 255, 0.5);
+          animation: glow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+          0% { text-shadow: 0 0 5px rgba(95, 164, 255, 0.5); }
+          100% { text-shadow: 0 0 15px rgba(95, 164, 255, 0.8), 0 0 20px rgba(95, 164, 255, 0.4); }
+        }
+
+        /* ===== ESTILOS PARA LA PÁGINA DE PRODUCTO DE SILLA ===== */
+        .chair-product-section {
+          background-color: #000;
+          padding: 12rem 0 8rem 0;
+          min-height: 100vh;
+        }
+
+        .chair-product-container {
+          max-width: 1400px;
+          margin: 0 auto;
+          padding: 0 4rem;
+        }
+
+        .product-header {
+          text-align: center;
+          margin-bottom: 6rem;
+        }
+
+        .product-header h1 {
+          font-size: 4.5rem;
+          font-weight: 700;
+          background: linear-gradient(135deg, #5fa4ff 0%, #4fd1c5 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          margin-bottom: 1rem;
+          text-transform: uppercase;
+          letter-spacing: 0.1em;
+        }
+
+        .chair-product-layout {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 6rem;
+          align-items: start;
+        }
+
+        /* ===== GALERÍA DE IMÁGENES Y VIDEO ===== */
+        .chair-image-section {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .chair-main-image-container {
+          position: relative;
+          width: 100%;
+          max-width: 500px;
+          height: 500px;
+          border-radius: 2rem;
+          overflow: hidden;
+          background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+          border: 2px solid rgba(95, 164, 255, 0.3);
+          box-shadow: 0 20px 60px rgba(95, 164, 255, 0.2);
+          margin-bottom: 2rem;
+          cursor: pointer;
+        }
+
+        .chair-main-image {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.5s ease;
+        }
+
+        .chair-main-image:hover {
+          transform: scale(1.05);
+        }
+
+        .chair-main-video {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.5s ease;
+          border-radius: 2rem;
+        }
+
+        .chair-main-video:hover {
+          transform: scale(1.02);
+        }
+
+        .video-controls-overlay {
+          position: absolute;
+          bottom: 20px;
+          left: 50%;
+          transform: translateX(-50%);
+          background: rgba(0, 0, 0, 0.8);
+          border-radius: 50px;
+          padding: 10px 20px;
+          display: flex;
+          align-items: center;
+          gap: 15px;
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(95, 164, 255, 0.3);
+          transition: opacity 0.3s ease;
+        }
+
+        .video-play-btn {
+          background: linear-gradient(135deg, #5fa4ff 0%, #4fd1c5 100%);
+          border: none;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          color: #000;
+          font-size: 16px;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: all 0.3s ease;
+        }
+
+        .video-play-btn:hover {
+          transform: scale(1.1);
+          box-shadow: 0 5px 15px rgba(95, 164, 255, 0.4);
+        }
+
+        .chair-thumbnail-gallery {
+          display: flex;
+          flex-direction: row;
+          gap: 1rem;
+          width: 100%;
+          max-width: 500px;
+          overflow-x: auto;
+          scrollbar-width: thin;
+          scrollbar-color: rgba(95, 164, 255, 0.6) rgba(0, 0, 0, 0.2);
+          padding-bottom: 8px;
+        }
+
+        .chair-thumbnail-gallery::-webkit-scrollbar {
+          height: 6px;
+        }
+
+        .chair-thumbnail-gallery::-webkit-scrollbar-track {
+          background: rgba(0, 0, 0, 0.2);
+          border-radius: 10px;
+        }
+
+        .chair-thumbnail-gallery::-webkit-scrollbar-thumb {
+          background: linear-gradient(90deg, #5fa4ff, #4fd1c5);
+          border-radius: 10px;
+        }
+
+        .chair-thumbnail-gallery::-webkit-scrollbar-thumb:hover {
+          background: linear-gradient(90deg, #4fd1c5, #5fa4ff);
+        }
+
+        .thumbnail-item {
+          width: 100px;
+          height: 100px;
+          min-width: 100px;
+          flex-shrink: 0;
+          border-radius: 1rem;
+          overflow: hidden;
+          border: 2px solid transparent;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          background: #1a1a1a;
+        }
+
+        .thumbnail-item.active {
+          border-color: #5fa4ff;
+          box-shadow: 0 0 20px rgba(95, 164, 255, 0.5);
+        }
+
+        .thumbnail-item:hover {
+          border-color: #4fd1c5;
+          transform: scale(1.05);
+        }
+
+        .thumbnail-item img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        /* ===== INFORMACIÓN DEL PRODUCTO ===== */
+        .chair-info-section {
+          display: flex;
+          flex-direction: column;
+          gap: 3rem;
+        }
+
+        .chair-product-title {
+          font-size: 3.5rem;
+          font-weight: 700;
+          color: #fff;
+          margin-bottom: 2rem;
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+        }
+
+        .chair-product-price {
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+          margin-bottom: 2rem;
+        }
+
+        .chair-price-current {
+          font-size: 3rem;
+          font-weight: 700;
+          background: linear-gradient(135deg, #5fa4ff 0%, #4fd1c5 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+
+        .price-label {
+          font-size: 1.4rem;
+          color: #888;
+          text-transform: uppercase;
+          letter-spacing: 0.1em;
+        }
+
+        .chair-product-description {
+          font-size: 1.8rem;
+          line-height: 1.6;
+          color: #e0e0e0;
+          margin-bottom: 3rem;
+        }
+
+        .product-features {
+          background: #1a1a1a;
+          border-radius: 1.5rem;
+          padding: 3rem;
+          margin-bottom: 3rem;
+        }
+
+        .features-title {
+          font-size: 2.2rem;
+          font-weight: 600;
+          color: #5fa4ff;
+          margin-bottom: 2rem;
+        }
+
+        .features-list {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+        }
+
+        .feature-item {
+          display: flex;
+          align-items: center;
+          gap: 1.5rem;
+          padding: 1rem 0;
+          border-bottom: 1px solid #333;
+          font-size: 1.6rem;
+          color: #e0e0e0;
+        }
+
+        .feature-item:last-child {
+          border-bottom: none;
+        }
+
+        .feature-icon {
+          color: #5fa4ff;
+          font-weight: 700;
+          font-size: 1.8rem;
+        }
+
+        .chair-actions {
+          display: flex;
+          gap: 2rem;
+          align-items: center;
+        }
+
+        .quantity-selector {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          background: #1a1a1a;
+          border-radius: 1rem;
+          padding: 1rem;
+        }
+
+        .quantity-btn {
+          background: #5fa4ff;
+          color: #fff;
+          border: none;
+          width: 4rem;
+          height: 4rem;
+          border-radius: 0.5rem;
+          font-size: 2rem;
+          font-weight: 700;
+          cursor: pointer;
+          transition: all 0.3s ease;
+        }
+
+        .quantity-btn:hover {
+          background: #4fd1c5;
+          transform: scale(1.1);
+        }
+
+        .quantity-input {
+          background: transparent;
+          border: none;
+          color: #fff;
+          font-size: 1.8rem;
+          font-weight: 600;
+          text-align: center;
+          width: 5rem;
+        }
+
+        .chair-add-to-cart {
+          background: linear-gradient(135deg, #5fa4ff 0%, #4fd1c5 100%);
+          color: #000;
+          border: none;
+          padding: 1.8rem 4rem;
+          font-size: 1.6rem;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 0.1em;
+          border-radius: 1rem;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          box-shadow: 0 10px 30px rgba(95, 164, 255, 0.3);
+        }
+
+        .chair-add-to-cart:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 15px 40px rgba(95, 164, 255, 0.5);
+        }
+
+        .product-meta {
+          display: flex;
+          flex-direction: column;
+          gap: 1.5rem;
+          padding: 2rem 0;
+          border-top: 1px solid #333;
+          margin-top: 3rem;
+        }
+
+        .meta-row {
+          display: flex;
+          gap: 2rem;
+        }
+
+        .meta-label {
+          color: #888;
+          font-weight: 600;
+          min-width: 100px;
+        }
+
+        .meta-value {
+          color: #fff;
+          font-weight: 400;
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media screen and (max-width: 1024px) {
+          .chair-product-layout {
+            grid-template-columns: 1fr;
+            gap: 4rem;
+          }
+          
+          .chair-product-container {
+            padding: 0 2rem;
+          }
+          
+          .product-header h1 {
+            font-size: 3.5rem;
+          }
+          
+          .chair-product-title {
+            font-size: 2.8rem;
+          }
+
+          .chair-thumbnail-gallery {
+            justify-content: center;
+            gap: 1.5rem;
+            max-width: 350px;
+          }
+
+          .thumbnail-item {
+            width: 120px;
+            height: 120px;
+            min-width: 120px;
+          }
+        }
+
+        @media screen and (max-width: 768px) {
+          .chair-product-section {
+            padding: 8rem 0 4rem 0;
+          }
+          
+          .product-header h1 {
+            font-size: 2.8rem;
+          }
+          
+          .chair-product-title {
+            font-size: 2.2rem;
+          }
+          
+          .chair-actions {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 1.5rem;
+          }
+          
+          .chair-add-to-cart {
+            width: 100%;
+            text-align: center;
+          }
+
+          .chair-thumbnail-gallery {
+            justify-content: center;
+            gap: 1.5rem;
+            max-width: 350px;
+          }
+
+          .thumbnail-item {
+            width: 120px;
+            height: 120px;
+            min-width: 120px;
+          }
+        }
+
+        @media screen and (max-width: 480px) {
+          .chair-product-container {
+            padding: 0 1rem;
+          }
+
+          .chair-main-image-container {
+            height: 350px;
+          }
+
+          .chair-thumbnail-gallery {
+            max-width: 320px;
+          }
+
+          .thumbnail-item {
+            width: 100px;
+            height: 100px;
+            min-width: 100px;
+          }
+          
+          .description-toggle-btn {
+            font-size: 1.8rem;
+            padding: 1.5rem 2rem;
+          }
+        }
+
+        /* ===== SISTEMA DE DESCRIPCIÓN COLAPSABLE ===== */
+        
+        .product-description-section {
+          width: 100%;
+          margin-bottom: 3rem;
+        }
+        
+        .description-toggle-btn {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+          background: linear-gradient(135deg, #5fa4ff 0%, #4fd1c5 100%);
+          color: #000;
+          font-size: 2.2rem;
+          font-weight: 700;
+          padding: 2rem 3rem;
+          border: none;
+          border-radius: 1.5rem;
+          cursor: pointer;
+          transition: all 0.4s ease;
+          text-transform: uppercase;
+          letter-spacing: 0.1em;
+          box-shadow: 0 8px 25px rgba(95, 164, 255, 0.3);
+          margin-bottom: 0;
+        }
+        
+        .description-toggle-btn:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 12px 35px rgba(95, 164, 255, 0.4);
+          background: linear-gradient(135deg, #4fd1c5 0%, #5fa4ff 100%);
+        }
+        
+        .toggle-icon {
+          font-size: 2rem;
+          font-weight: 700;
+          transition: transform 0.4s ease;
+        }
+        
+        .description-toggle-btn.active .toggle-icon {
+          transform: rotate(180deg);
+        }
+        
+        .description-content {
+          max-height: 0;
+          overflow: hidden;
+          transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+          opacity: 0;
+          padding: 0 0.5rem;
+        }
+        
+        .description-content.open {
+          max-height: 2000px;
+          opacity: 1;
+          padding: 2rem 0.5rem 0 0.5rem;
+        }
+      </style>
+    </div>
+
+    <!-- Navigation -->
+    <div class="navbar-sticky">
+      <div class="padding-global is_full-height">
+        <div class="container-large is_full-height">
+          <div class="navbar-sticky__wrapper">
+            <a href="index.html" class="navbar-sticky__heading">
+              <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/Asset%2019supreme%20(1).png" alt="Raper Logo" class="navbar-logo">
+            </a>
+            <div class="navbar-sticky__links-wrapper">
+              <div class="nav-links">
+                <a href="index.html" class="navbar-sticky__link">Inicio</a>
+                <a href="store.html" class="navbar-sticky__link">Tienda</a>
+                <a href="careers.html" class="navbar-sticky__link">Trabaja con Nosotros</a>
+              </div>
+            </div>
+            <div class="navbar-actions">
+              <div class="cart-icon-wrapper" onclick="showCart()">
+                <svg class="cart-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9 22C9.55228 22 10 21.5523 10 21C10 20.4477 9.55228 20 9 20C8.44772 20 8 20.4477 8 21C8 21.5523 8.44772 22 9 22Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M20 22C20.5523 22 21 21.5523 21 21C21 20.4477 20.5523 20 20 20C19.4477 20 19 20.4477 19 21C19 21.5523 19.4477 22 20 22Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M1 1H5L7.68 14.39C7.77144 14.8504 8.02191 15.264 8.38755 15.5583C8.75318 15.8526 9.2107 16.009 9.68 16H19.4C19.8693 16.009 20.3268 15.8526 20.6925 15.5583C21.0581 15.264 21.3086 14.8504 21.4 14.39L23 6H6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <div id="cart-count">0</div>
+              </div>
+              <!-- Mobile Menu Button -->
+              <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="navbar-sticky__background"></div>
+          
+      <!-- Mobile Menu -->
+      <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-links">
+          <a href="index.html" class="mobile-menu-link">Inicio</a>
+          <a href="store.html" class="mobile-menu-link">Tienda</a>
+          <a href="careers.html" class="mobile-menu-link">Trabaja con Nosotros</a>
+        </div>
+        <div class="mobile-menu-contact">
+          <div class="contact-item">
+            <span class="flag">🇺🇸</span>
+            <span class="phone">+1 (786) 978-1978</span>
+          </div>
+          <div class="contact-item">
+            <span class="flag">🇦🇷</span>
+            <span class="phone">+54 9 11 3422 6971</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-wrapper">
+      <div class="chair-product-section">
+        <div class="chair-product-container">
+          <!-- Header -->
+          <div class="product-header">
+            <h1>Silla Director Supreme Edition</h1>
+            <p style="color: #b0b0b0; font-size: 1.8rem;">Colaboración exclusiva edición limitada Supreme</p>
+          </div>
+
+          <!-- Product Display -->
+          <div class="chair-product-layout">
+            <!-- Image Section with Gallery -->
+            <div class="chair-image-section">
+              <div class="chair-main-image-container" id="main-media-container">
+                <video id="main-chair-video" src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/rojo_girando.mp4" 
+                       class="chair-main-video" 
+                       controls 
+                       autoplay 
+                       muted
+                       loop
+                       preload="auto"
+                       poster="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/silla.jpg"
+                       alt="Video de la Silla de Director SUPREME">
+                  Tu navegador no soporta la reproducción de videos.
+                </video>
+                <img id="main-chair-image" src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/silla.jpg" alt="Silla de Director SUPREME" class="chair-main-image" style="display: none;">
+                
+                <div class="video-controls-overlay" id="video-overlay">
+                  <button class="video-play-btn" onclick="toggleMainVideo()" id="main-video-btn">
+                    ▶
+                  </button>
+                  <span style="color: #fff; font-size: 14px; font-weight: 600;">Video Promocional</span>
+                </div>
+              </div>
+              
+              <!-- Thumbnail Gallery -->
+              <div class="chair-thumbnail-gallery">
+                <div class="thumbnail-item active" onclick="showMainVideo(this)" data-type="video">
+                  <div style="position: relative; width: 100%; height: 100%; background: linear-gradient(135deg, #5fa4ff 0%, #4fd1c5 100%); display: flex; align-items: center; justify-content: center;">
+                    <span style="color: #000; font-size: 24px; font-weight: bold;">▶</span>
+                    <span style="position: absolute; bottom: 5px; left: 50%; transform: translateX(-50%); color: #000; font-size: 10px; font-weight: 600;">VIDEO</span>
+                  </div>
+                </div>
+                <div class="thumbnail-item" onclick="changeMainImage('https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/silla.jpg', this)" data-type="image">
+                  <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/silla.jpg" alt="Vista principal Supreme">
+                </div>
+                <div class="thumbnail-item" onclick="changeMainImage('https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/silla_1%20(2).png', this)" data-type="image">
+                  <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/silla_1%20(2).png" alt="Vista lateral Supreme">
+                </div>
+                <div class="thumbnail-item" onclick="changeMainImage('https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/detalle_silla1.jpg', this)" data-type="image">
+                  <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/detalle_silla1.jpg" alt="Detalle Supreme 1">
+                </div>
+                <div class="thumbnail-item" onclick="changeMainImage('https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/detalle_silla2.jpg', this)" data-type="image">
+                  <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/detalle_silla2.jpg" alt="Detalle Supreme 2">
+                </div>
+              </div>
+            </div>
+          
+            <!-- Info Section -->
+            <div class="chair-info-section">
+              <h2 class="chair-product-title">Silla Director Supreme Edition</h2>
+              
+              <div class="chair-product-price">
+                <span class="chair-price-current">$199.999 ARS</span>
+                <span class="price-label">Precio final - Edición limitada</span>
+              </div>
+              
+              <p class="chair-product-description">
+                La expresión máxima del streetwear de lujo aplicado al mobiliario premium. Diseñada en colaboración exclusiva con Supreme, 
+                esta silla de director representa la fusión perfecta entre el icónico estilo Supreme y la filosofía RAPER. Una pieza 
+                de colección única que combina materiales premium, diseño vanguardista y la exclusividad que caracteriza a ambas marcas, 
+                creando una experiencia de confort que trasciende las fronteras del arte urbano y el diseño de interiores.
+              </p>
+
+              <!-- Descripción Colapsable -->
+              <div class="product-description-section">
+                <button class="description-toggle-btn" onclick="toggleDescription()">
+                  <span>Descripción</span>
+                  <span class="toggle-icon">▼</span>
+                </button>
+                
+                <div class="description-content" id="description-content">
+                  <!-- Características Técnicas -->
+                  <div class="product-features">
+                    <h3 class="features-title">Especificaciones Técnicas Supreme</h3>
+                    <ul class="features-list">
+                      <li class="feature-item">
+                        <span class="feature-icon">◆</span>
+                        <span>Estructura de titanio ligero con logo Supreme integrado</span>
+                      </li>
+                      <li class="feature-item">
+                        <span class="feature-icon">◇</span>
+                        <span>Tapizado en cuero italiano premium con bordado Supreme</span>
+                      </li>
+                      <li class="feature-item">
+                        <span class="feature-icon">◈</span>
+                        <span>Sistema de reclinación híbrido de 85° a 180°</span>
+                      </li>
+                      <li class="feature-item">
+                        <span class="feature-icon">◉</span>
+                        <span>Reposabrazos con tecnología anti-fatiga Supreme</span>
+                      </li>
+                      <li class="feature-item">
+                        <span class="feature-icon">◐</span>
+                        <span>Soporte lumbar inteligente con adaptación automática</span>
+                      </li>
+                      <li class="feature-item">
+                        <span class="feature-icon">◑</span>
+                        <span>Base giratoria Supreme con rodamientos de precisión</span>
+                      </li>
+                      <li class="feature-item">
+                        <span class="feature-icon">◒</span>
+                        <span>Capacidad de peso: hasta 180kg</span>
+                      </li>
+                      <li class="feature-item">
+                        <span class="feature-icon">◓</span>
+                        <span>Garantía vitalicia RAPER x Supreme</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="chair-actions">
+                <div class="quantity-selector">
+                  <button class="quantity-btn" onclick="updateChairQuantity(-1)">-</button>
+                  <input type="number" id="chair-quantity" class="quantity-input" value="1" min="1" readonly>
+                  <button class="quantity-btn" onclick="updateChairQuantity(1)">+</button>
+                </div>
+                <button class="chair-add-to-cart" onclick="addChairToCart()">
+                  AGREGAR AL CARRITO
+                </button>
+              </div>
+            
+              <!-- Metadatos del Producto -->
+              <div class="product-meta">
+                <div class="meta-row">
+                  <span class="meta-label">SKU:</span>
+                  <span class="meta-value">RAPER-CHAIR-SUPREME-003</span>
+                </div>
+                <div class="meta-row">
+                  <span class="meta-label">Categoría:</span>
+                  <span class="meta-value">Sillas de Director Supreme - Edición Limitada</span>
+                </div>
+                <div class="meta-row">
+                  <span class="meta-label">Características:</span>
+                  <span class="meta-value">Supreme, titanio, cuero italiano, edición limitada</span>
+                </div>
+                <div class="meta-row">
+                  <span class="meta-label">Envío:</span>
+                  <span class="meta-value">Gratis + Instalación premium incluida</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js"></script>
+  <script src="js/webflow.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/theme.js"></script>
+
+  <!-- Side Cart -->
+  <div id="side-cart-container" class="side-cart-container">
+    <div id="side-cart-overlay" class="side-cart-overlay"></div>
+    <div id="side-cart" class="side-cart">
+      <button id="close-cart-btn" class="close-cart-btn">&times;</button>
+      <div id="side-cart-content" class="side-cart-content">
+        <p>Cargando carrito...</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ===== FUNCIONES DE GALERÍA DE IMÁGENES Y VIDEO =====
+    function changeMainImage(imageSrc, thumbnailElement) {
+      const mainImage = document.getElementById('main-chair-image');
+      const mainVideo = document.getElementById('main-chair-video');
+      const videoOverlay = document.getElementById('video-overlay');
+      
+      // Mostrar imagen, ocultar video
+      mainImage.style.display = 'block';
+      mainVideo.style.display = 'none';
+      videoOverlay.style.display = 'none';
+      
+      // Pausar video si está reproduciéndose
+      if (!mainVideo.paused) {
+        mainVideo.pause();
+      }
+      
+      mainImage.src = imageSrc;
+      
+      // Actualizar thumbnail activo
+      document.querySelectorAll('.thumbnail-item').forEach(item => {
+        item.classList.remove('active');
+      });
+      thumbnailElement.classList.add('active');
+      
+      // Efecto de transición
+      mainImage.style.opacity = '0.7';
+      setTimeout(() => {
+        mainImage.style.opacity = '1';
+      }, 200);
+    }
+
+    function showMainVideo(thumbnailElement) {
+      const mainImage = document.getElementById('main-chair-image');
+      const mainVideo = document.getElementById('main-chair-video');
+      const videoOverlay = document.getElementById('video-overlay');
+      const videoBtn = document.getElementById('main-video-btn');
+      
+      // Mostrar video, ocultar imagen
+      mainImage.style.display = 'none';
+      mainVideo.style.display = 'block';
+      videoOverlay.style.display = 'flex';
+      
+      // Actualizar thumbnail activo
+      document.querySelectorAll('.thumbnail-item').forEach(item => {
+        item.classList.remove('active');
+      });
+      thumbnailElement.classList.add('active');
+      
+      // Actualizar botón según estado del video
+      videoBtn.textContent = mainVideo.paused ? '▶' : '⏸';
+      
+      // Reiniciar autoplay si fue pausado
+      if (mainVideo.paused) {
+        const playPromise = mainVideo.play();
+        if (playPromise !== undefined) {
+          playPromise.then(() => {
+            videoBtn.textContent = '⏸';
+            console.log('▶️ Video reanudado automáticamente');
+          }).catch(error => {
+            console.log('🔇 No se pudo reanudar automáticamente');
+          });
+        }
+      }
+      
+      // Efecto de transición
+      mainVideo.style.opacity = '0.7';
+      setTimeout(() => {
+        mainVideo.style.opacity = '1';
+      }, 100);
+    }
+
+    function toggleMainVideo() {
+      const mainVideo = document.getElementById('main-chair-video');
+      const videoBtn = document.getElementById('main-video-btn');
+      
+      if (mainVideo.paused) {
+        const playPromise = mainVideo.play();
+        if (playPromise !== undefined) {
+          playPromise.then(() => {
+            videoBtn.textContent = '⏸';
+            console.log('▶️ Video reproducido manualmente');
+          }).catch(error => {
+            console.log('🔇 Error al reproducir video manualmente');
+          });
+        }
+      } else {
+        mainVideo.pause();
+        videoBtn.textContent = '▶';
+        console.log('⏸️ Video pausado manualmente');
+      }
+    }
+
+    // ===== FUNCIONES DEL PRODUCTO =====
+    function updateChairQuantity(change) {
+      const quantityInput = document.getElementById('chair-quantity');
+      let currentQuantity = parseInt(quantityInput.value) || 1;
+      const newQuantity = Math.max(1, currentQuantity + change);
+      quantityInput.value = newQuantity;
+    }
+
+    function addChairToCart() {
+      const quantity = parseInt(document.getElementById('chair-quantity').value) || 1;
+      const product = {
+        id: 'raper-chair-supreme-003',
+        name: 'Silla Director Supreme Edition',
+        price: 199999,
+        image: 'https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/silla.jpg',
+        quantity: quantity,
+        category: 'Supreme Limited Edition'
+      };
+
+      // Agregar al carrito (usando función del cart.js)
+      if (typeof addToCart === 'function') {
+        addToCart(product);
+      } else {
+        // Fallback si cart.js no está cargado
+        let cart = JSON.parse(localStorage.getItem('raperCart')) || [];
+        const existingIndex = cart.findIndex(item => item.id === product.id);
+        
+        if (existingIndex > -1) {
+          cart[existingIndex].quantity += quantity;
+        } else {
+          cart.push(product);
+        }
+        
+        localStorage.setItem('raperCart', JSON.stringify(cart));
+        updateCartUI();
+      }
+
+      // Mostrar feedback visual
+      const addButton = document.querySelector('.chair-add-to-cart');
+      const originalText = addButton.textContent;
+      addButton.textContent = '✓ AGREGADO AL CARRITO';
+      addButton.style.background = '#4fd1c5';
+      
+      setTimeout(() => {
+        addButton.textContent = originalText;
+        addButton.style.background = 'linear-gradient(135deg, #5fa4ff 0%, #4fd1c5 100%)';
+      }, 2000);
+    }
+
+    function toggleDescription() {
+      const toggleBtn = document.querySelector('.description-toggle-btn');
+      const content = document.getElementById('description-content');
+      
+      toggleBtn.classList.toggle('active');
+      content.classList.toggle('open');
+    }
+
+    function updateCartUI() {
+      const cart = JSON.parse(localStorage.getItem('raperCart')) || [];
+      const cartCount = document.getElementById('cart-count');
+      if (cartCount) {
+        const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+        cartCount.textContent = totalItems;
+        cartCount.style.display = totalItems > 0 ? 'block' : 'none';
+      }
+    }
+
+    // Función para mostrar carrito (compatibilidad con navbar)
+    function showCart() {
+      console.log('🛒 Mostrar carrito - función llamada');
+      // Si existe la función openSideCart del sistema de carrito, usarla
+      if (typeof openSideCart === 'function') {
+        openSideCart();
+      } else {
+        // Fallback: mostrar el carrito lateral si existe
+        const sideCart = document.getElementById('side-cart-container');
+        if (sideCart) {
+          sideCart.style.display = 'block';
+          sideCart.classList.add('active');
+        }
+      }
+    }
+
+    // ===== INICIALIZACIÓN =====
+    document.addEventListener('DOMContentLoaded', function() {
+      console.log('🪑 Página de Silla Director Supreme Edition cargada');
+      
+      // Inicializar contador del carrito
+      updateCartUI();
+      
+      // Mobile Menu FUNCIONAL - Silla Supreme
+      const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+      
+      if (mobileMenuToggle && mobileMenu) {
+        // Asegurar estado inicial correcto
+        mobileMenu.classList.remove('active');
+        mobileMenuToggle.classList.remove('active');
+        document.body.style.overflow = '';
+        
+        // Event listener para el botón hamburguesa
+        mobileMenuToggle.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          
+          console.log('🍔 Toggle menú móvil clickeado - Silla Supreme');
+          
+          mobileMenuToggle.classList.toggle('active');
+          mobileMenu.classList.toggle('active');
+          
+          // Prevenir scroll del body cuando menú está abierto
+          if (mobileMenu.classList.contains('active')) {
+            document.body.style.overflow = 'hidden';
+          } else {
+            document.body.style.overflow = '';
+          }
+        });
+        
+        // Cerrar menú cuando se hace click en links
+        mobileMenuLinks.forEach(link => {
+          link.addEventListener('click', function() {
+            console.log('🔗 Link del menú móvil clickeado - Silla Supreme');
+            mobileMenuToggle.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+          });
+        });
+        
+        // Cerrar menú cuando se hace click fuera de él
+        document.addEventListener('click', function(e) {
+          if (!mobileMenu.contains(e.target) && 
+              !mobileMenuToggle.contains(e.target) && 
+              mobileMenu.classList.contains('active')) {
+            console.log('📱 Click fuera del menú - cerrando - Silla Supreme');
+            mobileMenuToggle.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+          }
+        });
+        
+        // Cerrar menú con tecla Escape
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+            console.log('⌨️ Escape presionado - cerrando menú - Silla Supreme');
+            mobileMenuToggle.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+          }
+        });
+        
+        console.log('📱 Menú móvil funcional inicializado correctamente - Silla Supreme');
+      } else {
+        console.warn('⚠️ No se encontraron elementos del menú móvil - Silla Supreme');
+      }
+      
+      // Actualizar estado inicial del video
+      const mainVideo = document.getElementById('main-chair-video');
+      const videoBtn = document.getElementById('main-video-btn');
+      
+      if (mainVideo && videoBtn) {
+        // Escuchar eventos del video
+        mainVideo.addEventListener('play', () => {
+          videoBtn.textContent = '⏸';
+        });
+        
+        mainVideo.addEventListener('pause', () => {
+          videoBtn.textContent = '▶';
+        });
+        
+        // Estado inicial
+        videoBtn.textContent = mainVideo.paused ? '▶' : '⏸';
+        
+        console.log('🎬 Video rojo_girando.mp4 inicializado correctamente');
+      }
+    });
+  </script>
+
+</body>
+</html> 
