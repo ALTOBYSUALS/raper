@@ -15,9 +15,9 @@
   <script type="text/javascript">WebFont.load({  google: {    families: ["Montserrat:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic"]  }});</script>
   <link href="https://res.cloudinary.com/dt5pkdr0k/image/upload/v1747379718/fabicon_2_1_j76m5a.png" rel="shortcut icon" type="image/x-icon">
 </head>
-<body class="dark-mode">
-  <div class="page-wrapper">
-    <!-- Navbar Original RAPER -->
+<body>
+  <div class="page-wrapper is-relative">
+    <!-- NAVBAR EXACTA DE INDEX.HTML -->
     <div class="navbar-sticky">
       <div class="padding-global is_full-height">
         <div class="container-large is_full-height">
@@ -31,28 +31,28 @@
                 <a href="store.html" class="navbar-sticky__link">Tienda</a>
                 <a href="careers.html" class="navbar-sticky__link">Trabaja con Nosotros</a>
               </div>
-            </div>
-            <div class="navbar-actions">
-              <div class="cart-icon-wrapper" onclick="showCart()">
-                <svg class="cart-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M9 22C9.55228 22 10 21.5523 10 21C10 20.4477 9.55228 20 9 20C8.44772 20 8 20.4477 8 21C8 21.5523 8.44772 22 9 22Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M20 22C20.5523 22 21 21.5523 21 21C21 20.4477 20.5523 20 20 20C19.4477 20 19 20.4477 19 21C19 21.5523 19.4477 22 20 22Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M1 1H5L7.68 14.39C7.77144 14.8504 8.02191 15.264 8.38755 15.5583C8.75318 15.8526 9.2107 16.009 9.68 16H19.4C19.8693 16.009 20.3268 15.8526 20.6925 15.5583C21.0581 15.264 21.3086 14.8504 21.4 14.39L23 6H6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <div id="cart-count">0</div>
+              <div class="navbar-actions">
+                <div class="cart-icon-wrapper" onclick="showCart()">
+                  <svg class="cart-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 22C9.55228 22 10 21.5523 10 21C10 20.4477 9.55228 20 9 20C8.44772 20 8 20.4477 8 21C8 21.5523 8.44772 22 9 22Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M20 22C20.5523 22 21 21.5523 21 21C21 20.4477 20.5523 20 20 20C19.4477 20 19 20.4477 19 21C19 21.5523 19.4477 22 20 22Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M1 1H5L7.68 14.39C7.77144 14.8504 8.02191 15.264 8.38755 15.5583C8.75318 15.8526 9.2107 16.009 9.68 16H19.4C19.8693 16.009 20.3268 15.8526 20.6925 15.5583C21.0581 15.264 21.3086 14.8504 21.4 14.39L23 6H6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  <div id="cart-count">0</div>
+                </div>
               </div>
-              <!-- Mobile Menu Button -->
-              <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-              </button>
             </div>
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+              <span class="hamburger-line"></span>
+              <span class="hamburger-line"></span>
+              <span class="hamburger-line"></span>
+            </button>
           </div>
         </div>
       </div>
       <div class="navbar-sticky__background"></div>
-          
+      
       <!-- Mobile Menu -->
       <div class="mobile-menu" id="mobile-menu">
         <div class="mobile-menu-links">
@@ -73,44 +73,46 @@
       </div>
     </div>
 
-    <!-- Main Content -->
-    <main class="aesthetic-main">
-      <!-- Hero Estético -->
-      <section class="hero-aesthetic">
-        <div class="hero-content-aesthetic">
-          <div class="hero-badge-aesthetic">RAPER COMPANY</div>
-          <h1 class="hero-title-aesthetic">
-            Producimos tu carrera
-          </h1>
-          <p class="hero-subtitle-aesthetic">SELLO DISCOGRÁFICO & EMPRESA CREATIVA</p>
-        </div>
-      </section>
+    <!-- MAIN CONTENT - DISEÑO DE LA REFERENCIA -->
+    <main class="main-wrapper">
+      <div class="careers-page-container">
+        <div class="careers-content">
+          <!-- Header Section -->
+          <div class="careers-header">
+            <div class="careers-badge">RAPER COMPANY</div>
+            <h1 class="careers-title">Producimos tu carrera</h1>
+            <p class="careers-subtitle">SELLO DISCOGRÁFICO & EMPRESA CREATIVA</p>
+          </div>
 
-      <!-- Formulario Central -->
-      <section class="form-section-aesthetic">
-        <div class="form-container-aesthetic">
-          <h2 class="form-title-aesthetic">Únete a nosotros</h2>
-          <form class="career-form-aesthetic" id="careerForm">
-            <div class="form-group-aesthetic">
-              <input type="text" id="artistName" class="form-input-aesthetic" placeholder="Nombre artístico" required>
+          <!-- Form Section -->
+          <div class="careers-form-section">
+            <div class="form-container">
+              <h2 class="form-title">Únete a nosotros</h2>
+              <form class="careers-form" id="careersForm">
+                <div class="form-field">
+                  <input type="text" id="artistName" placeholder="Nombre artístico" required>
+                </div>
+                <div class="form-field">
+                  <input type="email" id="email" placeholder="Email" required>
+                </div>
+                <div class="form-field">
+                  <input type="text" id="specialty" placeholder="Tu especialidad" required>
+                </div>
+                <div class="form-field">
+                  <textarea id="vision" placeholder="Cuéntanos tu visión artística..." rows="4" required></textarea>
+                </div>
+                <button type="submit" class="submit-button">ENVIAR PROPUESTA</button>
+              </form>
+              
+              <!-- Contact Direct -->
+              <div class="contact-direct">
+                <p>O contáctanos directamente:</p>
+                <a href="tel:+17869781978" class="phone-link">+1 (786) 978-1978</a>
+              </div>
             </div>
-            <div class="form-group-aesthetic">
-              <input type="email" id="email" class="form-input-aesthetic" placeholder="Email" required>
-            </div>
-            <div class="form-group-aesthetic">
-              <input type="text" id="specialty" class="form-input-aesthetic" placeholder="Tu especialidad" required>
-            </div>
-            <div class="form-group-aesthetic">
-              <textarea id="vision" class="form-textarea-aesthetic" placeholder="Cuéntanos tu visión artística..." rows="4" required></textarea>
-            </div>
-            <button type="submit" class="form-submit-aesthetic">ENVIAR PROPUESTA</button>
-          </form>
-          <div class="contact-direct-aesthetic">
-            <p>O contáctanos directamente:</p>
-            <a href="tel:+17869781978" class="phone-link-aesthetic">+1 (786) 978-1978</a>
           </div>
         </div>
-      </section>
+      </div>
     </main>
 
     <!-- Side Cart -->
@@ -126,123 +128,111 @@
   </div>
 
   <!-- Scripts -->
-  <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js"></script>
-  <script src="js/webflow.js"></script>
-  <script src="js/cart.js"></script>
-  <script src="js/theme.js"></script>
-  <script src="js/mobile-cart-fixes.js"></script>
+  <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=68269b7b12f8a3ad86be7d56" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <script src="js/webflow.js" type="text/javascript"></script>
+  <script src="js/cart.js" type="text/javascript"></script>
+  <script src="js/theme.js" type="text/javascript"></script>
+  <script src="js/mobile-cart-fixes.js" type="text/javascript"></script>
 
-  <!-- ESTILOS ESTÉTICOS -->
   <style>
-    /* ===== VARIABLES Y BASE ===== */
+    /* ===== ESTILOS CAREERS PAGE - DISEÑO REFERENCIA ===== */
+    
+    /* Variables */
     :root {
       --raper-blue: #5fa4ff;
       --raper-teal: #4fd1c5;
       --dark-bg: #0a0a0a;
-      --card-bg: rgba(20, 20, 20, 0.9);
       --text-primary: #ffffff;
       --text-secondary: #b0b0b0;
       --border-color: rgba(95, 164, 255, 0.2);
+      --form-bg: rgba(30, 30, 30, 0.8);
     }
 
-    .dark-mode {
+    /* Page Container */
+    .careers-page-container {
+      min-height: 100vh;
       background-color: var(--dark-bg);
-      color: var(--text-primary);
-      font-family: 'Montserrat', sans-serif;
-    }
-
-    /* ===== HERO SECTION ===== */
-    .hero-aesthetic {
-      min-height: 60vh;
+      padding: 12rem 2rem 8rem 2rem;
       display: flex;
       align-items: center;
       justify-content: center;
-      text-align: center;
-      padding: 12rem 2rem 6rem 2rem;
-      background: radial-gradient(ellipse at center, rgba(95, 164, 255, 0.1) 0%, transparent 70%);
     }
 
-    .hero-content-aesthetic {
+    .careers-content {
       max-width: 800px;
-      margin: 0 auto;
+      width: 100%;
+      text-align: center;
     }
 
-    .hero-badge-aesthetic {
+    /* Header */
+    .careers-header {
+      margin-bottom: 6rem;
+    }
+
+    .careers-badge {
       display: inline-block;
-      padding: 0.8rem 2rem;
-      background: rgba(95, 164, 255, 0.1);
-      border: 1px solid var(--border-color);
-      border-radius: 50px;
-      font-size: 1.2rem;
+      color: var(--raper-blue);
+      font-size: 1.4rem;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.2em;
-      color: var(--raper-blue);
-      margin-bottom: 3rem;
-    }
-
-    .hero-title-aesthetic {
-      font-size: 5rem;
-      font-weight: 700;
       margin-bottom: 2rem;
-      line-height: 1.2;
-      background: linear-gradient(135deg, var(--text-primary) 0%, var(--raper-blue) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      font-family: 'Montserrat', sans-serif;
     }
 
-    .hero-subtitle-aesthetic {
+    .careers-title {
+      font-size: 4.8rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 1.5rem;
+      line-height: 1.1;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .careers-subtitle {
       font-size: 1.6rem;
       font-weight: 400;
       color: var(--text-secondary);
       text-transform: uppercase;
-      letter-spacing: 0.3em;
+      letter-spacing: 0.15em;
       margin: 0;
+      font-family: 'Montserrat', sans-serif;
     }
 
-    /* ===== FORM SECTION ===== */
-    .form-section-aesthetic {
-      padding: 6rem 2rem;
+    /* Form Section */
+    .careers-form-section {
       display: flex;
       justify-content: center;
-      align-items: center;
-      min-height: 70vh;
     }
 
-    .form-container-aesthetic {
-      background: var(--card-bg);
-      border: 1px solid var(--border-color);
+    .form-container {
+      background: var(--form-bg);
       border-radius: 2rem;
       padding: 4rem;
       max-width: 600px;
       width: 100%;
       backdrop-filter: blur(20px);
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+      border: 1px solid var(--border-color);
     }
 
-    .form-title-aesthetic {
+    .form-title {
       font-size: 2.4rem;
       font-weight: 600;
-      text-align: center;
-      margin-bottom: 3rem;
       color: var(--text-primary);
+      margin-bottom: 3rem;
+      font-family: 'Montserrat', sans-serif;
     }
 
-    .career-form-aesthetic {
+    .careers-form {
       display: flex;
       flex-direction: column;
       gap: 2rem;
     }
 
-    .form-group-aesthetic {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .form-input-aesthetic,
-    .form-textarea-aesthetic {
-      background: rgba(40, 40, 40, 0.8);
+    .form-field input,
+    .form-field textarea {
+      width: 100%;
+      background: rgba(60, 60, 60, 0.6);
       border: 1px solid rgba(95, 164, 255, 0.3);
       border-radius: 1rem;
       padding: 1.5rem;
@@ -250,29 +240,29 @@
       color: var(--text-primary);
       font-family: 'Montserrat', sans-serif;
       transition: all 0.3s ease;
-      resize: vertical;
+      box-sizing: border-box;
     }
 
-    .form-input-aesthetic:focus,
-    .form-textarea-aesthetic:focus {
+    .form-field input:focus,
+    .form-field textarea:focus {
       outline: none;
       border-color: var(--raper-blue);
-      box-shadow: 0 0 20px rgba(95, 164, 255, 0.3);
-      background: rgba(60, 60, 60, 0.9);
+      background: rgba(80, 80, 80, 0.8);
+      box-shadow: 0 0 20px rgba(95, 164, 255, 0.2);
     }
 
-    .form-input-aesthetic::placeholder,
-    .form-textarea-aesthetic::placeholder {
+    .form-field input::placeholder,
+    .form-field textarea::placeholder {
       color: var(--text-secondary);
       font-size: 1.4rem;
     }
 
-    .form-textarea-aesthetic {
+    .form-field textarea {
+      resize: vertical;
       min-height: 120px;
-      font-family: 'Montserrat', sans-serif;
     }
 
-    .form-submit-aesthetic {
+    .submit-button {
       background: linear-gradient(135deg, var(--raper-blue) 0%, var(--raper-teal) 100%);
       color: #000;
       border: none;
@@ -288,137 +278,123 @@
       font-family: 'Montserrat', sans-serif;
     }
 
-    .form-submit-aesthetic:hover {
+    .submit-button:hover {
       transform: translateY(-2px);
-      box-shadow: 0 15px 40px rgba(95, 164, 255, 0.4);
+      box-shadow: 0 10px 30px rgba(95, 164, 255, 0.4);
     }
 
-    .contact-direct-aesthetic {
-      text-align: center;
+    /* Contact Direct */
+    .contact-direct {
       margin-top: 3rem;
       padding-top: 2rem;
       border-top: 1px solid var(--border-color);
     }
 
-    .contact-direct-aesthetic p {
-      font-size: 1.4rem;
+    .contact-direct p {
       color: var(--text-secondary);
+      font-size: 1.4rem;
       margin-bottom: 1rem;
+      font-family: 'Montserrat', sans-serif;
     }
 
-    .phone-link-aesthetic {
+    .phone-link {
+      color: var(--raper-teal);
       font-size: 1.8rem;
       font-weight: 600;
-      color: var(--raper-teal);
       text-decoration: none;
       transition: all 0.3s ease;
+      font-family: 'Montserrat', sans-serif;
     }
 
-    .phone-link-aesthetic:hover {
+    .phone-link:hover {
       color: var(--raper-blue);
       text-shadow: 0 0 10px rgba(95, 164, 255, 0.5);
     }
 
-    /* ===== RESPONSIVE DESIGN ===== */
+    /* Responsive */
     @media screen and (max-width: 768px) {
-      .hero-title-aesthetic {
+      .careers-page-container {
+        padding: 10rem 1.5rem 6rem 1.5rem;
+      }
+
+      .careers-title {
         font-size: 3.5rem;
       }
 
-      .hero-subtitle-aesthetic {
+      .careers-subtitle {
         font-size: 1.3rem;
-        letter-spacing: 0.2em;
+        letter-spacing: 0.1em;
       }
 
-      .form-container-aesthetic {
-        padding: 2.5rem;
-        margin: 0 1rem;
+      .form-container {
+        padding: 3rem 2rem;
       }
 
-      .form-title-aesthetic {
+      .form-title {
         font-size: 2rem;
       }
 
-      .form-input-aesthetic,
-      .form-textarea-aesthetic {
+      .form-field input,
+      .form-field textarea {
         padding: 1.2rem;
         font-size: 1.4rem;
       }
 
-      .form-submit-aesthetic {
+      .submit-button {
         padding: 1.5rem 2.5rem;
         font-size: 1.4rem;
       }
     }
 
     @media screen and (max-width: 480px) {
-      .hero-aesthetic {
-        padding: 10rem 1rem 4rem 1rem;
+      .careers-page-container {
+        padding: 8rem 1rem 4rem 1rem;
       }
 
-      .hero-title-aesthetic {
+      .careers-badge {
+        font-size: 1.2rem;
+      }
+
+      .careers-title {
         font-size: 2.8rem;
       }
 
-      .form-container-aesthetic {
-        padding: 2rem;
+      .careers-subtitle {
+        font-size: 1.1rem;
       }
 
-      .hero-badge-aesthetic {
-        font-size: 1rem;
-        padding: 0.6rem 1.5rem;
+      .form-container {
+        padding: 2rem 1.5rem;
+        border-radius: 1.5rem;
       }
-    }
 
-    /* ===== ALERTS Y FEEDBACK ===== */
-    .success-message {
-      background: linear-gradient(135deg, #4fd1c5 0%, #38b2ac 100%);
-      color: #000;
-      padding: 1.5rem;
-      border-radius: 1rem;
-      text-align: center;
-      font-weight: 600;
-      margin-top: 2rem;
-      display: none;
-    }
+      .form-title {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+      }
 
-    .error-message {
-      background: linear-gradient(135deg, #ff6b6b 0%, #ff5252 100%);
-      color: #fff;
-      padding: 1.5rem;
-      border-radius: 1rem;
-      text-align: center;
-      font-weight: 600;
-      margin-top: 2rem;
-      display: none;
+      .careers-form {
+        gap: 1.5rem;
+      }
     }
   </style>
 
   <script>
-    // ===== FUNCIONALIDAD DEL FORMULARIO =====
+    // ===== FUNCIONALIDAD CAREERS PAGE =====
     document.addEventListener('DOMContentLoaded', function() {
-      console.log('🎯 Página careers estética cargada correctamente');
+      console.log('🎯 Careers page cargada - diseño referencia');
       
-      // Inicializar contador del carrito
+      // Cart UI
       updateCartUI();
       
-      // Mobile Menu FUNCIONAL
+      // Mobile Menu - EXACTO DE INDEX.HTML
       const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
       const mobileMenu = document.getElementById('mobile-menu');
-      const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
       
       if (mobileMenuToggle && mobileMenu) {
-        // Estado inicial
-        mobileMenu.classList.remove('active');
-        mobileMenuToggle.classList.remove('active');
-        document.body.style.overflow = '';
-        
-        // Toggle del menú
         mobileMenuToggle.addEventListener('click', function(e) {
           e.preventDefault();
           e.stopPropagation();
-          
-          console.log('🍔 Toggle menú móvil careers');
           
           mobileMenuToggle.classList.toggle('active');
           mobileMenu.classList.toggle('active');
@@ -431,7 +407,7 @@
         });
         
         // Cerrar con links
-        mobileMenuLinks.forEach(link => {
+        document.querySelectorAll('.mobile-menu-link').forEach(link => {
           link.addEventListener('click', function() {
             mobileMenuToggle.classList.remove('active');
             mobileMenu.classList.remove('active');
@@ -449,23 +425,12 @@
             document.body.style.overflow = '';
           }
         });
-        
-        // Cerrar con Escape
-        document.addEventListener('keydown', function(e) {
-          if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
-            mobileMenuToggle.classList.remove('active');
-            mobileMenu.classList.remove('active');
-            document.body.style.overflow = '';
-          }
-        });
-        
-        console.log('📱 Menú móvil careers inicializado');
       }
       
-      // Formulario de carrera
-      const careerForm = document.getElementById('careerForm');
-      if (careerForm) {
-        careerForm.addEventListener('submit', function(e) {
+      // Form functionality
+      const careersForm = document.getElementById('careersForm');
+      if (careersForm) {
+        careersForm.addEventListener('submit', function(e) {
           e.preventDefault();
           
           const formData = {
@@ -475,10 +440,9 @@
             vision: document.getElementById('vision').value
           };
           
-          console.log('📝 Formulario de carrera enviado:', formData);
+          console.log('📝 Careers form submitted:', formData);
           
-          // Simular envío
-          const submitBtn = document.querySelector('.form-submit-aesthetic');
+          const submitBtn = document.querySelector('.submit-button');
           const originalText = submitBtn.textContent;
           
           submitBtn.textContent = 'ENVIANDO...';
@@ -486,7 +450,7 @@
           submitBtn.style.opacity = '0.7';
           
           setTimeout(() => {
-            submitBtn.textContent = '✓ PROPUESTA ENVIADA';
+            submitBtn.textContent = '✓ ENVIADO';
             submitBtn.style.background = 'linear-gradient(135deg, #4fd1c5 0%, #38b2ac 100%)';
             
             setTimeout(() => {
@@ -494,22 +458,20 @@
               submitBtn.disabled = false;
               submitBtn.style.opacity = '1';
               submitBtn.style.background = 'linear-gradient(135deg, #5fa4ff 0%, #4fd1c5 100%)';
-              careerForm.reset();
-            }, 3000);
-          }, 2000);
+              careersForm.reset();
+            }, 2500);
+          }, 1500);
         });
       }
     });
 
-    // Función para mostrar carrito
+    // Cart functions
     function showCart() {
-      console.log('🛒 Show cart function called');
       if (typeof openSideCart === 'function') {
         openSideCart();
       }
     }
 
-    // Actualizar UI del carrito
     function updateCartUI() {
       const cart = JSON.parse(localStorage.getItem('raperCart')) || [];
       const cartCount = document.getElementById('cart-count');
