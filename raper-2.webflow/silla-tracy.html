@@ -2,7 +2,7 @@
 <html data-wf-page="68269b7c12f8a3ad86be7f60" data-wf-site="68269b7b12f8a3ad86be7d56">
 <head>
   <meta charset="utf-8">
-  <title>Silla Tracy Edition - RAPER</title>
+  <title>Edición RAPER Carnal - RAPER</title>
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <link href="css/normalize.css" rel="stylesheet" type="text/css">
   <link href="css/webflow.css" rel="stylesheet" type="text/css">
@@ -55,7 +55,7 @@
           100% { text-shadow: 0 0 15px rgba(95, 164, 255, 0.8), 0 0 20px rgba(95, 164, 255, 0.4); }
         }
 
-        /* ===== ESTILOS PARA LA PÁGINA DE PRODUCTO TRACY ===== */
+        /* ===== ESTILOS PARA LA PÁGINA DE PRODUCTO EDICION RAPER CARNAL ===== */
         .chair-product-section {
           background-color: #000;
           padding: 12rem 0 8rem 0;
@@ -92,7 +92,7 @@
           align-items: start;
         }
 
-        /* ===== GALERÍA DE IMÁGENES ===== */
+        /* ===== GALERÍA DE IMÁGENES Y VIDEO ===== */
         .chair-image-section {
           display: flex;
           flex-direction: column;
@@ -126,6 +126,59 @@
 
         .chair-main-image:hover {
           transform: scale(1.05);
+        }
+
+        .chair-main-video {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.5s ease;
+          border-radius: 2rem;
+        }
+
+        .chair-main-video:hover {
+          transform: scale(1.02);
+        }
+
+        .video-controls-overlay {
+          position: absolute;
+          bottom: 20px;
+          left: 50%;
+          transform: translateX(-50%);
+          background: rgba(0, 0, 0, 0.8);
+          border-radius: 50px;
+          padding: 10px 20px;
+          display: flex;
+          align-items: center;
+          gap: 15px;
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(95, 164, 255, 0.3);
+          transition: opacity 0.3s ease;
+          opacity: 0;
+        }
+
+        .chair-main-image-container:hover .video-controls-overlay {
+          opacity: 1;
+        }
+
+        .video-play-btn {
+          background: linear-gradient(135deg, #5fa4ff 0%, #4fd1c5 100%);
+          border: none;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          color: #000;
+          font-size: 16px;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: all 0.3s ease;
+        }
+
+        .video-play-btn:hover {
+          transform: scale(1.1);
+          box-shadow: 0 5px 15px rgba(95, 164, 255, 0.4);
         }
 
         .chair-thumbnail-gallery {
@@ -436,24 +489,35 @@
     <section class="chair-product-section">
       <div class="chair-product-container">
         <div class="product-header">
-          <h1>Silla Tracy Edition</h1>
+          <h1>Edición RAPER Carnal</h1>
         </div>
 
         <div class="chair-product-layout">
-          <!-- Galería de Imágenes -->
+          <!-- Galería de Imágenes y Video -->
           <div class="chair-image-section">
-            <div class="chair-main-image-container">
-              <img id="mainImage" src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/tracy%201.jpg" alt="Silla Tracy Edition" class="chair-main-image">
+            <div class="chair-main-image-container" id="mainContainer">
+              <img id="mainImage" src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/tracy%201.jpg" alt="Edición RAPER Carnal" class="chair-main-image">
+              <video id="mainVideo" class="chair-main-video" style="display: none;" autoplay muted loop>
+                <source src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/verde_girando.mp4" type="video/mp4">
+              </video>
+              <div class="video-controls-overlay" id="videoControls" style="display: none;">
+                <button class="video-play-btn" onclick="toggleVideoPlayback()">
+                  <span id="playIcon">▶</span>
+                </button>
+              </div>
             </div>
             
             <div class="chair-thumbnail-gallery">
-              <div class="thumbnail-item active" onclick="changeImage('https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/tracy%201.jpg', this)">
+              <div class="thumbnail-item active" onclick="changeMedia('image', 'https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/tracy%201.jpg', this)">
                 <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/tracy%201.jpg" alt="Vista Principal" class="thumbnail-image">
               </div>
-              <div class="thumbnail-item" onclick="changeImage('https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/tracy%201.jpg', this)">
-                <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/tracy%201.jpg" alt="Vista Lateral" class="thumbnail-image">
+              <div class="thumbnail-item" onclick="changeMedia('video', 'https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/verde_girando.mp4', this)">
+                <div style="position: relative; width: 100%; height: 100%; background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%); display: flex; align-items: center; justify-content: center; border-radius: 1rem;">
+                  <div style="color: #4fd1c5; font-size: 2rem;">▶</div>
+                  <div style="position: absolute; bottom: 5px; left: 50%; transform: translateX(-50%); color: #fff; font-size: 1rem; font-weight: 600;">VIDEO</div>
+                </div>
               </div>
-              <div class="thumbnail-item" onclick="changeImage('https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/tracy%201.jpg', this)">
+              <div class="thumbnail-item" onclick="changeMedia('image', 'https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/tracy%201.jpg', this)">
                 <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/tracy%201.jpg" alt="Vista Detalle" class="thumbnail-image">
               </div>
             </div>
@@ -461,12 +525,12 @@
 
           <!-- Información del Producto -->
           <div class="chair-product-info">
-            <h2 class="product-title">Silla Tracy Edition</h2>
-            <p class="product-artist">Colaboración con Artista Tracy</p>
-            <p class="product-price">$320.000 ARS</p>
+            <h2 class="product-title">Edición RAPER Carnal</h2>
+            <p class="product-artist">Edición Exclusiva RAPER Company</p>
+            <p class="product-price">$375.000 ARS</p>
             
             <div class="product-description">
-              <p>Silla de director de edición limitada inspirada en el estilo urbano y la elegancia contemporánea. Diseñada en colaboración con la artista Tracy, esta pieza combina funcionalidad premium con un diseño que refleja la estética del trap y la cultura urbana moderna.</p>
+              <p>Silla de director de edición ultra limitada que representa la esencia más cruda y auténtica del rap argentino. La Edición RAPER Carnal es una declaración de principios: sin filtros, sin concesiones, puro rap de barrio elevado al máximo nivel de calidad y exclusividad.</p>
             </div>
 
             <!-- Sección de Descripción Colapsable -->
@@ -479,28 +543,32 @@
               <div class="description-content" id="descriptionContent">
                 <h3>Especificaciones Técnicas</h3>
                 <ul>
-                  <li><strong>Material:</strong> Estructura de aluminio reforzado con acabado mate</li>
-                  <li><strong>Tapizado:</strong> Cuero sintético premium resistente al desgaste</li>
-                  <li><strong>Dimensiones:</strong> 85cm (alto) x 60cm (ancho) x 65cm (profundo)</li>
-                  <li><strong>Peso máximo:</strong> 150kg</li>
-                  <li><strong>Características:</strong> Plegable, portátil, resistente a la intemperie</li>
-                  <li><strong>Color:</strong> Negro con detalles en gradiente azul-verde RAPER</li>
+                  <li><strong>Material:</strong> Estructura de acero industrial con acabado crudo black matte</li>
+                  <li><strong>Tapizado:</strong> Cuero auténtico envejecido estilo barrio underground</li>
+                  <li><strong>Dimensiones:</strong> 89cm (alto) x 64cm (ancho) x 68cm (profundo)</li>
+                  <li><strong>Peso máximo:</strong> 180kg</li>
+                  <li><strong>Características:</strong> Ultra resistente, diseño street, acabados brutales</li>
+                  <li><strong>Color:</strong> Negro carbón con detalles en verde RAPER underground</li>
                 </ul>
 
-                <h3>Diseño Exclusivo</h3>
-                <p>Inspirada en la estética del trap urbano, la Silla Tracy Edition presenta líneas limpias y modernas que reflejan la sofisticación del género musical. El diseño minimalista se complementa con detalles sutiles que hacen referencia a la identidad visual de RAPER Company.</p>
+                <h3>Filosofía CARNAL</h3>
+                <p>La Edición RAPER Carnal no es solo una silla, es un manifiesto. Representa el rap más crudo, sin máscaras ni poses. Cada marca, cada detalle rugoso, cuenta la historia de las esquinas, de las freestyle battles, de la cultura que nació en el asfalto y conquistó el mundo.</p>
 
                 <h3>Incluye en la Caja</h3>
                 <ul>
-                  <li>1x Silla Tracy Edition completamente ensamblada</li>
-                  <li>1x Funda de transporte premium con logo RAPER</li>
-                  <li>1x Certificado de autenticidad firmado</li>
-                  <li>1x Manual de cuidado y mantenimiento</li>
-                  <li>1x Sticker pack exclusivo Tracy Edition</li>
+                  <li>1x Edición RAPER Carnal completamente ensamblada</li>
+                  <li>1x Funda militar táctica con logo CARNAL bordado</li>
+                  <li>1x Certificado de autenticidad numerado a mano</li>
+                  <li>1x Manual de supervivencia urbana</li>
+                  <li>1x Pack exclusivo de stickers underground</li>
+                  <li>1x Playlist "CARNAL SESSIONS" con rap argentino puro</li>
                 </ul>
 
-                <h3>Colaboración Artística</h3>
-                <p>Esta edición especial nace de la colaboración entre RAPER Company y la artista Tracy, reconocida por su estilo único que fusiona elementos del trap con diseño contemporáneo. Cada silla representa una pieza de arte funcional que trasciende su propósito original.</p>
+                <h3>Edición Underground</h3>
+                <p>Producida en cantidades ultra limitadas, la Edición CARNAL es para aquellos que entienden que el rap no es solo música, es una forma de vida. Sin colaboraciones comerciales, sin compromisos: esto es RAPER Company en estado puro, crudo y sin filtros.</p>
+
+                <h3>Garantía CARNAL</h3>
+                <p>Como el rap verdadero, esta silla está hecha para durar. Resistir. Sobrevivir. Viene con garantía de por vida para uso underground y promesa de que siempre mantendrá su esencia rebelde intacta.</p>
               </div>
             </div>
 
@@ -509,7 +577,7 @@
               <button class="add-to-cart-btn" onclick="addToCart(5)">
                 Agregar al Carrito
               </button>
-              <p class="product-sku">SKU: RAPER-TC-001</p>
+              <p class="product-sku">SKU: RAPER-CARNAL-001</p>
             </div>
           </div>
         </div>
@@ -564,10 +632,11 @@
   </div>
 
   <script>
-    // Función para cambiar imagen principal
-    function changeImage(imageSrc, thumbnail) {
+    // Función para cambiar entre imagen y video
+    function changeMedia(type, src, thumbnail) {
       const mainImage = document.getElementById('mainImage');
-      mainImage.src = imageSrc;
+      const mainVideo = document.getElementById('mainVideo');
+      const videoControls = document.getElementById('videoControls');
       
       // Remover clase active de todos los thumbnails
       document.querySelectorAll('.thumbnail-item').forEach(item => {
@@ -576,7 +645,61 @@
       
       // Agregar clase active al thumbnail clickeado
       thumbnail.classList.add('active');
+      
+      if (type === 'image') {
+        // Mostrar imagen, ocultar video
+        mainImage.style.display = 'block';
+        mainVideo.style.display = 'none';
+        videoControls.style.display = 'none';
+        mainImage.src = src;
+        
+        // Pausar video si estaba reproduciéndose
+        mainVideo.pause();
+      } else if (type === 'video') {
+        // Mostrar video, ocultar imagen
+        mainImage.style.display = 'none';
+        mainVideo.style.display = 'block';
+        videoControls.style.display = 'flex';
+        
+        // Cargar nuevo video si es diferente
+        if (mainVideo.src !== src) {
+          mainVideo.src = src;
+        }
+        
+        // Reproducir automáticamente
+        mainVideo.play().catch(e => {
+          console.log('Autoplay blocked:', e);
+        });
+      }
     }
+
+    // Función para controlar reproducción del video
+    function toggleVideoPlayback() {
+      const mainVideo = document.getElementById('mainVideo');
+      const playIcon = document.getElementById('playIcon');
+      
+      if (mainVideo.paused) {
+        mainVideo.play();
+        playIcon.textContent = '⏸';
+      } else {
+        mainVideo.pause();
+        playIcon.textContent = '▶';
+      }
+    }
+
+    // Actualizar icono de play/pause automáticamente
+    document.addEventListener('DOMContentLoaded', function() {
+      const mainVideo = document.getElementById('mainVideo');
+      const playIcon = document.getElementById('playIcon');
+      
+      mainVideo.addEventListener('play', function() {
+        playIcon.textContent = '⏸';
+      });
+      
+      mainVideo.addEventListener('pause', function() {
+        playIcon.textContent = '▶';
+      });
+    });
 
     // Función para toggle de descripción
     function toggleDescription() {
@@ -596,7 +719,7 @@
 
     // Función para agregar al carrito
     function addToCart(productId) {
-      console.log('🪑 Agregando silla Tracy al carrito...');
+      console.log('🪑 Agregando Edición RAPER Carnal al carrito...');
       
       const button = document.querySelector('.add-to-cart-btn');
       
@@ -610,11 +733,11 @@
         let cart = JSON.parse(localStorage.getItem('raperCart')) || [];
         console.log('📦 Carrito actual:', cart.length, 'items');
         
-        // Definir producto Tracy
-        const tracyProduct = {
+        // Definir producto Edición RAPER Carnal
+        const carnaProduct = {
           id: productId.toString(),
-          name: 'Silla Tracy Edition',
-          price: 320000,
+          name: 'Edición RAPER Carnal',
+          price: 375000,
           image: 'https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/tracy%201.jpg',
           quantity: 1
         };
@@ -628,7 +751,7 @@
           console.log(`➕ Cantidad aumentada: ${cart[existingItemIndex].quantity}`);
         } else {
           // Si no existe, agregarlo
-          cart.push(tracyProduct);
+          cart.push(carnaProduct);
           console.log('🆕 Producto agregado al carrito');
         }
         

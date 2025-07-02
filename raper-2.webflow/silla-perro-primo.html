@@ -92,7 +92,7 @@
           align-items: start;
         }
 
-        /* ===== GALERÍA DE IMÁGENES ===== */
+        /* ===== GALERÍA DE IMÁGENES Y VIDEO ===== */
         .chair-image-section {
           display: flex;
           flex-direction: column;
@@ -116,29 +116,103 @@
         .chair-main-image {
           width: 100%;
           height: 100%;
-          object-fit: contain;
+          object-fit: cover;
           object-position: center;
-          padding: 30px;
-          background: linear-gradient(135deg, #f8f8f8 0%, #ececec 100%);
           transition: transform 0.5s ease;
-          filter: contrast(1.1) brightness(1.05);
         }
 
         .chair-main-image:hover {
           transform: scale(1.05);
         }
 
+        .chair-main-video {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.5s ease;
+          border-radius: 2rem;
+        }
+
+        .chair-main-video:hover {
+          transform: scale(1.02);
+        }
+
+        .video-controls-overlay {
+          position: absolute;
+          bottom: 20px;
+          left: 50%;
+          transform: translateX(-50%);
+          background: rgba(0, 0, 0, 0.8);
+          border-radius: 50px;
+          padding: 10px 20px;
+          display: flex;
+          align-items: center;
+          gap: 15px;
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(95, 164, 255, 0.3);
+          transition: opacity 0.3s ease;
+          opacity: 0;
+        }
+
+        .chair-main-image-container:hover .video-controls-overlay {
+          opacity: 1;
+        }
+
+        .video-play-btn {
+          background: linear-gradient(135deg, #5fa4ff 0%, #4fd1c5 100%);
+          border: none;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          color: #000;
+          font-size: 16px;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: all 0.3s ease;
+        }
+
+        .video-play-btn:hover {
+          transform: scale(1.1);
+          box-shadow: 0 5px 15px rgba(95, 164, 255, 0.4);
+        }
+
         .chair-thumbnail-gallery {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
+          display: flex;
+          flex-direction: row;
           gap: 1rem;
           width: 100%;
           max-width: 500px;
+          overflow-x: auto;
+          scrollbar-width: thin;
+          scrollbar-color: rgba(95, 164, 255, 0.6) rgba(0, 0, 0, 0.2);
+          padding-bottom: 8px;
+        }
+
+        .chair-thumbnail-gallery::-webkit-scrollbar {
+          height: 6px;
+        }
+
+        .chair-thumbnail-gallery::-webkit-scrollbar-track {
+          background: rgba(0, 0, 0, 0.2);
+          border-radius: 10px;
+        }
+
+        .chair-thumbnail-gallery::-webkit-scrollbar-thumb {
+          background: linear-gradient(90deg, #5fa4ff, #4fd1c5);
+          border-radius: 10px;
+        }
+
+        .chair-thumbnail-gallery::-webkit-scrollbar-thumb:hover {
+          background: linear-gradient(90deg, #4fd1c5, #5fa4ff);
         }
 
         .thumbnail-item {
           width: 100px;
           height: 100px;
+          min-width: 100px;
+          flex-shrink: 0;
           border-radius: 1rem;
           overflow: hidden;
           border: 2px solid transparent;
@@ -160,11 +234,8 @@
         .thumbnail-image {
           width: 100%;
           height: 100%;
-          object-fit: contain;
+          object-fit: cover;
           object-position: center;
-          padding: 10px;
-          background: linear-gradient(135deg, #f8f8f8 0%, #ececec 100%);
-          filter: contrast(1.1) brightness(1.05);
         }
 
         /* ===== INFORMACIÓN DEL PRODUCTO ===== */
@@ -327,50 +398,104 @@
         }
 
         /* ===== RESPONSIVE DESIGN ===== */
-        @media screen and (max-width: 991px) {
+        @media screen and (max-width: 1024px) {
           .chair-product-layout {
             grid-template-columns: 1fr;
             gap: 4rem;
           }
-
-          .product-header h1 {
-            font-size: 3rem;
-          }
-
-          .product-title {
-            font-size: 2.5rem;
-          }
-
+          
           .chair-product-container {
             padding: 0 2rem;
           }
-
-          .chair-thumbnail-gallery {
-            grid-template-columns: repeat(3, 1fr);
+          
+          .product-header h1 {
+            font-size: 3.5rem;
+          }
+          
+          .product-title {
+            font-size: 2.8rem;
           }
 
+          .chair-thumbnail-gallery {
+            justify-content: center;
+            gap: 1.5rem;
+            max-width: 350px;
+          }
+
+          .thumbnail-item {
+            width: 120px;
+            height: 120px;
+            min-width: 120px;
+          }
+        }
+
+        @media screen and (max-width: 768px) {
+          .chair-product-section {
+            padding: 8rem 0 4rem 0;
+          }
+          
+          .product-header h1 {
+            font-size: 2.8rem;
+          }
+          
+          .product-title {
+            font-size: 2.2rem;
+          }
+          
+          .product-actions {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 1.5rem;
+          }
+          
+          .add-to-cart-btn {
+            width: 100%;
+            text-align: center;
+          }
+
+          .chair-thumbnail-gallery {
+            justify-content: center;
+            gap: 1.5rem;
+            max-width: 350px;
+          }
+
+          .thumbnail-item {
+            width: 120px;
+            height: 120px;
+            min-width: 120px;
+          }
+        }
+
+        @media screen and (max-width: 480px) {
+          .chair-product-container {
+            padding: 0 1rem;
+          }
+
+          .chair-main-image-container {
+            height: 350px;
+          }
+
+          .chair-thumbnail-gallery {
+            max-width: 320px;
+          }
+
+          .thumbnail-item {
+            width: 100px;
+            height: 100px;
+            min-width: 100px;
+          }
+          
           .description-toggle-btn {
             font-size: 1.8rem;
             padding: 1.5rem 2rem;
           }
-        }
 
-        @media screen and (max-width: 479px) {
           .product-header h1 {
             font-size: 2.5rem;
           }
 
           .product-title {
             font-size: 2rem;
-          }
-
-          .chair-thumbnail-gallery {
-            grid-template-columns: repeat(2, 1fr);
-          }
-
-          .description-toggle-btn {
-            font-size: 1.8rem;
-            padding: 1.5rem 2rem;
           }
         }
       </style>
@@ -440,21 +565,38 @@
         </div>
 
         <div class="chair-product-layout">
-          <!-- Galería de Imágenes -->
+          <!-- Galería de Imágenes y Video -->
           <div class="chair-image-section">
-            <div class="chair-main-image-container">
-              <img id="mainImage" src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/perro%20primo.jpg" alt="Silla Perro Primo Edition" class="chair-main-image">
+            <div class="chair-main-image-container" id="mainContainer">
+              <img id="mainImage" src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/rosa1.jpg" alt="Silla Perro Primo Edition" class="chair-main-image" style="display: none;">
+              <video id="mainVideo" class="chair-main-video" style="display: block;" autoplay muted loop>
+                <source src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/rosa_girando.mp4" type="video/mp4">
+              </video>
+              <div class="video-controls-overlay" id="videoControls" style="display: flex;">
+                <button class="video-play-btn" onclick="toggleVideoPlayback()">
+                  <span id="playIcon">⏸</span>
+                </button>
+              </div>
             </div>
             
             <div class="chair-thumbnail-gallery">
-              <div class="thumbnail-item active" onclick="changeImage('https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/perro%20primo.jpg', this)">
-                <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/perro%20primo.jpg" alt="Vista Principal" class="thumbnail-image">
+              <div class="thumbnail-item" onclick="changeMedia('image', 'https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/rosa1.jpg', this)">
+                <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/rosa1.jpg" alt="Rosa Vista 1" class="thumbnail-image">
               </div>
-              <div class="thumbnail-item" onclick="changeImage('https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/perro%20primo.jpg', this)">
-                <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/perro%20primo.jpg" alt="Vista Lateral" class="thumbnail-image">
+              <div class="thumbnail-item" onclick="changeMedia('image', 'https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/rosa2.jpg', this)">
+                <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/rosa2.jpg" alt="Rosa Vista 2" class="thumbnail-image">
               </div>
-              <div class="thumbnail-item" onclick="changeImage('https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/perro%20primo.jpg', this)">
-                <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/perro%20primo.jpg" alt="Vista Detalle" class="thumbnail-image">
+              <div class="thumbnail-item" onclick="changeMedia('image', 'https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/rosa3.jpg', this)">
+                <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/rosa3.jpg" alt="Rosa Vista 3" class="thumbnail-image">
+              </div>
+              <div class="thumbnail-item active" onclick="changeMedia('video', 'https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/rosa_girando.mp4', this)">
+                <div style="position: relative; width: 100%; height: 100%; background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%); display: flex; align-items: center; justify-content: center; border-radius: 1rem;">
+                  <div style="color: #5fa4ff; font-size: 2rem;">▶</div>
+                  <div style="position: absolute; bottom: 5px; left: 50%; transform: translateX(-50%); color: #fff; font-size: 1rem; font-weight: 600;">VIDEO</div>
+                </div>
+              </div>
+              <div class="thumbnail-item" onclick="changeMedia('image', 'https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/perro%20primo.jpg', this)">
+                <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/perro%20primo.jpg" alt="Perro Primo Original" class="thumbnail-image">
               </div>
             </div>
           </div>
@@ -521,28 +663,26 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-      <div class="container-large">
-        <div class="footer-wrapper">
-          <div class="footer-content">
-            <div class="footer-brand">
-              <img src="https://res.cloudinary.com/dt5pkdr0k/image/upload/v1747379718/fabicon_2_1_j76m5a.png" loading="lazy" alt="RAPER Logo" class="footer-logo">
-              <p class="footer-description">RAPER Company - Redefiniendo el estilo urbano a través del diseño y la música.</p>
+    <footer class="footer-minimal">
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <img src="https://res.cloudinary.com/dt5pkdr0k/image/upload/v1747379718/fabicon_2_1_j76m5a.png" loading="lazy" alt="RAPER Logo" class="footer-logo-img">
+          </div>
+          <div class="footer-tagline">
+            RAPER Company - Redefiniendo el estilo urbano
+          </div>
+          <div class="footer-contact">
+            <div class="contact-item">
+              <span class="flag">🇺🇸</span>
+              <span class="phone">+1 (786) 978-1978</span>
             </div>
-            <div class="footer-links">
-              <h3>Enlaces</h3>
-              <a href="index.html">Inicio</a>
-              <a href="store.html">Tienda</a>
-              <a href="about.html">Nosotros</a>
-              <a href="careers.html">Carreras</a>
-            </div>
-            <div class="footer-contact">
-              <h3>Contacto</h3>
-              <p>contacto@raper.company</p>
-              <p>+54 11 1234-5678</p>
+            <div class="contact-item">
+              <span class="flag">🇦🇷</span>
+              <span class="phone">+54 9 11 3422 6971</span>
             </div>
           </div>
-          <div class="footer-bottom">
+          <div class="footer-copyright">
             <p>&copy; 2024 RAPER Company. Todos los derechos reservados.</p>
           </div>
         </div>
@@ -568,10 +708,11 @@
   </div>
 
   <script>
-    // Función para cambiar imagen principal
-    function changeImage(imageSrc, thumbnail) {
+    // Función para cambiar entre imagen y video
+    function changeMedia(type, src, thumbnail) {
       const mainImage = document.getElementById('mainImage');
-      mainImage.src = imageSrc;
+      const mainVideo = document.getElementById('mainVideo');
+      const videoControls = document.getElementById('videoControls');
       
       // Remover clase active de todos los thumbnails
       document.querySelectorAll('.thumbnail-item').forEach(item => {
@@ -580,7 +721,61 @@
       
       // Agregar clase active al thumbnail clickeado
       thumbnail.classList.add('active');
+      
+      if (type === 'image') {
+        // Mostrar imagen, ocultar video
+        mainImage.style.display = 'block';
+        mainVideo.style.display = 'none';
+        videoControls.style.display = 'none';
+        mainImage.src = src;
+        
+        // Pausar video si estaba reproduciéndose
+        mainVideo.pause();
+      } else if (type === 'video') {
+        // Mostrar video, ocultar imagen
+        mainImage.style.display = 'none';
+        mainVideo.style.display = 'block';
+        videoControls.style.display = 'flex';
+        
+        // Cargar nuevo video si es diferente
+        if (mainVideo.src !== src) {
+          mainVideo.src = src;
+        }
+        
+        // Reproducir automáticamente
+        mainVideo.play().catch(e => {
+          console.log('Autoplay blocked:', e);
+        });
+      }
     }
+
+    // Función para controlar reproducción del video
+    function toggleVideoPlayback() {
+      const mainVideo = document.getElementById('mainVideo');
+      const playIcon = document.getElementById('playIcon');
+      
+      if (mainVideo.paused) {
+        mainVideo.play();
+        playIcon.textContent = '⏸';
+      } else {
+        mainVideo.pause();
+        playIcon.textContent = '▶';
+      }
+    }
+
+    // Actualizar icono de play/pause automáticamente
+    document.addEventListener('DOMContentLoaded', function() {
+      const mainVideo = document.getElementById('mainVideo');
+      const playIcon = document.getElementById('playIcon');
+      
+      mainVideo.addEventListener('play', function() {
+        playIcon.textContent = '⏸';
+      });
+      
+      mainVideo.addEventListener('pause', function() {
+        playIcon.textContent = '▶';
+      });
+    });
 
     // Función para toggle de descripción
     function toggleDescription() {
