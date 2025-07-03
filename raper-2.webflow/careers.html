@@ -13,7 +13,7 @@
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
   <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
   <script type="text/javascript">WebFont.load({  google: {    families: ["Montserrat:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic"]  }});</script>
-  <link href="https://res.cloudinary.com/dt5pkdr0k/image/upload/v1747379718/fabicon_2_1_j76m5a.png" rel="shortcut icon" type="image/x-icon">
+  <link href="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/Asset%2019supreme%20(1).png" rel="shortcut icon" type="image/x-icon">
 </head>
 <body>
   <div class="page-wrapper is-relative">
@@ -75,45 +75,102 @@
 
     <!-- MAIN CONTENT - DISEÑO DE LA REFERENCIA -->
     <main class="main-wrapper">
-      <div class="careers-page-container">
-        <div class="careers-content">
-          <!-- Header Section -->
-          <div class="careers-header">
-            <div class="careers-badge">RAPER COMPANY</div>
-            <h1 class="careers-title">Producimos tu carrera</h1>
-            <p class="careers-subtitle">SELLO DISCOGRÁFICO & EMPRESA CREATIVA</p>
-          </div>
+      <!-- NUEVA SECCIÓN CAREERS CON IMAGEN DE FONDO -->
+      <section class="careers-hero-section">
+        <!-- Imagen de fondo con opacidad -->
+        <div class="careers-background">
+          <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/FONDO.png" alt="RAPER Background" class="careers-bg-image">
+          <div class="careers-bg-overlay"></div>
+        </div>
+        
+        <!-- Contenido principal -->
+        <div class="careers-content-wrapper">
+          <div class="container-large">
+            <!-- Header optimizado -->
+            <div class="careers-header-clean">
+              <div class="careers-badge-clean">◆ RAPER COMPANY ◆</div>
+              <h1 class="careers-title-clean">Producimos tu carrera</h1>
+              <p class="careers-subtitle-clean">SELLO DISCOGRÁFICO & EMPRESA CREATIVA</p>
+            </div>
 
-          <!-- Form Section -->
-          <div class="careers-form-section">
-            <div class="form-container">
-              <h2 class="form-title">Únete a nosotros</h2>
-              <form class="careers-form" id="careersForm">
-                <div class="form-field">
-                  <input type="text" id="artistName" placeholder="Nombre artístico" required>
+            <!-- Formulario rediseñado siguiendo el estilo de index.html -->
+            <div class="create-history-form-clean">
+              <div class="form-container-clean">
+                <h3>Únete a nosotros</h3>
+                <form class="history-form-clean" id="careersFormClean">
+                  <div class="form-group-clean">
+                    <input type="text" name="artistName" placeholder="Nombre artístico" required>
+                  </div>
+                  <div class="form-group-clean">
+                    <input type="email" name="email" placeholder="Email profesional" required>
+                  </div>
+                  <div class="form-group-clean">
+                    <select name="specialty" required>
+                      <option value="">Tu especialidad</option>
+                      <option value="rapper">Rapper / MC</option>
+                      <option value="cantante">Cantante</option>
+                      <option value="productor">Productor Musical</option>
+                      <option value="compositor">Compositor</option>
+                      <option value="dj">DJ</option>
+                      <option value="beatmaker">Beatmaker</option>
+                      <option value="ingeniero">Ingeniero de Sonido</option>
+                      <option value="otro">Otro</option>
+                    </select>
+                  </div>
+                  <div class="form-group-clean">
+                    <textarea name="vision" placeholder="Cuéntanos tu visión artística, experiencia y cómo puedes contribuir a RAPER Company..." rows="4" required></textarea>
+                  </div>
+                  <button type="submit" class="submit-btn-clean">
+                    Enviar Propuesta
+                    <span class="btn-icon-clean">◆</span>
+                  </button>
+                </form>
+                
+                <!-- Contacto directo -->
+                <div class="contact-details-clean">
+                  <p>O contáctanos directamente:</p>
+                  <div class="contact-phone-clean">
+                    <span class="flag">🇺🇸</span>
+                    <span class="phone">+1 (786) 978-1978</span>
+                  </div>
+                  <div class="contact-phone-clean">
+                    <span class="flag">🇦🇷</span>
+                    <span class="phone">+54 9 11 3422 6971</span>
+                  </div>
                 </div>
-                <div class="form-field">
-                  <input type="email" id="email" placeholder="Email" required>
-                </div>
-                <div class="form-field">
-                  <input type="text" id="specialty" placeholder="Tu especialidad" required>
-                </div>
-                <div class="form-field">
-                  <textarea id="vision" placeholder="Cuéntanos tu visión artística..." rows="4" required></textarea>
-                </div>
-                <button type="submit" class="submit-button">ENVIAR PROPUESTA</button>
-              </form>
-              
-              <!-- Contact Direct -->
-              <div class="contact-direct">
-                <p>O contáctanos directamente:</p>
-                <a href="tel:+17869781978" class="phone-link">+1 (786) 978-1978</a>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </main>
+
+    <!-- Footer Responsive -->
+    <footer class="footer-minimal">
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/Asset%2019supreme%20(1).png" loading="lazy" alt="RAPER Logo" class="footer-logo-img">
+          </div>
+          <div class="footer-tagline">
+            <p>RAPER Company - Redefiniendo el estilo urbano</p>
+          </div>
+          <div class="footer-contact">
+            <div class="contact-item">
+              <span class="flag">🇺🇸</span>
+              <span class="phone">+1 (786) 978-1978</span>
+            </div>
+            <div class="contact-item">
+              <span class="flag">🇦🇷</span>
+              <span class="phone">+54 9 11 3422 6971</span>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <p>&copy; 2024 RAPER Company. Todos los derechos reservados.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
 
     <!-- Side Cart -->
     <div id="side-cart-container" class="side-cart-container">
@@ -135,41 +192,75 @@
   <script src="js/mobile-cart-fixes.js" type="text/javascript"></script>
 
   <style>
-    /* ===== ESTILOS CAREERS PAGE - DISEÑO REFERENCIA ===== */
+    /* ===== ESTILOS CAREERS PAGE - COHERENTE CON EL SITIO ===== */
     
-    /* Variables */
+    /* Variables globales */
     :root {
       --raper-blue: #5fa4ff;
       --raper-teal: #4fd1c5;
-      --dark-bg: #0a0a0a;
+      --dark-bg: #000000;
       --text-primary: #ffffff;
-      --text-secondary: #b0b0b0;
-      --border-color: rgba(95, 164, 255, 0.2);
-      --form-bg: rgba(30, 30, 30, 0.8);
+      --text-secondary: rgba(255, 255, 255, 0.7);
+      --border-color: rgba(255, 255, 255, 0.3);
     }
 
-    /* Page Container */
-    .careers-page-container {
+    /* Sección principal con imagen de fondo */
+    .careers-hero-section {
+      position: relative;
       min-height: 100vh;
-      background-color: var(--dark-bg);
-      padding: 12rem 2rem 8rem 2rem;
+      width: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
+      padding: 12rem 0 8rem 0;
+      overflow: hidden;
     }
 
-    .careers-content {
-      max-width: 800px;
+    /* Imagen de fondo */
+    .careers-background {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
-      text-align: center;
+      height: 100%;
+      z-index: 0;
     }
 
-    /* Header */
-    .careers-header {
+    .careers-bg-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      opacity: 0.15;
+      filter: blur(2px);
+    }
+
+    .careers-bg-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.9) 100%);
+    }
+
+    /* Wrapper del contenido */
+    .careers-content-wrapper {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* Header limpio */
+    .careers-header-clean {
+      text-align: center;
       margin-bottom: 6rem;
     }
 
-    .careers-badge {
+    .careers-badge-clean {
       display: inline-block;
       color: var(--raper-blue);
       font-size: 1.4rem;
@@ -180,16 +271,20 @@
       font-family: 'Montserrat', sans-serif;
     }
 
-    .careers-title {
-      font-size: 4.8rem;
+    .careers-title-clean {
+      font-size: clamp(3.5rem, 8vw, 6rem);
       font-weight: 700;
       color: var(--text-primary);
       margin-bottom: 1.5rem;
       line-height: 1.1;
       font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(135deg, #ffffff 0%, #5fa4ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
-    .careers-subtitle {
+    .careers-subtitle-clean {
       font-size: 1.6rem;
       font-weight: 400;
       color: var(--text-secondary);
@@ -199,182 +294,245 @@
       font-family: 'Montserrat', sans-serif;
     }
 
-    /* Form Section */
-    .careers-form-section {
+    /* Formulario - USANDO ESTILOS DE INDEX.HTML */
+    .create-history-form-clean {
       display: flex;
       justify-content: center;
+      margin-top: 4rem;
     }
 
-    .form-container {
-      background: var(--form-bg);
-      border-radius: 2rem;
-      padding: 4rem;
-      max-width: 600px;
+    .form-container-clean {
+      background: transparent;
+      padding: 3rem;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: none;
+      max-width: 500px;
       width: 100%;
-      backdrop-filter: blur(20px);
-      border: 1px solid var(--border-color);
     }
 
-    .form-title {
-      font-size: 2.4rem;
-      font-weight: 600;
-      color: var(--text-primary);
-      margin-bottom: 3rem;
+    .form-container-clean h3 {
+      color: white;
+      font-size: 2.2rem;
+      margin-bottom: 2rem;
+      text-align: center;
       font-family: 'Montserrat', sans-serif;
     }
 
-    .careers-form {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
+    .form-group-clean {
+      margin-bottom: 1.5rem;
     }
 
-    .form-field input,
-    .form-field textarea {
+    .form-group-clean input,
+    .form-group-clean select,
+    .form-group-clean textarea {
       width: 100%;
-      background: rgba(60, 60, 60, 0.6);
-      border: 1px solid rgba(95, 164, 255, 0.3);
-      border-radius: 1rem;
-      padding: 1.5rem;
-      font-size: 1.6rem;
-      color: var(--text-primary);
-      font-family: 'Montserrat', sans-serif;
+      padding: 1.2rem;
+      background: transparent;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 10px;
+      color: white;
+      font-size: 1.4rem;
       transition: all 0.3s ease;
+      font-family: 'Montserrat', sans-serif;
       box-sizing: border-box;
     }
 
-    .form-field input:focus,
-    .form-field textarea:focus {
+    .form-group-clean input:focus,
+    .form-group-clean select:focus,
+    .form-group-clean textarea:focus {
       outline: none;
-      border-color: var(--raper-blue);
-      background: rgba(80, 80, 80, 0.8);
-      box-shadow: 0 0 20px rgba(95, 164, 255, 0.2);
+      border-color: #5fa4ff;
+      background: transparent;
+      box-shadow: 0 0 0 3px rgba(95, 164, 255, 0.1);
     }
 
-    .form-field input::placeholder,
-    .form-field textarea::placeholder {
-      color: var(--text-secondary);
-      font-size: 1.4rem;
+    .form-group-clean input::placeholder,
+    .form-group-clean textarea::placeholder {
+      color: rgba(255, 255, 255, 0.6);
     }
 
-    .form-field textarea {
-      resize: vertical;
-      min-height: 120px;
+    .form-group-clean option {
+      background: #1a1a1a;
+      color: #fff;
     }
 
-    .submit-button {
-      background: linear-gradient(135deg, var(--raper-blue) 0%, var(--raper-teal) 100%);
-      color: #000;
+    .submit-btn-clean {
+      width: 100%;
+      padding: 1.5rem 2rem;
+      background: linear-gradient(135deg, #5fa4ff 0%, #4fd1c5 100%);
+      color: white;
       border: none;
-      border-radius: 1rem;
-      padding: 1.8rem 3rem;
+      border-radius: 10px;
       font-size: 1.6rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
+      font-weight: 600;
       cursor: pointer;
       transition: all 0.3s ease;
-      margin-top: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
       font-family: 'Montserrat', sans-serif;
     }
 
-    .submit-button:hover {
+    .submit-btn-clean:hover {
       transform: translateY(-2px);
-      box-shadow: 0 10px 30px rgba(95, 164, 255, 0.4);
+      box-shadow: 0 10px 25px rgba(95, 164, 255, 0.4);
     }
 
-    /* Contact Direct */
-    .contact-direct {
+    .btn-icon-clean {
+      font-size: 1.2rem;
+    }
+
+    /* Contacto directo */
+    .contact-details-clean {
       margin-top: 3rem;
       padding-top: 2rem;
-      border-top: 1px solid var(--border-color);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      text-align: center;
     }
 
-    .contact-direct p {
-      color: var(--text-secondary);
+    .contact-details-clean p {
+      color: rgba(255, 255, 255, 0.8);
+      margin: 0 0 1rem 0;
       font-size: 1.4rem;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .contact-phone-clean {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem;
       margin-bottom: 1rem;
-      font-family: 'Montserrat', sans-serif;
-    }
-
-    .phone-link {
-      color: var(--raper-teal);
-      font-size: 1.8rem;
-      font-weight: 600;
-      text-decoration: none;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 1.4rem;
       transition: all 0.3s ease;
-      font-family: 'Montserrat', sans-serif;
+      padding: 0.8rem 1.5rem;
+      border: 1px solid rgba(95, 164, 255, 0.2);
+      border-radius: 25px;
+      background: rgba(95, 164, 255, 0.05);
     }
 
-    .phone-link:hover {
-      color: var(--raper-blue);
-      text-shadow: 0 0 10px rgba(95, 164, 255, 0.5);
+    .contact-phone-clean:hover {
+      color: rgba(95, 164, 255, 0.9);
+      transform: translateY(-2px);
+      border-color: rgba(95, 164, 255, 0.5);
+      box-shadow: 0 5px 15px rgba(95, 164, 255, 0.2);
+      background: rgba(95, 164, 255, 0.1);
     }
 
-    /* Responsive */
+    .flag {
+      font-size: 1.8rem;
+    }
+
+    .phone {
+      font-weight: 500;
+      letter-spacing: 0.05em;
+    }
+
+    /* Responsive optimizado */
     @media screen and (max-width: 768px) {
-      .careers-page-container {
-        padding: 10rem 1.5rem 6rem 1.5rem;
+      .careers-hero-section {
+        padding: 10rem 0 6rem 0;
       }
 
-      .careers-title {
-        font-size: 3.5rem;
+      .careers-content-wrapper {
+        padding: 0 1.5rem;
       }
 
-      .careers-subtitle {
+      .careers-header-clean {
+        margin-bottom: 4rem;
+      }
+
+      .careers-badge-clean {
+        font-size: 1.2rem;
+      }
+
+      .careers-subtitle-clean {
         font-size: 1.3rem;
         letter-spacing: 0.1em;
       }
 
-      .form-container {
-        padding: 3rem 2rem;
+      .form-container-clean {
+        padding: 2.5rem 2rem;
+        margin: 0 1rem;
       }
 
-      .form-title {
+      .form-container-clean h3 {
         font-size: 2rem;
       }
 
-      .form-field input,
-      .form-field textarea {
-        padding: 1.2rem;
+      .form-group-clean input,
+      .form-group-clean select,
+      .form-group-clean textarea {
+        padding: 1rem;
+        font-size: 1.3rem;
+      }
+
+      .submit-btn-clean {
+        padding: 1.3rem 1.8rem;
         font-size: 1.4rem;
       }
 
-      .submit-button {
-        padding: 1.5rem 2.5rem;
-        font-size: 1.4rem;
+      .contact-phone-clean {
+        padding: 0.6rem 1.2rem;
+        font-size: 1.3rem;
       }
     }
 
     @media screen and (max-width: 480px) {
-      .careers-page-container {
-        padding: 8rem 1rem 4rem 1rem;
+      .careers-hero-section {
+        padding: 8rem 0 4rem 0;
       }
 
-      .careers-badge {
-        font-size: 1.2rem;
+      .careers-content-wrapper {
+        padding: 0 1rem;
       }
 
-      .careers-title {
-        font-size: 2.8rem;
+      .careers-header-clean {
+        margin-bottom: 3rem;
       }
 
-      .careers-subtitle {
+      .careers-badge-clean {
         font-size: 1.1rem;
       }
 
-      .form-container {
+      .careers-subtitle-clean {
+        font-size: 1.1rem;
+      }
+
+      .form-container-clean {
         padding: 2rem 1.5rem;
-        border-radius: 1.5rem;
+        border-radius: 15px;
+        margin: 0 0.5rem;
       }
 
-      .form-title {
+      .form-container-clean h3 {
         font-size: 1.8rem;
-        margin-bottom: 2rem;
+        margin-bottom: 1.5rem;
       }
 
-      .careers-form {
-        gap: 1.5rem;
+      .form-group-clean {
+        margin-bottom: 1.2rem;
+      }
+
+      .form-group-clean input,
+      .form-group-clean select,
+      .form-group-clean textarea {
+        padding: 0.9rem;
+        font-size: 1.2rem;
+      }
+
+      .submit-btn-clean {
+        padding: 1.2rem 1.5rem;
+        font-size: 1.3rem;
+      }
+
+      .contact-phone-clean {
+        flex-direction: column;
+        gap: 0.5rem;
+        font-size: 1.2rem;
       }
     }
   </style>
@@ -427,38 +585,38 @@
         });
       }
       
-      // Form functionality
-      const careersForm = document.getElementById('careersForm');
-      if (careersForm) {
-        careersForm.addEventListener('submit', function(e) {
+      // Form functionality - NUEVO FORMULARIO LIMPIO
+      const careersFormClean = document.getElementById('careersFormClean');
+      if (careersFormClean) {
+        careersFormClean.addEventListener('submit', function(e) {
           e.preventDefault();
           
           const formData = {
-            artistName: document.getElementById('artistName').value,
-            email: document.getElementById('email').value,
-            specialty: document.getElementById('specialty').value,
-            vision: document.getElementById('vision').value
+            artistName: careersFormClean.artistName.value,
+            email: careersFormClean.email.value,
+            specialty: careersFormClean.specialty.value,
+            vision: careersFormClean.vision.value
           };
           
-          console.log('📝 Careers form submitted:', formData);
+          console.log('📝 Careers form submitted (clean version):', formData);
           
-          const submitBtn = document.querySelector('.submit-button');
-          const originalText = submitBtn.textContent;
+          const submitBtn = careersFormClean.querySelector('.submit-btn-clean');
+          const originalHTML = submitBtn.innerHTML;
           
-          submitBtn.textContent = 'ENVIANDO...';
+          submitBtn.innerHTML = 'ENVIANDO... <span class="btn-icon-clean">⌛</span>';
           submitBtn.disabled = true;
           submitBtn.style.opacity = '0.7';
           
           setTimeout(() => {
-            submitBtn.textContent = '✓ ENVIADO';
+            submitBtn.innerHTML = '✓ ENVIADO <span class="btn-icon-clean">✓</span>';
             submitBtn.style.background = 'linear-gradient(135deg, #4fd1c5 0%, #38b2ac 100%)';
             
             setTimeout(() => {
-              submitBtn.textContent = originalText;
+              submitBtn.innerHTML = originalHTML;
               submitBtn.disabled = false;
               submitBtn.style.opacity = '1';
               submitBtn.style.background = 'linear-gradient(135deg, #5fa4ff 0%, #4fd1c5 100%)';
-              careersForm.reset();
+              careersFormClean.reset();
             }, 2500);
           }, 1500);
         });
