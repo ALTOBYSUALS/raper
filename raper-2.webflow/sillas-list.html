@@ -348,7 +348,7 @@
         </div>
       </div>
       <div class="navbar-sticky__background"></div>
-      
+          
       <!-- Mobile Menu -->
       <div class="mobile-menu" id="mobile-menu">
         <div class="mobile-menu-links">
@@ -654,105 +654,34 @@
         cartCount.textContent = totalItems;
       }
 
-      // Mobile Menu Toggle - DEBUG FORENSE COMPLETO
-      console.log('🔬 INICIANDO DEBUG FORENSE DEL MENÚ MÓVIL');
-      
+      // Mobile Menu Toggle
       const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
       const mobileMenu = document.getElementById('mobile-menu');
       const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
       
-      console.log('🔍 ELEMENTOS ENCONTRADOS:');
-      console.log('Toggle:', mobileMenuToggle);
-      console.log('Menu:', mobileMenu);
-      console.log('Links count:', mobileMenuLinks.length);
-      console.log('Links:', Array.from(mobileMenuLinks));
-      
-      if (mobileMenuToggle) {
-        console.log('✅ Toggle element exists');
-        console.log('Toggle classes:', mobileMenuToggle.classList.toString());
-        console.log('Toggle computed style display:', window.getComputedStyle(mobileMenuToggle).display);
-        console.log('Toggle computed style visibility:', window.getComputedStyle(mobileMenuToggle).visibility);
-      } else {
-        console.error('❌ Toggle element NOT FOUND');
-      }
-      
-      if (mobileMenu) {
-        console.log('✅ Menu element exists');
-        console.log('Menu classes:', mobileMenu.classList.toString());
-        console.log('Menu computed style right:', window.getComputedStyle(mobileMenu).right);
-        console.log('Menu computed style display:', window.getComputedStyle(mobileMenu).display);
-        console.log('Menu innerHTML length:', mobileMenu.innerHTML.length);
-      } else {
-        console.error('❌ Menu element NOT FOUND');
-      }
-      
       if (mobileMenuToggle && mobileMenu) {
-        console.log('🎯 CONFIGURANDO EVENT LISTENERS...');
-        
-        // Detectar si el click está funcionando
-        mobileMenuToggle.addEventListener('click', function(e) {
-          console.log('🔥 CLICK DETECTADO EN HAMBURGUESA!');
-          console.log('Event:', e);
-          console.log('Event target:', e.target);
-          console.log('Current target:', e.currentTarget);
-          
-          console.log('📊 ESTADO ANTES DEL TOGGLE:');
-          console.log('Toggle has active class:', mobileMenuToggle.classList.contains('active'));
-          console.log('Menu has active class:', mobileMenu.classList.contains('active'));
-          console.log('Menu current right style:', window.getComputedStyle(mobileMenu).right);
-          
+        mobileMenuToggle.addEventListener('click', function() {
           mobileMenuToggle.classList.toggle('active');
           mobileMenu.classList.toggle('active');
-          
-          const isActive = mobileMenu.classList.contains('active');
-          document.body.style.overflow = isActive ? 'hidden' : '';
-          
-          console.log('📊 ESTADO DESPUÉS DEL TOGGLE:');
-          console.log('Toggle has active class:', mobileMenuToggle.classList.contains('active'));
-          console.log('Menu has active class:', mobileMenu.classList.contains('active'));
-          console.log('Body overflow:', document.body.style.overflow);
-          console.log('Menu computed right after toggle:', window.getComputedStyle(mobileMenu).right);
-          
-          // FORZAR REFRESH DE ESTILOS
-          setTimeout(() => {
-            console.log('📊 ESTADO 100ms DESPUÉS:');
-            console.log('Menu computed right delayed:', window.getComputedStyle(mobileMenu).right);
-            console.log('Menu visible:', window.getComputedStyle(mobileMenu).visibility);
-            console.log('Menu opacity:', window.getComputedStyle(mobileMenu).opacity);
-          }, 100);
+          document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
         });
         
-        // Debug de los links
-        mobileMenuLinks.forEach((link, index) => {
-          console.log(`🔗 Configurando link ${index + 1}:`, link.textContent);
-          link.addEventListener('click', function(e) {
-            console.log(`📎 CLICK EN LINK ${index + 1}:`, link.textContent);
+        mobileMenuLinks.forEach(link => {
+          link.addEventListener('click', function() {
             mobileMenuToggle.classList.remove('active');
             mobileMenu.classList.remove('active');
             document.body.style.overflow = '';
           });
         });
         
-        // Debug del click fuera
         document.addEventListener('click', function(e) {
           if (!mobileMenu.contains(e.target) && !mobileMenuToggle.contains(e.target) && mobileMenu.classList.contains('active')) {
-            console.log('🌍 CLICK FUERA DEL MENÚ - cerrando');
             mobileMenuToggle.classList.remove('active');
             mobileMenu.classList.remove('active');
             document.body.style.overflow = '';
           }
         });
-        
-        console.log('✅ EVENT LISTENERS CONFIGURADOS CORRECTAMENTE');
-      } else {
-        console.error('❌ CRITICAL ERROR: No se pudieron configurar los event listeners');
-        console.error('Toggle element:', mobileMenuToggle);
-        console.error('Menu element:', mobileMenu);
       }
-      
-      console.log('🔬 DEBUG FORENSE COMPLETADO');
-
-
     });
   </script>
 
