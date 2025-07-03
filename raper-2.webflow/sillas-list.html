@@ -17,6 +17,77 @@
   <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
   <script type="text/javascript">WebFont.load({  google: {    families: ["Montserrat:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic"]  }});</script>
   <link href="https://res.cloudinary.com/dt5pkdr0k/image/upload/v1747379718/fabicon_2_1_j76m5a.png" rel="shortcut icon" type="image/x-icon">
+  
+  <!-- ===== FIX CRÍTICO PARA IPHONE - ANTI-DETECCIÓN TELÉFONOS ===== -->
+  <style>
+    /* Forzar que los números de teléfono NO sean detectados como enlaces */
+    .footer-contact .phone,
+    .mobile-menu-contact .phone,
+    span.phone {
+      color: rgba(255, 255, 255, 0.8) !important;
+      text-decoration: none !important;
+      -webkit-text-decoration: none !important;
+      -webkit-text-decoration-line: none !important;
+      text-decoration-line: none !important;
+      -webkit-text-decoration-color: transparent !important;
+      text-decoration-color: transparent !important;
+      -webkit-appearance: none !important;
+      appearance: none !important;
+      font-weight: 500 !important;
+      letter-spacing: 0.05em !important;
+      pointer-events: none !important;
+      -webkit-touch-callout: none !important;
+      -webkit-user-select: none !important;
+      user-select: none !important;
+    }
+    
+    /* Estados de hover/focus/active - Mantener estilo consistente */
+    .footer-contact .phone:hover,
+    .footer-contact .phone:focus,
+    .footer-contact .phone:active,
+    .footer-contact .phone:link,
+    .footer-contact .phone:visited,
+    .mobile-menu-contact .phone:hover,
+    .mobile-menu-contact .phone:focus,
+    .mobile-menu-contact .phone:active,
+    .mobile-menu-contact .phone:link,
+    .mobile-menu-contact .phone:visited {
+      color: rgba(95, 164, 255, 0.9) !important;
+      text-decoration: none !important;
+      -webkit-text-decoration: none !important;
+      -webkit-text-decoration-line: none !important;
+      text-decoration-line: none !important;
+      border: none !important;
+      outline: none !important;
+    }
+    
+    /* Container anti-detección */
+    .contact-item {
+      -webkit-touch-callout: none !important;
+      -webkit-user-select: none !important;
+      user-select: none !important;
+    }
+    
+    /* iOS Safari específico - Regla ultra-agresiva */
+    @supports (-webkit-touch-callout: none) {
+      .footer-contact .phone,
+      .mobile-menu-contact .phone {
+        color: rgba(255, 255, 255, 0.8) !important;
+        text-decoration: none !important;
+        -webkit-text-decoration: none !important;
+        -webkit-text-decoration-line: none !important;
+        text-decoration-line: none !important;
+        -webkit-text-decoration-color: transparent !important;
+        text-decoration-color: transparent !important;
+        -webkit-appearance: none !important;
+        appearance: none !important;
+        border: none !important;
+        outline: none !important;
+        box-shadow: none !important;
+        background: transparent !important;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="page-wrapper is-relative">
@@ -27,7 +98,218 @@
       </div>
     </div>
 
-    <div class="global-styles w-embed"></div>
+    <div class="global-styles w-embed">
+      <style>
+        :root { font-size: 62.5%; }
+        body { font-size: 1.6rem; background: #000; }
+
+        .record-label-banner {
+          width: 100%;
+          background: linear-gradient(90deg, rgba(0,0,0,0.9) 0%, rgba(95, 164, 255, 0.2) 50%, rgba(0,0,0,0.9) 100%);
+          padding: 10px 0;
+          position: relative;
+          z-index: 100;
+          border-bottom: 1px solid rgba(95, 164, 255, 0.3);
+        }
+
+        .record-label-text {
+          text-align: center;
+          color: #fff;
+          font-size: 1.4rem;
+          font-weight: 600;
+          letter-spacing: 0.2em;
+          text-transform: uppercase;
+          margin: 0;
+          text-shadow: 0 0 10px rgba(95, 164, 255, 0.5);
+          animation: glow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+          0% { text-shadow: 0 0 5px rgba(95, 164, 255, 0.5); }
+          100% { text-shadow: 0 0 15px rgba(95, 164, 255, 0.8), 0 0 20px rgba(95, 164, 255, 0.4); }
+        }
+
+        /* ===== MENÚ MÓVIL - USANDO CSS EXTERNO COMO STORE.HTML ===== */
+
+        /* ===== DISEÑO VERTICAL DOS COLUMNAS ===== */
+        .sillas-grid-section {
+          background: #000;
+          min-height: 100vh;
+          padding: 6rem 2rem 4rem 2rem;
+        }
+
+        .sillas-grid-container {
+          max-width: 800px;
+          margin: 0 auto;
+        }
+
+        .sillas-grid-header {
+          text-align: center;
+          margin-bottom: 4rem;
+        }
+
+        .sillas-grid-title {
+          font-size: 3.2rem;
+          font-weight: 700;
+          color: #fff;
+          margin-bottom: 2rem;
+          text-transform: uppercase;
+          letter-spacing: 0.1em;
+        }
+
+        .sillas-grid-subtitle {
+          font-size: 1.6rem;
+          color: #888;
+          max-width: 600px;
+          margin: 0 auto;
+          line-height: 1.6;
+        }
+
+        .sillas-video-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 2rem 2.5rem;
+          margin: 0 auto;
+        }
+
+        .silla-video-card {
+          position: relative;
+          aspect-ratio: 3/4;
+          border-radius: 1.2rem;
+          overflow: hidden;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          border: 2px solid rgba(255, 255, 255, 0.1);
+          background: rgba(0, 0, 0, 0.5);
+        }
+
+        .silla-video-card:hover {
+          transform: scale(1.03);
+          border-color: rgba(95, 164, 255, 0.6);
+          box-shadow: 0 10px 25px rgba(95, 164, 255, 0.3);
+        }
+
+        .silla-video {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.4s ease;
+        }
+
+        .silla-video-overlay {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+          padding: 2rem;
+          transform: translateY(100%);
+          transition: transform 0.4s ease;
+        }
+
+        /* TODAS LAS SILLAS - Texto siempre visible */
+        .silla-video-overlay {
+          transform: translateY(0) !important;
+          background: linear-gradient(transparent 30%, rgba(0, 0, 0, 0.9));
+        }
+
+        .silla-video-card:hover .silla-video-overlay {
+          background: linear-gradient(transparent 20%, rgba(0, 0, 0, 0.95));
+        }
+
+        .silla-title {
+          color: #fff;
+          font-size: 1.8rem;
+          font-weight: 700;
+          margin-bottom: 0.5rem;
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+        }
+
+        .silla-play-icon {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 60px;
+          height: 60px;
+          background: rgba(255, 255, 255, 0.9);
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          opacity: 0;
+          transition: all 0.4s ease;
+        }
+
+        .silla-video-card:hover .silla-play-icon {
+          opacity: 1;
+          transform: translate(-50%, -50%) scale(1.1);
+        }
+
+        .silla-play-icon::after {
+          content: "▶";
+          font-size: 2rem;
+          color: #000;
+          margin-left: 3px;
+        }
+
+        /* ===== RESPONSIVE DOS COLUMNAS VERTICAL ===== */
+        @media screen and (max-width: 767px) {
+          .sillas-grid-section {
+            padding: 4rem 1rem 3rem 1rem;
+          }
+          
+          .sillas-video-grid {
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem 1rem;
+          }
+          
+          .silla-video-card {
+            aspect-ratio: 3/4;
+            border-radius: 1rem;
+          }
+          
+          .sillas-grid-title {
+            font-size: 2.4rem;
+          }
+          
+          .silla-title {
+            font-size: 1.4rem;
+          }
+          
+          .silla-video-overlay {
+            padding: 1.5rem;
+          }
+        }
+
+        @media screen and (min-width: 768px) and (max-width: 991px) {
+          .sillas-video-grid {
+            grid-template-columns: 1fr 1fr;
+            gap: 1.8rem 2rem;
+          }
+          
+                     .sillas-grid-container {
+             max-width: 650px;
+           }
+        }
+
+        @media screen and (min-width: 992px) {
+          .sillas-video-grid {
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem 3rem;
+          }
+          
+          .sillas-grid-title {
+            font-size: 3.8rem;
+          }
+          
+                     .sillas-grid-container {
+             max-width: 850px;
+          }
+        }
+      </style>
+    </div>
 
     <div class="navbar-sticky">
       <div class="padding-global is_full-height">
@@ -224,7 +506,7 @@
     document.addEventListener('DOMContentLoaded', function() {
       // ===== MANEJO AVANZADO DE VIDEOS ANTI-FLASH =====
       function initializeVideos() {
-        const videos = document.querySelectorAll('.silla-video');
+        const videos = document.querySelectorAll('video.silla-video');
         console.log(`🎥 Inicializando ${videos.length} videos (anti-flash optimized)`);
         
         videos.forEach((video, index) => {
@@ -375,23 +657,16 @@
       const mobileMenu = document.getElementById('mobile-menu');
       const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
       
-      console.log('🔍 Inicializando menú móvil...');
-      console.log('Toggle encontrado:', !!mobileMenuToggle);
-      console.log('Menu encontrado:', !!mobileMenu);
-      console.log('Links encontrados:', mobileMenuLinks.length);
       
       if (mobileMenuToggle && mobileMenu) {
         mobileMenuToggle.addEventListener('click', function() {
-          console.log('🍔 Click en hamburguesa detectado!');
           mobileMenuToggle.classList.toggle('active');
           mobileMenu.classList.toggle('active');
           document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
-          console.log('Estado del menú:', mobileMenu.classList.contains('active'));
         });
         
         mobileMenuLinks.forEach(link => {
           link.addEventListener('click', function() {
-            console.log('🔗 Link clickeado:', link.textContent);
             mobileMenuToggle.classList.remove('active');
             mobileMenu.classList.remove('active');
             document.body.style.overflow = '';
@@ -400,16 +675,13 @@
         
         document.addEventListener('click', function(e) {
           if (!mobileMenu.contains(e.target) && !mobileMenuToggle.contains(e.target) && mobileMenu.classList.contains('active')) {
-            console.log('🌍 Click fuera - cerrando menú');
             mobileMenuToggle.classList.remove('active');
             mobileMenu.classList.remove('active');
             document.body.style.overflow = '';
           }
         });
         
-        console.log('✅ Event listeners configurados correctamente');
       } else {
-        console.error('❌ ERROR: No se encontraron elementos del menú móvil');
       }
     });
   </script>
