@@ -977,22 +977,6 @@
       }
     }
 
-    // Event listeners para el video
-    document.addEventListener('DOMContentLoaded', function() {
-      const mainVideo = document.getElementById('chair-video');
-      const playIcon = document.getElementById('play-icon');
-      
-      if (mainVideo && playIcon) {
-        mainVideo.addEventListener('play', function() {
-          playIcon.textContent = '⏸';
-        });
-        
-        mainVideo.addEventListener('pause', function() {
-          playIcon.textContent = '▶';
-        });
-      }
-    });
-
     // Función para toggle de descripción
     function toggleDescription() {
       const button = document.querySelector('.description-toggle-btn');
@@ -1094,13 +1078,105 @@
       }
     }
 
-    // Inicializar contador al cargar la página
+    // ===== INICIALIZACIÓN COMPLETA =====
     document.addEventListener('DOMContentLoaded', function() {
+      console.log('🪑 Página de Edición RAPER Carnal cargada');
+      
+      // 1. Inicializar contador del carrito
       const cart = JSON.parse(localStorage.getItem('raperCart')) || [];
       const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
       const cartCount = document.getElementById('cart-count');
       if (cartCount) {
         cartCount.textContent = totalItems;
+        if (totalItems > 0) {
+          cartCount.style.display = 'flex';
+        }
+      }
+
+      // 2. Event listeners para el video
+      const mainVideo = document.getElementById('chair-video');
+      const playIcon = document.getElementById('play-icon');
+      
+      if (mainVideo && playIcon) {
+        mainVideo.addEventListener('play', function() {
+          playIcon.textContent = '⏸';
+        });
+        
+        mainVideo.addEventListener('pause', function() {
+          playIcon.textContent = '▶';
+        });
+      }
+
+      // 3. LÓGICA DEL MENÚ MÓVIL - CARNAL EDITION
+      const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+
+      if (mobileMenuToggle && mobileMenu) {
+        console.log('📱 Elementos del menú móvil encontrados');
+        
+        // Asegurar estado inicial correcto
+        mobileMenu.classList.remove('active');
+        mobileMenuToggle.classList.remove('active');
+        document.body.style.overflow = '';
+
+        // Event listener para el botón hamburguesa
+        mobileMenuToggle.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          
+          console.log('🍔 Toggle menú móvil clickeado - Carnal Edition');
+          
+          mobileMenuToggle.classList.toggle('active');
+          mobileMenu.classList.toggle('active');
+          
+          // Prevenir scroll del body cuando menú está abierto
+          if (mobileMenu.classList.contains('active')) {
+            document.body.style.overflow = 'hidden';
+          } else {
+            document.body.style.overflow = '';
+          }
+        });
+        
+        // Cerrar menú cuando se hace click en links
+        mobileMenuLinks.forEach(link => {
+          link.addEventListener('click', function() {
+            console.log('🔗 Link del menú móvil clickeado - Carnal Edition');
+            mobileMenuToggle.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+          });
+        });
+        
+        // Cerrar menú cuando se hace click fuera de él
+        document.addEventListener('click', function(e) {
+          if (!mobileMenu.contains(e.target) && 
+              !mobileMenuToggle.contains(e.target) && 
+              mobileMenu.classList.contains('active')) {
+            console.log('📱 Click fuera del menú - cerrando - Carnal Edition');
+            mobileMenuToggle.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+          }
+        });
+        
+        // Cerrar menú con tecla Escape
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+            console.log('⌨️ Escape presionado - cerrando menú - Carnal Edition');
+            mobileMenuToggle.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+          }
+        });
+        
+        console.log('✅ Menú móvil funcional inicializado correctamente - Carnal Edition');
+      } else {
+        console.warn('⚠️ No se encontraron elementos del menú móvil - Carnal Edition');
+        console.log('🔍 Buscando:', {
+          toggle: !!mobileMenuToggle,
+          menu: !!mobileMenu
+        });
       }
     });
   </script>
