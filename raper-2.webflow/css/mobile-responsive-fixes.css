@@ -1509,3 +1509,134 @@ body .mobile-menu.active,
     pointer-events: auto !important;
   }
 }
+
+/* RESPONSIVE PARA MÓVILES GRANDES (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container-large {
+    padding: 0 40px;
+  }
+  
+  .featured-products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
+  
+  .mobile-menu {
+    display: none !important;
+  }
+  
+  .mobile-menu-toggle {
+    display: none !important;
+  }
+  
+  .nav-links {
+    display: flex !important;
+  }
+}
+
+/* ===========================================
+   FIX ESPECÍFICO PARA IPHONE - FOOTER
+   Soluciona text-decoration problemático
+   =========================================== */
+
+/* Fix para Safari/iOS - Eliminar text-decoration completamente */
+@media (max-width: 768px) {
+  .footer-minimal,
+  .footer-minimal * {
+    text-decoration: none !important;
+    -webkit-text-decoration: none !important;
+    -webkit-text-decoration-line: none !important;
+    text-decoration-line: none !important;
+  }
+  
+  .footer-contact .contact-item,
+  .footer-contact .contact-item * {
+    text-decoration: none !important;
+    -webkit-text-decoration: none !important;
+    -webkit-text-decoration-line: none !important;
+    text-decoration-line: none !important;
+    border: none !important;
+    outline: none !important;
+  }
+  
+  .footer-tagline p,
+  .footer-copyright p {
+    text-decoration: none !important;
+    -webkit-text-decoration: none !important;
+    -webkit-text-decoration-line: none !important;
+    text-decoration-line: none !important;
+  }
+  
+  /* Específico para spans dentro del footer */
+  .footer-contact .phone,
+  .footer-contact .flag {
+    text-decoration: none !important;
+    -webkit-text-decoration: none !important;
+    -webkit-text-decoration-line: none !important;
+    text-decoration-line: none !important;
+    -webkit-appearance: none !important;
+    appearance: none !important;
+  }
+  
+  /* Forzar reset completo de estilos text-decoration en iPhone */
+  .footer-minimal p,
+  .footer-minimal span,
+  .footer-minimal div {
+    text-decoration: none !important;
+    -webkit-text-decoration: none !important;
+    -webkit-text-decoration-line: none !important;
+    text-decoration-line: none !important;
+    -webkit-text-decoration-color: transparent !important;
+    text-decoration-color: transparent !important;
+    -webkit-text-decoration-style: none !important;
+    text-decoration-style: none !important;
+  }
+}
+
+/* Fix adicional para iOS específico */
+@supports (-webkit-touch-callout: none) {
+  .footer-minimal,
+  .footer-minimal *,
+  .footer-contact,
+  .footer-contact * {
+    text-decoration: none !important;
+    -webkit-text-decoration: none !important;
+    -webkit-text-decoration-line: none !important;
+    text-decoration-line: none !important;
+    -webkit-text-decoration-color: transparent !important;
+    text-decoration-color: transparent !important;
+    -webkit-appearance: none !important;
+    appearance: none !important;
+  }
+}
+
+/* Regla ultra-específica para iPhone Safari */
+@media (max-width: 768px) and (-webkit-min-device-pixel-ratio: 2) {
+  .footer-minimal {
+    -webkit-text-decoration: none !important;
+    -webkit-text-decoration-line: none !important;
+    text-decoration: none !important;
+    text-decoration-line: none !important;
+  }
+  
+  .footer-contact .contact-item {
+    -webkit-text-decoration: none !important;
+    -webkit-text-decoration-line: none !important;
+    text-decoration: none !important;
+    text-decoration-line: none !important;
+    -webkit-text-decoration-color: transparent !important;
+    text-decoration-color: transparent !important;
+    border-bottom: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+  }
+  
+  .footer-contact .contact-item:hover,
+  .footer-contact .contact-item:focus,
+  .footer-contact .contact-item:active {
+    text-decoration: none !important;
+    -webkit-text-decoration: none !important;
+    -webkit-text-decoration-line: none !important;
+    text-decoration-line: none !important;
+    border-bottom: none !important;
+  }
+}
