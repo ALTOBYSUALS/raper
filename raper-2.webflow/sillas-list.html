@@ -424,7 +424,7 @@
           <div class="sillas-video-grid">
             <!-- NICKI NICOLE Edition -->
             <div class="silla-video-card" onclick="goToProduct('silla-milkmakers.html')">
-              <video class="silla-video" autoplay muted loop preload="auto" poster="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/silla.jpg">
+              <video class="silla-video" autoplay muted loop preload="auto" playsinline poster="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/silla_1%20(2).png">
                 <source src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/azul_girando.mp4" type="video/mp4">
               </video>
               <div class="silla-play-icon"></div>
@@ -435,7 +435,7 @@
 
             <!-- ERICK BELTRAN Edition -->
             <div class="silla-video-card" onclick="goToProduct('silla-erick.html')">
-              <video class="silla-video" autoplay muted loop preload="auto" poster="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/silla.jpg">
+              <video class="silla-video" autoplay muted loop preload="auto" playsinline poster="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/detalle_silla1.jpg">
                 <source src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/madera_girando.mp4" type="video/mp4">
               </video>
               <div class="silla-play-icon"></div>
@@ -446,7 +446,7 @@
 
             <!-- SUPREME Edition -->
             <div class="silla-video-card" onclick="goToProduct('silla-supreme.html')">
-              <video class="silla-video" autoplay muted loop preload="auto" poster="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/silla.jpg">
+              <video class="silla-video" autoplay muted loop preload="auto" playsinline poster="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/detalle_silla2.jpg">
                 <source src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/rojo_girando.mp4" type="video/mp4">
               </video>
               <div class="silla-play-icon"></div>
@@ -457,7 +457,7 @@
 
             <!-- PERRO PRIMO Edition -->
             <div class="silla-video-card" onclick="goToProduct('silla-perro-primo.html')">
-              <video class="silla-video" autoplay muted loop preload="auto" poster="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/perro%20primo.jpg">
+              <video class="silla-video" autoplay muted loop preload="auto" playsinline poster="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/perro%20primo.jpg">
                 <source src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/rosa_girando.mp4" type="video/mp4">
               </video>
               <div class="silla-play-icon"></div>
@@ -468,7 +468,7 @@
 
             <!-- EDICION RAPER CARNAL -->
             <div class="silla-video-card" onclick="goToProduct('silla-tracy.html')">
-              <video class="silla-video" autoplay muted loop preload="auto" poster="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/tracy%201.jpg">
+              <video class="silla-video" autoplay muted loop preload="auto" playsinline poster="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/tracy%201.jpg">
                 <source src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/verde_girando.mp4" type="video/mp4">
               </video>
               <div class="silla-play-icon"></div>
@@ -477,14 +477,12 @@
               </div>
             </div>
 
-            <!-- COLECCIÓN ESPECIAL Edition -->
-            <div class="silla-video-card" onclick="goToProduct('silla-especial.html')">
-              <video class="silla-video" autoplay muted loop preload="auto" poster="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/silla.jpg">
-                <source src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/varias_girando.mp4" type="video/mp4">
-              </video>
+            <!-- PERSONALIZA TU SILLA -->
+            <div class="silla-video-card" onclick="goToProduct('silla-personalizar.html')">
+              <img class="silla-video" src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/silla..png" alt="Personaliza tu silla" style="object-fit: cover; width: 100%; height: 100%;">
               <div class="silla-play-icon"></div>
               <div class="silla-video-overlay">
-                <h3 class="silla-title">COLECCIÓN ESPECIAL</h3>
+                <h3 class="silla-title">PERSONALIZA<br>TU SILLA</h3>
               </div>
             </div>
           </div>
@@ -553,6 +551,63 @@
 
     // Inicialización
     document.addEventListener('DOMContentLoaded', function() {
+      // ===== MANEJO AVANZADO DE VIDEOS PARA MÓVIL =====
+      function initializeVideos() {
+        const videos = document.querySelectorAll('.silla-video');
+        console.log(`🎥 Inicializando ${videos.length} videos para móvil`);
+        
+        videos.forEach((video, index) => {
+          // Configuración móvil mejorada
+          video.setAttribute('playsinline', '');
+          video.setAttribute('webkit-playsinline', '');
+          video.setAttribute('muted', '');
+          video.setAttribute('autoplay', '');
+          video.muted = true; // Forzar muted para autoplay
+          
+          // Listener para when video can play
+          video.addEventListener('loadeddata', function() {
+            console.log(`✅ Video ${index + 1} cargado exitosamente`);
+            // Intentar reproducir inmediatamente
+            const playPromise = video.play();
+            if (playPromise !== undefined) {
+              playPromise.catch(error => {
+                console.log(`⚠️ Autoplay bloqueado para video ${index + 1}:`, error);
+                // En móvil, mostrar el poster si autoplay falla
+              });
+            }
+          });
+          
+          // Listener para errores
+          video.addEventListener('error', function(e) {
+            console.error(`❌ Error cargando video ${index + 1}:`, e);
+          });
+          
+          // Intersection Observer para reproducir cuando sea visible
+          if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries) => {
+              entries.forEach(entry => {
+                if (entry.isIntersecting && video.paused) {
+                  const playPromise = video.play();
+                  if (playPromise !== undefined) {
+                    playPromise.catch(error => {
+                      console.log(`📱 Autoplay restringido en móvil para video ${index + 1}`);
+                    });
+                  }
+                }
+              });
+            }, { threshold: 0.5 });
+            
+            observer.observe(video);
+          }
+          
+          // Forzar load del video
+          video.load();
+        });
+      }
+      
+      // Ejecutar inicialización de videos
+      initializeVideos();
+      
       // Efectos de animación para las tarjetas
       const videoCards = document.querySelectorAll('.silla-video-card');
       
