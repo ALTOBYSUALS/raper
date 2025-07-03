@@ -78,58 +78,35 @@
   </style>
   
   <style>
-    /* ===== FOOTER PILL-BUTTON OVERRIDE - ULTRA ESPECÍFICO ===== */
-    .footer-minimal .footer-contact .contact-item {
-      display: flex !important;
-      align-items: center !important;
-      gap: 0.8rem !important;
+    /* ===== FOOTER PILL-BUTTON OVERRIDE ===== */
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
       color: rgba(255, 255, 255, 0.7) !important;
-      font-size: 1.4rem !important;
-      transition: all 0.3s ease !important;
-      padding: 0.8rem 1.5rem !important;
-      border: 1px solid rgba(95, 164, 255, 0.2) !important;
-      border-radius: 25px !important;
-      background: rgba(95, 164, 255, 0.05) !important;
-      width: auto !important;
-      margin: 0.5rem 0 !important;
-      cursor: default !important;
+      font-size: 1.4rem;
+      transition: all 0.3s ease;
+      padding: 0.8rem 1.5rem;
+      border: 1px solid rgba(95, 164, 255, 0.2);
+      border-radius: 25px;
+      background: rgba(95, 164, 255, 0.05);
     }
 
-    .footer-minimal .footer-contact .contact-item:hover {
+    .contact-item:hover {
       color: rgba(95, 164, 255, 0.9) !important;
-      transform: translateY(-2px) !important;
-      border-color: rgba(95, 164, 255, 0.5) !important;
-      box-shadow: 0 5px 15px rgba(95, 164, 255, 0.2) !important;
-      background: rgba(95, 164, 255, 0.1) !important;
+      transform: translateY(-2px);
+      border-color: rgba(95, 164, 255, 0.5);
+      box-shadow: 0 5px 15px rgba(95, 164, 255, 0.2);
+      background: rgba(95, 164, 255, 0.1);
     }
     
-    .footer-minimal .footer-contact .contact-item .flag {
-      font-size: 1.8rem !important;
-      margin-right: 0.5rem !important;
+    .flag {
+      font-size: 1.8rem;
     }
 
-    .footer-minimal .footer-contact .contact-item .phone {
-      font-weight: 500 !important;
-      letter-spacing: 0.05em !important;
-      color: inherit !important;
-      text-decoration: none !important;
-    }
-    
-    /* Layout del footer-contact */
-    .footer-minimal .footer-contact {
-      display: flex !important;
-      flex-direction: column !important;
-      align-items: center !important;
-      gap: 1rem !important;
-      margin: 2rem 0 !important;
-    }
-    
-    /* Responsive móvil */
-    @media (max-width: 768px) {
-      .footer-minimal .footer-contact .contact-item {
-        font-size: 1.2rem !important;
-        padding: 0.6rem 1.2rem !important;
-      }
+    .phone {
+      font-weight: 500;
+      letter-spacing: 0.05em;
     }
   </style>
   
@@ -229,7 +206,88 @@
       }
     }
     
-    /* ===== FOOTER PILL-BUTTON OVERRIDE ===== */
+        /* ===== FOOTER COMPLETO IDÉNTICO A STORE.HTML ===== */
+    
+    /* Footer Principal */
+    .footer-minimal {
+      background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(5,15,25,1) 100%) !important;
+      border-top: 1px solid rgba(95, 164, 255, 0.3) !important;
+      padding: 4rem 0 3rem !important;
+      position: relative !important;
+      margin-top: 8rem !important;
+    }
+
+    /* Shimmer Animation */
+    .footer-minimal::before {
+      content: '' !important;
+      position: absolute !important;
+      top: -1px !important;
+      left: 0 !important;
+      right: 0 !important;
+      height: 1px !important;
+      background: linear-gradient(90deg, transparent, rgba(95, 164, 255, 0.8), transparent) !important;
+      animation: shimmer 3s ease-in-out infinite !important;
+    }
+
+    @keyframes shimmer {
+      0%, 100% { opacity: 0.5; }
+      50% { opacity: 1; }
+    }
+
+    /* Container */
+    .footer-container {
+      max-width: 1200px !important;
+      margin: 0 auto !important;
+      padding: 0 2rem !important;
+    }
+
+    /* Content Wrapper */
+    .footer-content {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      gap: 2rem !important;
+      text-align: center !important;
+    }
+
+    /* Logo Hover */
+    .footer-logo {
+      opacity: 0.9 !important;
+      transition: all 0.4s ease !important;
+    }
+
+    .footer-logo:hover {
+      opacity: 1 !important;
+      transform: scale(1.05) !important;
+      filter: drop-shadow(0 0 20px rgba(95, 164, 255, 0.6)) !important;
+    }
+
+    .footer-logo-img {
+      height: 40px !important;
+      width: auto !important;
+      filter: drop-shadow(0 0 10px rgba(95, 164, 255, 0.4)) !important;
+    }
+
+    /* Tagline */
+    .footer-tagline {
+      font-size: 1.2rem !important;
+      letter-spacing: 0.3em !important;
+      color: rgba(95, 164, 255, 0.9) !important;
+      font-weight: 300 !important;
+      text-transform: uppercase !important;
+      text-shadow: 0 0 10px rgba(95, 164, 255, 0.3) !important;
+    }
+
+    /* Contact Section */
+    .footer-contact {
+      display: flex !important;
+      gap: 3rem !important;
+      align-items: center !important;
+      flex-wrap: wrap !important;
+      justify-content: center !important;
+    }
+
+    /* Contact Pills */
     .contact-item {
       display: flex !important;
       align-items: center !important;
@@ -254,10 +312,69 @@
     .flag {
       font-size: 1.8rem !important;
     }
-
+    
     .phone {
       font-weight: 500 !important;
       letter-spacing: 0.05em !important;
+    }
+
+    /* Copyright */
+    .footer-copyright {
+      margin-top: 1rem !important;
+      padding-top: 2rem !important;
+      border-top: 1px solid rgba(95, 164, 255, 0.1) !important;
+      width: 100% !important;
+    }
+
+    .footer-copyright p {
+      font-size: 1.2rem !important;
+      color: rgba(255, 255, 255, 0.5) !important;
+      font-weight: 300 !important;
+      margin: 0 !important;
+    }
+
+    /* Partículas Cyber Background */
+    .footer-minimal::after {
+      content: '' !important;
+      position: absolute !important;
+      bottom: 0 !important;
+      left: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      background-image: 
+        radial-gradient(2px 2px at 20% 30%, rgba(95, 164, 255, 0.4), transparent),
+        radial-gradient(2px 2px at 60% 70%, rgba(79, 209, 197, 0.3), transparent),
+        radial-gradient(1px 1px at 90% 10%, rgba(95, 164, 255, 0.3), transparent) !important;
+      background-size: 200% 200% !important;
+      pointer-events: none !important;
+      opacity: 0.6 !important;
+      animation: floatBackground 20s ease-in-out infinite !important;
+    }
+
+    @keyframes floatBackground {
+      0%, 100% { background-position: 0% 0%; }
+      50% { background-position: 100% 100%; }
+    }
+
+    /* Responsive Mobile */
+    @media (max-width: 768px) {
+      .footer-minimal {
+        padding: 3rem 0 2rem !important;
+      }
+      
+      .footer-contact {
+        flex-direction: column !important;
+        gap: 1.5rem !important;
+      }
+      
+      .footer-tagline {
+        font-size: 1rem !important;
+        letter-spacing: 0.2em !important;
+      }
+      
+      .contact-item {
+        padding: 0.6rem 1.2rem !important;
+      }
     }
   </style>
 </head>
