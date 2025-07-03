@@ -405,7 +405,21 @@
           font-weight: 400;
         }
 
-        /* ===== RESPONSIVE DESIGN ===== */
+        /* ===== RESPONSIVE DESIGN MEJORADO ===== */
+        
+        /* Breakpoint Desktop Mediano - 1200px */
+        @media screen and (max-width: 1200px) {
+          .chair-product-container {
+            max-width: 1200px;
+            padding: 0 3rem;
+          }
+          
+          .chair-product-layout {
+            gap: 5rem;
+          }
+        }
+
+        /* Breakpoint Tablet - 1024px */
         @media screen and (max-width: 1024px) {
           .chair-product-layout {
             grid-template-columns: 1fr;
@@ -417,37 +431,69 @@
           }
           
           .product-header h1 {
-            font-size: 3.5rem;
+            font-size: 3.8rem;
           }
           
           .chair-product-title {
-            font-size: 2.8rem;
+            font-size: 3rem;
+          }
+
+          .chair-main-image-container {
+            max-width: 450px;
+            height: 450px;
+            margin: 0 auto 2rem;
           }
 
           .chair-thumbnail-gallery {
             justify-content: center;
             gap: 1.5rem;
-            max-width: 350px;
+            max-width: 450px;
+            margin: 0 auto;
           }
 
           .thumbnail-item {
-            width: 120px;
-            height: 120px;
-            min-width: 120px;
+            width: 110px;
+            height: 110px;
+            min-width: 110px;
           }
         }
 
+        /* Breakpoint Tablet Pequeño - 768px */
         @media screen and (max-width: 768px) {
           .chair-product-section {
             padding: 8rem 0 4rem 0;
           }
           
+          .chair-product-container {
+            padding: 0 1.5rem;
+          }
+          
+          .product-header {
+            margin-bottom: 4rem;
+          }
+          
           .product-header h1 {
-            font-size: 2.8rem;
+            font-size: 3.2rem;
+            line-height: 1.1;
           }
           
           .chair-product-title {
-            font-size: 2.2rem;
+            font-size: 2.6rem;
+            line-height: 1.2;
+          }
+          
+          .chair-price-current {
+            font-size: 2.6rem;
+          }
+          
+          .chair-product-description {
+            font-size: 1.6rem;
+            line-height: 1.7;
+          }
+          
+          .chair-main-image-container {
+            max-width: 380px;
+            height: 380px;
           }
           
           .chair-actions {
@@ -459,43 +505,199 @@
           .chair-add-to-cart {
             width: 100%;
             text-align: center;
+            padding: 2rem 3rem;
+            font-size: 1.4rem;
           }
 
           .chair-thumbnail-gallery {
             justify-content: center;
-            gap: 1.5rem;
-            max-width: 350px;
+            gap: 1.2rem;
+            max-width: 380px;
           }
 
           .thumbnail-item {
-            width: 120px;
-            height: 120px;
-            min-width: 120px;
+            width: 85px;
+            height: 85px;
+            min-width: 85px;
+          }
+          
+          .product-features {
+            padding: 2.5rem;
+          }
+          
+          .features-title {
+            font-size: 2rem;
+          }
+          
+          .feature-item {
+            font-size: 1.4rem;
+            padding: 0.8rem 0;
           }
         }
 
+        /* Breakpoint Móvil - 480px */
         @media screen and (max-width: 480px) {
+          .chair-product-section {
+            padding: 6rem 0 3rem 0;
+          }
+          
           .chair-product-container {
             padding: 0 1rem;
           }
+          
+          .product-header {
+            margin-bottom: 3rem;
+          }
+          
+          .product-header h1 {
+            font-size: 2.6rem;
+            line-height: 1.1;
+          }
+          
+          .product-header p {
+            font-size: 1.4rem;
+          }
+          
+          .chair-product-title {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+          }
+          
+          .chair-price-current {
+            font-size: 2.2rem;
+          }
+          
+          .price-label {
+            font-size: 1.2rem;
+          }
+          
+          .chair-product-description {
+            font-size: 1.4rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+          }
 
           .chair-main-image-container {
-            height: 350px;
+            max-width: 320px;
+            height: 320px;
           }
 
           .chair-thumbnail-gallery {
             max-width: 320px;
+            gap: 1rem;
           }
 
           .thumbnail-item {
-            width: 100px;
-            height: 100px;
-            min-width: 100px;
+            width: 75px;
+            height: 75px;
+            min-width: 75px;
           }
           
           .description-toggle-btn {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             padding: 1.5rem 2rem;
+          }
+          
+          .product-features {
+            padding: 2rem;
+            margin-bottom: 2rem;
+          }
+          
+          .features-title {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+          }
+          
+          .feature-item {
+            font-size: 1.3rem;
+            padding: 0.7rem 0;
+            gap: 1rem;
+          }
+          
+          .feature-icon {
+            font-size: 1.6rem;
+          }
+          
+          .quantity-selector {
+            padding: 0.8rem;
+          }
+          
+          .quantity-btn {
+            width: 3.5rem;
+            height: 3.5rem;
+            font-size: 1.8rem;
+          }
+          
+          .quantity-input {
+            font-size: 1.6rem;
+            width: 4rem;
+          }
+          
+          .chair-add-to-cart {
+            padding: 1.6rem 2rem;
+            font-size: 1.3rem;
+          }
+        }
+
+        /* Breakpoint Móvil Muy Pequeño - 360px */
+        @media screen and (max-width: 360px) {
+          .chair-product-container {
+            padding: 0 0.5rem;
+          }
+          
+          .product-header h1 {
+            font-size: 2.2rem;
+          }
+          
+          .chair-product-title {
+            font-size: 1.9rem;
+          }
+          
+          .chair-price-current {
+            font-size: 1.9rem;
+          }
+          
+          .chair-product-description {
+            font-size: 1.3rem;
+          }
+
+          .chair-main-image-container {
+            max-width: 280px;
+            height: 280px;
+          }
+
+          .chair-thumbnail-gallery {
+            max-width: 280px;
+            gap: 0.8rem;
+          }
+
+          .thumbnail-item {
+            width: 65px;
+            height: 65px;
+            min-width: 65px;
+          }
+          
+          .description-toggle-btn {
+            font-size: 1.4rem;
+            padding: 1.2rem 1.5rem;
+          }
+          
+          .product-features {
+            padding: 1.5rem;
+          }
+          
+          .features-title {
+            font-size: 1.6rem;
+          }
+          
+          .feature-item {
+            font-size: 1.2rem;
+            gap: 0.8rem;
+          }
+          
+          .chair-add-to-cart {
+            padding: 1.4rem 1.5rem;
+            font-size: 1.2rem;
           }
         }
 
@@ -513,7 +715,7 @@
           width: 100%;
           background: linear-gradient(135deg, #5fa4ff 0%, #4fd1c5 100%);
           color: #000;
-          font-size: 2.2rem;
+          font-size: 1.8rem;
           font-weight: 700;
           padding: 2rem 3rem;
           border: none;
@@ -533,7 +735,7 @@
         }
         
         .toggle-icon {
-          font-size: 2rem;
+          font-size: 1.6rem;
           font-weight: 700;
           transition: transform 0.4s ease;
         }
@@ -554,6 +756,92 @@
           max-height: 2000px;
           opacity: 1;
           padding: 2rem 0.5rem 0 0.5rem;
+        }
+
+        /* ===== OPTIMIZACIONES ADICIONALES RESPONSIVE ===== */
+        
+        /* Universal box-sizing y overflow fix */
+        *, *::before, *::after {
+          box-sizing: border-box;
+        }
+        
+        html, body {
+          overflow-x: hidden;
+        }
+        
+        /* Navbar responsive optimizado */
+        @media screen and (max-width: 768px) {
+          .navbar-sticky__heading .navbar-logo,
+          img.navbar-logo,
+          .navbar-sticky .navbar-logo {
+            height: 32px !important;
+            max-width: 120px !important;
+          }
+        }
+        
+        @media screen and (max-width: 480px) {
+          .navbar-sticky__heading .navbar-logo,
+          img.navbar-logo,
+          .navbar-sticky .navbar-logo {
+            height: 28px !important;
+            max-width: 100px !important;
+          }
+        }
+        
+        /* Imágenes adaptativas mejoradas */
+        @media screen and (max-width: 768px) {
+          .chair-main-image,
+          .chair-main-video {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+          }
+          
+          .thumbnail-item img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+          }
+        }
+        
+        /* Video controls responsive */
+        @media screen and (max-width: 480px) {
+          .video-controls-overlay {
+            bottom: 15px;
+            padding: 8px 16px;
+          }
+          
+          .video-play-btn {
+            width: 35px;
+            height: 35px;
+            font-size: 14px;
+          }
+          
+          .video-controls-overlay span {
+            font-size: 12px !important;
+          }
+        }
+        
+        /* Scrollbar responsive para thumbnails */
+        @media screen and (max-width: 480px) {
+          .chair-thumbnail-gallery::-webkit-scrollbar {
+            height: 4px;
+          }
+        }
+        
+        /* Texto optimizado para móvil */
+        @media screen and (max-width: 768px) {
+          .record-label-text {
+            font-size: 1.2rem !important;
+            letter-spacing: 0.15em;
+          }
+        }
+        
+        @media screen and (max-width: 480px) {
+          .record-label-text {
+            font-size: 1rem !important;
+            letter-spacing: 0.1em;
+          }
         }
       </style>
     </div>
@@ -636,12 +924,12 @@
                        muted
                        loop
                        preload="metadata"
-                       poster="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/silla.jpg"
+                       poster="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/rojo1.jpg"
                        alt="Video de la Silla de Director SUPREME"
                        style="transition: opacity 0.3s ease-in-out; opacity: 0.9;">
                   Tu navegador no soporta la reproducción de videos.
                 </video>
-                <img id="main-chair-image" src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/silla.jpg" alt="Silla de Director SUPREME" class="chair-main-image" style="display: none;">
+                <img id="main-chair-image" src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/rojo1.jpg" alt="Silla de Director SUPREME" class="chair-main-image" style="display: none;">
                 
                 <div class="video-controls-overlay" id="video-overlay">
                   <button class="video-play-btn" onclick="toggleMainVideo()" id="main-video-btn">
@@ -659,17 +947,14 @@
                     <span style="position: absolute; bottom: 5px; left: 50%; transform: translateX(-50%); color: #000; font-size: 10px; font-weight: 600;">VIDEO</span>
                   </div>
                 </div>
-                <div class="thumbnail-item" onclick="changeMainImage('https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/silla.jpg', this)" data-type="image">
-                  <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/silla.jpg" alt="Vista principal Supreme">
+                <div class="thumbnail-item" onclick="changeMainImage('https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/rojo1.jpg', this)" data-type="image">
+                  <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/rojo1.jpg" alt="Vista Supreme Roja 1">
                 </div>
-                <div class="thumbnail-item" onclick="changeMainImage('https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/silla_1%20(2).png', this)" data-type="image">
-                  <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/silla_1%20(2).png" alt="Vista lateral Supreme">
+                <div class="thumbnail-item" onclick="changeMainImage('https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/rojo2.jpg', this)" data-type="image">
+                  <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/rojo2.jpg" alt="Vista Supreme Roja 2">
                 </div>
-                <div class="thumbnail-item" onclick="changeMainImage('https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/detalle_silla1.jpg', this)" data-type="image">
-                  <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/detalle_silla1.jpg" alt="Detalle Supreme 1">
-                </div>
-                <div class="thumbnail-item" onclick="changeMainImage('https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/detalle_silla2.jpg', this)" data-type="image">
-                  <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/detalle_silla2.jpg" alt="Detalle Supreme 2">
+                <div class="thumbnail-item" onclick="changeMainImage('https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/rojo3.jpg', this)" data-type="image">
+                  <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/rojo3.jpg" alt="Vista Supreme Roja 3">
                 </div>
               </div>
             </div>
