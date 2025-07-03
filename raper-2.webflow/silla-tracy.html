@@ -55,7 +55,7 @@
           100% { text-shadow: 0 0 15px rgba(95, 164, 255, 0.8), 0 0 20px rgba(95, 164, 255, 0.4); }
         }
 
-        /* ===== ESTILOS PARA LA PÁGINA DE PRODUCTO EDICION RAPER CARNAL ===== */
+        /* ===== ESTILOS PARA LA PÁGINA DE PRODUCTO DE SILLA - FORMATO SUPREME ===== */
         .chair-product-section {
           background-color: #000;
           padding: 12rem 0 8rem 0;
@@ -113,6 +113,12 @@
           cursor: pointer;
         }
 
+        .chair-video-wrapper {
+          position: relative;
+          width: 100%;
+          height: 100%;
+        }
+
         .chair-main-image {
           width: 100%;
           height: 100%;
@@ -140,7 +146,7 @@
           transform: scale(1.02);
         }
 
-        .video-controls-overlay {
+        .video-controls {
           position: absolute;
           bottom: 20px;
           left: 50%;
@@ -154,11 +160,6 @@
           backdrop-filter: blur(10px);
           border: 1px solid rgba(95, 164, 255, 0.3);
           transition: opacity 0.3s ease;
-          opacity: 0;
-        }
-
-        .chair-main-image-container:hover .video-controls-overlay {
-          opacity: 1;
         }
 
         .video-play-btn {
@@ -182,16 +183,40 @@
         }
 
         .chair-thumbnail-gallery {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
+          display: flex;
+          flex-direction: row;
           gap: 1rem;
           width: 100%;
           max-width: 500px;
+          overflow-x: auto;
+          scrollbar-width: thin;
+          scrollbar-color: rgba(95, 164, 255, 0.6) rgba(0, 0, 0, 0.2);
+          padding-bottom: 8px;
+        }
+
+        .chair-thumbnail-gallery::-webkit-scrollbar {
+          height: 6px;
+        }
+
+        .chair-thumbnail-gallery::-webkit-scrollbar-track {
+          background: rgba(0, 0, 0, 0.2);
+          border-radius: 10px;
+        }
+
+        .chair-thumbnail-gallery::-webkit-scrollbar-thumb {
+          background: linear-gradient(90deg, #5fa4ff, #4fd1c5);
+          border-radius: 10px;
+        }
+
+        .chair-thumbnail-gallery::-webkit-scrollbar-thumb:hover {
+          background: linear-gradient(90deg, #4fd1c5, #5fa4ff);
         }
 
         .thumbnail-item {
           width: 100px;
           height: 100px;
+          min-width: 100px;
+          flex-shrink: 0;
           border-radius: 1rem;
           overflow: hidden;
           border: 2px solid transparent;
@@ -210,61 +235,94 @@
           transform: scale(1.05);
         }
 
-        .thumbnail-image {
+        .thumbnail-item img {
           width: 100%;
           height: 100%;
-          object-fit: contain;
-          object-position: center;
-          padding: 10px;
-          background: linear-gradient(135deg, #f8f8f8 0%, #ececec 100%);
-          filter: contrast(1.1) brightness(1.05);
+          object-fit: cover;
+        }
+
+        .video-thumbnail {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 1rem;
+        }
+
+        .video-play-icon {
+          color: #4fd1c5;
+          font-size: 2rem;
+          margin-bottom: 5px;
+        }
+
+        .video-label {
+          position: absolute;
+          bottom: 5px;
+          left: 50%;
+          transform: translateX(-50%);
+          color: #fff;
+          font-size: 1rem;
+          font-weight: 600;
         }
 
         /* ===== INFORMACIÓN DEL PRODUCTO ===== */
-        .chair-product-info {
+        .chair-info-section {
           display: flex;
           flex-direction: column;
           gap: 3rem;
         }
 
-        .product-title {
+        .chair-product-title {
           font-size: 3.5rem;
           font-weight: 700;
-          color: white;
+          color: #fff;
           margin-bottom: 1rem;
           text-transform: uppercase;
           letter-spacing: 0.05em;
-          line-height: 1.2;
         }
 
-        .product-artist {
-          font-size: 1.8rem;
-          color: #5fa4ff;
-          font-weight: 600;
+        .chair-product-artist {
+          font-size: 1.6rem;
+          color: #888;
           margin-bottom: 2rem;
           text-transform: uppercase;
           letter-spacing: 0.1em;
         }
 
-        .product-price {
+        .chair-product-price {
+          display: flex;
+          align-items: baseline;
+          gap: 1rem;
+          margin-bottom: 2rem;
+        }
+
+        .price-amount {
           font-size: 3rem;
           font-weight: 700;
           background: linear-gradient(135deg, #5fa4ff 0%, #4fd1c5 100%);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
-          margin-bottom: 2rem;
         }
 
-        .product-description {
-          font-size: 1.6rem;
-          color: #b0b0b0;
-          line-height: 1.8;
+        .price-currency {
+          font-size: 1.8rem;
+          color: #888;
+          font-weight: 600;
+        }
+
+        .chair-product-description {
+          font-size: 1.8rem;
+          line-height: 1.6;
+          color: #e0e0e0;
           margin-bottom: 3rem;
         }
 
-        /* ===== SECCIÓN DE DESCRIPCIÓN COLAPSABLE ===== */
-        .product-description-section {
+        /* ===== DESCRIPCIÓN COLAPSABLE ===== */
+        .chair-description-section {
           margin-bottom: 3rem;
         }
 
@@ -346,84 +404,292 @@
         }
 
         /* ===== BOTONES DE ACCIÓN ===== */
-        .product-actions {
+        .chair-product-actions {
           display: flex;
           flex-direction: column;
           gap: 2rem;
         }
 
-        .add-to-cart-btn {
+        .chair-add-to-cart-btn {
           background: linear-gradient(135deg, #5fa4ff 0%, #4fd1c5 100%);
           color: #000;
           border: none;
           padding: 2rem 4rem;
-          border-radius: 5rem;
+          border-radius: 1.5rem;
           font-size: 1.8rem;
           font-weight: 700;
           cursor: pointer;
           transition: all 0.3s ease;
           text-transform: uppercase;
           letter-spacing: 0.1em;
+          box-shadow: 0 10px 30px rgba(95, 164, 255, 0.3);
         }
 
-        .add-to-cart-btn:hover {
+        .chair-add-to-cart-btn:hover {
           transform: translateY(-3px);
-          box-shadow: 0 15px 40px rgba(95, 164, 255, 0.4);
+          box-shadow: 0 15px 40px rgba(95, 164, 255, 0.5);
           background: linear-gradient(135deg, #4fd1c5 0%, #5fa4ff 100%);
         }
 
-        .product-sku {
+        .chair-product-sku {
           font-size: 1.4rem;
           color: #666;
           text-transform: uppercase;
           letter-spacing: 0.1em;
+          text-align: center;
         }
 
-        /* ===== RESPONSIVE DESIGN ===== */
-        @media screen and (max-width: 991px) {
+        /* ===== RESPONSIVE DESIGN COMPLETO - FORMATO SUPREME ===== */
+        
+        /* Universal box-sizing y overflow fix */
+        *, *::before, *::after {
+          box-sizing: border-box;
+        }
+        
+        html, body {
+          overflow-x: hidden;
+        }
+        
+        /* Navbar responsive optimizado */
+        @media screen and (max-width: 768px) {
+          .navbar-sticky__heading .navbar-logo,
+          img.navbar-logo,
+          .navbar-sticky .navbar-logo {
+            height: 32px !important;
+            max-width: 120px !important;
+          }
+        }
+        
+        @media screen and (max-width: 480px) {
+          .navbar-sticky__heading .navbar-logo,
+          img.navbar-logo,
+          .navbar-sticky .navbar-logo {
+            height: 28px !important;
+            max-width: 100px !important;
+          }
+        }
+
+        /* Breakpoint Desktop Mediano - 1200px */
+        @media screen and (max-width: 1200px) {
+          .chair-product-container {
+            max-width: 1200px;
+            padding: 0 3rem;
+          }
+          
+          .chair-product-layout {
+            gap: 5rem;
+          }
+          
+          .chair-main-image-container {
+            max-width: 480px;
+            height: 480px;
+          }
+          
+          .chair-thumbnail-gallery {
+            max-width: 480px;
+          }
+        }
+
+        /* Breakpoint Tablet - 1024px */
+        @media screen and (max-width: 1024px) {
           .chair-product-layout {
             grid-template-columns: 1fr;
             gap: 4rem;
           }
-
-          .product-header h1 {
-            font-size: 3rem;
-          }
-
-          .product-title {
-            font-size: 2.5rem;
-          }
-
+          
           .chair-product-container {
             padding: 0 2rem;
           }
-
-          .chair-thumbnail-gallery {
-            grid-template-columns: repeat(3, 1fr);
+          
+          .product-header h1 {
+            font-size: 3.8rem;
+          }
+          
+          .chair-product-title {
+            font-size: 3rem;
           }
 
-          .description-toggle-btn {
-            font-size: 1.8rem;
-            padding: 1.5rem 2rem;
+          .chair-main-image-container {
+            max-width: 450px;
+            height: 450px;
+            margin: 0 auto 2rem;
+          }
+
+          .chair-thumbnail-gallery {
+            justify-content: center;
+            gap: 1.5rem;
+            max-width: 450px;
+            margin: 0 auto;
+          }
+
+          .thumbnail-item {
+            width: 110px;
+            height: 110px;
+            min-width: 110px;
           }
         }
 
-        @media screen and (max-width: 479px) {
-          .product-header h1 {
-            font-size: 2.5rem;
+        /* Breakpoint Tablet Pequeño - 768px */
+        @media screen and (max-width: 768px) {
+          .chair-product-section {
+            padding: 8rem 0 4rem 0;
           }
+          
+          .chair-product-container {
+            padding: 0 1.5rem;
+          }
+          
+          .product-header {
+            margin-bottom: 4rem;
+          }
+          
+          .product-header h1 {
+            font-size: 3.2rem;
+            line-height: 1.1;
+          }
+          
+          .chair-product-title {
+            font-size: 2.6rem;
+            line-height: 1.2;
+          }
+          
+          .price-amount {
+            font-size: 2.6rem;
+          }
+          
+          .chair-product-description {
+            font-size: 1.6rem;
+            line-height: 1.7;
+          }
+          
+          .chair-main-image-container {
+            max-width: 380px;
+            height: 380px;
+          }
+          
+          .chair-add-to-cart-btn {
+            padding: 2rem 3rem;
+            font-size: 1.6rem;
+          }
+          
+          .thumbnail-item {
+            width: 85px;
+            height: 85px;
+            min-width: 85px;
+          }
+        }
 
-          .product-title {
+        /* Breakpoint Móvil - 480px */
+        @media screen and (max-width: 480px) {
+          .chair-product-section {
+            padding: 6rem 0 3rem 0;
+          }
+          
+          .chair-product-container {
+            padding: 0 1rem;
+          }
+          
+          .product-header {
+            margin-bottom: 3rem;
+          }
+          
+          .product-header h1 {
+            font-size: 2.8rem;
+            line-height: 1.1;
+          }
+          
+          .chair-product-title {
+            font-size: 2.2rem;
+            line-height: 1.2;
+          }
+          
+          .price-amount {
+            font-size: 2.2rem;
+          }
+          
+          .chair-product-description {
+            font-size: 1.5rem;
+            line-height: 1.6;
+          }
+          
+          .chair-main-image-container {
+            max-width: 320px;
+            height: 320px;
+          }
+          
+          .chair-add-to-cart-btn {
+            padding: 1.8rem 2.5rem;
+            font-size: 1.5rem;
+          }
+          
+          .thumbnail-item {
+            width: 75px;
+            height: 75px;
+            min-width: 75px;
+          }
+          
+          .description-toggle-btn {
+            font-size: 1.6rem;
+            padding: 1.8rem 2rem;
+          }
+          
+          .video-controls {
+            bottom: 10px;
+            padding: 8px 15px;
+          }
+          
+          .video-play-btn {
+            width: 35px;
+            height: 35px;
+            font-size: 14px;
+          }
+        }
+
+        /* Breakpoint Móvil Muy Pequeño - 360px */
+        @media screen and (max-width: 360px) {
+          .chair-product-container {
+            padding: 0 0.8rem;
+          }
+          
+          .product-header h1 {
+            font-size: 2.4rem;
+          }
+          
+          .chair-product-title {
             font-size: 2rem;
           }
-
-          .chair-thumbnail-gallery {
-            grid-template-columns: repeat(2, 1fr);
+          
+          .price-amount {
+            font-size: 2rem;
           }
-
+          
+          .chair-product-description {
+            font-size: 1.4rem;
+          }
+          
+          .chair-main-image-container {
+            max-width: 280px;
+            height: 280px;
+          }
+          
+          .chair-add-to-cart-btn {
+            padding: 1.6rem 2rem;
+            font-size: 1.4rem;
+          }
+          
+          .thumbnail-item {
+            width: 65px;
+            height: 65px;
+            min-width: 65px;
+          }
+          
           .description-toggle-btn {
-            font-size: 1.8rem;
-            padding: 1.5rem 2rem;
+            font-size: 1.4rem;
+            padding: 1.6rem 1.8rem;
+          }
+          
+          .description-content.open {
+            padding: 1.5rem 2rem 2rem 2rem;
           }
         }
       </style>
@@ -495,48 +761,58 @@
         <div class="chair-product-layout">
           <!-- Galería de Imágenes y Video -->
           <div class="chair-image-section">
-            <div class="chair-main-image-container" id="mainContainer">
-              <img id="mainImage" src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/tracy%201.jpg" alt="Edición RAPER Carnal" class="chair-main-image">
-              <video id="mainVideo" class="chair-main-video" style="display: none;" autoplay muted loop>
-                <source src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/verde_girando.mp4" type="video/mp4">
-              </video>
-              <div class="video-controls-overlay" id="videoControls" style="display: none;">
-                <button class="video-play-btn" onclick="toggleVideoPlayback()">
-                  <span id="playIcon">▶</span>
-                </button>
+            <div class="chair-main-image-container">
+              <div class="chair-video-wrapper">
+                <video id="chair-video" class="chair-main-video" autoplay muted loop
+                       poster="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/tracy%201.jpg">
+                  <source src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/verde_girando.mp4" type="video/mp4">
+                </video>
+                <img id="main-chair-image" src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/tracy%201.jpg" alt="Silla de Director CARNAL" class="chair-main-image" style="display: none;">
+                
+                <div class="video-controls">
+                  <button class="video-play-btn" onclick="toggleVideoPlayback()">
+                    <span id="play-icon">⏸</span>
+                  </button>
+                </div>
               </div>
             </div>
             
             <div class="chair-thumbnail-gallery">
-              <div class="thumbnail-item active" onclick="changeMedia('image', 'https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/tracy%201.jpg', this)">
-                <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/tracy%201.jpg" alt="Vista Principal" class="thumbnail-image">
+              <div class="thumbnail-item" onclick="changeMainImage('https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/tracy%201.jpg', this)" data-type="image">
+                <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/tracy%201.jpg" alt="Vista principal CARNAL">
               </div>
-              <div class="thumbnail-item" onclick="changeMedia('video', 'https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/verde_girando.mp4', this)">
-                <div style="position: relative; width: 100%; height: 100%; background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%); display: flex; align-items: center; justify-content: center; border-radius: 1rem;">
-                  <div style="color: #4fd1c5; font-size: 2rem;">▶</div>
-                  <div style="position: absolute; bottom: 5px; left: 50%; transform: translateX(-50%); color: #fff; font-size: 1rem; font-weight: 600;">VIDEO</div>
+              <div class="thumbnail-item" onclick="changeMainImage('https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/tracy%201.jpg', this)" data-type="image">
+                <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/tracy%201.jpg" alt="Vista lateral CARNAL">
+              </div>
+              <div class="thumbnail-item" onclick="changeMainImage('https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/tracy%201.jpg', this)" data-type="image">
+                <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/tracy%201.jpg" alt="Detalle CARNAL">
+              </div>
+              <div class="thumbnail-item active" onclick="showVideo(this)" data-type="video">
+                <div class="video-thumbnail">
+                  <div class="video-play-icon">▶</div>
+                  <div class="video-label">VIDEO</div>
                 </div>
-              </div>
-              <div class="thumbnail-item" onclick="changeMedia('image', 'https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/tracy%201.jpg', this)">
-                <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/tracy%201.jpg" alt="Vista Detalle" class="thumbnail-image">
               </div>
             </div>
           </div>
 
           <!-- Información del Producto -->
-          <div class="chair-product-info">
-            <h2 class="product-title">Edición RAPER Carnal</h2>
-            <p class="product-artist">Edición Exclusiva RAPER Company</p>
-            <p class="product-price">$375.000 ARS</p>
+          <div class="chair-info-section">
+            <h1 class="chair-product-title">Edición RAPER Carnal</h1>
+            <p class="chair-product-artist">Edición Exclusiva RAPER Company</p>
+            <div class="chair-product-price">
+              <span class="price-amount">$375.000</span>
+              <span class="price-currency">ARS</span>
+            </div>
             
-            <div class="product-description">
+            <div class="chair-product-description">
               <p>Silla de director de edición ultra limitada que representa la esencia más cruda y auténtica del rap argentino. La Edición RAPER Carnal es una declaración de principios: sin filtros, sin concesiones, puro rap de barrio elevado al máximo nivel de calidad y exclusividad.</p>
             </div>
 
             <!-- Sección de Descripción Colapsable -->
-            <div class="product-description-section">
+            <div class="chair-description-section">
               <button class="description-toggle-btn" onclick="toggleDescription()">
-                <span>Descripción</span>
+                <span>DESCRIPCIÓN</span>
                 <span class="toggle-icon">▼</span>
               </button>
               
@@ -573,11 +849,11 @@
             </div>
 
             <!-- Botones de Acción -->
-            <div class="product-actions">
-              <button class="add-to-cart-btn" onclick="addToCart(5)">
-                Agregar al Carrito
+            <div class="chair-product-actions">
+              <button class="chair-add-to-cart-btn" onclick="addToCart(5)">
+                AGREGAR AL CARRITO
               </button>
-              <p class="product-sku">SKU: RAPER-CARNAL-001</p>
+              <p class="chair-product-sku">SKU: RAPER-CARNAL-001</p>
             </div>
           </div>
         </div>
@@ -590,7 +866,7 @@
         <div class="footer-wrapper">
           <div class="footer-content">
             <div class="footer-brand">
-              <img src="https://res.cloudinary.com/dt5pkdr0k/image/upload/v1747379718/fabicon_2_1_j76m5a.png" loading="lazy" alt="RAPER Logo" class="footer-logo">
+              <img src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/Asset%2019supreme%20(1).png" loading="lazy" alt="RAPER Logo" class="footer-logo">
               <p class="footer-description">RAPER Company - Redefiniendo el estilo urbano a través del diseño y la música.</p>
             </div>
             <div class="footer-links">
@@ -632,11 +908,13 @@
   </div>
 
   <script>
-    // Función para cambiar entre imagen y video
-    function changeMedia(type, src, thumbnail) {
-      const mainImage = document.getElementById('mainImage');
-      const mainVideo = document.getElementById('mainVideo');
-      const videoControls = document.getElementById('videoControls');
+    // ===== FUNCIONES DE GALERÍA - FORMATO SUPREME =====
+    
+    // Función para cambiar imagen principal
+    function changeMainImage(imageSrc, thumbnail) {
+      const mainImage = document.getElementById('main-chair-image');
+      const mainVideo = document.getElementById('chair-video');
+      const videoControls = document.querySelector('.video-controls');
       
       // Remover clase active de todos los thumbnails
       document.querySelectorAll('.thumbnail-item').forEach(item => {
@@ -646,59 +924,75 @@
       // Agregar clase active al thumbnail clickeado
       thumbnail.classList.add('active');
       
-      if (type === 'image') {
-        // Mostrar imagen, ocultar video
-        mainImage.style.display = 'block';
-        mainVideo.style.display = 'none';
-        videoControls.style.display = 'none';
-        mainImage.src = src;
-        
-        // Pausar video si estaba reproduciéndose
-        mainVideo.pause();
-      } else if (type === 'video') {
-        // Mostrar video, ocultar imagen
-        mainImage.style.display = 'none';
-        mainVideo.style.display = 'block';
-        videoControls.style.display = 'flex';
-        
-        // Cargar nuevo video si es diferente
-        if (mainVideo.src !== src) {
-          mainVideo.src = src;
-        }
-        
-        // Reproducir automáticamente
-        mainVideo.play().catch(e => {
-          console.log('Autoplay blocked:', e);
-        });
-      }
+      // Mostrar imagen, ocultar video
+      mainImage.style.display = 'block';
+      mainVideo.style.display = 'none';
+      if (videoControls) videoControls.style.display = 'none';
+      
+      // Cambiar la imagen
+      mainImage.src = imageSrc;
+      
+      // Pausar video si estaba reproduciéndose
+      mainVideo.pause();
+      
+      console.log('🖼️ Imagen principal cambiada:', imageSrc);
+    }
+
+    // Función para mostrar video
+    function showVideo(thumbnail) {
+      const mainImage = document.getElementById('main-chair-image');
+      const mainVideo = document.getElementById('chair-video');
+      const videoControls = document.querySelector('.video-controls');
+      
+      // Remover clase active de todos los thumbnails
+      document.querySelectorAll('.thumbnail-item').forEach(item => {
+        item.classList.remove('active');
+      });
+      
+      // Agregar clase active al thumbnail clickeado
+      thumbnail.classList.add('active');
+      
+      // Mostrar video, ocultar imagen
+      mainImage.style.display = 'none';
+      mainVideo.style.display = 'block';
+      if (videoControls) videoControls.style.display = 'flex';
+      
+      // Reproducir video automáticamente
+      mainVideo.play().catch(e => {
+        console.log('Autoplay blocked:', e);
+      });
+      
+      console.log('▶️ Video mostrado');
     }
 
     // Función para controlar reproducción del video
     function toggleVideoPlayback() {
-      const mainVideo = document.getElementById('mainVideo');
-      const playIcon = document.getElementById('playIcon');
+      const mainVideo = document.getElementById('chair-video');
+      const playIcon = document.getElementById('play-icon');
       
       if (mainVideo.paused) {
         mainVideo.play();
-        playIcon.textContent = '⏸';
+        if (playIcon) playIcon.textContent = '⏸';
       } else {
         mainVideo.pause();
-        playIcon.textContent = '▶';
+        if (playIcon) playIcon.textContent = '▶';
       }
     }
 
-    // Actualizar icono de play/pause automáticamente
+    // Event listeners para el video
     document.addEventListener('DOMContentLoaded', function() {
-      const mainVideo = document.getElementById('mainVideo');
-      const playIcon = document.getElementById('playIcon');
+      const mainVideo = document.getElementById('chair-video');
+      const playIcon = document.getElementById('play-icon');
       
-      mainVideo.addEventListener('play', function() {
-        playIcon.textContent = '⏸';
-      });
-      
-      mainVideo.addEventListener('pause', function() {
-        playIcon.textContent = '▶';
-      });
+      if (mainVideo && playIcon) {
+        mainVideo.addEventListener('play', function() {
+          playIcon.textContent = '⏸';
+        });
+        
+        mainVideo.addEventListener('pause', function() {
+          playIcon.textContent = '▶';
+        });
+      }
     });
 
     // Función para toggle de descripción
@@ -721,7 +1015,7 @@
     function addToCart(productId) {
       console.log('🪑 Agregando Edición RAPER Carnal al carrito...');
       
-      const button = document.querySelector('.add-to-cart-btn');
+      const button = document.querySelector('.chair-add-to-cart-btn');
       
       // Efecto visual inmediato
       button.style.transform = 'scale(0.95)';
