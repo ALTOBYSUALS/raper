@@ -652,33 +652,79 @@
         cartCount.textContent = totalItems;
       }
 
-      // Mobile Menu Toggle - IDÉNTICO AL DE STORE.HTML
+      // Mobile Menu Toggle - CON DEBUG COMPLETO
       const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
       const mobileMenu = document.getElementById('mobile-menu');
       const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
       
+      console.log('🔍 DEBUG MENÚ MÓVIL:');
+      console.log('📱 Toggle:', mobileMenuToggle);
+      console.log('📋 Menú:', mobileMenu);
+      console.log('🔗 Links:', mobileMenuLinks.length);
+      
       if (mobileMenuToggle && mobileMenu) {
-        mobileMenuToggle.addEventListener('click', function() {
+        console.log('✅ Elementos encontrados - configurando eventos');
+        
+        mobileMenuToggle.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          
+          console.log('🍔 CLICK EN HAMBURGUESA!');
+          console.log('📱 Estado antes:', {
+            toggleActive: mobileMenuToggle.classList.contains('active'),
+            menuActive: mobileMenu.classList.contains('active')
+          });
+          
           mobileMenuToggle.classList.toggle('active');
           mobileMenu.classList.toggle('active');
-          document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+          
+          const isActive = mobileMenu.classList.contains('active');
+          document.body.style.overflow = isActive ? 'hidden' : '';
+          
+          console.log('📱 Estado después:', {
+            toggleActive: mobileMenuToggle.classList.contains('active'),
+            menuActive: mobileMenu.classList.contains('active'),
+            bodyOverflow: document.body.style.overflow
+          });
+          
+          // FORZAR ESTILOS DIRECTAMENTE
+          if (isActive) {
+            mobileMenu.style.right = '0px';
+            mobileMenu.style.display = 'flex';
+            mobileMenu.style.opacity = '1';
+            mobileMenu.style.visibility = 'visible';
+            console.log('🟢 Menú ABIERTO forzadamente');
+          } else {
+            mobileMenu.style.right = '-100%';
+            console.log('🔴 Menú CERRADO');
+          }
         });
         
         mobileMenuLinks.forEach(link => {
           link.addEventListener('click', function() {
+            console.log('🔗 Click en link del menú');
             mobileMenuToggle.classList.remove('active');
             mobileMenu.classList.remove('active');
+            mobileMenu.style.right = '-100%';
             document.body.style.overflow = '';
           });
         });
         
         document.addEventListener('click', function(e) {
           if (!mobileMenu.contains(e.target) && !mobileMenuToggle.contains(e.target) && mobileMenu.classList.contains('active')) {
+            console.log('📱 Click fuera - cerrando menú');
             mobileMenuToggle.classList.remove('active');
             mobileMenu.classList.remove('active');
+            mobileMenu.style.right = '-100%';
             document.body.style.overflow = '';
           }
         });
+        
+        console.log('✅ Event listeners configurados correctamente');
+      } else {
+        console.error('❌ ERROR: No se encontraron elementos del menú móvil');
+        console.log('Toggle element:', mobileMenuToggle);
+        console.log('Menu element:', mobileMenu);
       }
 
 
