@@ -2918,45 +2918,7 @@ margin: 0rem !important;
   </div>
 
   <style>
-    /* ===== FIX ESPECÍFICO PARA IOS SAFARI - TEXT DECORATION ===== */
-    .phone, 
-    .contact-item .phone,
-    span.phone {
-      -webkit-text-decoration: none !important;
-      text-decoration: none !important;
-      -webkit-text-decoration-line: none !important;
-      text-decoration-line: none !important;
-      -webkit-text-decoration-color: transparent !important;
-      text-decoration-color: transparent !important;
-      color: rgba(255, 255, 255, 0.7) !important;
-      font-weight: 500 !important;
-      letter-spacing: 0.05em !important;
-    }
-    
-    .contact-item .phone:hover {
-      color: rgba(95, 164, 255, 0.9) !important;
-      text-decoration: none !important;
-      -webkit-text-decoration: none !important;
-    }
-    
-    /* Forzar estilos en todos los estados */
-    .phone:link,
-    .phone:visited,
-    .phone:hover,
-    .phone:active {
-      text-decoration: none !important;
-      -webkit-text-decoration: none !important;
-      color: inherit !important;
-    }
-    
-    /* Evitar auto-detección de teléfonos en iOS */
-    .contact-item {
-      -webkit-touch-callout: none !important;
-      -webkit-user-select: none !important;
-      -moz-user-select: none !important;
-      -ms-user-select: none !important;
-      user-select: none !important;
-    }
+    /* ===== CSS FOOTER ELIMINADO - AHORA SE USA EL DEL HEAD PARA CONSISTENCIA TOTAL =====*/
     
     /* Animación de pulso para el brillo del auricular */
     @keyframes pulse {
@@ -3935,8 +3897,7 @@ margin: 0rem !important;
     });
   </script>
   
-  <!-- Carrito JavaScript -->
-  <script src="js/cart.js"></script>
+  <!-- Carrito JavaScript (Carga eliminada, ya se carga en el head) -->
 
 
 
