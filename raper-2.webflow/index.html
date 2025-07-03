@@ -78,35 +78,58 @@
   </style>
   
   <style>
-    /* ===== FOOTER PILL-BUTTON OVERRIDE ===== */
-    .contact-item {
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
+    /* ===== FOOTER PILL-BUTTON OVERRIDE - ULTRA ESPECÍFICO ===== */
+    .footer-minimal .footer-contact .contact-item {
+      display: flex !important;
+      align-items: center !important;
+      gap: 0.8rem !important;
       color: rgba(255, 255, 255, 0.7) !important;
-      font-size: 1.4rem;
-      transition: all 0.3s ease;
-      padding: 0.8rem 1.5rem;
-      border: 1px solid rgba(95, 164, 255, 0.2);
-      border-radius: 25px;
-      background: rgba(95, 164, 255, 0.05);
+      font-size: 1.4rem !important;
+      transition: all 0.3s ease !important;
+      padding: 0.8rem 1.5rem !important;
+      border: 1px solid rgba(95, 164, 255, 0.2) !important;
+      border-radius: 25px !important;
+      background: rgba(95, 164, 255, 0.05) !important;
+      width: auto !important;
+      margin: 0.5rem 0 !important;
+      cursor: default !important;
     }
 
-    .contact-item:hover {
+    .footer-minimal .footer-contact .contact-item:hover {
       color: rgba(95, 164, 255, 0.9) !important;
-      transform: translateY(-2px);
-      border-color: rgba(95, 164, 255, 0.5);
-      box-shadow: 0 5px 15px rgba(95, 164, 255, 0.2);
-      background: rgba(95, 164, 255, 0.1);
+      transform: translateY(-2px) !important;
+      border-color: rgba(95, 164, 255, 0.5) !important;
+      box-shadow: 0 5px 15px rgba(95, 164, 255, 0.2) !important;
+      background: rgba(95, 164, 255, 0.1) !important;
     }
     
-    .flag {
-      font-size: 1.8rem;
+    .footer-minimal .footer-contact .contact-item .flag {
+      font-size: 1.8rem !important;
+      margin-right: 0.5rem !important;
     }
 
-    .phone {
-      font-weight: 500;
-      letter-spacing: 0.05em;
+    .footer-minimal .footer-contact .contact-item .phone {
+      font-weight: 500 !important;
+      letter-spacing: 0.05em !important;
+      color: inherit !important;
+      text-decoration: none !important;
+    }
+    
+    /* Layout del footer-contact */
+    .footer-minimal .footer-contact {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      gap: 1rem !important;
+      margin: 2rem 0 !important;
+    }
+    
+    /* Responsive móvil */
+    @media (max-width: 768px) {
+      .footer-minimal .footer-contact .contact-item {
+        font-size: 1.2rem !important;
+        padding: 0.6rem 1.2rem !important;
+      }
     }
   </style>
   
@@ -204,6 +227,37 @@
         box-shadow: none !important;
         background: transparent !important;
       }
+    }
+    
+    /* ===== FOOTER PILL-BUTTON OVERRIDE ===== */
+    .contact-item {
+      display: flex !important;
+      align-items: center !important;
+      gap: 0.8rem !important;
+      color: rgba(255, 255, 255, 0.7) !important;
+      font-size: 1.4rem !important;
+      transition: all 0.3s ease !important;
+      padding: 0.8rem 1.5rem !important;
+      border: 1px solid rgba(95, 164, 255, 0.2) !important;
+      border-radius: 25px !important;
+      background: rgba(95, 164, 255, 0.05) !important;
+    }
+
+    .contact-item:hover {
+      color: rgba(95, 164, 255, 0.9) !important;
+      transform: translateY(-2px) !important;
+      border-color: rgba(95, 164, 255, 0.5) !important;
+      box-shadow: 0 5px 15px rgba(95, 164, 255, 0.2) !important;
+      background: rgba(95, 164, 255, 0.1) !important;
+    }
+    
+    .flag {
+      font-size: 1.8rem !important;
+    }
+
+    .phone {
+      font-weight: 500 !important;
+      letter-spacing: 0.05em !important;
     }
   </style>
 </head>
