@@ -619,9 +619,10 @@
                        autoplay 
                        muted
                        loop
-                       preload="auto"
+                       preload="metadata"
                        poster="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/silla.jpg"
-                       alt="Video de la Silla de Director RAPER">
+                       alt="Video de la Silla de Director RAPER"
+                       style="transition: opacity 0.3s ease-in-out; opacity: 0.9;">
                   Tu navegador no soporta la reproducción de videos.
                 </video>
                 <img id="main-chair-image" src="https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/silla.jpg" alt="Silla de Director RAPER" class="chair-main-image" style="display: none;">
@@ -1021,11 +1022,51 @@
       const videoOverlay = document.getElementById('video-overlay');
 
       if (mainVideo && videoBtn) {
+        // OPTIMIZACIÓN ANTI-FLASH: Eventos múltiples
+        let hasPlayedMain = false;
+        
+        // Evento temprano - cuando puede empezar
+        mainVideo.addEventListener('canplay', function() {
+          if (!hasPlayedMain) {
+            console.log('🎬 Video principal listo (canplay)');
+            attemptMainPlay();
+          }
+        });
+        
+        // Evento seguro - cuando tiene suficientes datos
+        mainVideo.addEventListener('canplaythrough', function() {
+          if (!hasPlayedMain) {
+            console.log('⚡ Video principal completamente listo');
+            attemptMainPlay();
+          }
+        });
+        
+        // Función para intentar reproducir
+        function attemptMainPlay() {
+          if (hasPlayedMain) return;
+          hasPlayedMain = true;
+          
+          const playPromise = mainVideo.play();
+          if (playPromise !== undefined) {
+            playPromise.then(() => {
+              console.log('✅ Video principal reproduciendo - transición suave');
+              mainVideo.style.opacity = '1';
+              videoBtn.textContent = '⏸';
+            }).catch(error => {
+              console.log('🔇 Autoplay bloqueado:', error.message);
+              mainVideo.style.opacity = '1';
+              videoBtn.textContent = '▶';
+              hasPlayedMain = false;
+            });
+          }
+        }
+        
         // Configurar autoplay si está soportado
         mainVideo.addEventListener('loadeddata', function() {
-          console.log('🎬 Video cargado y listo para reproducir automáticamente');
-          // Actualizar botón inicial basado en autoplay
-          videoBtn.textContent = mainVideo.paused ? '▶' : '⏸';
+          if (!hasPlayedMain) {
+            console.log('📊 Video principal datos cargados');
+            setTimeout(attemptMainPlay, 50); // Pequeño delay anti-flash
+          }
         });
 
         // Eventos del video
@@ -1048,18 +1089,6 @@
         mainVideo.addEventListener('error', function(e) {
           console.log('⚠️ Error en video:', e);
         });
-
-        // Intentar autoplay si falló inicialmente
-        const playPromise = mainVideo.play();
-        if (playPromise !== undefined) {
-          playPromise.then(() => {
-            console.log('✅ Autoplay iniciado exitosamente');
-            videoBtn.textContent = '⏸';
-          }).catch(error => {
-            console.log('🔇 Autoplay bloqueado por el navegador, se requiere interacción del usuario');
-            videoBtn.textContent = '▶';
-          });
-        }
 
         // Overlay simplificado - siempre visible pero transparente durante reproducción
         const mediaContainer = document.getElementById('main-media-container');

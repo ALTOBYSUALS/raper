@@ -551,10 +551,10 @@
 
     // Inicialización
     document.addEventListener('DOMContentLoaded', function() {
-      // ===== MANEJO AVANZADO DE VIDEOS PARA MÓVIL =====
+      // ===== MANEJO AVANZADO DE VIDEOS ANTI-FLASH =====
       function initializeVideos() {
         const videos = document.querySelectorAll('.silla-video');
-        console.log(`🎥 Inicializando ${videos.length} videos para móvil`);
+        console.log(`🎥 Inicializando ${videos.length} videos (anti-flash optimized)`);
         
         videos.forEach((video, index) => {
           // Configuración móvil mejorada
@@ -562,52 +562,120 @@
           video.setAttribute('webkit-playsinline', '');
           video.setAttribute('muted', '');
           video.setAttribute('autoplay', '');
-          video.muted = true; // Forzar muted para autoplay
+          video.muted = true;
           
-          // Listener para when video can play
-          video.addEventListener('loadeddata', function() {
-            console.log(`✅ Video ${index + 1} cargado exitosamente`);
-            // Intentar reproducir inmediatamente
-            const playPromise = video.play();
-            if (playPromise !== undefined) {
-              playPromise.catch(error => {
-                console.log(`⚠️ Autoplay bloqueado para video ${index + 1}:`, error);
-                // En móvil, mostrar el poster si autoplay falla
-              });
+          // OPTIMIZACIÓN ANTI-FLASH: Preload inteligente
+          video.setAttribute('preload', 'metadata'); // Solo metadatos inicialmente
+          
+          // CSS para transición suave (sin cambiar diseño)
+          video.style.transition = 'opacity 0.3s ease-in-out';
+          video.style.opacity = '0.8'; // Ligeramente transparente hasta que cargue
+          
+          // ESTRATEGIA MÚLTIPLE: Varios eventos para capturar momento exacto
+          let hasPlayed = false;
+          let isVideoReady = false;
+          
+          // 1. Evento más temprano - cuando puede empezar a reproducir
+          video.addEventListener('canplay', function() {
+            if (!hasPlayed && !isVideoReady) {
+              console.log(`⚡ Video ${index + 1} listo (canplay)`);
+              isVideoReady = true;
+              attemptPlay(video, index);
             }
           });
           
-          // Listener para errores
-          video.addEventListener('error', function(e) {
-            console.error(`❌ Error cargando video ${index + 1}:`, e);
+          // 2. Evento más seguro - cuando tiene suficientes datos
+          video.addEventListener('canplaythrough', function() {
+            if (!hasPlayed) {
+              console.log(`🎬 Video ${index + 1} completamente listo (canplaythrough)`);
+              attemptPlay(video, index);
+            }
           });
           
-          // Intersection Observer para reproducir cuando sea visible
+          // 3. Fallback con delay mínimo
+          video.addEventListener('loadeddata', function() {
+            if (!hasPlayed) {
+              console.log(`📊 Video ${index + 1} datos cargados (loadeddata)`);
+              // Delay mínimo para evitar race condition
+              setTimeout(() => attemptPlay(video, index), 50);
+            }
+          });
+          
+          // Función optimizada para reproducir
+          function attemptPlay(video, index) {
+            if (hasPlayed) return;
+            hasPlayed = true;
+            
+            const playPromise = video.play();
+            if (playPromise !== undefined) {
+              playPromise.then(() => {
+                console.log(`✅ Video ${index + 1} reproduciendo - transición suave`);
+                // Transición suave a opacidad completa
+                video.style.opacity = '1';
+              }).catch(error => {
+                console.log(`⚠️ Autoplay bloqueado para video ${index + 1}: ${error.message}`);
+                // Mantener opacidad para que se vea el poster
+                video.style.opacity = '1';
+                hasPlayed = false; // Permitir retry
+              });
+            }
+          }
+          
+          // Manejo de errores
+          video.addEventListener('error', function(e) {
+            console.error(`❌ Error video ${index + 1}:`, e);
+            video.style.opacity = '1'; // Mostrar poster en caso de error
+            hasPlayed = false;
+          });
+          
+          // INTERSECTION OBSERVER AGRESIVO - Preload inteligente
           if ('IntersectionObserver' in window) {
             const observer = new IntersectionObserver((entries) => {
               entries.forEach(entry => {
-                if (entry.isIntersecting && video.paused) {
-                  const playPromise = video.play();
-                  if (playPromise !== undefined) {
-                    playPromise.catch(error => {
-                      console.log(`📱 Autoplay restringido en móvil para video ${index + 1}`);
-                    });
+                if (entry.isIntersecting) {
+                  // Cambiar a preload completo cuando entra en vista
+                  if (video.getAttribute('preload') !== 'auto') {
+                    video.setAttribute('preload', 'auto');
+                    console.log(`👁️ Video ${index + 1} visible - preload completo activado`);
+                  }
+                  
+                  // Intentar reproducir si no está corriendo
+                  if (video.paused && !hasPlayed) {
+                    const playPromise = video.play();
+                    if (playPromise !== undefined) {
+                      playPromise.catch(error => {
+                        console.log(`📱 Autoplay restringido móvil - video ${index + 1}`);
+                      });
+                    }
                   }
                 }
               });
-            }, { threshold: 0.5 });
+            }, { 
+              threshold: 0.1, // Detectar al 10% visible (más temprano)
+              rootMargin: '150px' // Preload 150px antes de ser visible
+            });
             
             observer.observe(video);
           }
           
-          // Forzar load del video
-          video.load();
+          // OPTIMIZACIÓN INICIAL: Detectar si está en viewport
+          const videoRect = video.getBoundingClientRect();
+          const isInViewport = videoRect.top < window.innerHeight && videoRect.bottom > 0;
+          
+          if (isInViewport) {
+            console.log(`📺 Video ${index + 1} en viewport - preload inmediato`);
+            video.setAttribute('preload', 'auto');
+            video.load();
+          } else {
+            // Fuera de vista - solo metadatos para ahorrar ancho de banda
+            video.load();
+          }
         });
       }
       
-      // Ejecutar inicialización de videos
+      // Ejecutar inicialización optimizada
       initializeVideos();
-      
+
       // Efectos de animación para las tarjetas
       const videoCards = document.querySelectorAll('.silla-video-card');
       
@@ -630,8 +698,6 @@
         const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
         cartCount.textContent = totalItems;
       }
-
-
 
       // Mobile Menu FUNCIONAL RESTAURADO - Sillas List
       const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
