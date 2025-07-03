@@ -6,6 +6,76 @@
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <meta name="format-detection" content="telephone=no">
   <meta content="Webflow" name="generator">
+  
+  <style>
+    /* Forzar que los números de teléfono NO sean detectados como enlaces */
+    .footer-contact .phone,
+    .mobile-menu-contact .phone,
+    span.phone {
+      color: rgba(255, 255, 255, 0.8) !important;
+      text-decoration: none !important;
+      -webkit-text-decoration: none !important;
+      -webkit-text-decoration-line: none !important;
+      text-decoration-line: none !important;
+      -webkit-text-decoration-color: transparent !important;
+      text-decoration-color: transparent !important;
+      -webkit-appearance: none !important;
+      appearance: none !important;
+      font-weight: 500 !important;
+      letter-spacing: 0.05em !important;
+      pointer-events: none !important;
+      -webkit-touch-callout: none !important;
+      -webkit-user-select: none !important;
+      user-select: none !important;
+    }
+    
+    /* Estados de hover/focus/active - Mantener estilo consistente */
+    .footer-contact .phone:hover,
+    .footer-contact .phone:focus,
+    .footer-contact .phone:active,
+    .footer-contact .phone:link,
+    .footer-contact .phone:visited,
+    .mobile-menu-contact .phone:hover,
+    .mobile-menu-contact .phone:focus,
+    .mobile-menu-contact .phone:active,
+    .mobile-menu-contact .phone:link,
+    .mobile-menu-contact .phone:visited {
+      color: rgba(95, 164, 255, 0.9) !important;
+      text-decoration: none !important;
+      -webkit-text-decoration: none !important;
+      -webkit-text-decoration-line: none !important;
+      text-decoration-line: none !important;
+      border: none !important;
+      outline: none !important;
+    }
+    
+    /* Container anti-detección */
+    .contact-item {
+      -webkit-touch-callout: none !important;
+      -webkit-user-select: none !important;
+      user-select: none !important;
+    }
+    
+    /* iOS Safari específico - Regla ultra-agresiva */
+    @supports (-webkit-touch-callout: none) {
+      .footer-contact .phone,
+      .mobile-menu-contact .phone {
+        color: rgba(255, 255, 255, 0.8) !important;
+        text-decoration: none !important;
+        -webkit-text-decoration: none !important;
+        -webkit-text-decoration-line: none !important;
+        text-decoration-line: none !important;
+        -webkit-text-decoration-color: transparent !important;
+        text-decoration-color: transparent !important;
+        -webkit-appearance: none !important;
+        appearance: none !important;
+        border: none !important;
+        outline: none !important;
+        box-shadow: none !important;
+        background: transparent !important;
+      }
+    }
+  </style>
   <link href="css/normalize.css" rel="stylesheet" type="text/css">
   <link href="css/webflow.css" rel="stylesheet" type="text/css">
   <link href="css/raper-2.webflow.css?v=20250117" rel="stylesheet" type="text/css">
