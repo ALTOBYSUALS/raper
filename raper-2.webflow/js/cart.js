@@ -11,7 +11,7 @@ const productData = {
   6: { name: 'RAPER Azul Océano', price: 199000, image: 'https://res.cloudinary.com/dyrgyzca3/image/upload/v1748398979/6_mt8tn6.jpg' },
   7: { name: 'RAPER Verde Esmeralda', price: 199000, image: 'https://res.cloudinary.com/dyrgyzca3/image/upload/v1748398978/7_1_zq3fig.jpg' },
   8: { name: 'RAPER Rojo Carmesí', price: 199000, image: 'https://res.cloudinary.com/dyrgyzca3/image/upload/v1748398978/8_1_ixbyop.jpg' },
-  100: { name: 'RAPER Basketball Premium', price: 89999, image: 'https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/balon.jpg' },
+  100: { name: 'RAPER Basketball Premium', price: 85000, image: 'https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/balon.jpg' },
   200: { name: 'RAPER Director Chair Premium', price: 149999, image: 'https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/silla.jpg' }
 };
 
