@@ -487,6 +487,33 @@ body {
 .padding-global {
   padding: 0 !important;
 }
+
+/* IMAGEN DE FONDO PARA HEADPHONES CATEGORY */
+.headphones-category {
+  position: relative;
+  overflow: hidden;
+}
+
+.headphones-category::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('https://pub-573f900cac3744cfbb3b1f02894f7042.r2.dev/WhatsApp%20Image%202025-07-03%20at%2014.36.58.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.15;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.headphones-category > * {
+  position: relative;
+  z-index: 2;
+}
 </style>
     </div>
 
@@ -554,7 +581,7 @@ body {
             
             <div class="categories-grid">
               <!-- Categoría Auriculares -->
-              <div class="category-card">
+              <div class="category-card headphones-category">
                 <h2 class="category-title">HEADPHONES<br>RAPER</h2>
                 <div class="category-headphones-layout">
                   <div class="main-headphone" onclick="goToCategory('auriculares')">
